@@ -2,22 +2,22 @@
 .pagination {
   @apply flex justify-between items-center py-4 px-6;
   .rightArrow {
-    pointer-events: none !important;
+    pointer-events: none;
     svg {
       @apply w-4 h-4;
     }
   }
-  :global(.elf-select) {
-    @apply mx-2 w-auto !important;
-    :global(.elf-select-selector) {
-      @apply border bg-dark-bgc text-white py-2 rounded border-dark-border-default flex items-center !important;
-      :global(.elf-select-selection-item) {
+  :global(.ant-select) {
+    @apply mx-2 w-auto;
+    :global(.ant-select-selector) {
+      @apply border hover:!border-dark-border-default bg-dark-bgc text-white py-2 rounded !border-dark-border-default flex items-center;
+      :global(.ant-select-selection-item) {
         @apply pe-5 text-white font-medium leading-5 text-xs;
       }
     }
   }
-  :global(.elf-btn-primary) {
-    @apply border rounded-[6px] font-medium bg-dark-bgc !important;
+  :global(.ant-btn-primary) {
+    @apply border text-primary-color border-primary-color rounded-[6px] font-medium bg-dark-bgc hover:!bg-dark-bgc hover:!border-primary-border-hover hover:!text-primary-color;
     svg {
       path {
         @apply fill-primary-color;
@@ -26,27 +26,23 @@
   }
   .pagination__right {
     @apply flex items-center;
-    .elf-pagination-simple-pager {
+    .ant-pagination-simple-pager {
       @apply hidden;
     }
-    :global(.elf-btn.elf-btn-background-ghost[disabled]) {
-      @apply bg-dark-bgc-disable border-dark-border-default  text-dark-caption !important;
+    :global(.ant-btn.ant-btn-background-ghost[disabled]) {
+      @apply !bg-dark-bgc-disable !border-dark-border-default  !text-dark-caption;
       svg {
         path {
           @apply fill-dark-caption;
         }
       }
     }
-    .pagination__first .first-button,
-    .pagination__last .last-button {
-      @apply bg-dark-bgc font-medium !important;
-    }
 
     .pagination__prev,
     .pagination__next {
       @apply rounded-[6px] mr-0;
       .anticon {
-        @apply text-[16px] !important;
+        @apply text-[16px];
       }
       .active-icon {
         svg {
@@ -58,41 +54,16 @@
           @apply text-dark-caption fill-dark-caption;
         }
       }
-      .elf-btn-primary:disabled {
-        @apply bg-dark-bgc-disable  text-dark-caption !important;
-        .active-icon {
-          svg {
-            @apply text-dark-caption;
-          }
-        }
-      }
     }
 
     .prev,
     .next {
       box-shadow: none;
-      @apply flex justify-center box-border m-0 items-center border !important;
-    }
-    .prev:hover,
-    .next:hover {
-      .active-icon {
-        svg {
-          @apply text-white;
-        }
-      }
-    }
-    .elf-pagination-disabled {
-      @apply bg-dark-bgc-disable !important;
-      .prev:hover,
-      .next:hover {
-        @apply bg-dark-bgc-disable text-dark-border-default !important;
-
-        cursor: auto;
-      }
+      @apply flex justify-center box-border m-0 items-center border;
     }
     .pagination__page {
       box-sizing: border-box;
-      @apply text-xs rounded-[6px] mx-2 text-dark-caption leading-[18px] bg-dark-bgc-disable px-2 py-[7px];
+      @apply text-xs h-8 rounded-[6px] mx-2 text-dark-caption leading-[18px] bg-dark-bgc-disable px-2 py-[7px];
     }
   }
 }

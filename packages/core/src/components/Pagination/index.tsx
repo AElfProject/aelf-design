@@ -1,23 +1,23 @@
-import { Button, Select } from 'antd';
-import type { PaginationProps } from 'antd';
-import styles from './style/index.module.css';
-import { ReactNode, useEffect, useState } from 'react';
-import { useDebounceFn } from 'ahooks';
-import clsx from 'clsx';
-import  RightArrow  from './assets/right-arrow.svg?react';
-import  LeftArrow from './assets/left-arrow.svg?react';
-import  DownArrow from './assets/down-arrow.svg?react';
+import { Button, Select } from 'antd'
+import type { PaginationProps } from 'antd'
+import styles from './style/index.module.css'
+import { ReactNode, useEffect, useState } from 'react'
+import { useDebounceFn } from 'ahooks'
+import clsx from 'clsx'
+import RightArrow from './assets/right-arrow.svg?react'
+import LeftArrow from './assets/left-arrow.svg?react'
+import DownArrow from './assets/down-arrow.svg?react'
 import useResponsive from 'hooks/useResponsive'
 function JumpButton({
   disabled,
   className,
   svgComponent,
-  onChange,
+  onChange
 }: {
-  disabled: boolean;
-  className: string;
-  svgComponent: ReactNode;
-  onChange: (event: React.MouseEvent<HTMLElement>) => void;
+  disabled: boolean
+  className: string
+  svgComponent: ReactNode
+  onChange: (event: React.MouseEvent<HTMLElement>) => void
 }) {
   return (
     <Button
@@ -26,27 +26,28 @@ function JumpButton({
       disabled={disabled}
       className={className}
       onClick={onChange}
-      icon={svgComponent}></Button>
-  );
+      icon={svgComponent}
+    ></Button>
+  )
 }
 
 export type Options = {
-  value: number;
-  label: number;
-};
+  value: number
+  label: number
+}
 
 export interface IEpPaginationProps extends PaginationProps {
-  current?: number;
-  pageSize?: number;
-  isMobile?: boolean;
-  hideOnSinglePage?: boolean;
-  defaultCurrent?: number;
-  total: number;
-  defaultPageSize?: number;
-  showSizeChanger?: boolean;
-  pageChange?: (page: number, pageSize?: number) => void;
-  pageSizeChange?: (page: number, pageSize: number) => void;
-  options?: Options[];
+  current?: number
+  pageSize?: number
+  isMobile?: boolean
+  hideOnSinglePage?: boolean
+  defaultCurrent?: number
+  total: number
+  defaultPageSize?: number
+  showSizeChanger?: boolean
+  pageChange?: (page: number, pageSize?: number) => void
+  pageSizeChange?: (page: number, pageSize: number) => void
+  options?: Options[]
 }
 
 export default function Pagination({
@@ -62,81 +63,86 @@ export default function Pagination({
   options = [
     { value: 10, label: 10 },
     { value: 20, label: 20 },
-    { value: 50, label: 50 },
-  ],
+    { value: 50, label: 50 }
+  ]
 }: IEpPaginationProps) {
-
   // Component state
-  const [pageNum, setPageNum] = useState<number>(defaultCurrent);
-  const [pageSizeValue, setPageSizeValue] = useState<number>(defaultPageSize);
+  const [pageNum, setPageNum] = useState<number>(defaultCurrent)
+  const [pageSizeValue, setPageSizeValue] = useState<number>(defaultPageSize)
 
   // Calculated states
-  const totalPage = Math.floor((total + pageSizeValue - 1) / pageSizeValue) || 1;
-  const isFirstPage = pageNum === 1;
-  const isLastPage = pageNum >= totalPage;
+  const totalPage = Math.floor((total + pageSizeValue - 1) / pageSizeValue) || 1
+  const isFirstPage = pageNum === 1
+  const isLastPage = pageNum >= totalPage
 
   // Hooks
-  const { isMobile } = useResponsive();
+  const { isMobile } = useResponsive()
 
   // Effect
   useEffect(() => {
-    current && setPageNum(current);
-  }, [current]);
+    current && setPageNum(current)
+  }, [current])
   useEffect(() => {
-    pageSize && setPageSizeValue(pageSize);
-  }, [pageSize]);
+    pageSize && setPageSizeValue(pageSize)
+  }, [pageSize])
 
   // Methods
   const prevChange = () => {
-    const page = pageNum === 1 ? pageNum : pageNum - 1;
-    setPageNum(page);
-    pageChange && pageChange(page);
-  };
-  const { run: runPrevChange } = useDebounceFn(prevChange, { wait: 300 });
+    const page = pageNum === 1 ? pageNum : pageNum - 1
+    setPageNum(page)
+    pageChange && pageChange(page)
+  }
+  const { run: runPrevChange } = useDebounceFn(prevChange, { wait: 300 })
 
   const nextChange = () => {
-    const page = pageNum === totalPage ? totalPage : pageNum + 1;
-    setPageNum(page);
-    pageChange && pageChange(page);
-  };
-  const { run: runNextChange } = useDebounceFn(nextChange, { wait: 300 });
+    const page = pageNum === totalPage ? totalPage : pageNum + 1
+    setPageNum(page)
+    pageChange && pageChange(page)
+  }
+  const { run: runNextChange } = useDebounceFn(nextChange, { wait: 300 })
 
   const jumpFirst = () => {
-    setPageNum(1);
-    pageChange && pageChange(1, pageSize);
-  };
-  const { run: debounceJumpFirst } = useDebounceFn(jumpFirst, { wait: 300 });
+    setPageNum(1)
+    pageChange && pageChange(1, pageSize)
+  }
+  const { run: debounceJumpFirst } = useDebounceFn(jumpFirst, { wait: 300 })
 
   const jumpLast = () => {
-    setPageNum(totalPage);
-    pageChange && pageChange(totalPage, pageSize);
-  };
-  const { run: debounceJumpLast } = useDebounceFn(jumpLast, { wait: 300 });
+    setPageNum(totalPage)
+    pageChange && pageChange(totalPage, pageSize)
+  }
+  const { run: debounceJumpLast } = useDebounceFn(jumpLast, { wait: 300 })
 
   const sizeChange = (value: number) => {
-    setPageNum(1);
-    setPageSizeValue(value);
-    pageSizeChange && pageSizeChange(1, value);
-  };
+    setPageNum(1)
+    setPageSizeValue(value)
+    pageSizeChange && pageSizeChange(1, value)
+  }
 
   // Render
-  if(hideOnSinglePage && total <= 10){
+  if (hideOnSinglePage && total <= 10) {
     return null
   }
 
   return (
-    <div className={clsx(styles.pagination, isMobile && styles.paginationMobile)}>
+    <div
+      className={clsx(styles.pagination, isMobile && styles.paginationMobile)}
+    >
       <div className={styles.epPaginationLeft}>
         {showSizeChanger && (
           <>
-            <span className="title inline-block text-xs leading-[18px] text-dark-caption">Show：</span>
+            <span className="title inline-block text-xs leading-[18px] text-dark-caption">
+              Show：
+            </span>
             <Select
               defaultValue={pageSizeValue}
               suffixIcon={<DownArrow className={styles.rightArrow} />}
               options={options}
               onChange={sizeChange}
             />
-            <span className="title inline-block text-xs leading-[18px] text-dark-caption">Records</span>
+            <span className="title inline-block text-xs leading-[18px] text-dark-caption">
+              Records
+            </span>
           </>
         )}
       </div>
@@ -147,7 +153,8 @@ export default function Pagination({
             type="primary"
             ghost
             className="!px-2 !text-xs !leading-5 mr-2 first-button"
-            onClick={debounceJumpFirst}>
+            onClick={debounceJumpFirst}
+          >
             First
           </Button>
         </div>
@@ -160,7 +167,9 @@ export default function Pagination({
           />
         </div>
         <div className={styles.pagination__page}>
-          <div className="text-xs leading-5">{`Page ${current || pageNum} of ${totalPage}`}</div>
+          <div className="text-xs leading-5">{`Page ${
+            current || pageNum
+          } of ${totalPage}`}</div>
         </div>
         <div className={styles.pagination__next}>
           <JumpButton
@@ -176,11 +185,12 @@ export default function Pagination({
             type="primary"
             ghost
             className="!px-2 ml-2 !text-xs !leading-5 last-button"
-            onClick={debounceJumpLast}>
+            onClick={debounceJumpLast}
+          >
             Last
           </Button>
         </div>
       </div>
     </div>
-  );
+  )
 }

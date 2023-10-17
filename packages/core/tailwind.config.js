@@ -1,14 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-function withOpacityValue(variable) {
-  return `var(${variable})`;
-}
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif']
       },
       colors: {
         'primary-color': '#8B60F7',
@@ -33,22 +30,22 @@ module.exports = {
         'nav-search-bg': '#18161E',
         'error-color': '#BE283A',
         'dark-link': '#1B76E2',
-        'dark-loading-bg': 'rgba(0, 0, 0, 0.64)',
+        'dark-loading-bg': 'rgba(0, 0, 0, 0.64)'
       },
       boxShadow: {
         dropMenu: '0px 6px 16px 0px rgba(0, 0, 0, 0.16)',
         inset: '0px -1px 0px 0px #252132 inset',
         'line-bot': '0px 1px 0px 0px #252132 inset',
-        'tab-active': '0px -2px 0px 0px #8B60F7 inset',
+        'tab-active': '0px -2px 0px 0px #8B60F7 inset'
       },
       screens: {
         pcMax: '1440px',
-        pcMin: '500px',
-      },
-    },
+        pcMin: '500px'
+      }
+    }
   },
   plugins: [],
   corePlugins: {
-    preflight: false,
-  },
-};
+    preflight: false
+  }
+}
