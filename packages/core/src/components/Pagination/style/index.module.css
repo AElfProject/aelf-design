@@ -1,0 +1,105 @@
+/* stylelint-disable no-descending-specificity */
+.pagination {
+  @apply flex justify-between items-center py-4 px-6;
+  .rightArrow {
+    pointer-events: none !important;
+    svg {
+      @apply w-4 h-4;
+    }
+  }
+  :global(.elf-select) {
+    @apply mx-2 w-auto !important;
+    :global(.elf-select-selector) {
+      @apply border bg-dark-bgc text-white py-2 rounded border-dark-border-default flex items-center !important;
+      :global(.elf-select-selection-item) {
+        @apply pe-5 text-white font-medium leading-5 text-xs;
+      }
+    }
+  }
+  :global(.elf-btn-primary) {
+    @apply border rounded-[6px] font-medium bg-dark-bgc !important;
+    svg {
+      path {
+        @apply fill-primary-color;
+      }
+    }
+  }
+  .pagination__right {
+    @apply flex items-center;
+    .elf-pagination-simple-pager {
+      @apply hidden;
+    }
+    :global(.elf-btn.elf-btn-background-ghost[disabled]) {
+      @apply bg-dark-bgc-disable border-dark-border-default  text-dark-caption !important;
+      svg {
+        path {
+          @apply fill-dark-caption;
+        }
+      }
+    }
+    .pagination__first .first-button,
+    .pagination__last .last-button {
+      @apply bg-dark-bgc font-medium !important;
+    }
+
+    .pagination__prev,
+    .pagination__next {
+      @apply rounded-[6px] mr-0;
+      .anticon {
+        @apply text-[16px] !important;
+      }
+      .active-icon {
+        svg {
+          @apply text-primary-color;
+        }
+      }
+      .disabled-icon {
+        svg {
+          @apply text-dark-caption fill-dark-caption;
+        }
+      }
+      .elf-btn-primary:disabled {
+        @apply bg-dark-bgc-disable  text-dark-caption !important;
+        .active-icon {
+          svg {
+            @apply text-dark-caption;
+          }
+        }
+      }
+    }
+
+    .prev,
+    .next {
+      box-shadow: none;
+      @apply flex justify-center box-border m-0 items-center border !important;
+    }
+    .prev:hover,
+    .next:hover {
+      .active-icon {
+        svg {
+          @apply text-white;
+        }
+      }
+    }
+    .elf-pagination-disabled {
+      @apply bg-dark-bgc-disable !important;
+      .prev:hover,
+      .next:hover {
+        @apply bg-dark-bgc-disable text-dark-border-default !important;
+
+        cursor: auto;
+      }
+    }
+    .pagination__page {
+      box-sizing: border-box;
+      @apply text-xs rounded-[6px] mx-2 text-dark-caption leading-[18px] bg-dark-bgc-disable px-2 py-[7px];
+    }
+  }
+}
+
+.paginationMobile {
+  @apply flex items-start flex-col;
+  .pagination__right {
+    @apply mt-2;
+  }
+}

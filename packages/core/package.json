@@ -15,8 +15,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@ebay/nice-modal-react": "^1.2.13",
     "ahooks": "^3.7.8",
     "antd": "^5.10.0",
+    "bignumber.js": "^9.1.2",
+    "clsx": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use": "^17.4.0"
