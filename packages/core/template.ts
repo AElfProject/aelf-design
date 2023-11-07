@@ -1,4 +1,5 @@
-export const defaultTemplate: any = (variables: any, { tpl }: any) => {
+import { Template } from '@svgr/babel-plugin-transform-svg-component'
+export const defaultTemplate: Template = (variables, { tpl }) => {
   return tpl`
 ${variables.imports};
 

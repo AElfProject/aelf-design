@@ -3,9 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import svgr from 'vite-plugin-svgr'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import path from 'path'
-import { defaultTemplate } from './template';
+import { defaultTemplate } from './template'
 
 // https://vitejs.dev/config https://vitest.dev/config
 export default defineConfig({
@@ -25,17 +23,18 @@ export default defineConfig({
               params: {
                 optionName: 'optionValue'
               },
-              fn: (ast,params, info) => {
-                const pathArr = info.path?.split('/');
-                const name = `${/^\S+(?=\.svg)/g.exec(
-                  pathArr[pathArr.length - 1]
-                )[0]}_svg_plugin_`
+              fn: (ast, params, info) => {
+                // add special id
+                const pathArr = info.path?.split('/')
+                const name = `${
+                  /^\S+(?=\.svg)/g.exec(pathArr[pathArr.length - 1])[0]
+                }_svg_plugin_`
                 return {
                   element: {
                     enter: (node, parentNode) => {
                       if (node.name === 'svg' && parentNode.type === 'root') {
                         node.attributes.id =
-                          name + Math.floor(Math.random() * 100000);
+                          name + Math.floor(Math.random() * 100000)
                       }
                     }
                   }
@@ -47,13 +46,6 @@ export default defineConfig({
         template: defaultTemplate
       }
     })
-    // createSvgIconsPlugin({
-    //   iconDirs: [path.resolve(process.cwd(), 'src/assets')],
-    //   symbolId: 'icon-[dir]-[name]',
-    //   svgoOptions: {
-    //     plugins: ['reusePaths']
-    //   }
-    // })
   ],
   test: {
     globals: true,
