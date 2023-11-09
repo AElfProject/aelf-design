@@ -2,6 +2,14 @@
   "name": "aelfd-core",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/react-components.umd.js",
+  "module": "./dist/react-components.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/react-components.es.js",
+      "require": "./dist/react-components.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -20,7 +28,6 @@
     "antd": "^5.10.0",
     "bignumber.js": "^9.1.2",
     "clsx": "^2.0.0",
-    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use": "^17.4.0"
   },
@@ -57,6 +64,8 @@
     "lint-staged": "^14.0.1",
     "postcss": "^8.4.31",
     "prettier": "3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "storybook": "^7.4.6",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",
@@ -64,6 +73,10 @@
     "vite-plugin-svgr": "^4.1.0",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^0.34.6"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "eslintConfig": {
     "extends": [
