@@ -16,6 +16,9 @@
   },
   "dependencies": {
     "@ebay/nice-modal-react": "^1.2.13",
+    "@svgr/babel-plugin-transform-svg-component": "^8.0.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@svgr/plugin-svgo": "^8.1.0",
     "ahooks": "^3.7.8",
     "antd": "^5.10.0",
     "bignumber.js": "^9.1.2",
