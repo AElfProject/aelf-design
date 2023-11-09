@@ -1,7 +1,7 @@
 import React from 'react'
 import type { CollapseProps } from 'antd'
 import { Collapse } from 'antd'
-import st from './style/index.module.css'
+// import st from './style/index.module.css'
 
 const text = `
   A dog is a type of domesticated animal.
