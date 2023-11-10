@@ -5,13 +5,12 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import svgr from 'vite-plugin-svgr'
 import { resolve } from 'path'
 
-
-
 import { defaultTemplate } from './template'
 
 // https://vitejs.dev/config https://vitest.dev/config
 export default defineConfig({
   build: {
+    emptyOutDir: false,
     lib: {
       entry: resolve(__dirname, 'src/components/index.tsx'),
       name: 'ReactComponents',
@@ -40,14 +39,11 @@ export default defineConfig({
           plugins: [
             {
               name: 'customPluginName',
-              params: {
-                optionName: 'optionValue'
-              },
-              fn: (ast, params, info) => {
+              fn: (_, __, info) => {
                 // add special id
-                const pathArr = info.path?.split('/')
+                const pathArr = info.path?.split('/') || []
                 const name = `${
-                  /^\S+(?=\.svg)/g.exec(pathArr[pathArr.length - 1])[0]
+                  (/^\S+(?=\.svg)/g.exec(pathArr[pathArr.length - 1]) || [])[0]
                 }_svg_plugin_`
                 return {
                   element: {
