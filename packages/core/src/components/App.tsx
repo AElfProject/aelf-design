@@ -9,15 +9,15 @@ function App() {
       <Collapse />
       <Pagination total={100} />
       <ToolLogo
-        twoToneColor={['red', 'green']}
-        hoverTwoToneColor={['pink', 'blue']}
+        data-twoToneColor={['red', 'green']}
+        data-hoverTwoToneColor={['pink', 'blue']}
         width="200px"
         height="200px"
         className="test"
       ></ToolLogo>
       <SearchLogo
         color="black"
-        hoverColor="green"
+        data-hoverColor="green"
         width="200px"
         height="200px"
       ></SearchLogo>

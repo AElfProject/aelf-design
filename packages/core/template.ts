@@ -39,27 +39,28 @@ function addNewStyle(newStyle) {
 
 
 function changePathStyle(props, arr, id) {
+    if(!props) return;
     const str = arr.join(' ');
     const root = arr[0];
     const others = arr.slice(1);
-    if(props?.color) {
+    if(props.color) {
         addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props.color + '}');
     }
-    if(props?.hoverColor) {
-        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props.hoverColor + '}');
+    if(props['data-hoverColor']) {
+        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-hoverColor'] + '}');
     }
-    if (Array.isArray(props?.twoToneColor)) {
-        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props.twoToneColor[0] + '}');
-        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props.twoToneColor[1] + '}');
+    if (Array.isArray(props['data-twoToneColor'])) {
+        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-twoToneColor'][0] + '}');
+        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-twoToneColor'][1] + '}');
     }
-    if (Array.isArray(props?.hoverTwoToneColor)) {
-        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props.hoverTwoToneColor[0] + '}');
-        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props.hoverTwoToneColor[1] + '}');
+    if (Array.isArray(props['data-hoverTwoToneColor'])) {
+        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-hoverTwoToneColor'][0] + '}');
+        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-hoverTwoToneColor'][1] + '}');
     }
-    if(props?.width) {
+    if(props.width) {
       addNewStyle(root + '#'+ id + '{width: ' + props.width + '}');
     }
-    if(props?.height) {
+    if(props.height) {
       addNewStyle(root + '#'+ id + '{height: ' + props.height + '}');
     }
 }
