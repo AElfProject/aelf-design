@@ -2,12 +2,20 @@
   "name": "aelfd-core",
   "version": "0.1.0",
   "private": true,
-  "main": "./dist/react-components.umd.js",
-  "module": "./dist/react-components.es.js",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/aelfd-core.js",
+  "module": "./dist/es/aelfd-core.mjs",
+  "umd": "./dist/umd/aelfd-core.umd.js",
   "exports": {
     ".": {
-      "import": "./dist/react-components.es.js",
-      "require": "./dist/react-components.umd.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/es/aelfd-core.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/cjs/aelfd-core.js"
+      }
     }
   },
   "scripts": {
@@ -37,6 +45,8 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@storybook/addon-essentials": "^7.4.6",
     "@storybook/addon-interactions": "^7.4.6",
     "@storybook/addon-links": "^7.4.6",
@@ -65,14 +75,18 @@
     "happy-dom": "^12.2.2",
     "husky": "^8.0.0",
     "lint-staged": "^14.0.1",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.31",
     "prettier": "3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup-plugin-typescript2": "^0.36.0",
     "storybook": "^7.4.6",
     "tailwindcss": "^3.3.3",
+    "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.6.3",
     "vite-plugin-svgr": "^4.1.0",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^0.34.6"
