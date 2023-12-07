@@ -15,7 +15,7 @@ import { defaultTemplate } from './template'
 // https://vitejs.dev/config https://vitest.dev/config
 export default defineConfig({
   build: {
-    emptyOutDir: false,
+    // emptyOutDir: false,
     lib: {
       entry: resolve(__dirname, 'src/components/index.tsx')
     },
