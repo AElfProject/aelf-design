@@ -194,6 +194,25 @@ const App = () => {
               icon={<SearchOutlined />}
             />
             <Button size="ultra" shape="circle" icon={<SearchOutlined />} />
+
+            <Button
+              type="primary"
+              size="mini"
+              icon={<SearchOutlined />}
+            ></Button>
+            <Button
+              type="dashed"
+              size="small"
+              icon={<SearchOutlined />}
+            ></Button>
+            <Button
+              type="primary"
+              ghost
+              size="medium"
+              icon={<SearchOutlined />}
+            ></Button>
+            <Button size="large" danger icon={<SearchOutlined />}></Button>
+            <Button size="ultra" icon={<SearchOutlined />}></Button>
           </div>
 
           <div className="mb-2 flex items-center gap-2">
@@ -259,7 +278,7 @@ const App = () => {
               addonBefore="ELF"
               addonAfter="AELF"
             />
-            {/* <Input.password></Input.password> */}
+            {/* <Input.Password></Input.Password> */}
           </div>
         </div>
 

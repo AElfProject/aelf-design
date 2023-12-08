@@ -1,9 +1,10 @@
 import { forwardRef } from 'react'
-import { Input, InputProps } from 'antd'
+import { Input, InputProps, InputRef } from 'antd'
 import { createStyles } from 'antd-style'
 import CircleClose from '../assets/circle-close.svg?react'
 
 type AelfdInputSizeType = 'small' | 'middle'
+
 const useStyles = createStyles(
   ({ css }, { size }: { size: AelfdInputSizeType }) => {
     return {
@@ -24,6 +25,7 @@ const useStyles = createStyles(
 export interface AelfdInputProps
   extends Omit<InputProps, 'size' | 'allowClear'> {
   size?: AelfdInputSizeType
+  className?: string
 }
 
 const AelfdInput = ({
@@ -52,4 +54,4 @@ const AelfdInput = ({
   )
 }
 
-export default forwardRef(AelfdInput)
+export default AelfdInput

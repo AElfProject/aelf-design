@@ -7,11 +7,23 @@ type AelfdButtonSizeType = 'mini' | 'small' | 'medium' | 'large' | 'ultra'
 
 const useStyles = createStyles(
   ({ token, css, cx }, { size }: { size: AelfdButtonSizeType }) => {
+    const dynamicWidth =
+      size === 'mini'
+        ? '24px'
+        : size === 'small'
+        ? '32px'
+        : size === 'medium'
+        ? '40px'
+        : size === 'large'
+        ? '48px'
+        : '56px'
+
     return {
       buttonWrap: css`
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
         font-size: ${size === 'mini'
           ? '12px'
           : size === 'small'
@@ -31,15 +43,7 @@ const useStyles = createStyles(
             : size === 'large'
             ? '28px'
             : '32px'};
-        height: ${size === 'mini'
-          ? '24px'
-          : size === 'small'
-          ? '32px'
-          : size === 'medium'
-          ? '40px'
-          : size === 'large'
-          ? '48px'
-          : '56px'};
+        height: ${dynamicWidth};
         min-width: ${size === 'mini'
           ? '40px'
           : size === 'small'
@@ -60,9 +64,13 @@ const useStyles = createStyles(
           : '6px'};
 
         &.ant-btn-circle {
-          min-height: 32px;
-          height: 32px;
+          min-height: ${dynamicWidth};
+          height: ${dynamicWidth};
           font-size: 14px;
+        }
+        &.ant-btn-icon-only {
+          min-width: auto;
+          width: ${dynamicWidth};
         }
       `
     }
