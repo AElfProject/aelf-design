@@ -1,17 +1,52 @@
-import { ThemeProvider, ThemeProviderProps } from 'antd-style'
+import { ThemeConfig } from 'antd'
+import { ThemeAppearance, ThemeProvider, ThemeProviderProps } from 'antd-style'
 
-const AELFDProvider = <T, S>(props: ThemeProviderProps<T, S>) => {
+interface IAelfdThemeProviderProps
+  extends Omit<ThemeProviderProps<IAelfdCustomToken>, 'theme'> {
+  theme?: ThemeConfig
+  customToken?: IAelfdCustomToken
+}
+
+interface IAelfdCustomToken {
+  colorTextSecondary: string
+  colorBgHover: string
+}
+
+declare module 'antd-style' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  export interface CustomToken extends IAelfdCustomToken {}
+}
+
+const AELFDProvider = (props: IAelfdThemeProviderProps) => {
   return (
-    <ThemeProvider
-      theme={(appearance) => {
+    <ThemeProvider<IAelfdCustomToken>
+      {...props}
+      // customToken={({ token, isDarkMode }) => ({
+      //   customColor: '#F8F8F8',
+      //   headerHeight: 64
+      // })}
+      customToken={({ appearance }) => {
+        if (appearance === 'dark') {
+          return {
+            colorTextSecondary: '#8C8C8C',
+            colorBgHover: '#212121'
+          }
+        } else {
+          return {
+            colorTextSecondary: '#808080',
+            colorBgHover: '#F8F8F8'
+          }
+        }
+      }}
+      theme={(appearance: ThemeAppearance) => {
         const comp = {
           Input: {
             paddingBlock: 11,
             paddingBlockSM: 7,
             paddingInline: 11,
             paddingInlineSM: 7,
-            addonBg: appearance === 'dark' ? '#141414' : '#F8F8F8',
-            ...props?.theme?.components?.Input
+            addonBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
+            ...props.theme?.components?.Input
           }
         }
         if (appearance === 'dark') {
@@ -52,7 +87,6 @@ const AELFDProvider = <T, S>(props: ThemeProviderProps<T, S>) => {
           components: comp
         }
       }}
-      {...props}
     >
       {props.children}
     </ThemeProvider>

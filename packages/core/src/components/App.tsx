@@ -3,7 +3,6 @@ import Pagination from 'components/Pagination'
 import ToolLogo from '../assets/tool.svg?react'
 import SearchLogo from '../assets/search.svg?react'
 import { SearchOutlined } from '@ant-design/icons'
-import Card from './card'
 import Button from './Button'
 import Input from './Input'
 import AELFDProvider from '../provider'
@@ -20,8 +19,8 @@ const App = () => {
     >
       <Segmented
         options={[
-          { label: '亮色', value: 'light' },
-          { label: '暗色', value: 'dark' }
+          { label: 'light', value: 'light' },
+          { label: 'dark', value: 'dark' }
         ]}
         value={appearance}
         onChange={(e) => setAppearance(e as ThemeAppearance)}
@@ -280,6 +279,10 @@ const App = () => {
             />
             {/* <Input.Password></Input.Password> */}
           </div>
+        </div>
+
+        <div className="mt-5">
+          <Pagination total={100}></Pagination>
         </div>
 
         {/* <Collapse /> */}

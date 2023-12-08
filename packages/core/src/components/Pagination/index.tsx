@@ -1,35 +1,13 @@
-import { Button, Select } from 'antd'
+import { Select } from 'antd'
 import type { PaginationProps } from 'antd'
-import styles from './style/index.module.css'
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDebounceFn } from 'ahooks'
-import clsx from 'clsx'
-import RightArrow from './assets/right-arrow.svg?react'
-import LeftArrow from './assets/left-arrow.svg?react'
-import DownArrow from './assets/down-arrow.svg?react'
+import RightArrow from 'assets/right-arrow.svg?react'
+import LeftArrow from 'assets/left-arrow.svg?react'
+import DownArrow from 'assets/downArrow.svg?react'
 import useResponsive from 'hooks/useResponsive'
-function JumpButton({
-  disabled,
-  className,
-  svgComponent,
-  onChange
-}: {
-  disabled: boolean
-  className: string
-  svgComponent: ReactNode
-  onChange: (event: React.MouseEvent<HTMLElement>) => void
-}) {
-  return (
-    <Button
-      type="primary"
-      ghost
-      disabled={disabled}
-      className={className}
-      onClick={onChange}
-      icon={svgComponent}
-    ></Button>
-  )
-}
+import Button from 'components/Button'
+import useStyles from './style'
 
 export type Options = {
   value: number
@@ -76,6 +54,7 @@ export default function Pagination({
   const isLastPage = pageNum >= totalPage
 
   // Hooks
+  const { styles, cx } = useStyles()
   const { isMobile } = useResponsive()
 
   // Effect
@@ -125,66 +104,62 @@ export default function Pagination({
   }
 
   return (
-    <div
-      className={clsx(styles.pagination, isMobile && styles.paginationMobile)}
-    >
-      <div className={styles.epPaginationLeft}>
+    <div className={styles.paginationContainer}>
+      <div>
         {showSizeChanger && (
           <>
-            <span className="title inline-block text-xs leading-[18px] text-dark-caption">
-              Show：
-            </span>
+            <span>Show：</span>
             <Select
               defaultValue={pageSizeValue}
-              suffixIcon={<DownArrow className={styles.rightArrow} />}
+              suffixIcon={<DownArrow />}
               options={options}
               onChange={sizeChange}
             />
-            <span className="title inline-block text-xs leading-[18px] text-dark-caption">
-              Records
-            </span>
+            <span>Records</span>
           </>
         )}
       </div>
-      <div className={styles.pagination__right}>
-        <div className={styles.pagination__first}>
+      <div className={styles.pageContainer}>
+        <div>
           <Button
             disabled={isFirstPage}
+            size="medium"
             type="primary"
             ghost
-            className="!px-2 !text-xs !leading-5 mr-2 first-button"
             onClick={debounceJumpFirst}
           >
             First
           </Button>
         </div>
-        <div className={clsx(styles.pagination__prev, 'w-8')}>
-          <JumpButton
+        <div>
+          <Button
             disabled={isFirstPage}
-            onChange={runPrevChange}
-            className={styles.prev}
-            svgComponent={<LeftArrow />}
+            type="primary"
+            size="medium"
+            ghost
+            onClick={runPrevChange}
+            icon={<LeftArrow />}
           />
         </div>
-        <div className={styles.pagination__page}>
-          <div className="text-xs leading-5">{`Page ${
-            current || pageNum
-          } of ${totalPage}`}</div>
+        <div className={cx('pageNumber-container', styles.pageNumberContainer)}>
+          <div>{`Page ${current || pageNum} of ${totalPage}`}</div>
         </div>
-        <div className={styles.pagination__next}>
-          <JumpButton
+        <div>
+          <Button
+            type="primary"
+            size="medium"
+            ghost
             disabled={isLastPage}
-            onChange={runNextChange}
-            className={styles.next}
-            svgComponent={<RightArrow />}
+            onClick={runNextChange}
+            icon={<RightArrow />}
           />
         </div>
-        <div className={styles.pagination__last}>
+        <div>
           <Button
             disabled={isLastPage}
             type="primary"
+            size="medium"
             ghost
-            className="!px-2 ml-2 !text-xs !leading-5 last-button"
             onClick={debounceJumpLast}
           >
             Last
