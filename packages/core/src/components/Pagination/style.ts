@@ -10,13 +10,11 @@ export default createStyles(({ token }, props: { isMobile: boolean }) => {
       align-items: ${isMobile ? 'flex-start' : 'center'};
       height: 100%;
       justify-content: space-between;
-      .ant-select-focused:where(
-          .css-dev-only-do-not-override-1yhc7so
-        ).ant-select:not(.ant-select-disabled):not(
+      .ant-select-focused.ant-select:not(.ant-select-disabled):not(
           .ant-select-customize-input
         ):not(.ant-pagination-size-changer)
         .ant-select-selector {
-        border-color: ${token.colorPrimaryActive} !important;
+        border-color: ${token.colorPrimaryActive};
       }
 
       .ant-select-open .ant-select-arrow {
@@ -61,15 +59,10 @@ export default createStyles(({ token }, props: { isMobile: boolean }) => {
         padding: 0 8px !important;
         border-radius: 4px;
       }
-      :where(
-          .css-dev-only-do-not-override-1yhc7so
-        ).ant-select-single.ant-select-show-arrow
-        .ant-select-selection-item,
-      :where(
-          .css-dev-only-do-not-override-1yhc7so
-        ).ant-select-single.ant-select-show-arrow
-        .ant-select-selection-placeholder {
-        padding-inline-end: 20px;
+
+      .ant-select-selection-item,
+      .ant-select-selection-placeholder {
+        padding-inline-end: 20px !important;
       }
       .ant-select-arrow {
         color: ${token.colorDownArrow};
@@ -78,17 +71,14 @@ export default createStyles(({ token }, props: { isMobile: boolean }) => {
     pageSizePopup: css`
       padding: 5px 0;
       border-radius: 6px;
-      :where(.css-dev-only-do-not-override-189hnkz).ant-select-dropdown
-        .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+      .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
         background-color: ${token.colorBgPage};
         color: ${token.colorPrimary};
       }
-      :where(.css-dev-only-do-not-override-189hnkz).ant-select-dropdown
-        .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+      .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
         background-color: ${token.colorBgHover};
       }
-      :where(.css-dev-only-do-not-override-189hnkz).ant-select-dropdown
-        .ant-select-item {
+      .ant-select-item {
         padding: 5px 12px;
         line-height: 22px;
         border-radius: 0px;
