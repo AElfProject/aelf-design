@@ -1,6 +1,6 @@
 import { Select } from 'antd'
 import type { PaginationProps } from 'antd'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useDebounceFn } from 'ahooks'
 import RightArrow from 'assets/right-arrow.svg?react'
 import LeftArrow from 'assets/left-arrow.svg?react'
@@ -9,10 +9,7 @@ import useResponsive from 'hooks/useResponsive'
 import Button from 'components/Button'
 import useStyles from './style'
 
-export type Options = {
-  value: number
-  label: number
-}
+export type Options = number[]
 
 export interface IEpPaginationProps extends PaginationProps {
   current?: number
@@ -25,7 +22,7 @@ export interface IEpPaginationProps extends PaginationProps {
   showSizeChanger?: boolean
   pageChange?: (page: number, pageSize?: number) => void
   pageSizeChange?: (page: number, pageSize: number) => void
-  options?: Options[]
+  options?: Options
 }
 
 export default function Pagination({
@@ -38,11 +35,7 @@ export default function Pagination({
   pageChange,
   hideOnSinglePage,
   pageSizeChange,
-  options = [
-    { value: 10, label: 10 },
-    { value: 20, label: 20 },
-    { value: 50, label: 50 }
-  ]
+  options = [10, 20, 50]
 }: IEpPaginationProps) {
   // Component state
   const [pageNum, setPageNum] = useState<number>(defaultCurrent)
@@ -54,8 +47,8 @@ export default function Pagination({
   const isLastPage = pageNum >= totalPage
 
   // Hooks
-  const { styles, cx } = useStyles()
-  const { isMobile } = useResponsive()
+  const { isMD: isMobile } = useResponsive()
+  const { styles, cx } = useStyles({ isMobile })
 
   // Effect
   useEffect(() => {
@@ -98,8 +91,14 @@ export default function Pagination({
     pageSizeChange && pageSizeChange(1, value)
   }
 
-  // Render
-  if (hideOnSinglePage && total <= 10) {
+  const pagesizeOptions = useMemo(() => {
+    return options.map((item) => {
+      return { label: item, value: item }
+    })
+  }, [options])
+
+  // hidden pagination Render
+  if (hideOnSinglePage && total <= options[0]) {
     return null
   }
 
@@ -108,14 +107,19 @@ export default function Pagination({
       <div>
         {showSizeChanger && (
           <>
-            <span>Show：</span>
+            <span className={styles.pagesizeLabel}>Show：</span>
             <Select
               defaultValue={pageSizeValue}
+              className={styles.pagesizeSelect}
+              popupClassName={styles.pageSizePopup}
+              popupMatchSelectWidth={false}
               suffixIcon={<DownArrow />}
-              options={options}
+              options={pagesizeOptions}
               onChange={sizeChange}
             />
-            <span>Records</span>
+            <span className={cx(styles.pagesizeLabel, styles.records)}>
+              Records
+            </span>
           </>
         )}
       </div>
@@ -123,7 +127,8 @@ export default function Pagination({
         <div>
           <Button
             disabled={isFirstPage}
-            size="medium"
+            size="small"
+            className={styles.paginationButton}
             type="primary"
             ghost
             onClick={debounceJumpFirst}
@@ -135,7 +140,8 @@ export default function Pagination({
           <Button
             disabled={isFirstPage}
             type="primary"
-            size="medium"
+            className={styles.paginationButton}
+            size="small"
             ghost
             onClick={runPrevChange}
             icon={<LeftArrow />}
@@ -147,7 +153,8 @@ export default function Pagination({
         <div>
           <Button
             type="primary"
-            size="medium"
+            className={styles.paginationButton}
+            size="small"
             ghost
             disabled={isLastPage}
             onClick={runNextChange}
@@ -157,8 +164,9 @@ export default function Pagination({
         <div>
           <Button
             disabled={isLastPage}
+            className={styles.paginationButton}
             type="primary"
-            size="medium"
+            size="small"
             ghost
             onClick={debounceJumpLast}
           >

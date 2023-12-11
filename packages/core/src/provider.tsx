@@ -10,6 +10,8 @@ interface IAelfdThemeProviderProps
 interface IAelfdCustomToken {
   colorTextSecondary: string
   colorBgHover: string
+  colorDownArrow: string
+  colorBgPage: string
 }
 
 declare module 'antd-style' {
@@ -29,12 +31,16 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
         if (appearance === 'dark') {
           return {
             colorTextSecondary: '#8C8C8C',
-            colorBgHover: '#212121'
+            colorBgHover: '#212121',
+            colorDownArrow: '#fff',
+            colorBgPage: '#1A1A1A'
           }
         } else {
           return {
             colorTextSecondary: '#808080',
-            colorBgHover: '#F8F8F8'
+            colorBgHover: '#F8F8F8',
+            colorDownArrow: '#101114',
+            colorBgPage: '#FFF'
           }
         }
       }}
@@ -63,6 +69,7 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
               colorLinkActive: '#0756BC',
               colorTextBase: '#E8E8E8',
               colorBorder: '#484848',
+              colorTextDisabled: '#3D3D3D',
               ...props?.theme?.token
             },
             components: comp
@@ -82,6 +89,7 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorTextBase: '#1A1A1A',
             colorBorder: '#E0E0E0',
             colorErrorBg: '#FEE8E8',
+            colorTextDisabled: '#D6D6D6',
             ...props?.theme?.token
           },
           components: comp
