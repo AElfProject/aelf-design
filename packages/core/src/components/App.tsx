@@ -5,6 +5,7 @@ import SearchLogo from '../assets/search.svg?react'
 import { SearchOutlined } from '@ant-design/icons'
 import Button from './Button'
 import Input from './Input'
+import AelfdTypography, { FontWeightType } from './Typography'
 import AELFDProvider from '../provider'
 import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
@@ -285,6 +286,37 @@ const App = () => {
           <Pagination total={100}></Pagination>
         </div>
 
+        <div className="mt-5">
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={1}>
+            title1 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={2}>
+            title2 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={3}>
+            title3 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={4}>
+            title4 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={5}>
+            title5 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={6}>
+            title6 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={7}>
+            title7 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Text
+            size="small"
+            fontWeight={FontWeightType.Regular}
+          >
+            text test titlefsdfsdfsdfADD
+          </AelfdTypography.Text>
+        </div>
         {/* <Collapse /> */}
       </AELFDProvider>
     </div>
