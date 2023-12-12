@@ -30,7 +30,7 @@ const App = () => {
         // theme={{ token: { colorPrimary: '#9ddd13' } }}
       >
         <div>
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button size="mini">mini</Button>
             <Button size="small">small</Button>
             <Button size="medium">medium</Button>
@@ -52,7 +52,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button size="mini" ghost type="primary">
               mini
             </Button>
@@ -70,7 +70,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button type="primary" size="mini">
               mini
             </Button>
@@ -85,7 +85,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button type="dashed" size="mini">
               mini
             </Button>
@@ -100,7 +100,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button danger type="primary" size="mini">
               mini
             </Button>
@@ -118,7 +118,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button disabled type="primary" size="mini">
               mini
             </Button>
@@ -135,7 +135,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button type="text" size="mini">
               mini
             </Button>
@@ -150,7 +150,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button type="link" size="mini">
               mini
             </Button>
@@ -166,7 +166,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button
               size="mini"
               shape="circle"
@@ -214,7 +214,7 @@ const App = () => {
             <Button size="ultra" icon={<SearchOutlined />}></Button>
           </div>
 
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button type="primary" size="mini" icon={<SearchOutlined />}>
               mini
             </Button>
@@ -232,7 +232,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="mb-2 flex items-center gap-2">
+          <div className="flex items-center gap-2 mb-2">
             <Button type="primary" size="mini" loading>
               mini
             </Button>
@@ -277,7 +277,12 @@ const App = () => {
               addonBefore="ELF"
               addonAfter="AELF"
             />
-            {/* <Input.Password></Input.Password> */}
+          </div>
+          <div className="mb-4">
+            <Input.Password className="w-[400px]"></Input.Password>
+          </div>
+          <div className="mb-4">
+            <Input.TextArea className="w-[400px]"></Input.TextArea>
           </div>
         </div>
 
