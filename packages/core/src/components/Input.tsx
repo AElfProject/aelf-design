@@ -61,9 +61,11 @@ const AelfdInput = ({
   )
 }
 
-export interface AelfdInputPasswordProps
-  extends Omit<PasswordProps, 'size' | 'allowClear'>,
-    AelfdInputProps {}
+export type AelfdInputPasswordProps = Omit<
+  PasswordProps,
+  'size' | 'allowClear'
+> &
+  AelfdInputProps
 
 const AelfInputPassword = ({
   size = 'middle',
