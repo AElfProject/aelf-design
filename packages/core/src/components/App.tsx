@@ -9,6 +9,7 @@ import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
 import { useState } from 'react'
 import DownArrow from 'assets/downArrow.svg?react'
+import TableExample from 'examples/tableExample'
 
 const items = [
   {
@@ -361,6 +362,10 @@ const App = () => {
           >
             text test titlefsdfsdfsdfADD
           </AelfdTypography.Text>
+        </div>
+
+        <div className="mt-5">
+          <TableExample />
         </div>
         {/* <Collapse /> */}
       </AELFDProvider>
