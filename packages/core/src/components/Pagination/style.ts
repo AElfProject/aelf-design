@@ -1,6 +1,6 @@
-import { createStyles, css } from 'antd-style'
+import { createStyles } from 'antd-style'
 
-export default createStyles(({ token }, props: { isMobile: boolean }) => {
+export default createStyles(({ token, css }, props: { isMobile: boolean }) => {
   const { isMobile } = props
   return {
     paginationContainer: css`
@@ -27,7 +27,7 @@ export default createStyles(({ token }, props: { isMobile: boolean }) => {
     pageContainer: css`
       display: flex;
       grid-gap: 8px;
-      margin-top: ${isMobile ? '8px' : '0px'};
+      margin-top: ${isMobile ? '12px' : '0px'};
       align-items: center;
     `,
     pageNumberContainer: css`

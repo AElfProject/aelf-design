@@ -103,11 +103,13 @@ export default function Pagination({
   }
 
   return (
-    <div className={styles.paginationContainer}>
+    <div className={cx(styles.paginationContainer, 'pagination-container')}>
       <div>
         {showSizeChanger && (
           <>
-            <span className={styles.pagesizeLabel}>Show：</span>
+            <span className={cx(styles.pagesizeLabel, 'pagesize-label')}>
+              Show：
+            </span>
             <Select
               defaultValue={pageSizeValue}
               className={styles.pagesizeSelect}
@@ -117,18 +119,24 @@ export default function Pagination({
               options={pagesizeOptions}
               onChange={sizeChange}
             />
-            <span className={cx(styles.pagesizeLabel, styles.records)}>
+            <span
+              className={cx(
+                styles.pagesizeLabel,
+                styles.records,
+                'pagesize-label'
+              )}
+            >
               Records
             </span>
           </>
         )}
       </div>
-      <div className={styles.pageContainer}>
+      <div className={cx(styles.pageContainer, 'page-container')}>
         <div>
           <Button
             disabled={isFirstPage}
             size="small"
-            className={styles.paginationButton}
+            className={cx(styles.paginationButton, 'pagination-button')}
             type="primary"
             ghost
             onClick={debounceJumpFirst}
@@ -140,7 +148,7 @@ export default function Pagination({
           <Button
             disabled={isFirstPage}
             type="primary"
-            className={styles.paginationButton}
+            className={cx(styles.paginationButton, 'pagination-button')}
             size="small"
             ghost
             onClick={runPrevChange}
@@ -153,7 +161,7 @@ export default function Pagination({
         <div>
           <Button
             type="primary"
-            className={styles.paginationButton}
+            className={cx(styles.paginationButton, 'pagination-button')}
             size="small"
             ghost
             disabled={isLastPage}
@@ -164,7 +172,7 @@ export default function Pagination({
         <div>
           <Button
             disabled={isLastPage}
-            className={styles.paginationButton}
+            className={cx(styles.paginationButton, 'pagination-button')}
             type="primary"
             size="small"
             ghost

@@ -12,6 +12,7 @@ interface IAelfdCustomToken {
   colorBgHover: string
   colorDownArrow: string
   colorBgPage: string
+  headerBorderRadius: number
 }
 
 declare module 'antd-style' {
@@ -28,19 +29,24 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
       //   headerHeight: 64
       // })}
       customToken={({ appearance }) => {
+        const baseToken = {
+          headerBorderRadius: 6 //table header radius
+        }
         if (appearance === 'dark') {
           return {
             colorTextSecondary: '#8C8C8C',
             colorBgHover: '#212121',
             colorDownArrow: '#fff',
-            colorBgPage: '#1A1A1A'
+            colorBgPage: '#1A1A1A',
+            ...baseToken
           }
         } else {
           return {
             colorTextSecondary: '#808080',
             colorBgHover: '#F8F8F8',
             colorDownArrow: '#101114',
-            colorBgPage: '#FFF'
+            colorBgPage: '#FFF',
+            ...baseToken
           }
         }
       }}
@@ -57,6 +63,13 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
           Dropdown: {
             controlItemBgActiveHover:
               appearance === 'dark' ? '#212121' : '#F8F8F8'
+          },
+          Table: {
+            headerBg: appearance === 'dark' ? '#353535' : '#F0F0F0',
+            rowHoverBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
+            headerBorderRadius: 6,
+            headerColor: appearance === 'dark' ? '#8C8C8C' : '#808080',
+            fontWeightStrong: 500
           }
         }
         if (appearance === 'dark') {
@@ -76,6 +89,7 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
               colorTextDisabled: '#3D3D3D',
               controlItemBgActive: '#1f1f1f',
               controlItemBgHover: '#212121',
+              colorBgContainer: '#1A1A1A',
               ...props?.theme?.token
             },
             components: comp
@@ -98,6 +112,7 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorTextDisabled: '#D6D6D6',
             controlItemBgActive: 'transparent',
             controlItemBgHover: '#F8F8F8',
+            colorBgContainer: '#FFF',
             ...props?.theme?.token
           },
           components: comp
