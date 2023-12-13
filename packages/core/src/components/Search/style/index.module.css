@@ -1,0 +1,20 @@
+.elf-collapse-dark{
+  @apply bg-dark-bgc border-dark-border-default border border-solid rounded-b-md lg:rounded-md overflow-x-hidden overflow-y-scroll lg:max-h-[1000px] max-h-[500px] w-full lg:w-[322px];
+  :global{
+    .elf-collapse-item{
+      @apply border-b border-dark-border-shadow;
+      .elf-collapse-header{
+        @apply !p-4 lg:!px-6  !text-base !font-medium !text-white ;
+      }
+      &:last-child{
+        @apply border-none;
+      }
+    }
+    .elf-collapse-content{
+      @apply border-none;
+    }
+    .elf-collapse-content-box{
+      @apply !p-0;
+    }
+  }
+}
