@@ -53,6 +53,10 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             paddingInlineSM: 7,
             addonBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
             ...props.theme?.components?.Input
+          },
+          Dropdown: {
+            controlItemBgActiveHover:
+              appearance === 'dark' ? '#212121' : '#F8F8F8'
           }
         }
         if (appearance === 'dark') {
@@ -70,6 +74,8 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
               colorTextBase: '#E8E8E8',
               colorBorder: '#484848',
               colorTextDisabled: '#3D3D3D',
+              controlItemBgActive: '#1f1f1f',
+              controlItemBgHover: '#212121',
               ...props?.theme?.token
             },
             components: comp
@@ -90,6 +96,8 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorBorder: '#E0E0E0',
             colorErrorBg: '#FEE8E8',
             colorTextDisabled: '#D6D6D6',
+            controlItemBgActive: 'transparent',
+            controlItemBgHover: '#F8F8F8',
             ...props?.theme?.token
           },
           components: comp

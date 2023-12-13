@@ -1,16 +1,29 @@
-import Collapse from 'components/Collapse'
-import Pagination from 'components/Pagination'
-import ToolLogo from '../assets/tool.svg?react'
-import SearchLogo from '../assets/search.svg?react'
-import { SearchOutlined } from '@ant-design/icons'
+import Pagination from './Pagination'
+import { SearchOutlined, AndroidOutlined } from '@ant-design/icons'
 import Button from './Button'
 import Input from './Input'
+import Dropdown from './Dropdown'
 import AelfdTypography, { FontWeightType } from './Typography'
 import AELFDProvider from '../provider'
 import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
 import { useState } from 'react'
+import DownArrow from 'assets/downArrow.svg?react'
 
+const items = [
+  {
+    key: '1',
+    label: <div>1st menu item</div>
+  },
+  {
+    key: '2',
+    label: <div>2nd menu item</div>
+  },
+  {
+    key: '3',
+    label: <div>3rd menu item</div>
+  }
+]
 const App = () => {
   const [appearance, setAppearance] = useState<ThemeAppearance>('light')
 
@@ -31,7 +44,7 @@ const App = () => {
         // theme={{ token: { colorPrimary: '#9ddd13' } }}
       >
         <div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button size="mini">mini</Button>
             <Button size="small">small</Button>
             <Button size="medium">medium</Button>
@@ -53,7 +66,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button size="mini" ghost type="primary">
               mini
             </Button>
@@ -71,7 +84,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="primary" size="mini">
               mini
             </Button>
@@ -86,7 +99,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="dashed" size="mini">
               mini
             </Button>
@@ -101,7 +114,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button danger type="primary" size="mini">
               mini
             </Button>
@@ -119,7 +132,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button disabled type="primary" size="mini">
               mini
             </Button>
@@ -136,7 +149,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="text" size="mini">
               mini
             </Button>
@@ -151,7 +164,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="link" size="mini">
               mini
             </Button>
@@ -167,7 +180,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button
               size="mini"
               shape="circle"
@@ -215,7 +228,7 @@ const App = () => {
             <Button size="ultra" icon={<SearchOutlined />}></Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="primary" size="mini" icon={<SearchOutlined />}>
               mini
             </Button>
@@ -233,7 +246,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="primary" size="mini" loading>
               mini
             </Button>
@@ -256,8 +269,11 @@ const App = () => {
           <div className="mb-4">
             <Input
               className="w-[400px]"
-              placeholder="标准"
-              prefix={<SearchOutlined />}
+              placeholder="default"
+              prefix={<AndroidOutlined />}
+              onClear={(e) => {
+                console.log(e)
+              }}
               // classNames={{ input: 'w-[400px]' }}
               // addonBefore="http://"
               // addonAfter=".com"
@@ -268,7 +284,31 @@ const App = () => {
               status="error"
               size="small"
               className="w-[400px]"
-              placeholder="小号"
+              placeholder="small"
+            />
+          </div>
+          <div className="mb-4">
+            <Input
+              className="w-[400px]"
+              placeholder="placeholder"
+              prefix={
+                <Dropdown
+                  menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+                  trigger={['click']}
+                  offsetX={-12}
+                  offsetY={10}
+                >
+                  <div
+                    style={{
+                      borderRight: '1px solid #F0F0F0',
+                      paddingRight: '12px'
+                    }}
+                  >
+                    <span style={{ marginRight: '8px' }}>+86</span>
+                    <DownArrow />
+                  </div>
+                </Dropdown>
+              }
             />
           </div>
           <div className="mb-4">
@@ -327,28 +367,5 @@ const App = () => {
     </div>
   )
 }
-
-// function App() {
-//   return
-//       <Button>xd</Button>
-//       <Card />
-//       <Collapse />
-//       <Pagination total={100} />
-//       <ToolLogo
-//         data-twoToneColor={['red', 'green']}
-//         data-hoverTwoToneColor={['pink', 'blue']}
-//         width="200px"
-//         height="200px"
-//         className="test"
-//       ></ToolLogo>
-//       <SearchLogo
-//         color="black"
-//         data-hoverColor="green"
-//         width="200px"
-//         height="200px"
-//       ></SearchLogo>
-//       </AELFDProvider>>
-
-// }
 
 export default App
