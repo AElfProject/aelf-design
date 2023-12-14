@@ -1,27 +1,71 @@
-import Collapse from 'components/Collapse'
 import Pagination from 'components/Pagination'
-import ToolLogo from '../assets/tool.svg?react'
-import SearchLogo from '../assets/search.svg?react'
-import { SearchOutlined } from '@ant-design/icons'
-import Card from './card'
+import { SearchOutlined, AndroidOutlined } from '@ant-design/icons'
 import Button from './Button'
 import Input from './Input'
+import Dropdown from './Dropdown'
+import AelfdTypography, { FontWeightType } from './Typography'
 import AELFDProvider from '../provider'
 import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
 import { useState } from 'react'
+import Collapse, { AelfdCollapseProps } from './Collapse'
+import AddLogo from '../assets/add-circle.svg?react'
+import DownArrow from 'assets/downArrow.svg?react'
+import TableExample from 'examples/tableExample'
 
+const items = [
+  {
+    key: '1',
+    label: <div>1st menu item</div>
+  },
+  {
+    key: '2',
+    label: <div>2nd menu item</div>
+  },
+  {
+    key: '3',
+    label: <div>3rd menu item</div>
+  }
+]
 const App = () => {
   const [appearance, setAppearance] = useState<ThemeAppearance>('light')
 
+  const collapsetText = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`
+  const collapseItems: AelfdCollapseProps['items'] = [
+    {
+      key: '1',
+      label: 'This is panel header 1',
+      children: (
+        <div>
+          <AddLogo />
+          {collapsetText}
+        </div>
+      )
+    },
+    {
+      key: '2',
+      label: 'This is panel header 2',
+      children: <div>{collapsetText}</div>
+    },
+    {
+      key: '3',
+      label: 'This is panel header 3',
+      children: <div>{collapsetText}</div>
+    }
+  ]
+
   return (
     <div
-      style={{ backgroundColor: appearance === 'light' ? 'white' : 'black' }}
+      style={{ backgroundColor: appearance === 'light' ? 'white' : '#1a1a1a' }}
     >
       <Segmented
         options={[
-          { label: '亮色', value: 'light' },
-          { label: '暗色', value: 'dark' }
+          { label: 'light', value: 'light' },
+          { label: 'dark', value: 'dark' }
         ]}
         value={appearance}
         onChange={(e) => setAppearance(e as ThemeAppearance)}
@@ -256,8 +300,11 @@ const App = () => {
           <div className="mb-4">
             <Input
               className="w-[400px]"
-              placeholder="标准"
-              prefix={<SearchOutlined />}
+              placeholder="default"
+              prefix={<AndroidOutlined />}
+              onClear={(e) => {
+                console.log(e)
+              }}
               // classNames={{ input: 'w-[400px]' }}
               // addonBefore="http://"
               // addonAfter=".com"
@@ -268,7 +315,31 @@ const App = () => {
               status="error"
               size="small"
               className="w-[400px]"
-              placeholder="小号"
+              placeholder="small"
+            />
+          </div>
+          <div className="mb-4">
+            <Input
+              className="w-[400px]"
+              placeholder="placeholder"
+              prefix={
+                <Dropdown
+                  menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+                  trigger={['click']}
+                  offsetX={-12}
+                  offsetY={10}
+                >
+                  <div
+                    style={{
+                      // borderRight: '1px solid #F0F0F0',
+                      paddingRight: '12px'
+                    }}
+                  >
+                    <span style={{ marginRight: '8px' }}>+86</span>
+                    <DownArrow />
+                  </div>
+                </Dropdown>
+              }
             />
           </div>
           <div className="mb-4">
@@ -285,35 +356,97 @@ const App = () => {
           <div className="mb-4">
             <Input.TextArea className="w-[400px]"></Input.TextArea>
           </div>
+          <div className="mb-4">
+            <Collapse
+              className="w-[400px]"
+              items={collapseItems}
+              defaultActiveKey={['1']}
+            />
+          </div>
         </div>
 
+        <div className="mt-5">
+          <Pagination total={100}></Pagination>
+        </div>
+
+        <div className="mt-5 flex">
+          <div className="flex-1">
+            <Dropdown
+              size="small"
+              menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+              open={true}
+            >
+              <AelfdTypography.Text>small</AelfdTypography.Text>
+            </Dropdown>
+          </div>
+          <div className="flex-1">
+            <Dropdown
+              size="medium"
+              menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+              open={true}
+            >
+              <AelfdTypography.Text>medium</AelfdTypography.Text>
+            </Dropdown>
+          </div>
+          <div className="flex-1">
+            <Dropdown
+              size="default"
+              menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+              open={true}
+            >
+              <AelfdTypography.Text>default</AelfdTypography.Text>
+            </Dropdown>
+          </div>
+          <div className="flex-1">
+            <Dropdown
+              size="large"
+              menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+              open={true}
+            >
+              <AelfdTypography.Text>large</AelfdTypography.Text>
+            </Dropdown>
+          </div>
+        </div>
+
+        <div className="mt-[180px]">
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={1}>
+            title1 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={2}>
+            title2 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={3}>
+            title3 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={4}>
+            title4 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={5}>
+            title5 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={6}>
+            title6 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+
+          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={7}>
+            title7 test titlefsdfsdfsdfADD
+          </AelfdTypography.Title>
+          <AelfdTypography.Text
+            size="small"
+            fontWeight={FontWeightType.Regular}
+          >
+            text test titlefsdfsdfsdfADD
+          </AelfdTypography.Text>
+        </div>
+
+        <div className="mt-5">
+          <TableExample />
+        </div>
         {/* <Collapse /> */}
       </AELFDProvider>
     </div>
   )
 }
-
-// function App() {
-//   return
-//       <Button>xd</Button>
-//       <Card />
-//       <Collapse />
-//       <Pagination total={100} />
-//       <ToolLogo
-//         data-twoToneColor={['red', 'green']}
-//         data-hoverTwoToneColor={['pink', 'blue']}
-//         width="200px"
-//         height="200px"
-//         className="test"
-//       ></ToolLogo>
-//       <SearchLogo
-//         color="black"
-//         data-hoverColor="green"
-//         width="200px"
-//         height="200px"
-//       ></SearchLogo>
-//       </AELFDProvider>>
-
-// }
 
 export default App

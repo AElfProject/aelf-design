@@ -1,17 +1,88 @@
-import { ThemeProvider, ThemeProviderProps } from 'antd-style'
+import { ThemeConfig } from 'antd'
+import { ThemeAppearance, ThemeProvider, ThemeProviderProps } from 'antd-style'
 
-const AELFDProvider = <T, S>(props: ThemeProviderProps<T, S>) => {
+interface IAelfdThemeProviderProps
+  extends Omit<ThemeProviderProps<IAelfdCustomToken>, 'theme'> {
+  theme?: ThemeConfig
+  customToken?: IAelfdCustomToken
+}
+
+interface IAelfdCustomToken {
+  colorTextSecondary: string
+  colorBgHover: string
+  colorDownArrow: string
+  headerBorderRadius: number
+  Collapse: {
+    headerHoverBg: string
+    contentHoverBg: string
+    headerClickBg: string
+    contentClickBg: string
+  }
+}
+
+declare module 'antd-style' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  export interface CustomToken extends IAelfdCustomToken {}
+}
+
+const AELFDProvider = (props: IAelfdThemeProviderProps) => {
   return (
-    <ThemeProvider
-      theme={(appearance) => {
+    <ThemeProvider<IAelfdCustomToken>
+      {...props}
+      // customToken={({ token, isDarkMode }) => ({
+      //   customColor: '#F8F8F8',
+      //   headerHeight: 64
+      // })}
+      customToken={({ appearance }) => {
+        const baseToken = {
+          headerBorderRadius: 6 //table header radius
+        }
+        if (appearance === 'dark') {
+          return {
+            colorTextSecondary: '#8C8C8C',
+            colorBgHover: '#212121',
+            colorDownArrow: '#fff',
+            ...baseToken
+          }
+        } else {
+          return {
+            colorTextSecondary: '#808080',
+            colorBgHover: '#F8F8F8',
+            colorDownArrow: '#101114',
+            ...baseToken
+          }
+        }
+      }}
+      theme={(appearance: ThemeAppearance) => {
         const comp = {
           Input: {
             paddingBlock: 11,
             paddingBlockSM: 7,
             paddingInline: 11,
             paddingInlineSM: 7,
-            addonBg: appearance === 'dark' ? '#141414' : '#F8F8F8',
-            ...props?.theme?.components?.Input
+            addonBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
+            ...props.theme?.components?.Input
+          },
+          Collapse: {
+            headerBg: appearance === 'dark' ? '#1A1A1A' : '#fff',
+            contentPadding: '16px 24px',
+            headerPadding: '16px 24px',
+            headerHoverBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            contentHoverBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            headerClickBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            contentClickBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            ...props?.theme?.components?.Collapse
+          },
+          Dropdown: {
+            controlItemBgActiveHover:
+              appearance === 'dark' ? '#212121' : '#F8F8F8'
+          },
+          Table: {
+            headerBg: appearance === 'dark' ? '#353535' : '#F0F0F0',
+            rowHoverBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
+            headerBorderRadius: 6,
+            headerColor: appearance === 'dark' ? '#8C8C8C' : '#808080',
+            fontWeightStrong: 500
           }
         }
         if (appearance === 'dark') {
@@ -28,6 +99,13 @@ const AELFDProvider = <T, S>(props: ThemeProviderProps<T, S>) => {
               colorLinkActive: '#0756BC',
               colorTextBase: '#E8E8E8',
               colorBorder: '#484848',
+              colorPrimaryBorder: '#484848',
+              colorErrorBg: '#361F1F',
+              colorTextDisabled: '#3D3D3D',
+              controlItemBgActive: 'transparent',
+              controlItemBgHover: '#212121',
+              colorBgContainer: '#1A1A1A',
+              colorBgElevated: '#1A1A1A',
               ...props?.theme?.token
             },
             components: comp
@@ -46,13 +124,18 @@ const AELFDProvider = <T, S>(props: ThemeProviderProps<T, S>) => {
             colorLinkActive: '#0460D9',
             colorTextBase: '#1A1A1A',
             colorBorder: '#E0E0E0',
+            colorPrimaryBorder: '#E0E0E0',
             colorErrorBg: '#FEE8E8',
+            colorTextDisabled: '#D6D6D6',
+            controlItemBgActive: 'transparent',
+            controlItemBgHover: '#F8F8F8',
+            colorBgContainer: '#FFFFFF',
+            colorBgElevated: '#FFFFFF',
             ...props?.theme?.token
           },
           components: comp
         }
       }}
-      {...props}
     >
       {props.children}
     </ThemeProvider>
