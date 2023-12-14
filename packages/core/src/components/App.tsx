@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <div
-      style={{ backgroundColor: appearance === 'light' ? 'white' : 'black' }}
+      style={{ backgroundColor: appearance === 'light' ? 'white' : '#1a1a1a' }}
     >
       <Segmented
         options={[
@@ -301,7 +301,7 @@ const App = () => {
                 >
                   <div
                     style={{
-                      borderRight: '1px solid #F0F0F0',
+                      // borderRight: '1px solid #F0F0F0',
                       paddingRight: '12px'
                     }}
                   >
@@ -332,7 +332,46 @@ const App = () => {
           <Pagination total={100}></Pagination>
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 flex">
+          <div className="flex-1">
+            <Dropdown
+              size="small"
+              menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+              open={true}
+            >
+              <AelfdTypography.Text>small</AelfdTypography.Text>
+            </Dropdown>
+          </div>
+          <div className="flex-1">
+            <Dropdown
+              size="medium"
+              menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+              open={true}
+            >
+              <AelfdTypography.Text>medium</AelfdTypography.Text>
+            </Dropdown>
+          </div>
+          <div className="flex-1">
+            <Dropdown
+              size="default"
+              menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+              open={true}
+            >
+              <AelfdTypography.Text>default</AelfdTypography.Text>
+            </Dropdown>
+          </div>
+          <div className="flex-1">
+            <Dropdown
+              size="large"
+              menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
+              open={true}
+            >
+              <AelfdTypography.Text>large</AelfdTypography.Text>
+            </Dropdown>
+          </div>
+        </div>
+
+        <div className="mt-[180px]">
           <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={1}>
             title1 test titlefsdfsdfsdfADD
           </AelfdTypography.Title>

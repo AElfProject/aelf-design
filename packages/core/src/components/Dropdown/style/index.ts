@@ -3,7 +3,7 @@ import { AelfdDropdownSizeType } from '../Dropdown'
 
 const useStyles = createStyles(
   (
-    { css },
+    { css, token },
     {
       size,
       offsetX,
@@ -26,6 +26,8 @@ const useStyles = createStyles(
           border-radius: 6px;
           padding: 0;
           overflow: hidden;
+          box-shadow: none;
+          border: 1px solid ${token.colorPrimaryBorder};
           .ant-dropdown-menu-item {
             padding: ${dynamicVal} 12px;
             border-radius: 0;

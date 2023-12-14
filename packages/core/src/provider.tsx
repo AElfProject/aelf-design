@@ -86,10 +86,13 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
               colorLinkActive: '#0756BC',
               colorTextBase: '#E8E8E8',
               colorBorder: '#484848',
+              colorPrimaryBorder: '#484848',
+              colorErrorBg: '#361F1F',
               colorTextDisabled: '#3D3D3D',
-              controlItemBgActive: '#1f1f1f',
+              controlItemBgActive: 'transparent',
               controlItemBgHover: '#212121',
               colorBgContainer: '#1A1A1A',
+              colorBgElevated: '#1A1A1A',
               ...props?.theme?.token
             },
             components: comp
@@ -108,11 +111,13 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorLinkActive: '#0460D9',
             colorTextBase: '#1A1A1A',
             colorBorder: '#E0E0E0',
+            colorPrimaryBorder: '#E0E0E0',
             colorErrorBg: '#FEE8E8',
             colorTextDisabled: '#D6D6D6',
             controlItemBgActive: 'transparent',
             controlItemBgHover: '#F8F8F8',
-            colorBgContainer: '#FFF',
+            colorBgContainer: '#FFFFFF',
+            colorBgElevated: '#FFFFFF',
             ...props?.theme?.token
           },
           components: comp
