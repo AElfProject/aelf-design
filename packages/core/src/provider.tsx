@@ -1,5 +1,4 @@
 import { ThemeProvider, ThemeProviderProps } from 'antd-style'
-
 const AELFDProvider = <T, S>(props: ThemeProviderProps<T, S>) => {
   return (
     <ThemeProvider
@@ -12,6 +11,16 @@ const AELFDProvider = <T, S>(props: ThemeProviderProps<T, S>) => {
             paddingInlineSM: 7,
             addonBg: appearance === 'dark' ? '#141414' : '#F8F8F8',
             ...props?.theme?.components?.Input
+          },
+          Collapse: {
+            headerBg: appearance === 'dark' ? '#1A1A1A' : '#fff',
+            contentPadding: '16px 24px',
+            headerPadding: '16px 24px',
+            headerHoverBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            contentHoverBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            headerClickBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            contentClickBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            ...props?.theme?.components?.Collapse
           }
         }
         if (appearance === 'dark') {
