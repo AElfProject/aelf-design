@@ -72,7 +72,7 @@ export default createStyles(({ token, css }, props: { isMobile: boolean }) => {
       padding: 5px 0;
       border-radius: 6px;
       .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
-        background-color: ${token.colorBgPage};
+        background-color: ${token.colorBgContainer};
         color: ${token.colorPrimary};
       }
       .ant-select-item-option-active:not(.ant-select-item-option-disabled) {

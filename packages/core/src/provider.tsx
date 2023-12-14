@@ -11,7 +11,6 @@ interface IAelfdCustomToken {
   colorTextSecondary: string
   colorBgHover: string
   colorDownArrow: string
-  colorBgPage: string
   headerBorderRadius: number
   Collapse: {
     headerHoverBg: string
@@ -43,7 +42,6 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorTextSecondary: '#8C8C8C',
             colorBgHover: '#212121',
             colorDownArrow: '#fff',
-            colorBgPage: '#1A1A1A',
             ...baseToken
           }
         } else {
@@ -51,7 +49,6 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorTextSecondary: '#808080',
             colorBgHover: '#F8F8F8',
             colorDownArrow: '#101114',
-            colorBgPage: '#FFF',
             ...baseToken
           }
         }
