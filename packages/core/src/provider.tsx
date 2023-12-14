@@ -13,6 +13,12 @@ interface IAelfdCustomToken {
   colorDownArrow: string
   colorBgPage: string
   headerBorderRadius: number
+  Collapse: {
+    headerHoverBg: string
+    contentHoverBg: string
+    headerClickBg: string
+    contentClickBg: string
+  }
 }
 
 declare module 'antd-style' {
@@ -59,6 +65,16 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             paddingInlineSM: 7,
             addonBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
             ...props.theme?.components?.Input
+          },
+          Collapse: {
+            headerBg: appearance === 'dark' ? '#1A1A1A' : '#fff',
+            contentPadding: '16px 24px',
+            headerPadding: '16px 24px',
+            headerHoverBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            contentHoverBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            headerClickBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            contentClickBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
+            ...props?.theme?.components?.Collapse
           },
           Dropdown: {
             controlItemBgActiveHover:
