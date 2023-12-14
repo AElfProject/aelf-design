@@ -1,9 +1,5 @@
-import { Button, ButtonProps } from 'antd'
 import { createStyles } from 'antd-style'
-import { MouseEvent } from 'react'
-import { useThrottleFn } from 'ahooks'
-
-type AelfdButtonSizeType = 'mini' | 'small' | 'medium' | 'large' | 'ultra'
+import { AelfdButtonSizeType } from '../Button'
 
 const useStyles = createStyles(
   ({ token, css, cx }, { size }: { size: AelfdButtonSizeType }) => {
@@ -76,36 +72,5 @@ const useStyles = createStyles(
     }
   }
 )
-export interface AelfdButtonProps
-  extends Omit<ButtonProps, 'size' | 'onClick'> {
-  size?: AelfdButtonSizeType
-  onClick?: React.MouseEventHandler<HTMLElement>
-  millisecondOfThrottle?: number
-}
 
-const AelfdButton = ({
-  size = 'large',
-  className,
-  millisecondOfThrottle = 0,
-  ...rest
-}: AelfdButtonProps) => {
-  const { styles: st } = useStyles({ size })
-
-  const { run: buttonClickHandler } = useThrottleFn(
-    (e: MouseEvent<HTMLElement>) => {
-      rest.onClick && rest.onClick(e)
-    },
-    { wait: millisecondOfThrottle }
-  )
-  return (
-    <Button
-      {...rest}
-      onClick={buttonClickHandler}
-      className={`${st.buttonWrap} ${className || ''}`}
-    >
-      {rest.children}
-    </Button>
-  )
-}
-
-export default AelfdButton
+export default useStyles

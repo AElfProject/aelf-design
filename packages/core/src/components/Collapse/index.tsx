@@ -2,8 +2,9 @@ import { Collapse, CollapseProps } from 'antd'
 import { createStyles } from 'antd-style'
 
 const useStyles = createStyles(({ css, token }) => {
+  const { Collapse: collapseTokens } = token
   const { headerClickBg, headerHoverBg, contentClickBg, contentHoverBg } =
-    token.Collapse
+    collapseTokens
   return {
     aelfdCollapse: css`
       .ant-collapse-header-text {
