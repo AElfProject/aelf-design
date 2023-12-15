@@ -4,12 +4,12 @@ import { useThrottleFn } from 'ahooks'
 import { AelfdButtonProps } from './Button'
 import useStyles from './style'
 
-const AelfdButton = ({
+function AelfdButton({
   size = 'large',
   className,
   millisecondOfThrottle = 0,
   ...rest
-}: AelfdButtonProps) => {
+}: AelfdButtonProps) {
   const { styles: st, cx } = useStyles({ size })
 
   const { run: buttonClickHandler } = useThrottleFn(
