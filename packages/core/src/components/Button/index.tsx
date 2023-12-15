@@ -4,13 +4,13 @@ import { useThrottleFn } from 'ahooks'
 import { AelfdButtonProps } from './Button'
 import useStyles from './style'
 
-const AelfdButton = ({
+function AelfdButton({
   size = 'large',
   className,
   millisecondOfThrottle = 0,
   ...rest
-}: AelfdButtonProps) => {
-  const { styles: st } = useStyles({ size })
+}: AelfdButtonProps) {
+  const { styles: st, cx } = useStyles({ size })
 
   const { run: buttonClickHandler } = useThrottleFn(
     (e: MouseEvent<HTMLElement>) => {
@@ -22,7 +22,7 @@ const AelfdButton = ({
     <Button
       {...rest}
       onClick={buttonClickHandler}
-      className={`${st.buttonWrap} ${className || ''}`}
+      className={cx(st.buttonWrap, className)}
     >
       {rest.children}
     </Button>

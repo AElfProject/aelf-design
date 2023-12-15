@@ -9,7 +9,6 @@ import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
 import { useState } from 'react'
 import Collapse, { AelfdCollapseProps } from './Collapse'
-import AddLogo from '../assets/add-circle.svg?react'
 import DownArrow from 'assets/downArrow.svg?react'
 import TableExample from 'examples/tableExample'
 
@@ -39,12 +38,7 @@ const App = () => {
     {
       key: '1',
       label: 'This is panel header 1',
-      children: (
-        <div>
-          <AddLogo />
-          {collapsetText}
-        </div>
-      )
+      children: <div>{collapsetText}</div>
     },
     {
       key: '2',
@@ -75,7 +69,7 @@ const App = () => {
         // theme={{ token: { colorPrimary: '#9ddd13' } }}
       >
         <div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button size="mini">mini</Button>
             <Button size="small">small</Button>
             <Button size="medium">medium</Button>
@@ -97,7 +91,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button size="mini" ghost type="primary">
               mini
             </Button>
@@ -115,7 +109,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="primary" size="mini">
               mini
             </Button>
@@ -130,7 +124,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="dashed" size="mini">
               mini
             </Button>
@@ -145,7 +139,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button danger type="primary" size="mini">
               mini
             </Button>
@@ -163,7 +157,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button disabled type="primary" size="mini">
               mini
             </Button>
@@ -180,7 +174,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="text" size="mini">
               mini
             </Button>
@@ -195,7 +189,7 @@ const App = () => {
               ultra
             </Button>
           </div>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="link" size="mini">
               mini
             </Button>
@@ -211,7 +205,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button
               size="mini"
               shape="circle"
@@ -259,7 +253,7 @@ const App = () => {
             <Button size="ultra" icon={<SearchOutlined />}></Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="primary" size="mini" icon={<SearchOutlined />}>
               mini
             </Button>
@@ -277,7 +271,7 @@ const App = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 mb-2">
+          <div className="mb-2 flex items-center gap-2">
             <Button type="primary" size="mini" loading>
               mini
             </Button>
@@ -369,7 +363,7 @@ const App = () => {
           <Pagination total={100}></Pagination>
         </div>
 
-        <div className="mt-5 flex">
+        <div className="flex mt-5">
           <div className="flex-1">
             <Dropdown
               size="small"
