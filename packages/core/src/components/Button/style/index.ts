@@ -2,7 +2,7 @@ import { createStyles } from 'antd-style'
 import { AelfdButtonSizeType } from '../Button'
 
 const useStyles = createStyles(
-  ({ token, css, cx }, { size }: { size: AelfdButtonSizeType }) => {
+  ({ css, prefixCls }, { size }: { size: AelfdButtonSizeType }) => {
     const dynamicWidth =
       size === 'mini'
         ? '24px'
@@ -59,12 +59,12 @@ const useStyles = createStyles(
           ? '6px'
           : '6px'};
 
-        &.ant-btn-circle {
+        &.${prefixCls}-btn-circle {
           min-height: ${dynamicWidth};
           height: ${dynamicWidth};
           font-size: 14px;
         }
-        &.ant-btn-icon-only {
+        &.${prefixCls}-btn-icon-only {
           min-width: auto;
           width: ${dynamicWidth};
         }
