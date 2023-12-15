@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style'
 import DownArrow from '../../assets/downArrow.svg?react'
 const useStyles = createStyles(({ css, token }) => {
   const { Collapse: collapseTokens } = token
-  const { headerClickBg, headerHoverBg } = collapseTokens
+  const { headerClickBg = '', headerHoverBg = '' } = collapseTokens
   return {
     aelfdCollapse: css`
       .ant-collapse-header-text {
