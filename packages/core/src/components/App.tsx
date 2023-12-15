@@ -9,7 +9,6 @@ import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
 import { useState } from 'react'
 import Collapse, { AelfdCollapseProps } from './Collapse'
-import AddLogo from '../assets/add-circle.svg?react'
 import DownArrow from 'assets/downArrow.svg?react'
 import TableExample from 'examples/tableExample'
 
@@ -39,12 +38,7 @@ const App = () => {
     {
       key: '1',
       label: 'This is panel header 1',
-      children: (
-        <div>
-          <AddLogo />
-          {collapsetText}
-        </div>
-      )
+      children: <div>{collapsetText}</div>
     },
     {
       key: '2',
@@ -369,7 +363,7 @@ const App = () => {
           <Pagination total={100}></Pagination>
         </div>
 
-        <div className="mt-5 flex">
+        <div className="flex mt-5">
           <div className="flex-1">
             <Dropdown
               size="small"
