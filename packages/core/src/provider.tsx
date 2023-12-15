@@ -14,9 +14,7 @@ interface IAelfdCustomToken {
   headerBorderRadius: number
   Collapse: {
     headerHoverBg: string
-    contentHoverBg: string
     headerClickBg: string
-    contentClickBg: string
   }
 }
 
@@ -42,6 +40,10 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorTextSecondary: '#8C8C8C',
             colorBgHover: '#212121',
             colorDownArrow: '#fff',
+            Collapse: {
+              headerHoverBg: '#212121',
+              headerClickBg: '#212121'
+            },
             ...baseToken
           }
         } else {
@@ -49,6 +51,10 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorTextSecondary: '#808080',
             colorBgHover: '#F8F8F8',
             colorDownArrow: '#101114',
+            Collapse: {
+              headerHoverBg: '#f8f8f8',
+              headerClickBg: '#f8f8f8'
+            },
             ...baseToken
           }
         }
@@ -67,10 +73,6 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             headerBg: appearance === 'dark' ? '#1A1A1A' : '#fff',
             contentPadding: '16px 24px',
             headerPadding: '16px 24px',
-            headerHoverBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
-            contentHoverBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
-            headerClickBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
-            contentClickBg: appearance === 'dark' ? '#212121' : '#f8f8f8',
             ...props?.theme?.components?.Collapse
           },
           Dropdown: {
