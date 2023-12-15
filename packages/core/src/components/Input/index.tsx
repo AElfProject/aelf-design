@@ -29,12 +29,12 @@ const getClearIcon = (
   )
 }
 
-const AelfdInput = ({
+function AelfdInput({
   size = 'middle',
   className,
   onClear,
   ...rest
-}: AelfdInputProps) => {
+}: AelfdInputProps) {
   const { styles: st } = useStyles({ size })
   return (
     <Input
