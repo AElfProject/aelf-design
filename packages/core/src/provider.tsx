@@ -8,10 +8,14 @@ interface IAelfdThemeProviderProps
 }
 
 interface IAelfdCustomToken {
-  colorTextSecondary: string
-  colorBgHover: string
-  colorDownArrow: string
-  headerBorderRadius: number
+  Pagination: {
+    colorTextSecondary: string
+    colorBgHover: string
+    colorDownArrow: string
+  }
+  Table: {
+    headerBorderRadius: number
+  }
   Collapse: {
     headerHoverBg: string
     headerClickBg: string
@@ -27,35 +31,36 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
   return (
     <ThemeProvider<IAelfdCustomToken>
       {...props}
-      // customToken={({ token, isDarkMode }) => ({
-      //   customColor: '#F8F8F8',
-      //   headerHeight: 64
-      // })}
       customToken={({ appearance }) => {
-        const baseToken = {
-          headerBorderRadius: 6 //table header radius
-        }
         if (appearance === 'dark') {
           return {
-            colorTextSecondary: '#8C8C8C',
-            colorBgHover: '#212121',
-            colorDownArrow: '#fff',
             Collapse: {
               headerHoverBg: '#212121',
               headerClickBg: '#212121'
             },
-            ...baseToken
+            Table: {
+              headerBorderRadius: 6
+            },
+            Pagination: {
+              colorTextSecondary: '#8C8C8C',
+              colorBgHover: '#212121',
+              colorDownArrow: '#fff'
+            }
           }
         } else {
           return {
-            colorTextSecondary: '#808080',
-            colorBgHover: '#F8F8F8',
-            colorDownArrow: '#101114',
             Collapse: {
               headerHoverBg: '#f8f8f8',
               headerClickBg: '#f8f8f8'
             },
-            ...baseToken
+            Table: {
+              headerBorderRadius: 6
+            },
+            Pagination: {
+              colorTextSecondary: '#808080',
+              colorBgHover: '#F8F8F8',
+              colorDownArrow: '#101114'
+            }
           }
         }
       }}
@@ -77,14 +82,15 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
           },
           Dropdown: {
             controlItemBgActiveHover:
-              appearance === 'dark' ? '#212121' : '#F8F8F8'
+              appearance === 'dark' ? '#212121' : '#F8F8F8',
+            ...props?.theme?.components?.Dropdown
           },
           Table: {
             headerBg: appearance === 'dark' ? '#353535' : '#F0F0F0',
             rowHoverBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
-            headerBorderRadius: 6,
             headerColor: appearance === 'dark' ? '#8C8C8C' : '#808080',
-            fontWeightStrong: 500
+            fontWeightStrong: 500,
+            ...props?.theme?.components?.Table
           }
         }
         if (appearance === 'dark') {

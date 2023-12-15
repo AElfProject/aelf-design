@@ -35,11 +35,11 @@ export default createStyles(({ token, css }, props: { isMobile: boolean }) => {
       align-items: center;
       height: 32px;
       justify-content: center;
-      background-color: ${token.colorBgHover};
+      background-color: ${token.Pagination.colorBgHover};
       padding: 0 8px;
       border-radius: 4px;
 
-      color: ${token.colorTextSecondary};
+      color: ${token.Pagination.colorTextSecondary};
       font-size: 12px;
       line-height: 20px;
     `,
@@ -65,7 +65,7 @@ export default createStyles(({ token, css }, props: { isMobile: boolean }) => {
         padding-inline-end: 20px !important;
       }
       .ant-select-arrow {
-        color: ${token.colorDownArrow};
+        color: ${token.Pagination.colorDownArrow};
       }
     `,
     pageSizePopup: css`
@@ -76,7 +76,7 @@ export default createStyles(({ token, css }, props: { isMobile: boolean }) => {
         color: ${token.colorPrimary};
       }
       .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
-        background-color: ${token.colorBgHover};
+        background-color: ${token.Pagination.colorBgHover};
       }
       .ant-select-item {
         padding: 5px 12px;

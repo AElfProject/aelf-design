@@ -1,6 +1,6 @@
 import { Collapse, CollapseProps } from 'antd'
 import { createStyles } from 'antd-style'
-import DownArrow from '../../assets/downArrow.svg?react'
+import DownArrow from 'assets/downArrow.svg?react'
 const useStyles = createStyles(({ css, token }) => {
   const { Collapse: collapseTokens } = token
   const { headerClickBg = '', headerHoverBg = '' } = collapseTokens
@@ -37,13 +37,15 @@ export interface AelfdCollapseProps
 }
 
 const AelfdCollapse = ({ className, ...rest }: AelfdCollapseProps) => {
-  const { styles: st } = useStyles()
+  const { styles: st, cx } = useStyles()
   return (
     <Collapse
       {...rest}
-      expandIcon={DownArrow}
+      expandIcon={({ isActive }) => (
+        <DownArrow className={cx('duration-300', isActive && 'rotate-180')} />
+      )}
       expandIconPosition={'end'}
-      className={`${st.aelfdCollapse} ${className || ''}`}
+      className={cx(st.aelfdCollapse, className)}
     />
   )
 }
