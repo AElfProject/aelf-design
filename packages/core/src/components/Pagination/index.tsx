@@ -1,5 +1,4 @@
 import { Select } from 'antd'
-import type { PaginationProps } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
 import { useDebounceFn } from 'ahooks'
 import RightArrow from 'assets/right-arrow.svg?react'
@@ -11,7 +10,7 @@ import useStyles from './style'
 
 export type Options = number[]
 
-export interface IEpPaginationProps extends PaginationProps {
+export interface IEpPaginationProps {
   current?: number
   pageSize?: number
   isMobile?: boolean

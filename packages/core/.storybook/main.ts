@@ -20,7 +20,14 @@ const config: StorybookConfig = {
         esModuleInterop: false
       },
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) => true
+
+      // 👇 Default prop filter, which excludes props from node_modules
+      propFilter: (prop) => {
+        const regexString =
+          '(?:\\/node_modules\\/(?:rc(?:-[^\\/]+)?|antd)|src\\/components)\\/'
+        const regex = new RegExp(regexString)
+        return prop.parent ? regex.test(prop.parent.fileName) : true
+      }
     }
   },
   docs: {
