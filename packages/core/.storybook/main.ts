@@ -14,7 +14,13 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
+      // prevent showing undefined
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false
+      },
       shouldExtractLiteralValuesFromEnum: true,
+
       // 👇 Default prop filter, which excludes props from node_modules
       propFilter: (prop) => {
         const regexString =
