@@ -18,7 +18,7 @@ const config: StorybookConfig = {
       // 👇 Default prop filter, which excludes props from node_modules
       propFilter: (prop) => {
         const regexString =
-          '(?:\\/node_modules\\/(?:rc(?:-[^\\/]+)?|antd)|\\/src\\/components)\\/'
+          '(?:\\/node_modules\\/(?:rc(?:-[^\\/]+)?|antd)|src\\/components)\\/'
         const regex = new RegExp(regexString)
         return prop.parent ? regex.test(prop.parent.fileName) : true
       }
