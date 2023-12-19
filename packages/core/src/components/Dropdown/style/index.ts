@@ -1,5 +1,5 @@
 import { createStyles } from 'antd-style'
-import { AelfdDropdownSizeType } from '../Dropdown'
+import { DropdownSizeType } from '../Dropdown'
 
 const useStyles = createStyles(
   (
@@ -8,7 +8,7 @@ const useStyles = createStyles(
       size,
       offsetX,
       offsetY
-    }: { size: AelfdDropdownSizeType; offsetX: number; offsetY: number }
+    }: { size: DropdownSizeType; offsetX: number; offsetY: number }
   ) => {
     const dynamicVal =
       size === 'small'
@@ -20,6 +20,7 @@ const useStyles = createStyles(
         : '17px'
     return {
       dropDownWrap: css`
+        min-width: auto !important;
         & .ant-dropdown-menu {
           margin-left: ${offsetX}px;
           margin-top: ${offsetY}px;
@@ -35,9 +36,6 @@ const useStyles = createStyles(
               background: none;
             } */
           }
-          /* .ant-dropdown-menu-item-selected:hover {
-          background-color: transparent;
-        } */
         }
       `
     }
