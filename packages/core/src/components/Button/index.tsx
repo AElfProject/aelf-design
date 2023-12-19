@@ -1,15 +1,15 @@
-import { Button } from 'antd'
+import { Button as AntdButton } from 'antd'
 import { MouseEvent } from 'react'
 import { useThrottleFn } from 'ahooks'
-import { AelfdButtonProps } from './Button'
+import { IButtonProps } from './Button'
 import useStyles from './style'
 
-function AelfdButton({
+function Button({
   size = 'large',
   className,
   millisecondOfThrottle = 0,
   ...rest
-}: AelfdButtonProps) {
+}: IButtonProps) {
   const { styles: st, cx } = useStyles({ size })
 
   const { run: buttonClickHandler } = useThrottleFn(
@@ -19,14 +19,14 @@ function AelfdButton({
     { wait: millisecondOfThrottle }
   )
   return (
-    <Button
+    <AntdButton
       {...rest}
       onClick={buttonClickHandler}
       className={cx(st.buttonWrap, className)}
     >
       {rest.children}
-    </Button>
+    </AntdButton>
   )
 }
 
-export default AelfdButton
+export default Button

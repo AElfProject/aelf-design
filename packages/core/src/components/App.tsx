@@ -9,26 +9,26 @@ import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
 import { useState } from 'react'
 import Collapse, { AelfdCollapseProps } from './Collapse'
+import Search from './Search'
 import DownArrow from 'assets/downArrow.svg?react'
 import TableExample from 'examples/tableExample'
 
 const items = [
   {
     key: '1',
-    label: <div>1st menu item</div>
+    label: <div className="w-[130px]">1st menu item</div>
   },
   {
     key: '2',
-    label: <div>2nd menu item</div>
+    label: <div className="w-[130px]">2nd menu item</div>
   },
   {
     key: '3',
-    label: <div>3rd menu item</div>
+    label: <div className="w-[130px]">3rd menu item</div>
   }
 ]
 const App = () => {
   const [appearance, setAppearance] = useState<ThemeAppearance>('light')
-
   const collapsetText = `
   A dog is a type of domesticated animal.
   Known for its loyalty and faithfulness,
@@ -363,7 +363,7 @@ const App = () => {
           <Pagination total={100}></Pagination>
         </div>
 
-        <div className="flex mt-5">
+        <div className="mt-5 flex">
           <div className="flex-1">
             <Dropdown
               size="small"
@@ -438,6 +438,53 @@ const App = () => {
           <TableExample />
         </div>
         {/* <Collapse /> */}
+
+        <div className="mt-5">
+          <Search
+            className="w-[400px]"
+            withSearchIcon="after"
+            placeholder="search something..."
+          />
+        </div>
+
+        <div className="mt-5">
+          <Search
+            className="w-[400px]"
+            withSearchIcon="inline"
+            onSearchBtnClick={(e) => {
+              console.log(e)
+            }}
+            status="error"
+            placeholder="search something..."
+          />
+        </div>
+
+        <div className="mt-5">
+          <Search
+            filterItems={items}
+            inputSize="middle"
+            placeholder="search something..."
+            // prefixWidth={130}
+            onClear={() => {
+              console.log(1)
+            }}
+            onSelectChange={(obj) => {
+              console.log(obj)
+            }}
+            onPressEnter={(e) => {
+              console.log('enter', e)
+            }}
+            onChange={(e) => {
+              console.log(e.target.value)
+            }}
+            onSearchBtnClick={(e) => {
+              console.log(e)
+            }}
+            withSearchIcon="connect"
+          />
+        </div>
+
+        <div className="mt-5 h-44">111</div>
       </AELFDProvider>
     </div>
   )

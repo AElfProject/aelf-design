@@ -1,8 +1,8 @@
 import { createStyles } from 'antd-style'
-import { AelfdButtonSizeType } from '../Button'
+import { ButtonSizeType } from '../Button'
 
 const useStyles = createStyles(
-  ({ css, prefixCls }, { size }: { size: AelfdButtonSizeType }) => {
+  ({ css, prefixCls }, { size }: { size: ButtonSizeType }) => {
     const dynamicWidth =
       size === 'mini'
         ? '24px'

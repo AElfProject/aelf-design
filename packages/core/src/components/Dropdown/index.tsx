@@ -1,23 +1,23 @@
-import { Dropdown } from 'antd'
-import { AelfdDropdownProps } from './Dropdown'
+import { Dropdown as AntdDropdown } from 'antd'
+import { IDropdownProps } from './Dropdown'
 import useStyles from './style'
 
-const AelfdDropdown = ({
+const Dropdown = ({
   children,
   size = 'default',
   offsetX = 0,
   offsetY = 0,
   ...props
-}: AelfdDropdownProps) => {
+}: IDropdownProps) => {
   const { styles, cx } = useStyles({ size, offsetX, offsetY })
   return (
-    <Dropdown
+    <AntdDropdown
       overlayClassName={cx(styles.dropDownWrap, props.overlayClassName)}
       {...props}
     >
       {children}
-    </Dropdown>
+    </AntdDropdown>
   )
 }
 
-export default AelfdDropdown
+export default Dropdown

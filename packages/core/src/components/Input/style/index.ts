@@ -13,6 +13,12 @@ const useStyles = createStyles(
         & .ant-input-prefix {
           margin-right: 8px;
         }
+        & .ant-input {
+          line-height: 24px;
+        }
+        & .ant-input-prefix {
+          color: inherit !important;
+        }
       `
     }
   }

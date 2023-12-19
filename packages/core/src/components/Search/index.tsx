@@ -1,38 +1,135 @@
-import React from 'react'
-import type { CollapseProps } from 'antd'
-import { Collapse } from 'antd'
-// import st from './style/index.module.css'
+import React, { useCallback, useMemo, useState, MouseEvent } from 'react'
+import Input from 'components/Input'
+import Dropdown from 'components/Dropdown'
+import { ISearchProps } from './Search'
+import Query from 'assets/query.svg?react'
+import DownArrow from 'assets/downArrow.svg?react'
+import { MenuClickEventHandler } from 'rc-menu/lib/interface'
+import useStyles from './style'
 
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`
+function Search({
+  inputSize = 'middle',
+  dropdownSize = 'default',
+  filterItems = [],
+  prefixWidth,
+  withSearchIcon,
+  status,
+  className,
+  inputClassName,
+  onSelectChange,
+  onSearchBtnClick,
+  ...props
+}: ISearchProps) {
+  const [checkedItem, setCheckedItem] = useState(filterItems[0])
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false)
+  const { styles, cx } = useStyles({ prefixWidth, inputSize, withSearchIcon })
 
-const items: CollapseProps['items'] = [
-  {
-    key: '1',
-    label: 'This is panel header 1',
-    children: <p>{text}</p>
-  },
-  {
-    key: '2',
-    label: 'This is panel header 2',
-    children: <p>{text}</p>
-  },
-  {
-    key: '3',
-    label: 'This is panel header 3',
-    children: <p>{text}</p>
-  }
-]
+  const isMiddleSize = inputSize === 'middle'
+  const isInlineSearchIcon = withSearchIcon === 'inline'
+  const isNotInlineSearchIcon =
+    withSearchIcon === 'connect' || withSearchIcon === 'after'
+  const isErrorStatus = status === 'error'
 
-const App: React.FC = () => {
-  const onChange = (key: string | string[]) => {
-    console.log(key)
-  }
+  const searchBtnClickHandler = useCallback(
+    (e: MouseEvent<HTMLElement>) => {
+      if (isErrorStatus) {
+        return
+      }
+      onSearchBtnClick && onSearchBtnClick(e)
+    },
+    [onSearchBtnClick, isErrorStatus]
+  )
 
-  return <Collapse items={items} defaultActiveKey={['1']} onChange={onChange} />
+  const searchBtnNode = (
+    <div
+      onClick={searchBtnClickHandler}
+      className={cx(
+        isInlineSearchIcon ? styles.searchBtnInline : styles.searchBtn,
+        isErrorStatus && styles.searchBtnDisabled
+      )}
+    >
+      <Query />
+    </div>
+  )
+
+  const filterClickHandler: MenuClickEventHandler = useCallback(
+    (obj) => {
+      const idx = filterItems.findIndex((ele) => ele?.key === obj.key)
+      setCheckedItem(filterItems[idx])
+      setIsDropDownOpen(false)
+      onSelectChange && onSelectChange(obj)
+    },
+    [filterItems, onSelectChange]
+  )
+
+  const onOpenChangeHandler = useCallback((open: boolean) => {
+    setIsDropDownOpen(open)
+  }, [])
+
+  const prefixDom = useMemo(() => {
+    if (filterItems.length === 0) {
+      return <Query />
+    }
+    return (
+      <Dropdown
+        menu={{
+          items: filterItems,
+          selectable: true,
+          onClick: filterClickHandler,
+          defaultSelectedKeys: [`${checkedItem?.key}`]
+        }}
+        size={dropdownSize}
+        trigger={['click']}
+        offsetX={isMiddleSize ? -12 : -8}
+        offsetY={isMiddleSize ? 10 : 6}
+        onOpenChange={onOpenChangeHandler}
+      >
+        <div className={styles.searchDropDownWrap}>
+          <div className={styles.searchDropDownLeft}>
+            <div className={styles.searchDropDownLeftLabel}>
+              {checkedItem?.label}
+            </div>
+            <DownArrow
+              className={cx('duration-300', isDropDownOpen && 'rotate-180')}
+            />
+          </div>
+          <div className={styles.searchDropDownRight}>
+            <Query />
+          </div>
+        </div>
+      </Dropdown>
+    )
+  }, [
+    checkedItem?.key,
+    checkedItem?.label,
+    cx,
+    dropdownSize,
+    filterClickHandler,
+    filterItems,
+    isDropDownOpen,
+    isMiddleSize,
+    onOpenChangeHandler,
+    styles.searchDropDownLeft,
+    styles.searchDropDownLeftLabel,
+    styles.searchDropDownRight,
+    styles.searchDropDownWrap
+  ])
+
+  return (
+    <div className={cx(styles.search, className)}>
+      <div className={styles.searchInput}>
+        <Input
+          {...props}
+          status={status}
+          size={inputSize}
+          prefix={prefixDom}
+          className={inputClassName}
+          suffix={isInlineSearchIcon && searchBtnNode}
+        />
+      </div>
+      {isNotInlineSearchIcon && searchBtnNode}
+    </div>
+  )
 }
 
-export default App
+export default Search

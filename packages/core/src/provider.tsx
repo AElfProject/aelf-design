@@ -31,8 +31,8 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
   return (
     <ThemeProvider<IAelfdCustomToken>
       {...props}
-      customToken={({ appearance }) => {
-        if (appearance === 'dark') {
+      customToken={({ isDarkMode }) => {
+        if (isDarkMode) {
           return {
             Collapse: {
               headerHoverBg: '#212121',
