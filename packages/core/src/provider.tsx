@@ -107,14 +107,13 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             borderRadius: 8,
             fontSize: 12,
             lineHeight: 1.66666666666667,
-            boxShadowSecondary:
-              appearance === 'dark'
-                ? '0px 4px 16px 0px rgba(0, 0, 0, 0.16)'
-                : '0px 4px 16px 0px rgba(0, 0, 0, 0.16)'
+            boxShadowSecondary: '0px 0px 16px 0px rgba(0, 0, 0, 0.16)',
+            ...props?.theme?.components?.Tooltip
           },
           Tabs: {
             horizontalItemPadding: '17px 16px',
-            horizontalItemPaddingSM: '13px 10px'
+            horizontalItemPaddingSM: '13px 10px',
+            ...props?.theme?.components?.Tabs
           }
         }
         const baseToken = {
