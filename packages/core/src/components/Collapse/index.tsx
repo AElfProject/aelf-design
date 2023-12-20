@@ -1,45 +1,16 @@
-import { Collapse, CollapseProps } from 'antd'
-import { createStyles } from 'antd-style'
+import { Collapse as AntdCollapse, CollapseProps } from 'antd'
 import DownArrow from 'assets/downArrow.svg?react'
-const useStyles = createStyles(({ css, token }) => {
-  const { Collapse: collapseTokens } = token
-  const { headerClickBg = '', headerHoverBg = '' } = collapseTokens
-  return {
-    aelfdCollapse: css`
-      .ant-collapse-header-text {
-        line-height: 24px;
-      }
-      .ant-collapse-content-box {
-        line-height: 22px;
-      }
-      .ant-collapse-header {
-        &:hover {
-          background-color: ${headerHoverBg};
-        }
-        &:active {
-          color: #127fff;
-          background-color: ${headerClickBg};
-        }
-      }
-      .ant-collapse-item:first-child {
-        .ant-collapse-header:hover {
-          border-top-left-radius: 8px;
-          border-top-right-radius: 8px;
-        }
-      }
-    `
-  }
-})
+import useStyles from './style'
 
-export interface AelfdCollapseProps
+export interface ICollapseProps
   extends Omit<CollapseProps, 'expandIcon' | 'expandIconPosition'> {
   className?: string
 }
 
-const AelfdCollapse = ({ className, ...rest }: AelfdCollapseProps) => {
+function Collapse({ className, ...rest }: ICollapseProps) {
   const { styles: st, cx } = useStyles()
   return (
-    <Collapse
+    <AntdCollapse
       {...rest}
       expandIcon={({ isActive }) => (
         <DownArrow className={cx('duration-300', isActive && 'rotate-180')} />
@@ -50,5 +21,5 @@ const AelfdCollapse = ({ className, ...rest }: AelfdCollapseProps) => {
   )
 }
 
-AelfdCollapse.Panel = Collapse.Panel
-export default AelfdCollapse
+Collapse.Panel = AntdCollapse.Panel
+export default Collapse

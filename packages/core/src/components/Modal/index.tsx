@@ -2,12 +2,12 @@ import { Modal as AntdModal } from 'antd'
 import { IModalProps } from './Modal'
 import useStyles from './style'
 
-const Modal = ({
+function Modal({
   wrapClassName,
   width = 438,
   children,
   ...props
-}: IModalProps) => {
+}: IModalProps) {
   const { styles, cx } = useStyles()
   return (
     <AntdModal

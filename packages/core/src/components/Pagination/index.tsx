@@ -12,7 +12,6 @@ export type Options = number[]
 export interface IEpPaginationProps {
   current?: number
   pageSize?: number
-  isMobile?: boolean
   hideOnSinglePage?: boolean
   defaultCurrent?: number
   total: number

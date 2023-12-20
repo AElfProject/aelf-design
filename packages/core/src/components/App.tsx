@@ -8,8 +8,9 @@ import ConfigProvider from '../provider'
 import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
 import { useState } from 'react'
-import Collapse, { AelfdCollapseProps } from './Collapse'
+import Collapse, { ICollapseProps } from './Collapse'
 import Search from './Search'
+import Tabs from './Tabs'
 import DownArrow from 'assets/downArrow.svg?react'
 import TableExample from 'examples/tableExample'
 import ModalExample from 'examples/modalExample'
@@ -32,6 +33,27 @@ const items = [
     value: '3rd menu item'
   }
 ]
+
+const tabItems = [
+  {
+    key: '1',
+    label: 'Tab 1',
+    children: 'Content of Tab Pane 1',
+    icon: <SearchOutlined />
+  },
+  {
+    key: '2',
+    label: 'Tab 2',
+    children: 'Content of Tab Pane 2',
+    icon: <DownArrow />
+  },
+  {
+    key: '3',
+    label: 'Tabxxxxxx 3',
+    children: 'Content of Tab Pane 3',
+    icon: <SearchOutlined />
+  }
+]
 const App = () => {
   const [appearance, setAppearance] = useState<ThemeAppearance>('light')
   const collapsetText = `
@@ -39,7 +61,7 @@ const App = () => {
   Known for its loyalty and faithfulness,
   it can be found as a welcome guest in many households across the world.
 `
-  const collapseItems: AelfdCollapseProps['items'] = [
+  const collapseItems: ICollapseProps['items'] = [
     {
       key: '1',
       label: 'This is panel header 1',
@@ -359,6 +381,9 @@ const App = () => {
             />
           </div>
           <div className="mb-4">
+            <Input.Password size="small" className="w-[400px]"></Input.Password>
+          </div>
+          <div className="mb-4">
             <Input.Password className="w-[400px]"></Input.Password>
           </div>
           <div className="mb-4">
@@ -503,8 +528,21 @@ const App = () => {
           />
         </div>
 
-        <div className="mt-5 h-44">
+        <div className="mt-5">
           <ModalExample />
+        </div>
+
+        <div className="mt-5">
+          <Tabs defaultActiveKey="1" items={tabItems} />
+        </div>
+
+        <div className="mt-5">
+          <Tabs
+            size="small"
+            defaultActiveKey="1"
+            items={tabItems}
+            indicatorSize={(origin) => origin - 26}
+          />
         </div>
       </ConfigProvider>
     </div>

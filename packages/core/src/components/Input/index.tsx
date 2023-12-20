@@ -39,11 +39,11 @@ function Input({ size = 'middle', className, onClear, ...rest }: IInputProps) {
   )
 }
 
-const AelfdInputPassword = ({
+function InputPassword({
   size = 'middle',
   className,
   ...rest
-}: InputPasswordProps) => {
+}: InputPasswordProps) {
   const { styles: st } = useStyles({ size })
   return (
     <AntdInput.Password
@@ -76,11 +76,11 @@ const AelfdInputPassword = ({
   )
 }
 
-const AelfdInputTextArea = ({
+function InputTextArea({
   size = 'middle',
   className,
   ...rest
-}: InputTextAreaProps) => {
+}: InputTextAreaProps) {
   const { styles: st } = useStyles({ size })
   return (
     <AntdInput.TextArea
@@ -91,7 +91,7 @@ const AelfdInputTextArea = ({
   )
 }
 
-Input.Password = AelfdInputPassword
-Input.TextArea = AelfdInputTextArea
+Input.Password = InputPassword
+Input.TextArea = InputTextArea
 
 export default Input
