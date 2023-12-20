@@ -1,8 +1,8 @@
 import { createStyles } from 'antd-style'
-import { AelfdInputSizeType } from '../Input'
+import { InputSizeType } from '../Input'
 
 const useStyles = createStyles(
-  ({ css }, { size }: { size: AelfdInputSizeType }) => {
+  ({ css, token }, { size }: { size: InputSizeType }) => {
     return {
       aelfdInput: css`
         font-size: 16px;
@@ -18,6 +18,9 @@ const useStyles = createStyles(
         }
         & .ant-input-prefix {
           color: inherit !important;
+          svg {
+            color: ${token.colorTextDisabled};
+          }
         }
       `
     }

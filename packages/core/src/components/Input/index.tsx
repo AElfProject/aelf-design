@@ -1,13 +1,9 @@
-import { Input } from 'antd'
+import { Input as AntdInput } from 'antd'
 import CircleClose from 'assets/circle-close.svg?react'
 import EyeTwoTone from 'assets/eye.svg?react'
 import EyeInvisibleOutlined from 'assets/eye-invisible.svg?react'
 import useStyles from './style'
-import {
-  AelfdInputProps,
-  AelfdInputPasswordProps,
-  AelfdInputTextAreaProps
-} from './Input'
+import { IInputProps, InputPasswordProps, InputTextAreaProps } from './Input'
 
 const getClearIcon = (
   onClear?: React.MouseEventHandler<HTMLElement> | undefined
@@ -29,15 +25,10 @@ const getClearIcon = (
   )
 }
 
-function AelfdInput({
-  size = 'middle',
-  className,
-  onClear,
-  ...rest
-}: AelfdInputProps) {
+function Input({ size = 'middle', className, onClear, ...rest }: IInputProps) {
   const { styles: st } = useStyles({ size })
   return (
-    <Input
+    <AntdInput
       {...rest}
       size={size}
       className={`${st.aelfdInput} ${className || ''}`}
@@ -52,10 +43,10 @@ const AelfdInputPassword = ({
   size = 'middle',
   className,
   ...rest
-}: AelfdInputPasswordProps) => {
+}: InputPasswordProps) => {
   const { styles: st } = useStyles({ size })
   return (
-    <Input.Password
+    <AntdInput.Password
       {...rest}
       size={size}
       className={`${st.aelfdInput} ${className || ''}`}
@@ -81,7 +72,7 @@ const AelfdInputPassword = ({
           />
         )
       }
-    ></Input.Password>
+    ></AntdInput.Password>
   )
 }
 
@@ -89,18 +80,18 @@ const AelfdInputTextArea = ({
   size = 'middle',
   className,
   ...rest
-}: AelfdInputTextAreaProps) => {
+}: InputTextAreaProps) => {
   const { styles: st } = useStyles({ size })
   return (
-    <Input.TextArea
+    <AntdInput.TextArea
       {...rest}
       size={size}
       className={`${st.aelfdInput} ${className || ''}`}
-    ></Input.TextArea>
+    ></AntdInput.TextArea>
   )
 }
 
-AelfdInput.Password = AelfdInputPassword
-AelfdInput.TextArea = AelfdInputTextArea
+Input.Password = AelfdInputPassword
+Input.TextArea = AelfdInputTextArea
 
-export default AelfdInput
+export default Input
