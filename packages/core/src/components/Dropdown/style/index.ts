@@ -3,7 +3,7 @@ import { DropdownSizeType } from '../Dropdown'
 
 const useStyles = createStyles(
   (
-    { css, token },
+    { css, token, prefixCls },
     {
       size,
       offsetX,
@@ -21,7 +21,7 @@ const useStyles = createStyles(
     return {
       dropDownWrap: css`
         min-width: auto !important;
-        & .ant-dropdown-menu {
+        & .${prefixCls}-dropdown-menu {
           margin-left: ${offsetX}px;
           margin-top: ${offsetY}px;
           border-radius: 6px;
@@ -29,7 +29,7 @@ const useStyles = createStyles(
           overflow: hidden;
           box-shadow: none;
           border: 1px solid ${token.colorPrimaryBorder};
-          .ant-dropdown-menu-item {
+          .${prefixCls}-dropdown-menu-item {
             padding: ${dynamicVal} 12px;
             border-radius: 0;
             /* &:hover ~ li {

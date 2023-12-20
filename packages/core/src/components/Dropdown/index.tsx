@@ -2,13 +2,13 @@ import { Dropdown as AntdDropdown } from 'antd'
 import { IDropdownProps } from './Dropdown'
 import useStyles from './style'
 
-const Dropdown = ({
+function Dropdown({
   children,
   size = 'default',
   offsetX = 0,
   offsetY = 0,
   ...props
-}: IDropdownProps) => {
+}: IDropdownProps) {
   const { styles, cx } = useStyles({ size, offsetX, offsetY })
   return (
     <AntdDropdown

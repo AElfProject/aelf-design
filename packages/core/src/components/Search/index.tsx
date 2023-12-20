@@ -101,7 +101,7 @@ function Search({
     )
   }, [
     checkedItem?.key,
-    checkedItem?.label,
+    checkedItem?.value,
     cx,
     dropdownSize,
     filterClickHandler,

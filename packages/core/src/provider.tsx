@@ -111,6 +111,10 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
               appearance === 'dark'
                 ? '0px 4px 16px 0px rgba(0, 0, 0, 0.16)'
                 : '0px 4px 16px 0px rgba(0, 0, 0, 0.16)'
+          },
+          Tabs: {
+            horizontalItemPadding: '17px 16px',
+            horizontalItemPaddingSM: '13px 10px'
           }
         }
         const baseToken = {

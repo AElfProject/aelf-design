@@ -2,21 +2,21 @@ import { createStyles } from 'antd-style'
 import { InputSizeType } from '../Input'
 
 const useStyles = createStyles(
-  ({ css, token }, { size }: { size: InputSizeType }) => {
+  ({ css, token, prefixCls }, { size }: { size: InputSizeType }) => {
     return {
       aelfdInput: css`
         font-size: 16px;
         height: ${size === 'middle' ? '48px' : '40px'};
-        & .ant-input-clear-icon {
+        & .${prefixCls}-input-clear-icon {
           line-height: 1;
         }
-        & .ant-input-prefix {
+        & .${prefixCls}-input-prefix {
           margin-right: 8px;
         }
-        & .ant-input {
+        & .${prefixCls}-input {
           line-height: 24px;
         }
-        & .ant-input-prefix {
+        & .${prefixCls}-input-prefix {
           color: inherit !important;
           svg {
             color: ${token.colorTextDisabled};
