@@ -4,7 +4,7 @@ export default createStyles(({ token, css }) => {
     tablePaginationContainer: css`
       padding: 16px 0;
     `,
-    aelfdTableContainer: css`
+    TableContainer: css`
       .ant-table-wrapper
         .ant-table-container
         table

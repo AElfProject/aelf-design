@@ -99,6 +99,18 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             titleFontSize: 20,
             titleLineHeight: 1.4,
             ...props?.theme?.components?.Modal
+          },
+          Tooltip: {
+            colorBgSpotlight: appearance === 'dark' ? '#282828' : '#FFF',
+            colorTextLightSolid: appearance === 'dark' ? '#8C8C8C' : '#808080',
+            colorText: appearance === 'dark' ? '#8C8C8C' : '#808080',
+            borderRadius: 8,
+            fontSize: 12,
+            lineHeight: 1.66666666666667,
+            boxShadowSecondary:
+              appearance === 'dark'
+                ? '0px 4px 16px 0px rgba(0, 0, 0, 0.16)'
+                : '0px 4px 16px 0px rgba(0, 0, 0, 0.16)'
           }
         }
         const baseToken = {

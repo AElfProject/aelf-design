@@ -1,5 +1,5 @@
 import { ColumnsType } from 'antd/es/table'
-import AelfdTable from '../components/Table'
+import Table from '../components/Table'
 import { useEffect, useState } from 'react'
 import { IEpPaginationProps } from 'components/Pagination'
 interface DataType {
@@ -82,11 +82,11 @@ export default function TableExample() {
   }, [tableParams])
 
   return (
-    <AelfdTable
+    <Table
       columns={columns}
       loading={loading}
       pagination={{ ...tableParams.pagination, pageChange, pageSizeChange }}
       dataSource={dataSource}
-    ></AelfdTable>
+    ></Table>
   )
 }
