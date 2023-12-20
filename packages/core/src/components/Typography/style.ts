@@ -1,9 +1,9 @@
-import { createStyles, css } from 'antd-style'
+import { createStyles } from 'antd-style'
 import '../../styles/fonts.css'
-import { TextSizeType } from './index'
+import { TextSizeType } from './Text'
 export default createStyles(
   (
-    { token },
+    { css },
     props: {
       fontFamily: string
       size?: TextSizeType
@@ -46,7 +46,7 @@ export default createStyles(
         break
     }
     return {
-      AelfdTitle: css`
+      AelfDesignTitle: css`
         font-family: ${fontFamily};
         font-size: ${fontSize}px !important;
         line-height: ${lineHeight}px !important;
@@ -57,7 +57,7 @@ export default createStyles(
         margin-top: 0 !important;
         margin-bottom: 0 !important;
       `,
-      AelfdText: css`
+      AelfDesignText: css`
         font-family: ${fontFamily};
         font-weight: normal !important;
         display: inline-block;

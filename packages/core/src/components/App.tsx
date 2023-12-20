@@ -3,8 +3,8 @@ import { SearchOutlined, AndroidOutlined } from '@ant-design/icons'
 import Button from './Button'
 import Input from './Input'
 import Dropdown from './Dropdown'
-import AelfdTypography, { FontWeightType } from './Typography'
-import AELFDProvider from '../provider'
+import Typography, { FontWeightType } from './Typography'
+import ConfigProvider from '../provider'
 import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
 import { useState } from 'react'
@@ -13,6 +13,7 @@ import Search from './Search'
 import DownArrow from 'assets/downArrow.svg?react'
 import TableExample from 'examples/tableExample'
 import ModalExample from 'examples/modalExample'
+import ToolTipExample from '../examples/tooltipExample'
 
 const items = [
   {
@@ -68,7 +69,7 @@ const App = () => {
         value={appearance}
         onChange={(e) => setAppearance(e as ThemeAppearance)}
       />
-      <AELFDProvider
+      <ConfigProvider
         appearance={appearance}
         // theme={{ token: { colorPrimary: '#9ddd13' } }}
       >
@@ -383,7 +384,7 @@ const App = () => {
               menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
               open={true}
             >
-              <AelfdTypography.Text>small</AelfdTypography.Text>
+              <Typography.Text>small</Typography.Text>
             </Dropdown>
           </div>
           <div className="flex-1">
@@ -392,7 +393,7 @@ const App = () => {
               menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
               open={true}
             >
-              <AelfdTypography.Text>medium</AelfdTypography.Text>
+              <Typography.Text>medium</Typography.Text>
             </Dropdown>
           </div>
           <div className="flex-1">
@@ -401,7 +402,7 @@ const App = () => {
               menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
               open={true}
             >
-              <AelfdTypography.Text>default</AelfdTypography.Text>
+              <Typography.Text>default</Typography.Text>
             </Dropdown>
           </div>
           <div className="flex-1">
@@ -410,45 +411,50 @@ const App = () => {
               menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}
               open={true}
             >
-              <AelfdTypography.Text>large</AelfdTypography.Text>
+              <Typography.Text>large</Typography.Text>
             </Dropdown>
           </div>
         </div>
 
         <div className="mt-[180px]">
-          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={1}>
-            title1 test titlefsdfsdfsdfADD
-          </AelfdTypography.Title>
-          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={2}>
-            title2 test titlefsdfsdfsdfADD
-          </AelfdTypography.Title>
-          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={3}>
-            title3 test titlefsdfsdfsdfADD
-          </AelfdTypography.Title>
-          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={4}>
-            title4 test titlefsdfsdfsdfADD
-          </AelfdTypography.Title>
-          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={5}>
-            title5 test titlefsdfsdfsdfADD
-          </AelfdTypography.Title>
+          <Typography.Title fontWeight={FontWeightType.Bold} level={1}>
+            Title1 test TitlefsdfsdfsdfADD
+          </Typography.Title>
+          <Typography.Title fontWeight={FontWeightType.Bold} level={2}>
+            Title2 test TitlefsdfsdfsdfADD
+          </Typography.Title>
+          <Typography.Title fontWeight={FontWeightType.Bold} level={3}>
+            Title3 test TitlefsdfsdfsdfADD
+          </Typography.Title>
+          <Typography.Title fontWeight={FontWeightType.Bold} level={4}>
+            Title4 test TitlefsdfsdfsdfADD
+          </Typography.Title>
+          <Typography.Title fontWeight={FontWeightType.Bold} level={5}>
+            Title5 test TitlefsdfsdfsdfADD
+          </Typography.Title>
 
-          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={6}>
-            title6 test titlefsdfsdfsdfADD
-          </AelfdTypography.Title>
+          <Typography.Title fontWeight={FontWeightType.Bold} level={6}>
+            Title6 test TitlefsdfsdfsdfADD
+          </Typography.Title>
 
-          <AelfdTypography.Title fontWeight={FontWeightType.Bold} level={7}>
-            title7 test titlefsdfsdfsdfADD
-          </AelfdTypography.Title>
-          <AelfdTypography.Text
+          <Typography.Title fontWeight={FontWeightType.Bold} level={7}>
+            Title7 test TitlefsdfsdfsdfADD
+          </Typography.Title>
+          <Typography.Text
             size="small"
+            disabled
             fontWeight={FontWeightType.Regular}
           >
             text test titlefsdfsdfsdfADD
-          </AelfdTypography.Text>
+          </Typography.Text>
         </div>
 
         <div className="mt-5">
           <TableExample />
+        </div>
+
+        <div className="mt-5">
+          <ToolTipExample></ToolTipExample>
         </div>
         {/* <Collapse /> */}
 
@@ -500,7 +506,7 @@ const App = () => {
         <div className="mt-5 h-44">
           <ModalExample />
         </div>
-      </AELFDProvider>
+      </ConfigProvider>
     </div>
   )
 }
