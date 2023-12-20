@@ -1,22 +1,28 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import AelfdInput from './index'
+import Input from './index'
 
 const meta = {
   title: 'Example/Input',
-  component: AelfdInput,
+  component: Input,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'padded'
   },
+  argTypes: {
+    size: {
+      options: ['small', 'middle'],
+      control: { type: 'radio' }
+    }
+  },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs']
-} satisfies Meta<typeof AelfdInput>
+} satisfies Meta<typeof Input>
 
 export default meta
 
-type Story = StoryObj<typeof AelfdInput>
+type Story = StoryObj<typeof Input>
 // // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   args: {
@@ -27,12 +33,12 @@ export const Default: Story = {
     layout: 'padded'
   }
 }
-type TextAreaStory = StoryObj<typeof AelfdInput.TextArea>
+type TextAreaStory = StoryObj<typeof Input.TextArea>
 export const TextArea: TextAreaStory = {
-  render: () => <AelfdInput.TextArea />
+  render: (props) => <Input.TextArea {...props} />
 }
 
-type PasswordStory = StoryObj<typeof AelfdInput.Password>
+type PasswordStory = StoryObj<typeof Input.Password>
 export const Password: PasswordStory = {
-  render: () => <AelfdInput.Password />
+  render: (props) => <Input.Password {...props} />
 }

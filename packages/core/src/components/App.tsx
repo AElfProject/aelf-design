@@ -12,19 +12,23 @@ import Collapse, { AelfdCollapseProps } from './Collapse'
 import Search from './Search'
 import DownArrow from 'assets/downArrow.svg?react'
 import TableExample from 'examples/tableExample'
+import ModalExample from 'examples/modalExample'
 
 const items = [
   {
     key: '1',
-    label: <div className="w-[130px]">1st menu item</div>
+    label: <div className="w-[130px]">1st menu item</div>,
+    value: '1st menu item'
   },
   {
     key: '2',
-    label: <div className="w-[130px]">2nd menu item</div>
+    label: <div className="w-[130px]">2nd menu item</div>,
+    value: '2nd menu item'
   },
   {
     key: '3',
-    label: <div className="w-[130px]">3rd menu item</div>
+    label: <div className="w-[130px]">3rd menu item</div>,
+    value: '3rd menu item'
   }
 ]
 const App = () => {
@@ -345,6 +349,15 @@ const App = () => {
             />
           </div>
           <div className="mb-4">
+            <Input
+              size="small"
+              className="w-[400px]"
+              placeholder="placeholder"
+              addonBefore="ELF"
+              addonAfter="AELF"
+            />
+          </div>
+          <div className="mb-4">
             <Input.Password className="w-[400px]"></Input.Password>
           </div>
           <div className="mb-4">
@@ -464,7 +477,7 @@ const App = () => {
             filterItems={items}
             inputSize="middle"
             placeholder="search something..."
-            // prefixWidth={130}
+            prefixWidth={130}
             onClear={() => {
               console.log(1)
             }}
@@ -484,7 +497,9 @@ const App = () => {
           />
         </div>
 
-        <div className="mt-5 h-44">111</div>
+        <div className="mt-5 h-44">
+          <ModalExample />
+        </div>
       </AELFDProvider>
     </div>
   )

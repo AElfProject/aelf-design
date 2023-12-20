@@ -1,15 +1,18 @@
 import { createStyles } from 'antd-style'
 
-export default createStyles(({ token, css }, props: { isMobile: boolean }) => {
-  const { isMobile } = props
+export default createStyles(({ token, css, responsive }) => {
   return {
     paginationContainer: css`
       display: flex;
       flex-shrink: 0;
-      flex-direction: ${isMobile ? 'column' : 'row'};
-      align-items: ${isMobile ? 'flex-start' : 'center'};
+      flex-direction: row;
+      align-items: 'center';
       height: 100%;
       justify-content: space-between;
+      ${responsive.md} {
+        flex-direction: column;
+        align-items: flex-start;
+      }
       .ant-select-focused.ant-select:not(.ant-select-disabled):not(
           .ant-select-customize-input
         ):not(.ant-pagination-size-changer)
@@ -27,7 +30,10 @@ export default createStyles(({ token, css }, props: { isMobile: boolean }) => {
     pageContainer: css`
       display: flex;
       grid-gap: 8px;
-      margin-top: ${isMobile ? '12px' : '0px'};
+      margin-top: 0;
+      ${responsive.md} {
+        margin-top: 12px;
+      }
       align-items: center;
     `,
     pageNumberContainer: css`

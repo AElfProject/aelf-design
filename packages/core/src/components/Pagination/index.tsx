@@ -4,7 +4,6 @@ import { useDebounceFn } from 'ahooks'
 import RightArrow from 'assets/right-arrow.svg?react'
 import LeftArrow from 'assets/left-arrow.svg?react'
 import DownArrow from 'assets/downArrow.svg?react'
-import useResponsive from 'hooks/useResponsive'
 import Button from 'components/Button'
 import useStyles from './style'
 
@@ -46,8 +45,7 @@ export default function Pagination({
   const isLastPage = pageNum >= totalPage
 
   // Hooks
-  const { isMD: isMobile } = useResponsive()
-  const { styles, cx } = useStyles({ isMobile })
+  const { styles, cx } = useStyles()
 
   // Effect
   useEffect(() => {

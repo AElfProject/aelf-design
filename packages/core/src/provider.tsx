@@ -91,7 +91,22 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             headerColor: appearance === 'dark' ? '#8C8C8C' : '#808080',
             fontWeightStrong: 500,
             ...props?.theme?.components?.Table
+          },
+          Modal: {
+            paddingMD: 24,
+            paddingContentHorizontalLG: 24,
+            fontWeightStrong: 500,
+            titleFontSize: 20,
+            titleLineHeight: 1.4,
+            ...props?.theme?.components?.Modal
           }
+        }
+        const baseToken = {
+          screenXXLMin: 1441,
+          screenXLMax: 1440,
+          screenLGMax: 1024,
+          screenMDMax: 768,
+          screenSMMax: 640
         }
         if (appearance === 'dark') {
           return {
@@ -113,7 +128,10 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
               controlItemBgActive: 'transparent',
               controlItemBgHover: '#212121',
               colorBgContainer: '#1A1A1A',
-              colorBgElevated: '#1A1A1A',
+              colorBgElevated: '#282828',
+              boxShadow: '0px 4px 16px 0px rgba(0, 0, 0, 0.16)',
+              colorBgMask: 'rgba(0, 0, 0, 0.6)',
+              ...baseToken,
               ...props?.theme?.token
             },
             components: comp
@@ -139,6 +157,9 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             controlItemBgHover: '#F8F8F8',
             colorBgContainer: '#FFFFFF',
             colorBgElevated: '#FFFFFF',
+            boxShadow: '0px 4px 16px 0px rgba(0, 0, 0, 0.16)',
+            colorBgMask: 'rgba(0, 0, 0, 0.6)',
+            ...baseToken,
             ...props?.theme?.token
           },
           components: comp

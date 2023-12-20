@@ -87,7 +87,7 @@ function Search({
         <div className={styles.searchDropDownWrap}>
           <div className={styles.searchDropDownLeft}>
             <div className={styles.searchDropDownLeftLabel}>
-              {checkedItem?.label}
+              {checkedItem?.value}
             </div>
             <DownArrow
               className={cx('duration-300', isDropDownOpen && 'rotate-180')}
