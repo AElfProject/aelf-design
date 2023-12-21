@@ -48,7 +48,7 @@ const tabItems = [
     icon: <DownArrow />
   },
   {
-    key: '3',
+    key: '4',
     label: 'Tabxxxxxx 3',
     children: 'Content of Tab Pane 3',
     icon: <SearchOutlined />
