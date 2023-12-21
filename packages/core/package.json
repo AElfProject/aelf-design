@@ -107,5 +107,6 @@
       "eslint --cache --ext .js,.jsx,.ts,.tsx"
     ],
     "*.{css,less}": "stylelint --fix"
-  }
+  },
+  "gitHead": "f60bcb7aca642bec0ae3c044776b62b2f16a902e"
 }
