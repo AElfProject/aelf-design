@@ -1,6 +1,6 @@
 {
   "name": "test-my-design",
-  "version": "0.1.6-alpha.0",
+  "version": "0.1.7-alpha.0",
   "types": "./dist/index.d.ts",
   "main": "./dist/cjs/aelfd-core.js",
   "module": "./dist/es/aelfd-core.mjs",
