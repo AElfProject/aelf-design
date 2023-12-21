@@ -1,5 +1,5 @@
 {
-  "name": "aelfd-core",
+  "name": "test-my-design",
   "version": "0.1.0",
   "private": true,
   "types": "./dist/cjs/index.d.ts",
