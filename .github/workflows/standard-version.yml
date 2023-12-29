@@ -7,12 +7,14 @@ on:
         description: "The version you want to release."
         required: true
 
+defaults:
+  run:
+    working-directory: "packages/core"
+
 jobs:
   create-release-branch:
     permissions: write-all
     runs-on: ubuntu-latest
-    env:
-      working-directory: packages/core
     steps:
       - uses: actions/checkout@v2
         with:
