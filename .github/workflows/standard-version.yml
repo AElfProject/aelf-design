@@ -2,6 +2,8 @@ name: Create Release Branch
 
 on:
   workflow_dispatch:
+    paths:
+      - "packages/core/**"
     inputs:
       version:
         description: "The version you want to release."
