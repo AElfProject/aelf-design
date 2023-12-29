@@ -2,8 +2,6 @@ name: Create Release Branch
 
 on:
   workflow_dispatch:
-    paths:
-      - "packages/core/**"
     inputs:
       version:
         description: "The version you want to release."
@@ -20,8 +18,10 @@ jobs:
       - name: Install
         run: |
           yarn install
+        working-directory: packages/core
 
       - uses: Wuerike/standard-version-release-branch@v1.2.1
+        working-directory: packages/core
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_version: ${{ github.event.inputs.version }}
