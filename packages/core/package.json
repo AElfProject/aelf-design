@@ -28,7 +28,7 @@
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky install"
+    "prepare": "cd .. && husky install"
   },
   "dependencies": {
     "@ebay/nice-modal-react": "^1.2.13",
