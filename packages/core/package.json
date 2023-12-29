@@ -27,8 +27,7 @@
     "lint": "eslint src --max-warnings=0",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepare": "cd ../.. && husky install"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@ebay/nice-modal-react": "^1.2.13",
