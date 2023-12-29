@@ -11,6 +11,8 @@ jobs:
   create-release-branch:
     permissions: write-all
     runs-on: ubuntu-latest
+    env:
+      working-directory: packages/core
     steps:
       - uses: actions/checkout@v2
         with:
@@ -18,10 +20,8 @@ jobs:
       - name: Install
         run: |
           yarn install
-        working-directory: packages/core
 
       - uses: Wuerike/standard-version-release-branch@v1.2.1
-        working-directory: packages/core
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release_version: ${{ github.event.inputs.version }}
