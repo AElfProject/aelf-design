@@ -1,6 +1,13 @@
-import { Tabs as AntdTabs } from 'antd'
-import { ITabsProps } from './Tabs'
+import { Tabs as AntdTabs, TabsProps } from 'antd'
 import useStyles from './style'
+
+export type TabsSizeType = 'middle' | 'small'
+
+export interface ITabsProps
+  extends Omit<TabsProps, 'size' | 'tabBarGutter' | 'rootClassName'> {
+  size?: TabsSizeType
+  rootClassName?: string
+}
 
 function Tabs({ size = 'middle', rootClassName, ...props }: ITabsProps) {
   const { styles, cx } = useStyles()

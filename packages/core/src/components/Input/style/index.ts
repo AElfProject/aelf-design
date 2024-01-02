@@ -1,5 +1,5 @@
 import { createStyles } from 'antd-style'
-import { InputSizeType } from '../Input'
+import { InputSizeType } from '../index'
 
 const useStyles = createStyles(
   ({ css, token, prefixCls }, { size }: { size: InputSizeType }) => {

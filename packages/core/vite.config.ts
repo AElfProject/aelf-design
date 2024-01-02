@@ -50,8 +50,8 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
     dts({
-      insertTypesEntry: true,
-      copyDtsFiles: false
+      entryRoot: './src/components',
+      outDir: ['./dist/es', './dist/cjs', './dist/umd']
     }),
     rollupResolve(),
     // typescript({

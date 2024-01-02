@@ -1,6 +1,14 @@
-import { Dropdown as AntdDropdown } from 'antd'
-import { IDropdownProps } from './Dropdown'
+import { Dropdown as AntdDropdown, DropdownProps } from 'antd'
 import useStyles from './style'
+
+export type DropdownSizeType = 'small' | 'medium' | 'default' | 'large'
+export interface IDropdownProps
+  extends Omit<DropdownProps, 'overlayClassName'> {
+  overlayClassName?: string
+  size?: DropdownSizeType
+  offsetX?: number
+  offsetY?: number
+}
 
 function Dropdown({
   children,

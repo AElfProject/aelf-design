@@ -3,8 +3,9 @@ import { createStyles } from 'antd-style'
 const useStyles = createStyles(({ css, prefixCls }) => {
   return {
     tabslWrap: css`
-      .${prefixCls}-tabs .${prefixCls}-tabs-tab .anticon {
-        margin-right: 8px;
+      .${prefixCls}-tabs-tab-icon {
+        margin-right: 8px !important;
+        margin-inline-end: 8px !important;
       }
     `
   }

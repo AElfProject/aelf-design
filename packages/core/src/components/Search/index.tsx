@@ -1,11 +1,29 @@
 import React, { useCallback, useMemo, useState, MouseEvent } from 'react'
-import Input from 'components/Input'
-import Dropdown from 'components/Dropdown'
-import { ISearchProps } from './Search'
+import Input, { InputSizeType, IInputProps } from 'components/Input'
+import Dropdown, { DropdownSizeType } from 'components/Dropdown'
 import Query from 'assets/query.svg?react'
 import DownArrow from 'assets/downArrow.svg?react'
 import { MenuClickEventHandler } from 'rc-menu/lib/interface'
 import useStyles from './style'
+import { MenuItemType } from 'antd/lib/menu/hooks/useItems'
+
+export type WithSearchIconType = 'connect' | 'inline' | 'after'
+
+interface FilterItemType extends MenuItemType {
+  value: string
+}
+export interface ISearchProps
+  extends Omit<IInputProps, 'size' | 'addonAfter' | 'suffix'> {
+  inputSize?: InputSizeType
+  dropdownSize?: DropdownSizeType
+  filterItems?: FilterItemType[]
+  prefixWidth?: number
+  withSearchIcon?: WithSearchIconType
+  className?: string
+  inputClassName?: string
+  onSelectChange?: MenuClickEventHandler
+  onSearchBtnClick?: (e: React.MouseEvent<HTMLElement>) => void
+}
 
 function Search({
   inputSize = 'middle',
