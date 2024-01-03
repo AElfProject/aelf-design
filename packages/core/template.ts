@@ -27,7 +27,7 @@ function findPathParent(obj, arr) {
   }
 }
 function addNewStyle(newStyle) {
-    var styleElement = document.getElementById('styles_js');
+    let styleElement = document.getElementById('styles_js');
     if (!styleElement) {
       styleElement = document.createElement('style');
       styleElement.type = 'text/css';
@@ -37,21 +37,21 @@ function addNewStyle(newStyle) {
     styleElement.appendChild(document.createTextNode(newStyle));
 }
 
-
 function changePathStyle(props, arr, id) {
     if(!props) return;
     const str = arr.join(' ');
     const root = arr[0];
     const others = arr.slice(1);
+
     if(props.color) {
         addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props.color + '}');
     }
     if(props['data-hoverColor']) {
-        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-hoverColor'] + '}');
+        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-hoverColor'] + '}');
     }
     if(props['data-activeColor']) {
-      addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-activeColor'] + '}');
-  }
+        addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-activeColor'] + '}');
+    }
     if (Array.isArray(props['data-twoToneColor'])) {
         addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-twoToneColor'][0] + '}');
         addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-twoToneColor'][1] + '}');
@@ -63,7 +63,7 @@ function changePathStyle(props, arr, id) {
     if (Array.isArray(props['data-activeTwoToneColor'])) {
       addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-activeTwoToneColor'][0] + '}');
       addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-activeTwoToneColor'][1] + '}');
-  }
+    }
     if(props.width) {
       addNewStyle(root + '#'+ id + '{width: ' + props.width + '}');
     }
@@ -71,16 +71,25 @@ function changePathStyle(props, arr, id) {
       addNewStyle(root + '#'+ id + '{height: ' + props.height + '}');
     }
 }
-// prevent adding styles multiple times
-let hanfleFlag = true;
+const isArrayContainsElement = (arr1, arr2) => {
+    for (let i = 0; i < arr2.length; i++) {
+        if (arr1.includes(arr2[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+const OPTIONS = ['color', 'data-activeColor', 'data-hoverColor', 'data-twoToneColor', 'data-hoverTwoToneColor', 'data-activeTwoToneColor', 'width', 'height'];
+
 const ${variables.componentName} = (${variables.props}) => {
+  const isSetOptions = isArrayContainsElement(Object.keys(${variables.props}), OPTIONS);
   const svg = ${variables.jsx};
-  if(hanfleFlag) {
+  if(isSetOptions) {
     const parents = [];
     findPathParent(svg, parents);
     const id = svg.props.id;
     changePathStyle(props, parents, id);
-    hanfleFlag = false;
   }
   return svg;
 };
