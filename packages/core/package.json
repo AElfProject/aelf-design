@@ -1,8 +1,8 @@
 {
   "name": "test-my-design",
-  "private": true,
+  "private": false,
   "types": "./dist/cjs/index.d.ts",
-  "version": "0.1.5-alpha.0",
+  "version": "0.1.8-alpha.0",
   "main": "./dist/cjs/aelfd-core.js",
   "module": "./dist/es/aelfd-core.mjs",
   "umd": "./dist/umd/aelfd-core.umd.js",
