@@ -120,7 +120,7 @@ const App = () => {
 
           <div className="mb-2 flex items-center gap-2">
             <Button size="mini" ghost type="primary">
-              mini
+              mini1
             </Button>
             <Button size="small" ghost type="primary">
               small
