@@ -107,9 +107,7 @@ function Search({
             <div className={styles.searchDropDownLeftLabel}>
               {checkedItem?.value}
             </div>
-            <DownArrow
-              className={cx('duration-300', isDropDownOpen && 'rotate-180')}
-            />
+            <DownArrow className={cx(isDropDownOpen && styles.collapseIcon)} />
           </div>
           <div className={styles.searchDropDownRight}>
             <Query />
@@ -127,6 +125,7 @@ function Search({
     isDropDownOpen,
     isMiddleSize,
     onOpenChangeHandler,
+    styles.collapseIcon,
     styles.searchDropDownLeft,
     styles.searchDropDownLeftLabel,
     styles.searchDropDownRight,

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Tooltip from 'components/ToolTip'
+import Tooltip from 'components/Tooltip'
 import Button from 'components/Button'
 
 const text = (

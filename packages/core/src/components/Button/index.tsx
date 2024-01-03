@@ -1,6 +1,7 @@
 import { Button as AntdButton, ButtonProps } from 'antd'
 import { MouseEvent } from 'react'
 import { useThrottleFn } from 'ahooks'
+import useDatePolyfill from 'utils/useDatePolyfill'
 import useStyles from './style'
 
 export type ButtonSizeType = 'mini' | 'small' | 'medium' | 'large' | 'ultra'
@@ -17,6 +18,7 @@ function Button({
   ...rest
 }: IButtonProps) {
   const { styles: st, cx } = useStyles({ size })
+  useDatePolyfill()
 
   const { run: buttonClickHandler } = useThrottleFn(
     (e: MouseEvent<HTMLElement>) => {
