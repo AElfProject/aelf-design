@@ -3,18 +3,18 @@
   "private": false,
   "types": "./dist/cjs/index.d.ts",
   "version": "0.1.10-alpha.0",
-  "main": "./dist/cjs/aelfd-core.js",
-  "module": "./dist/es/aelfd-core.mjs",
-  "umd": "./dist/umd/aelfd-core.umd.js",
+  "main": "./dist/cjs/test-my-design.js",
+  "module": "./dist/es/test-my-design.mjs",
+  "umd": "./dist/umd/test-my-design.umd.js",
   "exports": {
     ".": {
       "import": {
         "types": "./dist/es/index.d.ts",
-        "default": "./dist/es/aelfd-core.mjs"
+        "default": "./dist/es/test-my-design.mjs"
       },
       "require": {
         "types": "./dist/cjs/index.d.ts",
-        "default": "./dist/cjs/aelfd-core.js"
+        "default": "./dist/cjs/test-my-design.js"
       }
     }
   },
