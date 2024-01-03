@@ -34,8 +34,10 @@ export default defineConfig({
         },
         {
           dir: resolve(__dirname, 'dist/es'),
+          // entryFileNames: '[name].js',
           format: 'es',
-          sourcemap: true
+          // preserveModules: true,
+          exports: 'named'
         },
         {
           dir: resolve(__dirname, 'dist/cjs'),
@@ -51,7 +53,8 @@ export default defineConfig({
     tsconfigPaths(),
     dts({
       entryRoot: './src/components',
-      outDir: ['./dist/es', './dist/cjs', './dist/umd']
+      outDir: ['./dist/es', './dist/cjs', './dist/umd'],
+      // tsconfigPath: './tsconfig.json'
     }),
     rollupResolve(),
     // typescript({
