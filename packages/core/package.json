@@ -31,7 +31,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@ebay/nice-modal-react": "^1.2.13",
     "@svgr/babel-plugin-transform-svg-component": "^8.0.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
@@ -40,8 +39,7 @@
     "antd-style": "^3.5.2",
     "bignumber.js": "^9.1.2",
     "clsx": "^2.0.0",
-    "react-dom": "^18.2.0",
-    "react-use": "^17.4.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",

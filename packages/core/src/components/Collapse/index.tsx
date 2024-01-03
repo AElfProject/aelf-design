@@ -13,7 +13,7 @@ function Collapse({ className, ...rest }: ICollapseProps) {
     <AntdCollapse
       {...rest}
       expandIcon={({ isActive }) => (
-        <DownArrow className={cx('duration-300', isActive && 'rotate-180')} />
+        <DownArrow className={cx(isActive && st.collapseIcon)} />
       )}
       expandIconPosition={'end'}
       className={cx(st.aelfdCollapse, className)}

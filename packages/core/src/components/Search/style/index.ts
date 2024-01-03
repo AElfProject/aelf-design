@@ -61,6 +61,9 @@ const useStyles = createStyles(
         cursor: pointer;
         margin-right: 12px;
         width: ${prefixWidth > 0 ? prefixWidth + 'px' : 'auto'};
+        svg {
+          transition-duration: 300ms;
+        }
       `,
       searchDropDownLeftLabel: css`
         margin-right: 8px;
@@ -96,6 +99,9 @@ const useStyles = createStyles(
         &:active {
           background-color: ${token.colorTextDisabled};
         }
+      `,
+      collapseIcon: css`
+        transform: rotate(180deg);
       `
     }
   }

@@ -21,6 +21,12 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
           background-color: ${headerClickBg};
         }
       }
+      svg {
+        transition-duration: 300ms;
+      }
+    `,
+    collapseIcon: css`
+      transform: rotate(180deg);
     `
   }
 })
