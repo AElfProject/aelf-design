@@ -1,8 +1,14 @@
-import { Button as AntdButton } from 'antd'
+import { Button as AntdButton, ButtonProps } from 'antd'
 import { MouseEvent } from 'react'
 import { useThrottleFn } from 'ahooks'
-import { IButtonProps } from './Button'
 import useStyles from './style'
+
+export type ButtonSizeType = 'mini' | 'small' | 'medium' | 'large' | 'ultra'
+export interface IButtonProps extends Omit<ButtonProps, 'size' | 'onClick'> {
+  size?: ButtonSizeType
+  onClick?: React.MouseEventHandler<HTMLElement>
+  millisecondOfThrottle?: number
+}
 
 function Button({
   size = 'large',

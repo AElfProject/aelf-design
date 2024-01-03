@@ -1,7 +1,7 @@
 import { ThemeConfig } from 'antd'
 import { ThemeAppearance, ThemeProvider, ThemeProviderProps } from 'antd-style'
 
-interface IAelfdThemeProviderProps
+export interface IAelfdThemeProviderProps
   extends Omit<ThemeProviderProps<IAelfdCustomToken>, 'theme'> {
   theme?: ThemeConfig
   customToken?: IAelfdCustomToken
@@ -32,35 +32,18 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
     <ThemeProvider<IAelfdCustomToken>
       {...props}
       customToken={({ isDarkMode }) => {
-        if (isDarkMode) {
-          return {
-            Collapse: {
-              headerHoverBg: '#212121',
-              headerClickBg: '#212121'
-            },
-            Table: {
-              headerBorderRadius: 6
-            },
-            Pagination: {
-              colorTextSecondary: '#8C8C8C',
-              colorBgHover: '#212121',
-              colorDownArrow: '#fff'
-            }
-          }
-        } else {
-          return {
-            Collapse: {
-              headerHoverBg: '#f8f8f8',
-              headerClickBg: '#f8f8f8'
-            },
-            Table: {
-              headerBorderRadius: 6
-            },
-            Pagination: {
-              colorTextSecondary: '#808080',
-              colorBgHover: '#F8F8F8',
-              colorDownArrow: '#101114'
-            }
+        return {
+          Collapse: {
+            headerHoverBg: isDarkMode ? '#212121' : '#f8f8f8',
+            headerClickBg: isDarkMode ? '#212121' : '#f8f8f8'
+          },
+          Table: {
+            headerBorderRadius: 6
+          },
+          Pagination: {
+            colorTextSecondary: isDarkMode ? '#8C8C8C' : '#808080',
+            colorBgHover: isDarkMode ? '#212121' : '#F8F8F8',
+            colorDownArrow: isDarkMode ? '#FFFFFF' : '#101114'
           }
         }
       }}

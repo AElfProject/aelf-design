@@ -1,5 +1,5 @@
 import { createStyles } from 'antd-style'
-import { DropdownSizeType } from '../Dropdown'
+import { DropdownSizeType } from '../index'
 
 const useStyles = createStyles(
   (

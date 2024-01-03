@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style'
-import { InputSizeType } from 'components/Input/Input'
-import { WithSearchIconType } from 'components/Search/Search'
+import { InputSizeType } from 'components/Input/index'
+import { WithSearchIconType } from 'components/Search'
 
 const useStyles = createStyles(
   (

@@ -1,5 +1,5 @@
 import { createStyles } from 'antd-style'
-import { ButtonSizeType } from '../Button'
+import { ButtonSizeType } from '../index'
 
 const useStyles = createStyles(
   ({ css, prefixCls }, { size }: { size: ButtonSizeType }) => {

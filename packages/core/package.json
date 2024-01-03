@@ -2,18 +2,18 @@
   "name": "aelfd-core",
   "version": "0.1.0",
   "private": true,
-  "types": "./dist/index.d.ts",
+  "types": "./dist/cjs/index.d.ts",
   "main": "./dist/cjs/aelfd-core.js",
   "module": "./dist/es/aelfd-core.mjs",
   "umd": "./dist/umd/aelfd-core.umd.js",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
+        "types": "./dist/es/index.d.ts",
         "default": "./dist/es/aelfd-core.mjs"
       },
       "require": {
-        "types": "./dist/index.d.ts",
+        "types": "./dist/cjs/index.d.ts",
         "default": "./dist/cjs/aelfd-core.js"
       }
     }
