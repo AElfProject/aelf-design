@@ -2,7 +2,7 @@
   "name": "test-my-design",
   "private": false,
   "types": "./dist/cjs/index.d.ts",
-  "version": "0.1.10-alpha.0",
+  "version": "0.1.11-alpha.0",
   "main": "./dist/cjs/test-my-design.js",
   "module": "./dist/es/test-my-design.mjs",
   "umd": "./dist/umd/test-my-design.umd.js",
