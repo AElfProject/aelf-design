@@ -2,7 +2,7 @@
   "name": "test-my-design",
   "private": false,
   "types": "./dist/cjs/index.d.ts",
-  "version": "0.1.9-alpha.0",
+  "version": "0.1.10-alpha.0",
   "main": "./dist/cjs/aelfd-core.js",
   "module": "./dist/es/aelfd-core.mjs",
   "umd": "./dist/umd/aelfd-core.umd.js",
