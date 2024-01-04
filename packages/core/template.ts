@@ -46,23 +46,23 @@ function changePathStyle(props, arr, id) {
     if(props.color) {
         addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props.color + '}');
     }
-    if(props['data-hoverColor']) {
-        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-hoverColor'] + '}');
+    if(props['data-hovercolor']) {
+        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-hovercolor'] + '}');
     }
-    if(props['data-activeColor']) {
-        addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-activeColor'] + '}');
+    if(props['data-activecolor']) {
+        addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-activecolor'] + '}');
     }
-    if (Array.isArray(props['data-twoToneColor'])) {
-        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-twoToneColor'][0] + '}');
-        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-twoToneColor'][1] + '}');
+    if (Array.isArray(props['data-twotonecolor'])) {
+        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-twotonecolor'][0] + '}');
+        addNewStyle(root + '#'+ id + ' ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-twotonecolor'][1] + '}');
     }
-    if (Array.isArray(props['data-hoverTwoToneColor'])) {
-        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-hoverTwoToneColor'][0] + '}');
-        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-hoverTwoToneColor'][1] + '}');
+    if (Array.isArray(props['data-hovertwotonecolor'])) {
+        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-hovertwotonecolor'][0] + '}');
+        addNewStyle(root + '#'+ id + ':hover ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-hovertwotonecolor'][1] + '}');
     }
-    if (Array.isArray(props['data-activeTwoToneColor'])) {
-      addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-activeTwoToneColor'][0] + '}');
-      addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-activeTwoToneColor'][1] + '}');
+    if (Array.isArray(props['data-activetwotonecolor'])) {
+      addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(1) {fill: ' + props['data-activetwotonecolor'][0] + '}');
+      addNewStyle(root + '#'+ id + ':active ' + others.join(' ') + ' path:nth-of-type(2) {fill: ' + props['data-activetwotonecolor'][1] + '}');
     }
     if(props.width) {
       addNewStyle(root + '#'+ id + '{width: ' + props.width + '}');
@@ -80,7 +80,7 @@ const isArrayContainsElement = (arr1, arr2) => {
     return false;
 }
 
-const OPTIONS = ['color', 'data-activeColor', 'data-hoverColor', 'data-twoToneColor', 'data-hoverTwoToneColor', 'data-activeTwoToneColor', 'width', 'height'];
+const OPTIONS = ['color', 'data-activecolor', 'data-hovercolor', 'data-twotonecolor', 'data-hovertwotonecolor', 'data-activetwotonecolor', 'width', 'height'];
 
 const ${variables.componentName} = (${variables.props}) => {
   const isSetOptions = isArrayContainsElement(Object.keys(${variables.props}), OPTIONS);

@@ -41,11 +41,11 @@ export default createStyles(({ token, css, responsive }) => {
       align-items: center;
       height: 32px;
       justify-content: center;
-      background-color: ${token.Pagination?.colorBgHover};
+      background-color: ${token.customPagination?.colorBgHover};
       padding: 0 8px;
       border-radius: 4px;
 
-      color: ${token.Pagination?.colorTextSecondary};
+      color: ${token.customPagination?.colorTextSecondary};
       font-size: 12px;
       line-height: 20px;
     `,
@@ -71,7 +71,7 @@ export default createStyles(({ token, css, responsive }) => {
         padding-inline-end: 20px !important;
       }
       .ant-select-arrow {
-        color: ${token.Pagination?.colorDownArrow};
+        color: ${token.customPagination?.colorDownArrow};
       }
     `,
     pageSizePopup: css`
@@ -82,7 +82,7 @@ export default createStyles(({ token, css, responsive }) => {
         color: ${token.colorPrimary};
       }
       .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
-        background-color: ${token.Pagination?.colorBgHover};
+        background-color: ${token.customPagination?.colorBgHover};
       }
       .ant-select-item {
         padding: 5px 12px;
