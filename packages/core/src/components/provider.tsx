@@ -30,20 +30,22 @@ declare module 'antd-style' {
 const AELFDProvider = (props: IAelfdThemeProviderProps) => {
   return (
     <ThemeProvider<IAelfdCustomToken>
-      {...props}
       customToken={({ isDarkMode }) => {
         return {
           customCollapse: {
             headerHoverBg: isDarkMode ? '#212121' : '#f8f8f8',
-            headerClickBg: isDarkMode ? '#212121' : '#f8f8f8'
+            headerClickBg: isDarkMode ? '#212121' : '#f8f8f8',
+            ...props.customToken?.customCollapse
           },
           customTable: {
-            headerBorderRadius: 6
+            headerBorderRadius: 6,
+            ...props.customToken?.customTable
           },
           customPagination: {
             colorTextSecondary: isDarkMode ? '#8C8C8C' : '#808080',
             colorBgHover: isDarkMode ? '#212121' : '#F8F8F8',
-            colorDownArrow: isDarkMode ? '#FFFFFF' : '#101114'
+            colorDownArrow: isDarkMode ? '#FFFFFF' : '#101114',
+            ...props.customToken?.customPagination
           }
         }
       }}

@@ -6,7 +6,7 @@ import useStyles from './style'
 import type { TextAreaProps, PasswordProps } from 'antd/lib/input'
 import { ReactNode } from 'react'
 import { Theme, useTheme } from 'antd-style'
-// import {IAelfdCustomToken} from 'components/provider'
+import { OverrideToken } from 'antd/es/theme/interface'
 
 export type InputSizeType = 'small' | 'middle'
 
@@ -38,7 +38,7 @@ export interface CountConfig {
 
 const getClearIcon = (
   onClear?: React.MouseEventHandler<HTMLElement> | undefined,
-  token?: Theme
+  token?: Theme & OverrideToken
 ) => {
   return (
     <div
@@ -48,7 +48,7 @@ const getClearIcon = (
     >
       <CircleClose
         color={token?.colorBorder}
-        data-hovercolor={token?.Table.headerBg}
+        data-hovercolor={token?.Table?.headerBg}
         data-activecolor={token?.colorTextDisabled}
         width="16px"
         height="16px"
@@ -60,7 +60,6 @@ const getClearIcon = (
 function Input({ size = 'middle', className, onClear, ...rest }: IInputProps) {
   const { styles: st } = useStyles({ size })
   const token = useTheme()
-  console.log(token)
 
   return (
     <AntdInput
