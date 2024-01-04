@@ -1,6 +1,6 @@
 import { Select } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
-import { useDebounceFn } from 'ahooks'
+import { debounce } from 'lodash'
 import RightArrow from 'assets/right-arrow.svg?react'
 import LeftArrow from 'assets/left-arrow.svg?react'
 import DownArrow from 'assets/downArrow.svg?react'
@@ -62,26 +62,38 @@ export default function Pagination({
     setPageNum(page)
     pageChange && pageChange(page)
   }
-  const { run: runPrevChange } = useDebounceFn(prevChange, { wait: 300 })
+  const runPrevChange = debounce(prevChange, 300, {
+    leading: true,
+    trailing: false
+  })
 
   const nextChange = () => {
     const page = pageNum === totalPage ? totalPage : pageNum + 1
     setPageNum(page)
     pageChange && pageChange(page)
   }
-  const { run: runNextChange } = useDebounceFn(nextChange, { wait: 300 })
+  const runNextChange = debounce(nextChange, 300, {
+    leading: true,
+    trailing: false
+  })
 
   const jumpFirst = () => {
     setPageNum(1)
     pageChange && pageChange(1, pageSize)
   }
-  const { run: debounceJumpFirst } = useDebounceFn(jumpFirst, { wait: 300 })
+  const debounceJumpFirst = debounce(jumpFirst, 300, {
+    leading: true,
+    trailing: false
+  })
 
   const jumpLast = () => {
     setPageNum(totalPage)
     pageChange && pageChange(totalPage, pageSize)
   }
-  const { run: debounceJumpLast } = useDebounceFn(jumpLast, { wait: 300 })
+  const debounceJumpLast = debounce(jumpLast, 300, {
+    leading: true,
+    trailing: false
+  })
 
   const sizeChange = (value: number) => {
     setPageNum(1)

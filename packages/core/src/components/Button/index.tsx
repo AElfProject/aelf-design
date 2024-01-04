@@ -1,6 +1,6 @@
 import { Button as AntdButton, ButtonProps } from 'antd'
 import { MouseEvent } from 'react'
-import { useThrottleFn } from 'ahooks'
+import { debounce } from 'lodash'
 import useDatePolyfill from 'utils/useDatePolyfill'
 import useStyles from './style'
 
@@ -20,11 +20,15 @@ function Button({
   const { styles: st, cx } = useStyles({ size })
   useDatePolyfill()
 
-  const { run: buttonClickHandler } = useThrottleFn(
+  const buttonClickHandler = debounce(
     (e: MouseEvent<HTMLElement>) => {
       rest.onClick && rest.onClick(e)
     },
-    { wait: millisecondOfThrottle }
+    millisecondOfThrottle,
+    {
+      leading: true,
+      trailing: false
+    }
   )
   return (
     <AntdButton
