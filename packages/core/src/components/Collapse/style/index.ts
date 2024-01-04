@@ -1,7 +1,7 @@
 import { createStyles } from 'antd-style'
 
 const useStyles = createStyles(({ css, token, prefixCls }) => {
-  const { Collapse: collapseTokens } = token
+  const { customCollapse: collapseTokens } = token
   const { headerClickBg = '', headerHoverBg = '' } = collapseTokens
   return {
     aelfdCollapse: css`

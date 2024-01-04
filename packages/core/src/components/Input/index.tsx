@@ -5,6 +5,8 @@ import EyeInvisibleOutlined from 'assets/eye-invisible.svg?react'
 import useStyles from './style'
 import type { TextAreaProps, PasswordProps } from 'antd/lib/input'
 import { ReactNode } from 'react'
+import { Theme, useTheme } from 'antd-style'
+// import {IAelfdCustomToken} from 'components/provider'
 
 export type InputSizeType = 'small' | 'middle'
 
@@ -35,7 +37,8 @@ export interface CountConfig {
 }
 
 const getClearIcon = (
-  onClear?: React.MouseEventHandler<HTMLElement> | undefined
+  onClear?: React.MouseEventHandler<HTMLElement> | undefined,
+  token?: Theme
 ) => {
   return (
     <div
@@ -44,9 +47,9 @@ const getClearIcon = (
       }}
     >
       <CircleClose
-        color="#E0E0E0"
-        data-hoverColor="#F0F0F0"
-        data-activeColor="#D6D6D6"
+        color={token?.colorBorder}
+        data-hovercolor={token?.Table.headerBg}
+        data-activecolor={token?.colorTextDisabled}
         width="16px"
         height="16px"
       />
@@ -56,13 +59,16 @@ const getClearIcon = (
 
 function Input({ size = 'middle', className, onClear, ...rest }: IInputProps) {
   const { styles: st } = useStyles({ size })
+  const token = useTheme()
+  console.log(token)
+
   return (
     <AntdInput
       {...rest}
       size={size}
       className={`${st.aelfdInput} ${className || ''}`}
       allowClear={{
-        clearIcon: getClearIcon(onClear)
+        clearIcon: getClearIcon(onClear, token)
       }}
     />
   )
@@ -74,6 +80,20 @@ function InputPassword({
   ...rest
 }: InputPasswordProps) {
   const { styles: st } = useStyles({ size })
+  const token = useTheme()
+  const iconProps = {
+    'data-twotonecolor': [token?.colorBorder, token?.colorBorder],
+    'data-hovertwotonecolor': [
+      token?.colorPrimaryHover,
+      token?.colorPrimaryHover
+    ],
+    'data-activetwotonecolor': [
+      token?.colorPrimaryActive,
+      token?.colorPrimaryActive
+    ],
+    width: '16px',
+    height: '16px'
+  }
   return (
     <AntdInput.Password
       {...rest}
@@ -84,21 +104,9 @@ function InputPassword({
       }}
       iconRender={(visible) =>
         visible ? (
-          <EyeTwoTone
-            data-twoToneColor={['#E0E0E0', '#E0E0E0']}
-            data-hoverTwoToneColor={['#3B9DFF', '#3B9DFF']}
-            data-activeTwoToneColor={['#127FFF', '#127FFF']}
-            width="16px"
-            height="16px"
-          />
+          <EyeTwoTone {...iconProps} />
         ) : (
-          <EyeInvisibleOutlined
-            data-twoToneColor={['#E0E0E0', '#E0E0E0']}
-            data-hoverTwoToneColor={['#3B9DFF', '#3B9DFF']}
-            data-activeTwoToneColor={['#127FFF', '#127FFF']}
-            width="16px"
-            height="16px"
-          />
+          <EyeInvisibleOutlined {...iconProps} />
         )
       }
     ></AntdInput.Password>

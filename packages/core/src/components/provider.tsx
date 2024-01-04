@@ -7,16 +7,16 @@ export interface IAelfdThemeProviderProps
   customToken?: IAelfdCustomToken
 }
 
-interface IAelfdCustomToken {
-  Pagination: {
+export interface IAelfdCustomToken {
+  customPagination: {
     colorTextSecondary: string
     colorBgHover: string
     colorDownArrow: string
   }
-  Table: {
+  customTable: {
     headerBorderRadius: number
   }
-  Collapse: {
+  customCollapse: {
     headerHoverBg: string
     headerClickBg: string
   }
@@ -33,14 +33,14 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
       {...props}
       customToken={({ isDarkMode }) => {
         return {
-          Collapse: {
+          customCollapse: {
             headerHoverBg: isDarkMode ? '#212121' : '#f8f8f8',
             headerClickBg: isDarkMode ? '#212121' : '#f8f8f8'
           },
-          Table: {
+          customTable: {
             headerBorderRadius: 6
           },
-          Pagination: {
+          customPagination: {
             colorTextSecondary: isDarkMode ? '#8C8C8C' : '#808080',
             colorBgHover: isDarkMode ? '#212121' : '#F8F8F8',
             colorDownArrow: isDarkMode ? '#FFFFFF' : '#101114'
