@@ -15,6 +15,7 @@ import DownArrow from 'assets/downArrow.svg?react'
 import TableExample from 'examples/tableExample'
 import ModalExample from 'examples/modalExample'
 import ToolTipExample from 'examples/tooltipExample'
+import RadioExample from 'examples/radioExample'
 
 const items = [
   {
@@ -543,6 +544,10 @@ const App = () => {
             items={tabItems}
             indicatorSize={(origin) => origin - 26}
           />
+        </div>
+
+        <div className="mt-5">
+          <RadioExample />
         </div>
       </ConfigProvider>
     </div>
