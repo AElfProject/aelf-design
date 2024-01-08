@@ -10,7 +10,7 @@ export default createStyles(
       level?: 1 | 2 | 3 | 4 | 5 | 6 | 7
     }
   ) => {
-    const { fontFamily, size, level } = props
+    const { fontFamily, size = 'normal', level } = props
     let lineHeight = 0
     let fontSize = 0
     switch (level) {

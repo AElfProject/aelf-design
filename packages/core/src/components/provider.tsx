@@ -30,6 +30,7 @@ declare module 'antd-style' {
 const AELFDProvider = (props: IAelfdThemeProviderProps) => {
   return (
     <ThemeProvider<IAelfdCustomToken>
+      {...props}
       customToken={({ isDarkMode }) => {
         return {
           customCollapse: {
@@ -99,6 +100,10 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             horizontalItemPadding: '17px 16px',
             horizontalItemPaddingSM: '13px 10px',
             ...props?.theme?.components?.Tabs
+          },
+          Radio: {
+            buttonBg: appearance === 'dark' ? '#1A1A1A' : '#FFF',
+            ...props?.theme?.components?.Radio
           }
         }
         const baseToken = {
