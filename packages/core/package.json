@@ -36,6 +36,7 @@
     "@svgr/plugin-svgo": "^8.1.0",
     "ahooks": "^3.7.8",
     "antd": "^5.12.4",
+    "antd-mobile": "^5.34.0",
     "antd-style": "^3.5.2",
     "bignumber.js": "^9.1.2",
     "clsx": "^2.0.0",

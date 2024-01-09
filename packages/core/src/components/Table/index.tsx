@@ -1,9 +1,9 @@
 import { Table as AntdTable, TableProps } from 'antd'
 import { AnyObject } from 'antd/es/_util/type'
-import Pagination, { IEpPaginationProps } from 'components/Pagination'
+import Pagination, { IPaginationProps } from 'components/Pagination'
 import useStyles from './style'
 export interface ITableProps<T> extends Omit<TableProps<T>, 'pagination'> {
-  pagination?: IEpPaginationProps
+  pagination?: IPaginationProps
 }
 
 function Table<T extends AnyObject>({ pagination, ...params }: ITableProps<T>) {

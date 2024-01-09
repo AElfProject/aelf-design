@@ -5,12 +5,11 @@ import RightArrow from 'assets/right-arrow.svg?react'
 import LeftArrow from 'assets/left-arrow.svg?react'
 import DownArrow from 'assets/downArrow.svg?react'
 import Button from 'components/Button'
-import useDatePolyfill from 'utils/useDatePolyfill'
 import useStyles from './style'
 
 export type Options = number[]
 
-export interface IEpPaginationProps {
+export interface IPaginationProps {
   current?: number
   pageSize?: number
   hideOnSinglePage?: boolean
@@ -34,7 +33,7 @@ export default function Pagination({
   hideOnSinglePage,
   pageSizeChange,
   options = [10, 20, 50]
-}: IEpPaginationProps) {
+}: IPaginationProps) {
   // Component state
   const [pageNum, setPageNum] = useState<number>(defaultCurrent)
   const [pageSizeValue, setPageSizeValue] = useState<number>(defaultPageSize)
@@ -46,7 +45,6 @@ export default function Pagination({
 
   // Hooks
   const { styles, cx } = useStyles()
-  useDatePolyfill()
 
   // Effect
   useEffect(() => {

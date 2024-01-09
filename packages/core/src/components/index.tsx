@@ -13,7 +13,7 @@ export type {
 export { default as Modal } from './Modal'
 export type { IModalProps } from './Modal'
 export { default as Pagination } from './Pagination'
-export type { IEpPaginationProps } from './Pagination'
+export type { IPaginationProps } from './Pagination'
 export { default as Search } from './Search'
 export type { ISearchProps } from './Search'
 export { default as Table } from './Table'

@@ -1,7 +1,7 @@
 import { ColumnsType } from 'antd/es/table'
 import Table from '../components/Table'
 import { useEffect, useState } from 'react'
-import { IEpPaginationProps } from 'components/Pagination'
+import { IPaginationProps } from 'components/Pagination'
 interface DataType {
   key: React.Key
   name: string
@@ -35,7 +35,7 @@ const columns: ColumnsType<DataType> = [
 ]
 
 interface TableParams {
-  pagination: IEpPaginationProps
+  pagination: IPaginationProps
 }
 
 export default function TableExample() {

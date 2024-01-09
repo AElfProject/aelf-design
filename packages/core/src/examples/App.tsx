@@ -16,6 +16,11 @@ import TableExample from 'examples/tableExample'
 import ModalExample from 'examples/modalExample'
 import ToolTipExample from 'examples/tooltipExample'
 import RadioExample from 'examples/radioExample'
+import Progress from 'components/Progress'
+import {
+  DatePickerForPC as DatePicker,
+  DatePickerForMobile
+} from 'components/DatePicker'
 
 const items = [
   {
@@ -56,7 +61,10 @@ const tabItems = [
   }
 ]
 const App = () => {
+  // const { RangePicker } = DatePicker
   const [appearance, setAppearance] = useState<ThemeAppearance>('light')
+  const [visible2, setVisible2] = useState(false)
+
   const collapsetText = `
   A dog is a type of domesticated animal.
   Known for its loyalty and faithfulness,
@@ -94,7 +102,16 @@ const App = () => {
       />
       <ConfigProvider
         appearance={appearance}
-        // theme={{ token: { colorPrimary: '#9ddd13' } }}
+        theme={
+          {
+            // token: { colorPrimary: '#9ddd13' }
+            // components: {
+            //   Progress: {
+            //     colorPrimary: 'red'
+            //   }
+            // }
+          }
+        }
       >
         <div>
           <div className="mb-2 flex items-center gap-2">
@@ -548,6 +565,33 @@ const App = () => {
 
         <div className="mt-5">
           <RadioExample />
+          <Progress percent={10} size={[300, 8]} strokeColor="#00ff00" />
+          <Progress percent={50} size={[300, 12]} />
+          <Progress percent={100} size={[300, 20]} />
+        </div>
+
+        <div className="mt-5">
+          <DatePicker showTime={{ format: 'HH:mm' }} />
+          {/* <RangePicker /> */}
+          <div>
+            <Button
+              onClick={() => {
+                setVisible2(true)
+              }}
+            >
+              DatePickerForMobile
+            </Button>
+            <DatePickerForMobile
+              visible={visible2}
+              onClose={() => {
+                setVisible2(false)
+              }}
+              precision="minute"
+              onConfirm={(val) => {
+                console.log(val.toString())
+              }}
+            />
+          </div>
         </div>
       </ConfigProvider>
     </div>
