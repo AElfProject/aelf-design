@@ -1,6 +1,6 @@
 {
   "name": "aelfd-design",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "private": false,
   "types": "./dist/es/index.d.ts",
   "main": "./dist/cjs/aelfd-design.js",
@@ -18,7 +18,9 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build",
