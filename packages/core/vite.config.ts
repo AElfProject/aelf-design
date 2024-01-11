@@ -5,15 +5,17 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import svgr from 'vite-plugin-svgr'
 import { resolve } from 'path'
 import pkg from './package.json'
-// import typescript from 'rollup-plugin-typescript2'
 import commonjs from '@rollup/plugin-commonjs'
 import rollupResolve from '@rollup/plugin-node-resolve'
 import dts from 'vite-plugin-dts'
 
 import { defaultTemplate } from './template'
 
-// https://vitejs.dev/config https://vitest.dev/config
+// https://vitejs.dev/config
 export default defineConfig({
+  optimizeDeps: {
+    exclude: ['antd-mobile']
+  },
   build: {
     // emptyOutDir: false,
     lib: {
@@ -54,11 +56,6 @@ export default defineConfig({
       outDir: ['./dist/es', './dist/cjs', './dist/umd']
     }),
     rollupResolve(),
-    // typescript({
-    //   rollupCommonJSResolveHack: true,
-    //   exclude: ['**/__tests__/**', '**/*.stories.*'],
-    //   clean: true
-    // }),
     svgr({
       svgrOptions: {
         // if want to use svgoConfig, you need these two plugins first
