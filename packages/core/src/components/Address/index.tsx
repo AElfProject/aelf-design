@@ -14,7 +14,6 @@ export interface IAddressProps {
   preLen?: number
   endLen?: number
   hasCopy?: boolean
-  hasTooltip?: boolean
 }
 
 const addPrefixSuffix = (str: string, chain: TChain) => {
@@ -54,7 +53,6 @@ function Address({
   preLen = 0,
   endLen = 0,
   hasCopy = true,
-  hasTooltip = false,
   addressClickCallback
 }: IAddressProps) {
   const { styles: st } = useStyles()

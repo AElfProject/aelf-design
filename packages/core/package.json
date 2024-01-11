@@ -1,23 +1,24 @@
 {
-  "name": "aelfd-core",
-  "version": "0.1.0",
+  "name": "aelfd-design",
+  "version": "0.0.1",
   "private": false,
   "types": "./dist/es/index.d.ts",
-  "main": "./dist/cjs/aelfd-core.js",
-  "module": "./dist/es/aelfd-core.mjs",
-  "umd": "./dist/umd/aelfd-core.umd.js",
+  "main": "./dist/cjs/aelfd-design.js",
+  "module": "./dist/es/aelfd-design.mjs",
+  "umd": "./dist/umd/aelfd-design.umd.js",
   "exports": {
     ".": {
       "import": {
         "types": "./dist/es/index.d.ts",
-        "default": "./dist/es/aelfd-core.mjs"
+        "default": "./dist/es/aelfd-design.mjs"
       },
       "require": {
         "types": "./dist/cjs/index.d.ts",
-        "default": "./dist/cjs/aelfd-core.js"
+        "default": "./dist/cjs/aelfd-design.js"
       }
     }
   },
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build",
