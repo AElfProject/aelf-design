@@ -13,16 +13,13 @@ import { defaultTemplate } from './template'
 
 // https://vitejs.dev/config
 export default defineConfig({
-  optimizeDeps: {
-    exclude: ['antd-mobile']
-  },
   build: {
     // emptyOutDir: false,
     lib: {
       entry: resolve(__dirname, 'src/components/index.tsx')
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'antd-mobile'],
       output: [
         {
           dir: resolve(__dirname, 'dist/umd'),
@@ -31,7 +28,8 @@ export default defineConfig({
           sourcemap: true,
           globals: {
             react: 'react',
-            'react-dom': 'react-dom'
+            'react-dom': 'react-dom',
+            'antd-mobile': 'antd-mobile'
           }
         },
         {
