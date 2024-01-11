@@ -1,24 +1,28 @@
 {
-  "name": "aelfd-core",
-  "version": "0.1.0",
+  "name": "aelf-design",
+  "version": "0.0.16-alpha.0",
   "private": false,
   "types": "./dist/es/index.d.ts",
-  "main": "./dist/cjs/aelfd-core.js",
-  "module": "./dist/es/aelfd-core.mjs",
-  "umd": "./dist/umd/aelfd-core.umd.js",
+  "main": "./dist/cjs/aelf-design.js",
+  "module": "./dist/es/aelf-design.mjs",
+  "umd": "./dist/umd/aelf-design.umd.js",
   "exports": {
     ".": {
       "import": {
         "types": "./dist/es/index.d.ts",
-        "default": "./dist/es/aelfd-core.mjs"
+        "default": "./dist/es/aelf-design.mjs"
       },
       "require": {
         "types": "./dist/cjs/index.d.ts",
-        "default": "./dist/cjs/aelfd-core.js"
+        "default": "./dist/cjs/aelf-design.js"
       }
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "clear": "vite clear",
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build",
     "serve": "vite preview",
@@ -38,8 +42,8 @@
     "antd-style": "^3.5.2",
     "bignumber.js": "^9.1.2",
     "clsx": "^2.0.0",
-    "react-dom": "^18.2.0",
-    "react-use": "^17.4.2"
+    "copy-to-clipboard": "^3.3.3",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
@@ -106,5 +110,6 @@
       "eslint --cache --ext .js,.jsx,.ts,.tsx"
     ],
     "*.{css,less}": "stylelint --fix"
-  }
+  },
+  "gitHead": "3075f8c53f056146202fcb2f9850c972a1233199"
 }

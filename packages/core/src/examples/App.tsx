@@ -18,6 +18,7 @@ import ToolTipExample from 'examples/tooltipExample'
 import RadioExample from 'examples/radioExample'
 import ButtonExample from 'examples/buttonExample'
 import AddressExample from 'examples/addressExample'
+import LoadingExample from 'examples/loadingExample'
 import Progress from 'components/Progress'
 import {
   DatePickerForPC as DatePicker,
@@ -104,6 +105,7 @@ const App = () => {
         onChange={(e) => setAppearance(e as ThemeAppearance)}
       />
       <ConfigProvider
+        prefixCls="xx"
         appearance={appearance}
         customToken={{
           customAddress: {
@@ -386,8 +388,13 @@ const App = () => {
         <div className="mt-5">
           <AddressExample />
         </div>
+
         <div className="mt-5">
           <UploadExample />
+        </div>
+
+        <div className="mt-5">
+          <LoadingExample />
         </div>
       </ConfigProvider>
     </div>

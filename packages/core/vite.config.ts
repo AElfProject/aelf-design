@@ -5,14 +5,13 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import svgr from 'vite-plugin-svgr'
 import { resolve } from 'path'
 import pkg from './package.json'
-// import typescript from 'rollup-plugin-typescript2'
 import commonjs from '@rollup/plugin-commonjs'
 import rollupResolve from '@rollup/plugin-node-resolve'
 import dts from 'vite-plugin-dts'
 
 import { defaultTemplate } from './template'
 
-// https://vitejs.dev/config https://vitest.dev/config
+// https://vitejs.dev/config
 export default defineConfig({
   build: {
     // emptyOutDir: false,
@@ -20,7 +19,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/components/index.tsx')
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'antd', 'antd-mobile'],
       output: [
         {
           dir: resolve(__dirname, 'dist/umd'),
@@ -29,7 +28,9 @@ export default defineConfig({
           sourcemap: true,
           globals: {
             react: 'react',
-            'react-dom': 'react-dom'
+            'react-dom': 'react-dom',
+            'antd-mobile': 'antd-mobile',
+            antd: 'antd'
           }
         },
         {
@@ -54,11 +55,6 @@ export default defineConfig({
       outDir: ['./dist/es', './dist/cjs', './dist/umd']
     }),
     rollupResolve(),
-    // typescript({
-    //   rollupCommonJSResolveHack: true,
-    //   exclude: ['**/__tests__/**', '**/*.stories.*'],
-    //   clean: true
-    // }),
     svgr({
       svgrOptions: {
         // if want to use svgoConfig, you need these two plugins first
