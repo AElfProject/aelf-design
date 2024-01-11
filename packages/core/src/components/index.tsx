@@ -32,3 +32,6 @@ export { default as Radio } from './Radio'
 export type { IRadioProps } from './Radio'
 export { default as Progress } from './Progress'
 export type { IProgressProps } from './Progress'
+
+export { default as Address } from './Address'
+export type { IAddressProps } from './Address'
