@@ -1,12 +1,12 @@
 import { createStyles } from 'antd-style'
-export default createStyles(({ token, css }) => {
+export default createStyles(({ token, css, prefixCls }) => {
   return {
     tablePaginationContainer: css`
       padding: 16px 0;
     `,
     TableContainer: css`
-      .ant-table-wrapper
-        .ant-table-container
+      .${prefixCls}-table-wrapper
+        .${prefixCls}-table-container
         table
         > thead
         > tr:first-child
@@ -14,8 +14,8 @@ export default createStyles(({ token, css }) => {
         border-bottom-left-radius: ${token.customTable?.headerBorderRadius}px;
         border-start-start-radius: ${token.customTable?.headerBorderRadius}px;
       }
-      .ant-table-wrapper
-        .ant-table-container
+      .${prefixCls}-table-wrapper
+        .${prefixCls}-table-container
         table
         > thead
         > tr:first-child

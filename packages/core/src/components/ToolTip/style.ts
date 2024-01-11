@@ -1,17 +1,17 @@
 import { createStyles } from 'antd-style'
 
-export default createStyles(({ css }) => {
+export default createStyles(({ css, prefixCls }) => {
   return {
     customTooltip: css`
-      .ant-tooltip-inner {
+      .${prefixCls}-tooltip-inner {
         padding: 4px 8px;
       }
-      .ant-tooltip-arrow::after {
+      .${prefixCls}-tooltip-arrow::after {
         box-shadow: none;
         width: 11.313708498984761px;
         height: 11.313708498984761px;
       }
-      .ant-tooltip-arrow::before {
+      .${prefixCls}-tooltip-arrow::before {
         clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
       }
     `

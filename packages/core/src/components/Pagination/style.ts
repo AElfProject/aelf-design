@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style'
 
-export default createStyles(({ token, css, responsive }) => {
+export default createStyles(({ token, css, responsive, prefixCls }) => {
   return {
     paginationContainer: css`
       display: flex;
@@ -13,17 +13,18 @@ export default createStyles(({ token, css, responsive }) => {
         flex-direction: column;
         align-items: flex-start;
       }
-      .ant-select-focused.ant-select:not(.ant-select-disabled):not(
-          .ant-select-customize-input
-        ):not(.ant-pagination-size-changer)
-        .ant-select-selector {
+      .${prefixCls}-select-focused.${prefixCls}-select:not(.${prefixCls}-select-disabled):not(
+          .${prefixCls}-select-customize-input
+        ):not(.${prefixCls}-pagination-size-changer)
+        .${prefixCls}-select-selector {
         border-color: ${token.colorPrimaryActive};
       }
 
-      .ant-select-open .ant-select-arrow {
+      .${prefixCls}-select-open .${prefixCls}-select-arrow {
         rotate: 180deg;
       }
-      .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      .${prefixCls}-select:not(.${prefixCls}-select-customize-input)
+        .${prefixCls}-select-selector {
         border-color: ${token.colorTextDisabled};
       }
     `,
@@ -61,30 +62,30 @@ export default createStyles(({ token, css, responsive }) => {
       padding: 0 8px;
     `,
     pagesizeSelect: css`
-      .ant-select-selector {
+      .${prefixCls}-select-selector {
         padding: 0 8px !important;
         border-radius: 4px;
       }
 
-      .ant-select-selection-item,
-      .ant-select-selection-placeholder {
+      .${prefixCls}-select-selection-item,
+        .${prefixCls}-select-selection-placeholder {
         padding-inline-end: 20px !important;
       }
-      .ant-select-arrow {
+      .${prefixCls}-select-arrow {
         color: ${token.customPagination?.colorDownArrow};
       }
     `,
     pageSizePopup: css`
       padding: 5px 0;
       border-radius: 6px;
-      .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+      .${prefixCls}-select-item-option-selected:not(.${prefixCls}-select-item-option-disabled) {
         background-color: ${token.colorBgContainer};
         color: ${token.colorPrimary};
       }
-      .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+      .${prefixCls}-select-item-option-active:not(.${prefixCls}-select-item-option-disabled) {
         background-color: ${token.customPagination?.colorBgHover};
       }
-      .ant-select-item {
+      .${prefixCls}-select-item {
         padding: 5px 12px;
         line-height: 22px;
         border-radius: 0px;
