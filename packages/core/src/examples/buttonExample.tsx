@@ -10,7 +10,7 @@ export default function ButtonExample() {
         <Button size="medium">medium</Button>
         <Button
           onClick={() => {
-            console.log(2)
+            console.log(3)
           }}
         >
           default
