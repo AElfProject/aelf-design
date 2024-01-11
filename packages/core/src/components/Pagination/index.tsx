@@ -44,7 +44,7 @@ export default function Pagination({
   const isLastPage = pageNum >= totalPage
 
   // Hooks
-  const { styles, cx } = useStyles()
+  const { styles, cx, prefixCls } = useStyles()
 
   // Effect
   useEffect(() => {
@@ -111,11 +111,21 @@ export default function Pagination({
   }
 
   return (
-    <div className={cx(styles.paginationContainer, 'pagination-container')}>
+    <div
+      className={cx(
+        styles.paginationContainer,
+        prefixCls + '-pagination-container'
+      )}
+    >
       <div>
         {showSizeChanger && (
           <>
-            <span className={cx(styles.pagesizeLabel, 'pagesize-label')}>
+            <span
+              className={cx(
+                styles.pagesizeLabel,
+                prefixCls + '-pagesize-label'
+              )}
+            >
               Show：
             </span>
             <Select
@@ -131,7 +141,7 @@ export default function Pagination({
               className={cx(
                 styles.pagesizeLabel,
                 styles.records,
-                'pagesize-label'
+                prefixCls + '-pagesize-label'
               )}
             >
               Records
@@ -139,12 +149,15 @@ export default function Pagination({
           </>
         )}
       </div>
-      <div className={cx(styles.pageContainer, 'page-container')}>
+      <div className={cx(styles.pageContainer, prefixCls + '-page-container')}>
         <div>
           <Button
             disabled={isFirstPage}
             size="small"
-            className={cx(styles.paginationButton, 'pagination-button')}
+            className={cx(
+              styles.paginationButton,
+              prefixCls + '-pagination-button'
+            )}
             type="primary"
             ghost
             onClick={debounceJumpFirst}
@@ -156,20 +169,31 @@ export default function Pagination({
           <Button
             disabled={isFirstPage}
             type="primary"
-            className={cx(styles.paginationButton, 'pagination-button')}
+            className={cx(
+              styles.paginationButton,
+              prefixCls + '-pagination-button'
+            )}
             size="small"
             ghost
             onClick={runPrevChange}
             icon={<LeftArrow />}
           />
         </div>
-        <div className={cx('pageNumber-container', styles.pageNumberContainer)}>
+        <div
+          className={cx(
+            prefixCls + '-pageNumber-container',
+            styles.pageNumberContainer
+          )}
+        >
           <div>{`Page ${current || pageNum} of ${totalPage}`}</div>
         </div>
         <div>
           <Button
             type="primary"
-            className={cx(styles.paginationButton, 'pagination-button')}
+            className={cx(
+              styles.paginationButton,
+              prefixCls + '-pagination-button'
+            )}
             size="small"
             ghost
             disabled={isLastPage}
@@ -180,7 +204,10 @@ export default function Pagination({
         <div>
           <Button
             disabled={isLastPage}
-            className={cx(styles.paginationButton, 'pagination-button')}
+            className={cx(
+              styles.paginationButton,
+              prefixCls + '-pagination-button'
+            )}
             type="primary"
             size="small"
             ghost

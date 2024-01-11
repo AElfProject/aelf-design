@@ -3,11 +3,11 @@ import useStyles from './style'
 
 export interface IRadioProps extends RadioProps {}
 function Radio(props: IRadioProps) {
-  const { styles, cx } = useStyles()
+  const { styles, cx, prefixCls } = useStyles()
   return (
     <AntdRadio
       {...props}
-      className={cx('aelf-design-radio', styles.aelfDesignRadio)}
+      className={cx(prefixCls + '-radio', styles.aelfDesignRadio)}
     />
   )
 }

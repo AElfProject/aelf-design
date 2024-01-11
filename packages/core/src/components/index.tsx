@@ -37,3 +37,5 @@ export type {
   TDatePickerPropsForPC,
   TDatePickerPropsForMobile
 } from './DatePicker'
+export { default as Address } from './Address'
+export type { IAddressProps } from './Address'

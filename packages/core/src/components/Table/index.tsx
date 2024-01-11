@@ -7,9 +7,9 @@ export interface ITableProps<T> extends Omit<TableProps<T>, 'pagination'> {
 }
 
 function Table<T extends AnyObject>({ pagination, ...params }: ITableProps<T>) {
-  const { styles, cx } = useStyles()
+  const { styles, cx, prefixCls } = useStyles()
   return (
-    <div className={cx('table-container', styles.TableContainer)}>
+    <div className={cx(prefixCls + '-table-container', styles.TableContainer)}>
       <AntdTable<T> {...params} pagination={false} />
       {pagination && (
         <div className={cx(styles.tablePaginationContainer)}>
