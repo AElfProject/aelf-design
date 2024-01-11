@@ -2,25 +2,25 @@ import { ThemeConfig } from 'antd'
 import { ThemeAppearance, ThemeProvider, ThemeProviderProps } from 'antd-style'
 
 export interface IAelfdThemeProviderProps
-  extends Omit<ThemeProviderProps<IAelfdCustomToken>, 'theme'> {
+  extends Omit<ThemeProviderProps<IAelfdCustomToken>, 'theme' | 'customToken'> {
   theme?: ThemeConfig
   customToken?: IAelfdCustomToken
 }
 
 export interface IAelfdCustomToken {
-  customPagination: {
+  customPagination?: {
     colorTextSecondary: string
     colorBgHover: string
     colorDownArrow: string
   }
-  customTable: {
+  customTable?: {
     headerBorderRadius: number
   }
-  customCollapse: {
+  customCollapse?: {
     headerHoverBg: string
     headerClickBg: string
   }
-  customAddress: {
+  customAddress?: {
     primaryLinkColor: string
     primaryIconColor: string
     addressHoverColor: string

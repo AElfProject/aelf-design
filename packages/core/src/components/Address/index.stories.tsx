@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import Address from './index'
 
 const meta = {
-  title: 'Example/Button',
+  title: 'Example/Address',
   component: Address,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Address>
 // // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   args: {
-    address: 'fiasdfjlskafjaslfjsldfjlsdkfjlk'
+    address: 'iCQmBkK5m4FC6DMjkMGAx4q3niWfvTN6DqWgU7BYSGCRMAdDr'
   },
   parameters: {
     layout: 'padded'
