@@ -1,8 +1,8 @@
-import { Radio as AntdRadio } from 'antd'
-import { RadioProps } from 'antd/lib'
+import { Radio as AntdRadio, RadioProps } from 'antd'
 import useStyles from './style'
 
-function Radio(props: RadioProps) {
+export interface IRadioProps extends RadioProps {}
+function Radio(props: IRadioProps) {
   const { styles, cx } = useStyles()
   return (
     <AntdRadio

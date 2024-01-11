@@ -16,7 +16,6 @@ function Modal({
 }: IModalProps) {
   const { styles, cx } = useStyles()
   const token = useTheme()
-  console.log(token)
   return (
     <AntdModal
       {...props}

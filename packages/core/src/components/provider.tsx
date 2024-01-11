@@ -20,6 +20,12 @@ export interface IAelfdCustomToken {
     headerHoverBg: string
     headerClickBg: string
   }
+  customAddress: {
+    primaryLinkColor: string
+    primaryIconColor: string
+    addressHoverColor: string
+    addressActiveColor: string
+  }
 }
 
 declare module 'antd-style' {
@@ -30,6 +36,7 @@ declare module 'antd-style' {
 const AELFDProvider = (props: IAelfdThemeProviderProps) => {
   return (
     <ThemeProvider<IAelfdCustomToken>
+      prefixCls="aelfd"
       {...props}
       customToken={({ isDarkMode }) => {
         return {
@@ -47,11 +54,21 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorBgHover: isDarkMode ? '#212121' : '#F8F8F8',
             colorDownArrow: isDarkMode ? '#FFFFFF' : '#101114',
             ...props.customToken?.customPagination
+          },
+          customAddress: {
+            primaryLinkColor: isDarkMode ? '#127FFF' : '#1370DD',
+            primaryIconColor: isDarkMode ? '#484848' : '#E0E0E0',
+            addressHoverColor: isDarkMode ? '#3689DD' : '#3B9DFF',
+            addressActiveColor: isDarkMode ? '#0756BC' : '#0460D9',
+            ...props.customToken?.customAddress
           }
         }
       }}
       theme={(appearance: ThemeAppearance) => {
         const comp = {
+          Button: {
+            colorPrimary: appearance === 'dark' ? '#1370DD' : '#127FFF'
+          },
           Input: {
             paddingBlock: 11,
             paddingBlockSM: 7,
@@ -104,6 +121,17 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
           Radio: {
             buttonBg: appearance === 'dark' ? '#1A1A1A' : '#FFF',
             ...props?.theme?.components?.Radio
+          },
+          Progress: {
+            remainingColor: appearance === 'dark' ? '#282828' : '#F5F5F5',
+            colorSuccess: appearance === 'dark' ? '#1370DD' : '#127FFF',
+            defaultColor: appearance === 'dark' ? '#1370DD' : '#127FFF',
+            ...props?.theme?.components?.Progress
+          },
+          DatePicker: {
+            cellWidth: 44,
+            cellHeight: 24,
+            ...props?.theme?.components?.DatePicker
           }
         }
         const baseToken = {

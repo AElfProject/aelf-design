@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react'
 import React from 'react'
-import ConfigProvider from '../src/provider'
+import ConfigProvider from '../src/components/provider'
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
