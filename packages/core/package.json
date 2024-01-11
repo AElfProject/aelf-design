@@ -2,7 +2,7 @@
   "name": "aelf-design",
   "version": "0.0.3-alpha.0",
   "private": false,
-  "types": "./dist/es/index.d.ts",
+  "types": "./dist/cjs/index.d.ts",
   "main": "./dist/cjs/aelf-design.js",
   "module": "./dist/es/aelf-design.mjs",
   "umd": "./dist/umd/aelf-design.umd.js",
