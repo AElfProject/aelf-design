@@ -6,15 +6,7 @@ import {
   DatePicker as AdmDatePicker,
   DatePickerProps as AdmDatePickerProps
 } from 'antd-mobile'
-import dayjs from 'dayjs'
-import 'dayjs/locale/zh-cn'
-import updateLocale from 'dayjs/plugin/updateLocale'
 import useStyles from './style'
-
-dayjs.extend(updateLocale)
-dayjs.updateLocale('zh-cn', {
-  weekStart: 0
-})
 
 export type TDatePickerPropsForPC = AntdDatePickerProps
 export type TDatePickerPropsForMobile = AdmDatePickerProps
