@@ -20,6 +20,12 @@ export interface IAelfdCustomToken {
     headerHoverBg: string
     headerClickBg: string
   }
+  customAddress: {
+    primaryLinkColor: string
+    primaryIconColor: string
+    addressHoverColor: string
+    addressActiveColor: string
+  }
 }
 
 declare module 'antd-style' {
@@ -30,6 +36,7 @@ declare module 'antd-style' {
 const AELFDProvider = (props: IAelfdThemeProviderProps) => {
   return (
     <ThemeProvider<IAelfdCustomToken>
+      prefixCls="aelfd"
       {...props}
       customToken={({ isDarkMode }) => {
         return {
@@ -47,6 +54,13 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorBgHover: isDarkMode ? '#212121' : '#F8F8F8',
             colorDownArrow: isDarkMode ? '#FFFFFF' : '#101114',
             ...props.customToken?.customPagination
+          },
+          customAddress: {
+            primaryLinkColor: isDarkMode ? '#127FFF' : '#1370DD',
+            primaryIconColor: isDarkMode ? '#484848' : '#E0E0E0',
+            addressHoverColor: isDarkMode ? '#3689DD' : '#3B9DFF',
+            addressActiveColor: isDarkMode ? '#0756BC' : '#0460D9',
+            ...props.customToken?.customAddress
           }
         }
       }}

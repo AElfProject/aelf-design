@@ -1,8 +1,8 @@
 {
   "name": "aelfd-core",
   "version": "0.1.0",
-  "private": true,
-  "types": "./dist/cjs/index.d.ts",
+  "private": false,
+  "types": "./dist/es/index.d.ts",
   "main": "./dist/cjs/aelfd-core.js",
   "module": "./dist/es/aelfd-core.mjs",
   "umd": "./dist/umd/aelfd-core.umd.js",
@@ -27,20 +27,19 @@
     "lint": "eslint src --max-warnings=0",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepare": "husky install"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@svgr/babel-plugin-transform-svg-component": "^8.0.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
-    "ahooks": "^3.7.8",
     "antd": "^5.12.4",
     "antd-mobile": "^5.34.0",
     "antd-style": "^3.5.2",
     "bignumber.js": "^9.1.2",
     "clsx": "^2.0.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-use": "^17.4.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
