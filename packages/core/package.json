@@ -1,20 +1,20 @@
 {
-  "name": "aelf-design",
+  "name": "aelfd-design",
   "version": "0.0.6-alpha.0",
   "private": false,
   "types": "./dist/es/index.d.ts",
-  "main": "./dist/cjs/aelf-design.js",
-  "module": "./dist/es/aelf-design.mjs",
-  "umd": "./dist/umd/aelf-design.umd.js",
+  "main": "./dist/cjs/aelfd-design.js",
+  "module": "./dist/es/aelfd-design.mjs",
+  "umd": "./dist/umd/aelfd-design.umd.js",
   "exports": {
     ".": {
       "import": {
         "types": "./dist/es/index.d.ts",
-        "default": "./dist/es/aelf-design.mjs"
+        "default": "./dist/es/aelfd-design.mjs"
       },
       "require": {
         "types": "./dist/cjs/index.d.ts",
-        "default": "./dist/cjs/aelf-design.js"
+        "default": "./dist/cjs/aelfd-design.js"
       }
     }
   },
