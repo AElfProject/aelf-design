@@ -11,7 +11,7 @@ export default function AddressExample() {
       />
 
       <Address
-        address="iCQmBjkkkK5m4FC6DMjkMGAx4q3niWfvTN6DqWgU7BYSGCRMAdDr"
+        address="iCQmBjkkkK5m4FdC6DMjkMGAx4q3niWfvTN6DqWgU7BYSGCRMAdDr"
         chain="tDVV"
       />
       <Address
