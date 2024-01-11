@@ -19,10 +19,7 @@ import RadioExample from 'examples/radioExample'
 import ButtonExample from 'examples/buttonExample'
 import AddressExample from 'examples/addressExample'
 import Progress from 'components/Progress'
-import {
-  DatePickerForPC as DatePicker,
-  DatePickerForMobile
-} from 'components/DatePicker'
+import { DatePickerForPC as DatePicker } from 'components/DatePicker'
 
 const items = [
   {
@@ -65,7 +62,7 @@ const tabItems = [
 const App = () => {
   // const { RangePicker } = DatePicker
   const [appearance, setAppearance] = useState<ThemeAppearance>('light')
-  const [visible2, setVisible2] = useState(false)
+  const [, setVisible2] = useState(false)
 
   const collapsetText = `
   A dog is a type of domesticated animal.
@@ -369,7 +366,7 @@ const App = () => {
             >
               DatePickerForMobile
             </Button>
-            <DatePickerForMobile
+            {/* <DatePickerForMobile
               visible={visible2}
               onClose={() => {
                 setVisible2(false)
@@ -378,7 +375,7 @@ const App = () => {
               onConfirm={(val) => {
                 console.log(val.toString())
               }}
-            />
+            /> */}
           </div>
         </div>
 
