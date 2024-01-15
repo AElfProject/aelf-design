@@ -107,14 +107,14 @@ const App = () => {
       <ConfigProvider
         prefixCls="xx"
         appearance={appearance}
-        customToken={{
-          customAddress: {
-            primaryLinkColor: appearance == 'dark' ? '#c713af' : '#53dd13',
-            primaryIconColor: appearance == 'dark' ? '#ea1818' : '#7f7777',
-            addressHoverColor: appearance == 'dark' ? '#38b117' : '#149434',
-            addressActiveColor: appearance == 'dark' ? '#0756BC' : '#0460D9'
-          }
-        }}
+        // customToken={{
+        //   customAddress: {
+        //     primaryLinkColor: appearance == 'dark' ? '#c713af' : '#53dd13',
+        //     primaryIconColor: appearance == 'dark' ? '#ea1818' : '#7f7777',
+        //     addressHoverColor: appearance == 'dark' ? '#38b117' : '#149434',
+        //     addressActiveColor: appearance == 'dark' ? '#0756BC' : '#0460D9'
+        //   }
+        // }}
         theme={
           {
             // token: { colorPrimary: appearance == 'dark' ? '#9ddd13' : 'red' }
