@@ -26,6 +26,11 @@ export interface IAelfdCustomToken {
     addressHoverColor: string
     addressActiveColor: string
   }
+  customUpload: {
+    borderColor: string
+    containerBg: string
+    colorMessageText: string
+  }
 }
 
 declare module 'antd-style' {
@@ -61,6 +66,12 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             addressHoverColor: isDarkMode ? '#3689DD' : '#3B9DFF',
             addressActiveColor: isDarkMode ? '#0756BC' : '#0460D9',
             ...props.customToken?.customAddress
+          },
+          customUpload: {
+            borderColor: isDarkMode ? '#484848' : '#E0E0E0',
+            containerBg: isDarkMode ? '#212121' : '#F8F8F8',
+            colorMessageText: isDarkMode ? '#8C8C8C' : '#808080',
+            ...props.customToken?.customUpload
           }
         }
       }}
