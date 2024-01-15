@@ -26,7 +26,7 @@ export interface IAelfdCustomToken {
     addressHoverColor: string
     addressActiveColor: string
   }
-  customUpload: {
+  customUpload?: {
     borderColor: string
     containerBg: string
     colorMessageText: string

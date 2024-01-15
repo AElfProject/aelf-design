@@ -2,7 +2,6 @@ import { createStyles } from 'antd-style'
 
 const useStyles = createStyles(({ css, token, prefixCls }) => {
   const { customCollapse: collapseTokens } = token
-  const { headerClickBg = '', headerHoverBg = '' } = collapseTokens
   return {
     aelfdCollapse: css`
       overflow: hidden;
@@ -14,11 +13,11 @@ const useStyles = createStyles(({ css, token, prefixCls }) => {
       }
       .${prefixCls}-collapse-header {
         &:hover {
-          background-color: ${headerHoverBg};
+          background-color: ${collapseTokens?.headerHoverBg};
         }
         &:active {
           color: #127fff;
-          background-color: ${headerClickBg};
+          background-color: ${collapseTokens?.headerClickBg};
         }
       }
       svg {

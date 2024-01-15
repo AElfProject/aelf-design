@@ -10,7 +10,7 @@ import ClearIcon from 'assets/clear-icon.svg?react'
 import { useTheme } from 'antd-style'
 import { RcFile, UploadFile } from 'antd/es/upload'
 
-export interface UploadProps
+export interface IUploadProps
   extends Omit<AntdUploadProps, 'listType' | 'itemRender'> {
   tips?: string | ReactNode
 }
@@ -63,7 +63,7 @@ function UploadItemRender({
   )
 }
 
-function Upload(props: UploadProps) {
+function Upload(props: IUploadProps) {
   const { styles, cx, prefixCls } = useStyles()
   const token = useTheme()
   const { tips } = props

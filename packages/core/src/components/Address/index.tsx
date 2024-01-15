@@ -3,7 +3,7 @@ import Copy from './copy'
 
 type TChain = 'AELF' | 'tDVV' | 'tDVW'
 
-export interface IAddressProps {
+export interface IHashAddressProps {
   address: string
   addressClickCallback?: (
     originAddress?: string,
@@ -14,7 +14,6 @@ export interface IAddressProps {
   preLen?: number
   endLen?: number
   hasCopy?: boolean
-  hasTooltip?: boolean
 }
 
 const addPrefixSuffix = (str: string, chain: TChain) => {
@@ -54,10 +53,9 @@ function Address({
   preLen = 0,
   endLen = 0,
   hasCopy = true,
-  hasTooltip = false,
   addressClickCallback
-}: IAddressProps) {
-  const { styles: st } = useStyles()
+}: IHashAddressProps) {
+  const { styles: st, cx, prefixCls } = useStyles()
 
   const addPrefixSuffixTxt = addPrefixSuffix(address, chain)
   const omittedStr = getOmittedStr(addPrefixSuffixTxt, preLen, endLen)
@@ -67,7 +65,7 @@ function Address({
   }
 
   return (
-    <div className={st.addressWrap}>
+    <div className={cx(st.addressWrap, prefixCls + '-hash-address')}>
       <span className={st.addressText} onClick={addressClickHandler}>
         {omittedStr}
       </span>

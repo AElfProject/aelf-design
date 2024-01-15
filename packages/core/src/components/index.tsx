@@ -37,5 +37,7 @@ export type {
   TDatePickerPropsForPC,
   TDatePickerPropsForMobile
 } from './DatePicker'
-export { default as Address } from './Address'
-export type { IAddressProps } from './Address'
+export { default as HashAddress } from './Address'
+export type { IHashAddressProps } from './Address'
+export { default as Upload } from './Upload'
+export type { IUploadProps } from './Upload'
