@@ -23,6 +23,7 @@ import {
   DatePickerForPC as DatePicker,
   DatePickerForMobile
 } from 'components/DatePicker'
+import UploadExample from './uploadExample'
 
 const items = [
   {
@@ -384,6 +385,9 @@ const App = () => {
 
         <div className="mt-5">
           <AddressExample />
+        </div>
+        <div className="mt-5">
+          <UploadExample />
         </div>
       </ConfigProvider>
     </div>
