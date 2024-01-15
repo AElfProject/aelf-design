@@ -149,7 +149,11 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
           screenXXLMin: 1441,
           screenXLMax: 1440,
           screenLGMax: 1024,
+          screenLGMin: 769,
+          screenLG: 769,
           screenMDMax: 768,
+          screenMDMin: 641,
+          screenMD: 641,
           screenSMMax: 640
         }
         if (appearance === 'dark') {

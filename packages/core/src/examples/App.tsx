@@ -19,6 +19,7 @@ import RadioExample from 'examples/radioExample'
 import ButtonExample from 'examples/buttonExample'
 import AddressExample from 'examples/addressExample'
 import LoadingExample from 'examples/loadingExample'
+import CarouselExample from './carouselExample'
 import Progress from 'components/Progress'
 import {
   DatePickerForPC as DatePicker,
@@ -395,6 +396,9 @@ const App = () => {
 
         <div className="mt-5">
           <LoadingExample />
+          </div>
+        <div className="mt-5">
+          <CarouselExample />
         </div>
       </ConfigProvider>
     </div>
