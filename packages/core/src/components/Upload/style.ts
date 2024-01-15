@@ -54,8 +54,8 @@ export default createStyles(({ css, token, prefixCls }) => {
       min-height: 252px;
       border-radius: 6px;
       padding: 24px;
-      border: 1px dashed ${token.customUpload.borderColor};
-      background: ${token.customUpload.containerBg};
+      border: 1px dashed ${token.customUpload?.borderColor};
+      background: ${token.customUpload?.containerBg};
       :hover {
         svg * {
           fill: ${token.colorPrimaryHover} !important;
@@ -74,7 +74,7 @@ export default createStyles(({ css, token, prefixCls }) => {
       color: ${token.colorTextBase};
     `,
     message: css`
-      color: ${token.customUpload.colorMessageText};
+      color: ${token.customUpload?.colorMessageText};
       text-align: center;
       font-size: 12px;
       line-height: 20px;
@@ -95,7 +95,7 @@ export default createStyles(({ css, token, prefixCls }) => {
       padding: 24px;
       box-sizing: border-box;
       border-radius: 6px;
-      border: 1px dashed ${token.customUpload.borderColor};
+      border: 1px dashed ${token.customUpload?.borderColor};
       background: ${token.colorBgContainer};
 
       .fileName {
