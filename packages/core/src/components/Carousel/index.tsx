@@ -10,18 +10,18 @@ import useStyles from './styles'
 import PrevButton from 'assets/prev.svg?react'
 import NextButton from 'assets/next.svg?react'
 
-export interface ISlideItem {
+export interface ICarouselSlideItem {
   url: string
-  [key: string]: unknown
+  [key: string]: any
 }
 
-export interface ISwiperProps {
-  data: ISlideItem[]
+export interface ICarouselProps {
+  data: ICarouselSlideItem[]
   className?: string
-  onSlideClick?: (value: ISlideItem) => void
+  onSlideClick?: (value: ICarouselSlideItem) => void
 }
 
-export default function Carousel(props: ISwiperProps) {
+export default function Carousel(props: ICarouselProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
   const { data, onSlideClick, className } = props
   const { styles: st, cx, prefixCls } = useStyles()
@@ -85,7 +85,7 @@ export default function Carousel(props: ISwiperProps) {
           setThumbsSwiper(swiper as unknown as SetStateAction<null>)
         }}
         autoHeight
-        spaceBetween={16}
+        spaceBetween={responsive.md ? 16 : 12}
         slidesPerView={5}
         freeMode={true}
         watchSlidesProgress={true}

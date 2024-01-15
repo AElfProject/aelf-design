@@ -41,3 +41,6 @@ export { default as HashAddress } from './Address'
 export type { IHashAddressProps } from './Address'
 export { default as Upload } from './Upload'
 export type { IUploadProps } from './Upload'
+
+export { default as Carousel } from './Carousel'
+export type { ICarouselProps } from './Carousel'
