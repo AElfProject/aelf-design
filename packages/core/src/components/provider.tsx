@@ -9,34 +9,34 @@ export interface IAelfdThemeProviderProps
 
 export interface IAelfdCustomToken {
   customPagination?: {
-    colorTextSecondary: string
-    colorBgHover: string
-    colorDownArrow: string
+    colorTextSecondary?: string
+    colorBgHover?: string
+    colorDownArrow?: string
   }
   customTable?: {
-    headerBorderRadius: number
+    headerBorderRadius?: number
   }
   customCollapse?: {
-    headerHoverBg: string
-    headerClickBg: string
+    headerHoverBg?: string
+    headerClickBg?: string
   }
   customAddress?: {
-    primaryLinkColor: string
-    primaryIconColor: string
-    addressHoverColor: string
-    addressActiveColor: string
+    primaryLinkColor?: string
+    primaryIconColor?: string
+    addressHoverColor?: string
+    addressActiveColor?: string
   }
   customUpload?: {
-    borderColor: string
-    containerBg: string
-    colorMessageText: string
+    borderColor?: string
+    containerBg?: string
+    colorMessageText?: string
   }
   customRichProgress?: {
-    colorText: string
-    colorTextSecondary: string
-    progressLineColor: string
-    progressLineErrorColor: string
-    progressLineBg: string
+    colorText?: string
+    colorTextSecondary?: string
+    progressLineColor?: string
+    progressLineErrorColor?: string
+    progressLineBg?: string
   }
 }
 
@@ -93,7 +93,8 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
       theme={(appearance: ThemeAppearance) => {
         const comp = {
           Button: {
-            colorPrimary: appearance === 'dark' ? '#1370DD' : '#127FFF'
+            colorPrimary: appearance === 'dark' ? '#1370DD' : '#127FFF',
+            ...props.theme?.components?.Input
           },
           Input: {
             paddingBlock: 11,

@@ -37,7 +37,7 @@ const AliyunOSSUpload = ({ value, onChange }: AliyunOSSUploadProps) => {
       const result = await mockGetOSSData()
       setOSSData(result)
     } catch (error) {
-      message.error(error)
+      message.error('error')
     }
   }
 
@@ -75,8 +75,8 @@ const AliyunOSSUpload = ({ value, onChange }: AliyunOSSUploadProps) => {
       await init()
     }
 
-    const suffix = file.name.slice(file.name.lastIndexOf('.'))
-    const filename = Date.now() + suffix
+    // const suffix = file.name.slice(file.name.lastIndexOf('.'))
+    // const filename = Date.now() + suffix
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     // file.url = OSSData.dir + filename
