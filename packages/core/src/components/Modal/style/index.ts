@@ -21,6 +21,9 @@ const useStyles = createStyles(({ token, css, prefixCls }) => {
       .${prefixCls}-modal-header {
         padding-right: 16px;
       }
+    `,
+    closeIconWrap: css`
+      display: flex;
     `
   }
 })

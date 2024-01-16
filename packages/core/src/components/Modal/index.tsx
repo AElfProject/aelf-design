@@ -3,14 +3,14 @@ import Close from 'assets/close.svg?react'
 import useStyles from './style'
 import { useTheme } from 'antd-style'
 
-export interface IModalProps
-  extends Omit<ModalProps, 'wrapClassName' | 'closeIcon'> {
+export interface IModalProps extends Omit<ModalProps, 'wrapClassName'> {
   wrapClassName?: string
 }
 
 function Modal({
   wrapClassName,
   width = 438,
+  closeIcon = true,
   children,
   ...props
 }: IModalProps) {
@@ -22,9 +22,11 @@ function Modal({
       width={width}
       wrapClassName={cx(styles.modalWrap, wrapClassName)}
       closeIcon={
-        <div className={styles.modalWrap}>
-          <Close color={token?.colorTextBase} width="16" height="16" />
-        </div>
+        closeIcon ? (
+          <div className={styles.closeIconWrap}>
+            <Close color={token?.colorTextBase} width="16" height="16" />
+          </div>
+        ) : null
       }
     >
       {children}

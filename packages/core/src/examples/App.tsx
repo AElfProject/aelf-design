@@ -2,6 +2,7 @@ import Pagination from 'components/Pagination'
 import { SearchOutlined, AndroidOutlined } from '@ant-design/icons'
 import Button from 'components/Button'
 import Input from 'components/Input'
+import { Input as AInput } from 'antd'
 import Dropdown from 'components/Dropdown'
 import Typography, { FontWeightType } from 'components/Typography'
 import ConfigProvider from '../components/provider'
@@ -106,24 +107,24 @@ const App = () => {
         onChange={(e) => setAppearance(e as ThemeAppearance)}
       />
       <ConfigProvider
-        prefixCls="xx"
+        prefixCls="xxxx"
         appearance={appearance}
-        customToken={{
-          customAddress: {
-            primaryLinkColor: appearance == 'dark' ? '#c713af' : '#53dd13',
-            primaryIconColor: appearance == 'dark' ? '#ea1818' : '#7f7777',
-            addressHoverColor: appearance == 'dark' ? '#38b117' : '#149434',
-            addressActiveColor: appearance == 'dark' ? '#0756BC' : '#0460D9'
-          }
-        }}
-        theme={{
-          token: { colorPrimary: appearance == 'dark' ? '#9ddd13' : 'red' }
-          // components: {
-          //   Progress: {
-          //     colorPrimary: 'red'
-          //   }
-          // }
-        }}
+        // customToken={{
+        //   customAddress: {
+        //     primaryLinkColor: appearance == 'dark' ? '#c713af' : '#53dd13',
+        //     primaryIconColor: appearance == 'dark' ? '#ea1818' : '#7f7777',
+        //     addressHoverColor: appearance == 'dark' ? '#38b117' : '#149434',
+        //     addressActiveColor: appearance == 'dark' ? '#0756BC' : '#0460D9'
+        //   }
+        // }}
+        // theme={{
+        //   token: { colorPrimary: appearance == 'dark' ? '#9ddd13' : 'red' }
+        //   // components: {
+        //   //   Progress: {
+        //   //     colorPrimary: 'red'
+        //   //   }
+        //   // }
+        // }}
       >
         <ButtonExample />
 
@@ -141,13 +142,14 @@ const App = () => {
               // addonAfter=".com"
             />
           </div>
+          <AInput placeholder="xx" />
           <div className="mb-4">
-            <Input
+            {/* <Input
               status="error"
               size="small"
               className="w-[400px]"
               placeholder="small"
-            />
+            /> */}
           </div>
           <div className="mb-4">
             <Input
@@ -396,7 +398,7 @@ const App = () => {
 
         <div className="mt-5">
           <LoadingExample />
-          </div>
+        </div>
         <div className="mt-5">
           <CarouselExample />
         </div>
