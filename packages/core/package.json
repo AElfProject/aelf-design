@@ -37,13 +37,10 @@
     "@svgr/babel-plugin-transform-svg-component": "^8.0.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
-    "antd": "^5.12.4",
     "antd-mobile": "^5.34.0",
     "antd-style": "^3.5.2",
     "bignumber.js": "^9.1.2",
-    "clsx": "^2.0.0",
     "copy-to-clipboard": "^3.3.3",
-    "react-dom": "^18.2.0",
     "swiper": "^11.0.5"
   },
   "devDependencies": {
@@ -68,6 +65,7 @@
     "@typescript-eslint/parser": "^6.7.3",
     "@vitejs/plugin-react-swc": "^3.4.0",
     "@vitest/ui": "^0.34.6",
+    "antd": "^5.13.1",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
