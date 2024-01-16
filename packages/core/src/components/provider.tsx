@@ -94,7 +94,7 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
         const comp = {
           Button: {
             colorPrimary: appearance === 'dark' ? '#1370DD' : '#127FFF',
-            ...props.theme?.components?.Input
+            ...props.theme?.components?.Button
           },
           Input: {
             paddingBlock: 11,
