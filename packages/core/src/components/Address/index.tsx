@@ -3,6 +3,8 @@ import Copy from './copy'
 
 type TChain = 'AELF' | 'tDVV' | 'tDVW'
 
+export type AddressSize = 'small' | 'default' | 'large' | 'ultra'
+
 export interface IHashAddressProps {
   address: string
   addressClickCallback?: (
@@ -14,6 +16,8 @@ export interface IHashAddressProps {
   preLen?: number
   endLen?: number
   hasCopy?: boolean
+  className?: string
+  size?: AddressSize
 }
 
 const addPrefixSuffix = (str: string, chain: TChain) => {
@@ -53,9 +57,11 @@ function Address({
   preLen = 0,
   endLen = 0,
   hasCopy = true,
-  addressClickCallback
+  addressClickCallback,
+  className,
+  size = 'default'
 }: IHashAddressProps) {
-  const { styles: st, cx, prefixCls } = useStyles()
+  const { styles: st, cx, prefixCls } = useStyles({ size })
 
   const addPrefixSuffixTxt = addPrefixSuffix(address, chain)
   const omittedStr = getOmittedStr(addPrefixSuffixTxt, preLen, endLen)
@@ -65,12 +71,17 @@ function Address({
   }
 
   return (
-    <div className={cx(st.addressWrap, prefixCls + '-hash-address')}>
+    <div className={cx(st.addressWrap, className, prefixCls + '-hash-address')}>
       <span className={st.addressText} onClick={addressClickHandler}>
         {omittedStr}
       </span>
       {hasCopy && (
-        <Copy className={st.copyBtn} value={addPrefixSuffix(address, chain)} />
+        <div className={st.copyBtnWrap}>
+          <Copy
+            className={st.copyBtn}
+            value={addPrefixSuffix(address, chain)}
+          />
+        </div>
       )}
     </div>
   )
