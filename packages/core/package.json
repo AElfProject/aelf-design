@@ -37,7 +37,7 @@
     "@svgr/babel-plugin-transform-svg-component": "^8.0.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
-    "antd": "^5.12.4",
+    "antd": "^5.13.1",
     "antd-mobile": "^5.34.0",
     "antd-style": "^3.5.2",
     "bignumber.js": "^9.1.2",
