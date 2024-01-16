@@ -26,6 +26,8 @@ import {
   DatePickerForMobile
 } from 'components/DatePicker'
 import UploadExample from './uploadExample'
+import { ProgressModal } from 'components/ProgressModal'
+import { IStepItem } from 'components/RichProgress'
 
 const items = [
   {
@@ -90,6 +92,34 @@ const App = () => {
       key: '3',
       label: 'This is panel header 3',
       children: <div>{collapsetText}</div>
+    }
+  ]
+
+  const [showProgress, setShowProgress] = useState(false)
+  const steps: IStepItem[] = [
+    {
+      title: 'Title1Title1Title1',
+      subTitle: 'subTitle1subTitle1.',
+      percent: 100,
+      progressTip: 'About 15 sec',
+      status: 'normal',
+      available: false
+    },
+    {
+      title: 'Title2Title2Title2',
+      subTitle: 'subTitle2subTitle2subTitle2subTitle2.',
+      percent: 60,
+      progressTip: 'About 3~5 min',
+      status: 'exception',
+      available: true
+    },
+    {
+      title: 'Title3Title3Title3',
+      subTitle: 'subTitle3subTitle3subTitle3subTitle3subTitle3subTitle3.',
+      percent: 0,
+      progressTip: 'About 20 sec',
+      status: 'normal',
+      available: false
     }
   ]
 
@@ -396,9 +426,29 @@ const App = () => {
 
         <div className="mt-5">
           <LoadingExample />
-          </div>
+        </div>
         <div className="mt-5">
           <CarouselExample />
+        </div>
+        <div className="mt-5">
+          <ProgressModal
+            title="test-progress"
+            open={showProgress}
+            steps={steps}
+            strokeErrorColor={appearance === 'dark' ? '#D43939' : '#F53F3F'}
+            strokeColor={appearance === 'dark' ? '#1370DD' : '#127FFF'}
+            trailColor={appearance === 'dark' ? '#353535' : '#f0f0f0'}
+            onCancel={() => {
+              setShowProgress(false)
+            }}
+          />
+          <Button
+            onClick={() => {
+              setShowProgress(true)
+            }}
+          >
+            show progress modal demo
+          </Button>
         </div>
       </ConfigProvider>
     </div>

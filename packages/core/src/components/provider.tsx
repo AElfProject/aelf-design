@@ -31,6 +31,13 @@ export interface IAelfdCustomToken {
     containerBg: string
     colorMessageText: string
   }
+  customRichProgress?: {
+    colorText: string
+    colorTextSecondary: string
+    progressLineColor: string
+    progressLineErrorColor: string
+    progressLineBg: string
+  }
 }
 
 declare module 'antd-style' {
@@ -72,6 +79,14 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             containerBg: isDarkMode ? '#212121' : '#F8F8F8',
             colorMessageText: isDarkMode ? '#8C8C8C' : '#808080',
             ...props.customToken?.customUpload
+          },
+          customRichProgress: {
+            colorText: isDarkMode ? '#e8e8e8' : '#1a1a1a',
+            colorTextSecondary: isDarkMode ? '#808080' : '#8C8C8C',
+            progressLineColor: isDarkMode ? '#1370DD' : '#127FFF',
+            progressLineBg: isDarkMode ? '#353535' : '#F0f0f0',
+            progressLineErrorColor: isDarkMode ? '#D43939' : '#F53F3F',
+            ...props.customToken?.customRichProgress
           }
         }
       }}
