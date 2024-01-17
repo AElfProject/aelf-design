@@ -2,13 +2,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import React, { SetStateAction, useState } from 'react'
 import { useResponsive } from 'antd-style'
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/free-mode'
-import 'swiper/css/navigation'
-import 'swiper/css/thumbs'
 import useStyles from './styles'
 import PrevButton from 'assets/prev.svg?react'
 import NextButton from 'assets/next.svg?react'
+import 'swiper/swiper-bundle.css'
 
 export interface ICarouselSlideItem {
   url: string

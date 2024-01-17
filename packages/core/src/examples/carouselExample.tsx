@@ -1,4 +1,4 @@
-import Carousel from '../components/Carousel/index'
+import { Carousel } from '../components/index'
 export default function CarouselExample() {
   const mockData = [
     {
