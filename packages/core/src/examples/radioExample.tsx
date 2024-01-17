@@ -3,7 +3,6 @@ import Radio from 'components/Radio'
 import { useState } from 'react'
 export default function RadioExample() {
   const [value, setValue] = useState(1)
-
   const onChange = (e: RadioChangeEvent) => {
     console.log('radio checked', e.target.value)
     setValue(e.target.value)
