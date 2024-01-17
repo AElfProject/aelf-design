@@ -2,13 +2,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import React, { SetStateAction, useState } from 'react'
 import { useResponsive } from 'antd-style'
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/free-mode'
-import 'swiper/css/navigation'
-import 'swiper/css/thumbs'
 import useStyles from './styles'
 import PrevButton from 'assets/prev.svg?react'
 import NextButton from 'assets/next.svg?react'
+import 'swiper/swiper-bundle.css'
 
 export interface ICarouselSlideItem {
   url: string
@@ -18,13 +15,25 @@ export interface ICarouselSlideItem {
 export interface ICarouselProps {
   data: ICarouselSlideItem[]
   className?: string
+  thumbsSlidesPerView?: number
+  thumbsSwiperWidth?: number
   onSlideClick?: (value: ICarouselSlideItem) => void
 }
 
 export default function Carousel(props: ICarouselProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
-  const { data, onSlideClick, className } = props
-  const { styles: st, cx, prefixCls } = useStyles()
+  const {
+    data,
+    onSlideClick,
+    className,
+    thumbsSlidesPerView,
+    thumbsSwiperWidth
+  } = props
+  const {
+    styles: st,
+    cx,
+    prefixCls
+  } = useStyles({ thumbsSwiperWidth: thumbsSwiperWidth || 424 })
   const responsive = useResponsive()
   return (
     <div className={cx(st.Carousel, prefixCls + 'carousel', className)}>
@@ -86,7 +95,7 @@ export default function Carousel(props: ICarouselProps) {
         }}
         autoHeight
         spaceBetween={responsive.md ? 16 : 12}
-        slidesPerView={5}
+        slidesPerView={thumbsSlidesPerView || 5}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
