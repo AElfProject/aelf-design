@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import Typography from './index'
-import { FontWeightType } from './index'
+import { FontWeightEnum } from './index'
 const { Text } = Typography
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Text>
 // // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   args: {
-    fontWeight: FontWeightType.Regular,
+    fontWeight: FontWeightEnum.Regular,
     size: 'small',
     children: 'Typography text components'
   },

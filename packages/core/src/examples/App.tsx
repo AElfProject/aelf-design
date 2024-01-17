@@ -4,7 +4,7 @@ import Button from 'components/Button'
 import Input from 'components/Input'
 import { Input as AInput } from 'antd'
 import Dropdown from 'components/Dropdown'
-import Typography, { FontWeightType } from 'components/Typography'
+import { FontWeightEnum, Typography } from 'components/index'
 import ConfigProvider from '../components/provider'
 import { ThemeAppearance } from 'antd-style'
 import { Segmented } from 'antd'
@@ -284,33 +284,33 @@ const App = () => {
         </div>
 
         <div className="mt-[180px]">
-          <Typography.Title fontWeight={FontWeightType.Bold} level={1}>
+          <Typography.Title fontWeight={FontWeightEnum.Bold} level={1}>
             Title1 test TitlefsdfsdfsdfADD
           </Typography.Title>
-          <Typography.Title fontWeight={FontWeightType.Bold} level={2}>
+          <Typography.Title fontWeight={FontWeightEnum.Bold} level={2}>
             Title2 test TitlefsdfsdfsdfADD
           </Typography.Title>
-          <Typography.Title fontWeight={FontWeightType.Bold} level={3}>
+          <Typography.Title fontWeight={FontWeightEnum.Bold} level={3}>
             Title3 test TitlefsdfsdfsdfADD
           </Typography.Title>
-          <Typography.Title fontWeight={FontWeightType.Bold} level={4}>
+          <Typography.Title fontWeight={FontWeightEnum.Bold} level={4}>
             Title4 test TitlefsdfsdfsdfADD
           </Typography.Title>
-          <Typography.Title fontWeight={FontWeightType.Bold} level={5}>
+          <Typography.Title fontWeight={FontWeightEnum.Bold} level={5}>
             Title5 test TitlefsdfsdfsdfADD
           </Typography.Title>
 
-          <Typography.Title fontWeight={FontWeightType.Bold} level={6}>
+          <Typography.Title fontWeight={FontWeightEnum.Bold} level={6}>
             Title6 test TitlefsdfsdfsdfADD
           </Typography.Title>
 
-          <Typography.Title fontWeight={FontWeightType.Bold} level={7}>
+          <Typography.Title fontWeight={FontWeightEnum.Bold} level={7}>
             Title7 test TitlefsdfsdfsdfADD
           </Typography.Title>
           <Typography.Text
             size="small"
             disabled
-            fontWeight={FontWeightType.Regular}
+            fontWeight={FontWeightEnum.Regular}
           >
             text test titlefsdfsdfsdfADD
           </Typography.Text>
