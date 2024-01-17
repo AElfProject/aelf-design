@@ -15,11 +15,12 @@ import { defaultTemplate } from './template'
 export default defineConfig({
   build: {
     // emptyOutDir: false,
+    cssCodeSplit: true,
     lib: {
       entry: resolve(__dirname, 'src/components/index.tsx')
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'antd', 'antd-mobile', 'swiper'],
+      external: ['react', 'react-dom', 'antd', 'antd-mobile'],
       output: [
         {
           dir: resolve(__dirname, 'dist/umd'),
@@ -30,8 +31,7 @@ export default defineConfig({
             react: 'react',
             'react-dom': 'react-dom',
             'antd-mobile': 'antd-mobile',
-            antd: 'antd',
-            swiper: 'swiper'
+            antd: 'antd'
           }
         },
         {
