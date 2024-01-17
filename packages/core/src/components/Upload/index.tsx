@@ -22,9 +22,7 @@ const getBase64 = (img: RcFile, callback: (url: string) => void) => {
 }
 
 function UploadItemRender({
-  originNode,
   file,
-  fileList,
   actions
 }: {
   originNode: ReactElement
