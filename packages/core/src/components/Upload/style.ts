@@ -30,7 +30,6 @@ export default createStyles(({ css, token, prefixCls }) => {
         height: 100%;
         margin-block: 0 0px;
         margin-inline: 0 0px;
-        margin-bottom: 16px;
       }
 
       .${prefixCls}-upload-wrapper .${prefixCls}-upload-list {
@@ -97,6 +96,7 @@ export default createStyles(({ css, token, prefixCls }) => {
       border-radius: 6px;
       border: 1px dashed ${token.customUpload?.borderColor};
       background: ${token.colorBgContainer};
+      margin-bottom: 16px;
 
       .fileName {
         color: ${token.colorTextBase};

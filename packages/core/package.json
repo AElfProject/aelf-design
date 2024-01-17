@@ -47,6 +47,9 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
+    "@aws-sdk/client-cognito-identity": "^3.410.0",
+    "@aws-sdk/client-s3": "^3.410.0",
+    "@aws-sdk/credential-provider-cognito-identity": "^3.410.0",
     "@commitlint/config-conventional": "^17.7.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
