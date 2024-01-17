@@ -17,7 +17,7 @@ function AelfdTitle(
   const titleLevel = level && level > 5 ? 5 : level
   const { styles, cx } = useStyles({
     fontFamily: FontFamily[fontWeight],
-    level
+    level: level || 7
   })
   return (
     <Title
