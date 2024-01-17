@@ -5,16 +5,16 @@ import { Typography as AntdTypography } from 'antd'
 import Text from './Text'
 import Title from './Title'
 
-export enum FontWeightType {
+export enum FontWeightEnum {
   'Regular' = 'Regular',
   'Medium' = 'Medium',
   'Bold' = 'Bold'
 }
 
 export const FontFamily = {
-  [FontWeightType.Regular]: 'RobotoRegular',
-  [FontWeightType.Medium]: 'RobotoMedium',
-  [FontWeightType.Bold]: 'RobotoBold'
+  [FontWeightEnum.Regular]: 'RobotoRegular',
+  [FontWeightEnum.Medium]: 'RobotoMedium',
+  [FontWeightEnum.Bold]: 'RobotoBold'
 }
 
 function Typography() {
