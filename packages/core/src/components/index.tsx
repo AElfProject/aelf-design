@@ -44,3 +44,5 @@ export type { IUploadProps } from './Upload'
 
 export { default as Carousel } from './Carousel'
 export type { ICarouselProps } from './Carousel'
+
+export { default as useResponsive } from 'hooks/useResponsive'

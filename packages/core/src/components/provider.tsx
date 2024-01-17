@@ -38,6 +38,9 @@ export interface IAelfdCustomToken {
     progressLineErrorColor?: string
     progressLineBg?: string
   }
+  customRadio?: {
+    dotColor?: string
+  }
 }
 
 declare module 'antd-style' {
@@ -87,6 +90,10 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             progressLineBg: isDarkMode ? '#353535' : '#F0f0f0',
             progressLineErrorColor: isDarkMode ? '#D43939' : '#F53F3F',
             ...props.customToken?.customRichProgress
+          },
+          customRadio: {
+            dotColor: isDarkMode ? '#1A1A1A' : '#FFFFFF',
+            ...props.customToken?.customRadio
           }
         }
       }}
@@ -146,7 +153,7 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             ...props?.theme?.components?.Tabs
           },
           Radio: {
-            buttonBg: appearance === 'dark' ? '#1A1A1A' : '#FFF',
+            dotSize: 8,
             ...props?.theme?.components?.Radio
           },
           Progress: {
