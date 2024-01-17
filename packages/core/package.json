@@ -18,6 +18,7 @@
       }
     }
   },
+  "./css": "./dist/es/index.css",
   "files": [
     "dist"
   ],
