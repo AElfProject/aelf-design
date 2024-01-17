@@ -15,11 +15,9 @@ import { defaultTemplate } from './template'
 export default defineConfig({
   build: {
     // emptyOutDir: false,
-    cssCodeSplit: true,
     lib: {
       entry: resolve(__dirname, 'src/components/index.tsx')
     },
-    cssCodeSplit: true,
     rollupOptions: {
       external: ['react', 'react-dom', 'antd', 'antd-mobile'],
       output: [
