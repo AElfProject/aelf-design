@@ -5,7 +5,7 @@ export default function AddressExample() {
     <>
       <Address
         className="w-[300px]"
-        address="iCQmBkK5m4FC6DMjkMGAsxq3niWfvTN6DqWgU7BYSGCRMAdDr"
+        address="iCQmBkK5m4FC6DMjkMGAsxq33niWfvTN6DqWgU7BYSGCRMAdDr"
         size="small"
         addressClickCallback={(o, f) => {
           console.log(o, f)
