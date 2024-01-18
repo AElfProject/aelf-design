@@ -17,7 +17,7 @@
         "default": "./dist/cjs/aelf-design.js"
       }
     },
-    "./css": "./dist/es/index.css"
+    "./css": "./dist/es/style.css"
   },
   "files": [
     "dist"
