@@ -39,6 +39,7 @@ const AWSUpload = () => {
   return (
     <Upload
       fileList={fileList}
+      maxSizeText={'100mb'}
       customRequest={customUpload}
       onChange={handleChange}
     />
