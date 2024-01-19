@@ -2,13 +2,16 @@ import { createStyles } from 'antd-style'
 import { AddressSize } from '../index'
 
 const useStyles = createStyles(
-  ({ token, css }, { size }: { size: AddressSize }) => {
+  (
+    { token, css },
+    { size, ignoreEvent }: { size: AddressSize; ignoreEvent: boolean }
+  ) => {
     return {
       addressWrap: css`
         font-weight: 500;
         display: flex;
         align-items: flex-start;
-        cursor: pointer;
+        cursor: ${ignoreEvent ? 'default' : 'pointer'};
       `,
       addressText: css`
         font-size: ${size === 'small'
@@ -47,6 +50,7 @@ const useStyles = createStyles(
         flex-shrink: 0;
         margin-left: ${size === 'small' ? '4px' : '8px'};
         align-items: center;
+        cursor: pointer;
       `,
       copyBtn: css`
         width: ${size === 'small'
