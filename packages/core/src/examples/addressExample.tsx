@@ -72,6 +72,19 @@ export default function AddressExample() {
         endLen={11}
         size="ultra"
       />
+
+      <Address
+        address="iCQmBkK5m4FC6DMjkMGAx4q3niWfvTN6DqWgU7BYSGCRMAdDr"
+        chain="tDVV"
+        preLen={8}
+        endLen={11}
+        size="ultra"
+        ignorePrefixSuffix={true}
+        ignoreEvent={true}
+        addressClickCallback={(o, f) => {
+          console.log(o, f)
+        }}
+      />
     </>
   )
 }

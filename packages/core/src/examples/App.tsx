@@ -396,8 +396,13 @@ const App = () => {
 
         <div className="mt-5">
           <RadioExample />
-          <Progress percent={10} size={[300, 8]} strokeColor="#00ff00" />
-          <Progress percent={50} size={[300, 12]} />
+          <Progress
+            percent={10}
+            size={[300, 8]}
+            strokeColor="#00ff00"
+            showInfo={true}
+          />
+          <Progress percent={50} size={[300, 12]} showInfo={true} />
           <Progress percent={100} size={[300, 20]} />
         </div>
 

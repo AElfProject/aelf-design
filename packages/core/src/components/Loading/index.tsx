@@ -5,7 +5,7 @@ import useStyles from './style'
 export interface ILoadingProps {
   open?: boolean
   content?: string | React.ReactNode
-  width?: number
+  width?: number | string
 }
 function Loading({ open, content = 'loading...', width = 240 }: ILoadingProps) {
   const { styles, prefixCls } = useStyles()
