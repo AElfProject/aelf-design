@@ -147,18 +147,20 @@ const App = () => {
             addressActiveColor: appearance == 'dark' ? '#0756BC' : '#0460D9'
           }
         }}
-        theme={{
-          token: {
-            colorPrimary: appearance == 'dark' ? '#9ddd13' : 'red',
-            colorPrimaryHover: 'yellow'
+        theme={
+          {
+            // token: {
+            //   colorPrimary: appearance == 'dark' ? '#9ddd13' : 'red',
+            //   colorPrimaryHover: 'yellow'
+            // }
+            // components: {
+            //   Button: {
+            //     colorPrimary: 'red',
+            //     colorPrimaryHover: 'yellow'
+            //   }
+            // }
           }
-          // components: {
-          //   Button: {
-          //     colorPrimary: 'red',
-          //     colorPrimaryHover: 'yellow'
-          //   }
-          // }
-        }}
+        }
       >
         <ButtonExample />
 
