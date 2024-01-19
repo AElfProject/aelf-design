@@ -19,6 +19,8 @@ export interface IHashAddressProps {
   hasCopy?: boolean
   className?: string
   size?: AddressSize
+  ignorePrefixSuffix?: boolean
+  ignoreEvent?: boolean
 }
 
 const addPrefixSuffix = (str: string, chain: TChain) => {
@@ -60,14 +62,21 @@ function Address({
   hasCopy = true,
   addressClickCallback,
   className,
-  size = 'default'
+  size = 'default',
+  ignorePrefixSuffix = false,
+  ignoreEvent = false
 }: IHashAddressProps) {
-  const { styles: st, cx, prefixCls } = useStyles({ size })
+  const { styles: st, cx, prefixCls } = useStyles({ size, ignoreEvent })
 
-  const addPrefixSuffixTxt = addPrefixSuffix(address, chain)
+  const addPrefixSuffixTxt = ignorePrefixSuffix
+    ? address
+    : addPrefixSuffix(address, chain)
   const omittedStr = getOmittedStr(addPrefixSuffixTxt, preLen, endLen)
 
   const addressClickHandler = (e: React.MouseEvent<HTMLElement>) => {
+    if (ignoreEvent) {
+      return
+    }
     addressClickCallback && addressClickCallback(address, addPrefixSuffixTxt, e)
   }
 
@@ -78,10 +87,7 @@ function Address({
       </span>
       {hasCopy && (
         <div className={st.copyBtnWrap}>
-          <Copy
-            className={st.copyBtn}
-            value={addPrefixSuffix(address, chain)}
-          />
+          <Copy className={st.copyBtn} value={addPrefixSuffixTxt} />
         </div>
       )}
     </div>
