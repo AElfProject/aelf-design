@@ -31,7 +31,10 @@ function UploadItemRender({
   const token = useTheme()
   return (file.url || file.thumbUrl) && file.status === 'done' ? (
     <div className={cx(styles.previewContainer)}>
-      <Image height={202} src={file.url || file.thumbUrl} />
+      <Image
+        height={202}
+        src={file?.response?.url || file.url || file.thumbUrl}
+      />
       <div className="file-info">
         <div className={cx('fileName')}>{file.name}</div>
         <div
