@@ -12,10 +12,12 @@ export interface ICarouselSlideItem {
   [key: string]: any
 }
 
+type TGalleryObjectFit = 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
 export interface ICarouselProps {
   data: ICarouselSlideItem[]
   className?: string
   thumbsSlidesPerView?: number
+  galleryObjectFit?: TGalleryObjectFit
   thumbsSwiperWidth?: number
   onSlideClick?: (value: ICarouselSlideItem) => void
 }
@@ -27,13 +29,17 @@ export default function Carousel(props: ICarouselProps) {
     onSlideClick,
     className,
     thumbsSlidesPerView,
-    thumbsSwiperWidth
+    thumbsSwiperWidth,
+    galleryObjectFit
   } = props
   const {
     styles: st,
     cx,
     prefixCls
-  } = useStyles({ thumbsSwiperWidth: thumbsSwiperWidth || 424 })
+  } = useStyles({
+    thumbsSwiperWidth: thumbsSwiperWidth || 424,
+    galleryObjectFit: galleryObjectFit || 'cover'
+  })
   const responsive = useResponsive()
   return (
     <div className={cx(st.Carousel, prefixCls + 'carousel', className)}>
@@ -46,6 +52,7 @@ export default function Carousel(props: ICarouselProps) {
         spaceBetween={16}
         slidesPerView={'auto'}
         centeredSlides={true}
+        autoHeight
         breakpoints={{
           640: {
             slidesPerGroup: 1,
@@ -59,12 +66,15 @@ export default function Carousel(props: ICarouselProps) {
         {data.map((item, index) => {
           return (
             <SwiperSlide className="gallery-slide" key={index}>
-              <img
-                src={item.url}
-                onClick={() => {
-                  onSlideClick && onSlideClick(item)
-                }}
-              />
+              <div className="slide-container">
+                <img
+                  src={item.url}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    onSlideClick && onSlideClick(item)
+                  }}
+                />
+              </div>
             </SwiperSlide>
           )
         })}

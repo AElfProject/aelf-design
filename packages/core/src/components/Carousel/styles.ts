@@ -5,6 +5,7 @@ const useStyles = createStyles(
     { responsive, css },
     props: {
       thumbsSwiperWidth: number
+      galleryObjectFit: string
     }
   ) => {
     return {
@@ -17,14 +18,27 @@ const useStyles = createStyles(
             ${responsive.sm} {
               width: 89%;
             }
-            img {
-              width: 320px !important;
-              height: 176px !important;
-              border-radius: 6px;
-              cursor: pointer;
+            .slide-container {
+              width: 320px;
+              height: 176px;
+              img {
+                height: auto;
+                min-width: 100%;
+                max-width: 100%;
+                min-height: 100%;
+                max-height: 100%;
+                border-radius: 6px;
+                object-fit: ${props.galleryObjectFit};
+                border-radius: 6px;
+                cursor: pointer;
+                ${responsive.sm} {
+                  aspect-ratio: 2/1.1;
+                }
+              }
               ${responsive.sm} {
-                width: 100% !important;
-                height: 100% !important;
+                /* aspect-ratio: 4/3; */
+                width: 100%;
+                height: auto;
               }
             }
           }
@@ -44,27 +58,31 @@ const useStyles = createStyles(
               height: 100%;
               border-radius: 6px;
               cursor: pointer;
+              object-fit: cover;
+            }
+          }
+          .slide-container {
+            position: relative;
+            height: 100%;
+            .slide-mask {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              cursor: pointer;
+              inset: 0;
+              background-color: #ffffffcc;
             }
           }
           .mobile-thumbs-slide {
             img {
-              width: 100%;
-              height: 100%;
+              min-width: 100%;
+              max-width: 100%;
+              min-height: 100%;
+              max-height: 100%;
               border-radius: 6px;
-              cursor: pointer;
+              object-fit: cover;
+              aspect-ratio: 4/3;
             }
-          }
-        }
-
-        .slide-container {
-          position: relative;
-          .slide-mask {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            cursor: pointer;
-            inset: 0;
-            background-color: #ffffffcc;
           }
         }
         .swiper-button-next {

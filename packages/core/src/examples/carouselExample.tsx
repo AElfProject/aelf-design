@@ -32,6 +32,14 @@ export default function CarouselExample() {
     {
       id: '8',
       url: 'src/assets/swiper/8.png'
+    },
+    {
+      id: '9',
+      url: 'src/assets/swiper/9.jpeg'
+    },
+    {
+      id: '10',
+      url: 'src/assets/swiper/max.jpeg'
     }
   ]
   return (

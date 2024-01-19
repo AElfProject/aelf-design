@@ -14,6 +14,8 @@ export interface IUploadProps
   extends Omit<AntdUploadProps, 'listType' | 'itemRender'> {
   tips?: string | ReactNode
   showUploadButton?: boolean
+  maxSizeText?: string
+  ratioText?: string
 }
 
 function UploadItemRender({
@@ -55,7 +57,12 @@ function UploadItemRender({
 function Upload(props: IUploadProps) {
   const { styles, cx, prefixCls } = useStyles()
   const token = useTheme()
-  const { tips, showUploadButton = true } = props
+  const {
+    tips,
+    showUploadButton = true,
+    maxSizeText = '10 MB',
+    ratioText = '16:9'
+  } = props
   return (
     <div
       className={
@@ -92,10 +99,8 @@ function Upload(props: IUploadProps) {
               {tips || (
                 <>
                   <div className={styles.messageTitle}>
-                    Formats supported JPG, JPEG, PNG. Max size 100 MB.
-                  </div>
-                  <div className={styles.messageSubTitle}>
-                    Recommend ratio 16:9.
+                    {`Formats supported JPG, JPEG, PNG. Max size ${maxSizeText}.`}
+                    {`Recommend ratio ${ratioText}.`}
                   </div>
                 </>
               )}
