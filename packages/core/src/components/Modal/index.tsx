@@ -2,6 +2,7 @@ import { Modal as AntdModal, ModalProps } from 'antd'
 import Close from 'assets/close.svg?react'
 import useStyles from './style'
 import { useTheme } from 'antd-style'
+import { memo } from 'react'
 
 export interface IModalProps extends Omit<ModalProps, 'wrapClassName'> {
   wrapClassName?: string
@@ -34,4 +35,4 @@ function Modal({
   )
 }
 
-export default Modal
+export default memo(Modal)

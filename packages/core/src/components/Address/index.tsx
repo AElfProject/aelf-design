@@ -1,5 +1,6 @@
 import useStyles from './style'
 import Copy from './copy'
+import { memo } from 'react'
 
 type TChain = 'AELF' | 'tDVV' | 'tDVW'
 
@@ -87,4 +88,4 @@ function Address({
   )
 }
 
-export default Address
+export default memo(Address)

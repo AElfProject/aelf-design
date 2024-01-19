@@ -148,10 +148,14 @@ const App = () => {
           }
         }}
         theme={{
-          token: { colorPrimary: appearance == 'dark' ? '#9ddd13' : '#127FFF' }
+          token: {
+            colorPrimary: appearance == 'dark' ? '#9ddd13' : 'red',
+            colorPrimaryHover: 'yellow'
+          }
           // components: {
-          //   Progress: {
-          //     colorPrimary: 'red'
+          //   Button: {
+          //     colorPrimary: 'red',
+          //     colorPrimaryHover: 'yellow'
           //   }
           // }
         }}
