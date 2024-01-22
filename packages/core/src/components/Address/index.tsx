@@ -87,10 +87,7 @@ function Address({
       </span>
       {hasCopy && (
         <div className={st.copyBtnWrap}>
-          <Copy
-            className={st.copyBtn}
-            value={addPrefixSuffix(address, chain)}
-          />
+          <Copy className={st.copyBtn} value={addPrefixSuffixTxt} />
         </div>
       )}
     </div>
