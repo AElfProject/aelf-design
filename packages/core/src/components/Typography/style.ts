@@ -5,7 +5,7 @@ export default createStyles(
   (
     { css },
     props: {
-      fontFamily: string
+      fontFamily: number
       size?: TextSizeType
       level?: 1 | 2 | 3 | 4 | 5 | 6 | 7
     }
@@ -47,10 +47,9 @@ export default createStyles(
     }
     return {
       AelfDesignTitle: css`
-        font-family: ${fontFamily};
+        font-weight: ${fontFamily} !important;
         font-size: ${fontSize}px !important;
         line-height: ${lineHeight}px !important;
-        font-weight: normal !important;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -58,8 +57,7 @@ export default createStyles(
         margin-bottom: 0 !important;
       `,
       AelfDesignText: css`
-        font-family: ${fontFamily};
-        font-weight: normal !important;
+        font-weight: ${fontFamily} !important;
         display: inline-block;
         font-size: ${size === 'normal'
           ? '14px'
