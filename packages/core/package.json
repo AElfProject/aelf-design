@@ -114,5 +114,5 @@
     ],
     "*.{css,less}": "stylelint --fix"
   },
-  "gitHead": "cbef5414e21cc3088cd44c19e3b863e2407e2f38"
+  "gitHead": "3cc14d0898a8f0515299742d826c704f40bc3155"
 }
