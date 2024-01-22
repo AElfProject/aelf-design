@@ -6,15 +6,9 @@ import Text from './Text'
 import Title from './Title'
 
 export enum FontWeightEnum {
-  'Regular' = 'Regular',
-  'Medium' = 'Medium',
-  'Bold' = 'Bold'
-}
-
-export const FontFamily = {
-  [FontWeightEnum.Regular]: 'RobotoRegular',
-  [FontWeightEnum.Medium]: 'RobotoMedium',
-  [FontWeightEnum.Bold]: 'RobotoBold'
+  'Regular' = 400,
+  'Medium' = 500,
+  'Bold' = 700
 }
 
 function Typography() {

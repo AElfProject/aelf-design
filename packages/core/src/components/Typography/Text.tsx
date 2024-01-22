@@ -1,7 +1,7 @@
 import { TextProps } from 'antd/es/typography/Text'
 import useStyles from './style'
 import { Typography } from 'antd'
-import { FontFamily, FontWeightEnum } from './index'
+import { FontWeightEnum } from './index'
 import React, { Ref } from 'react'
 const { Text: AntdText } = Typography
 
@@ -14,7 +14,7 @@ export interface ITextProps extends TextProps {
 
 function Text(props: ITextProps, ref: Ref<HTMLSpanElement> | undefined) {
   const { fontWeight = FontWeightEnum.Regular, size = 'normal' } = props
-  const { styles, cx } = useStyles({ fontFamily: FontFamily[fontWeight], size })
+  const { styles, cx } = useStyles({ fontFamily: fontWeight, size })
   return (
     <AntdText
       {...props}

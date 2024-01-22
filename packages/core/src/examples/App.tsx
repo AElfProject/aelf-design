@@ -288,8 +288,11 @@ const App = () => {
         </div>
 
         <div className="mt-[180px]">
-          <Typography.Title fontWeight={FontWeightEnum.Bold} level={1}>
+          <Typography.Title fontWeight={FontWeightEnum.Regular} level={1}>
             Title1 test TitlefsdfsdfsdfADD
+          </Typography.Title>
+          <Typography.Title fontWeight={FontWeightEnum.Medium} level={2}>
+            Title2 test TitlefsdfsdfsdfADD
           </Typography.Title>
           <Typography.Title fontWeight={FontWeightEnum.Bold} level={2}>
             Title2 test TitlefsdfsdfsdfADD

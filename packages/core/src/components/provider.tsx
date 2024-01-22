@@ -174,7 +174,8 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
           screenMDMax: 768,
           screenMDMin: 641,
           screenMD: 641,
-          screenSMMax: 640
+          screenSMMax: 640,
+          fontFamily: 'RobotoRegular sans-serif'
         }
         if (appearance === 'dark') {
           return {
