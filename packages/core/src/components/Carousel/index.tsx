@@ -54,8 +54,8 @@ export default function Carousel(props: ICarouselProps) {
         centeredSlides={true}
         autoHeight
         breakpoints={{
-          640: {
-            slidesPerGroup: 1,
+          768: {
+            slidesPerGroup: 3,
             centeredSlides: false
           }
         }}

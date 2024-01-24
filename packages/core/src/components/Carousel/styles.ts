@@ -15,7 +15,7 @@ const useStyles = createStyles(
           .gallery-slide {
             display: flex;
             justify-content: center;
-            ${responsive.sm} {
+            ${responsive.md} {
               width: 89%;
             }
             .slide-container {
@@ -31,11 +31,14 @@ const useStyles = createStyles(
                 object-fit: ${props.galleryObjectFit};
                 border-radius: 6px;
                 cursor: pointer;
+                ${responsive.md} {
+                  aspect-ratio: 728/410;
+                }
                 ${responsive.sm} {
                   aspect-ratio: 2/1.1;
                 }
               }
-              ${responsive.sm} {
+              ${responsive.md} {
                 /* aspect-ratio: 4/3; */
                 width: 100%;
                 height: auto;
@@ -92,7 +95,7 @@ const useStyles = createStyles(
           ::after {
             display: none;
           }
-          ${responsive.sm} {
+          ${responsive.md} {
             display: none;
           }
         }
@@ -104,7 +107,7 @@ const useStyles = createStyles(
           ::after {
             display: none;
           }
-          ${responsive.sm} {
+          ${responsive.md} {
             display: none;
           }
         }
