@@ -29,6 +29,7 @@ export interface IAelfdCustomToken {
   customUpload?: {
     borderColor?: string
     containerBg?: string
+    colorFileText?: string
     colorMessageText?: string
   }
   customRichProgress?: {
@@ -80,6 +81,7 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
           customUpload: {
             borderColor: isDarkMode ? '#484848' : '#E0E0E0',
             containerBg: isDarkMode ? '#212121' : '#F8F8F8',
+            colorFileText: isDarkMode ? '#fff' : '#070A26',
             colorMessageText: isDarkMode ? '#8C8C8C' : '#808080',
             ...props.customToken?.customUpload
           },
