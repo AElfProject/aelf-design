@@ -1,6 +1,6 @@
 {
   "name": "aelf-design",
-  "version": "0.1.30-alpha.0",
+  "version": "0.1.34-alpha.0",
   "private": false,
   "types": "./dist/es/index.d.ts",
   "main": "./dist/cjs/aelf-design.js",
@@ -114,5 +114,5 @@
     ],
     "*.{css,less}": "stylelint --fix"
   },
-  "gitHead": "cbef5414e21cc3088cd44c19e3b863e2407e2f38"
+  "gitHead": "f944921c0e2ec6c80da3d584e5e0019fd0209bcf"
 }
