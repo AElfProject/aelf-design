@@ -2,7 +2,7 @@ import { createStyles } from 'antd-style'
 import { ButtonSizeType } from '../index'
 
 const useStyles = createStyles(
-  ({ css, prefixCls }, { size }: { size: ButtonSizeType }) => {
+  ({ css, prefixCls, token }, { size }: { size: ButtonSizeType }) => {
     const dynamicWidth =
       size === 'mini'
         ? '24px'
@@ -19,6 +19,7 @@ const useStyles = createStyles(
         display: flex;
         align-items: center;
         justify-content: center;
+        font-weight: 500;
         flex-shrink: 0;
         font-size: ${size === 'mini'
           ? '12px'
@@ -50,14 +51,14 @@ const useStyles = createStyles(
           ? '92px'
           : '112px'};
         border-radius: ${size === 'mini'
-          ? '4px'
+          ? token.customButton?.borderRadiusDefault || '4px'
           : size === 'small'
-          ? '4px'
+          ? token.customButton?.borderRadiusDefault || '4px'
           : size === 'medium'
-          ? '6px'
+          ? token.customButton?.borderRadiusLarge || '6px'
           : size === 'large'
-          ? '6px'
-          : '6px'};
+          ? token.customButton?.borderRadiusLarge || '6px'
+          : token.customButton?.borderRadiusLarge || '6px'};
 
         &.${prefixCls}-btn-circle {
           min-height: ${dynamicWidth};

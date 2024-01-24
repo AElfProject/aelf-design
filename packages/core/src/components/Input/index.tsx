@@ -10,18 +10,15 @@ import { OverrideToken } from 'antd/es/theme/interface'
 
 export type InputSizeType = 'small' | 'middle'
 
-export interface IInputProps
-  extends Omit<InputProps, 'size' | 'onClear' | 'allowClear'> {
+export interface IInputProps extends Omit<InputProps, 'size' | 'onClear'> {
   size?: InputSizeType
   onClear?: React.MouseEventHandler<HTMLElement>
   count?: CountConfig
 }
 
-export type InputPasswordProps = Omit<PasswordProps, 'size' | 'allowClear'> &
-  IInputProps
+export type InputPasswordProps = Omit<PasswordProps, 'size'> & IInputProps
 
-export type InputTextAreaProps = Omit<TextAreaProps, 'size' | 'allowClear'> &
-  IInputProps
+export type InputTextAreaProps = Omit<TextAreaProps, 'size'> & IInputProps
 
 export interface CountConfig {
   max?: number
@@ -57,7 +54,13 @@ const getClearIcon = (
   )
 }
 
-function Input({ size = 'middle', className, onClear, ...rest }: IInputProps) {
+function Input({
+  size = 'middle',
+  className,
+  onClear,
+  allowClear,
+  ...rest
+}: IInputProps) {
   const { styles: st } = useStyles({ size })
   const token = useTheme()
 
@@ -66,9 +69,13 @@ function Input({ size = 'middle', className, onClear, ...rest }: IInputProps) {
       {...rest}
       size={size}
       className={`${st.aelfdInput} ${className || ''}`}
-      allowClear={{
-        clearIcon: getClearIcon(onClear, token)
-      }}
+      allowClear={
+        allowClear
+          ? allowClear
+          : {
+              clearIcon: getClearIcon(onClear, token)
+            }
+      }
     />
   )
 }

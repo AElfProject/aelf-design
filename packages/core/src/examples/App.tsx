@@ -140,6 +140,10 @@ const App = () => {
         prefixCls="xxxx"
         appearance={appearance}
         customToken={{
+          // customButton: {
+          //   borderRadiusDefault: '20px',
+          //   borderRadiusLarge: '30px'
+          // },
           customAddress: {
             primaryLinkColor: appearance == 'dark' ? '#c713af' : '#53dd13',
             primaryIconColor: appearance == 'dark' ? '#ea1818' : '#7f7777',
@@ -165,9 +169,11 @@ const App = () => {
         <div className="mt-5">
           <div className="mb-4">
             <Input
+              disabled
               className="w-[400px]"
               placeholder="default"
               prefix={<AndroidOutlined />}
+              allowClear={{ clearIcon: <div>x</div> }}
               onClear={(e) => {
                 console.log(e)
               }}
@@ -188,6 +194,9 @@ const App = () => {
           <div className="mb-4">
             <Input
               className="w-[400px]"
+              onClear={(e) => {
+                console.log(e)
+              }}
               placeholder="placeholder"
               prefix={
                 <Dropdown
