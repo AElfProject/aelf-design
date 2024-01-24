@@ -46,6 +46,22 @@ const AWSUpload = () => {
   )
 }
 
-const UploadExample: React.FC = () => <AWSUpload />
+const FileUpload = () => {
+  const [fileList, setFileList] = useState<any[]>([])
+  const handleChange: UploadProps['onChange'] = ({ fileList }) => {
+    const newFileList = [...fileList]
+    setFileList([...newFileList])
+  }
+  return (
+    <Upload fileList={fileList} onChange={handleChange} maxSizeText={'100mb'} />
+  )
+}
+
+const UploadExample: React.FC = () => (
+  <div>
+    <AWSUpload />
+    <FileUpload></FileUpload>
+  </div>
+)
 
 export default UploadExample

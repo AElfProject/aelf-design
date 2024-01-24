@@ -41,6 +41,44 @@ export default createStyles(({ css, token, prefixCls }) => {
         margin-inline-end: 0px !important;
         margin-bottom: 0px !important;
       }
+
+      .file-info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .clear-container {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        :hover {
+          .clear-text {
+            color: ${token.colorPrimaryHover};
+          }
+
+          svg * {
+            fill: ${token.colorPrimaryHover} !important;
+          }
+        }
+        :active {
+          .clear-text {
+            color: ${token.colorPrimaryActive};
+          }
+          svg * {
+            fill: ${token.colorPrimaryActive} !important;
+          }
+        }
+      }
+      .clear-text {
+        display: inline-block;
+        color: ${token.colorPrimary};
+        font-size: 14px;
+        font-style: normal;
+        line-height: 22px;
+        margin-left: 8px;
+      }
     `,
     uploadButton: css`
       display: flex;
@@ -103,43 +141,45 @@ export default createStyles(({ css, token, prefixCls }) => {
         font-size: 14px;
         line-height: 22px;
       }
-
-      .clear-text {
-        display: inline-block;
-        color: ${token.colorPrimary};
-        font-size: 14px;
-        font-style: normal;
-        line-height: 22px;
-        margin-left: 8px;
+    `,
+    FilePreviewContainer: css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      gap: 16px;
+      padding: 24px;
+      box-sizing: border-box;
+      border-radius: 6px;
+      border: 1px solid ${token.colorPrimary};
+      background: ${token.colorBgContainer};
+      margin-bottom: 16px;
+      .file-icon-container {
+        display: flex;
+        justify-content: center;
+        height: 166px;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
       }
-      .file-info {
+      .file-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
       }
-      .clear-container {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
+      .file-tips {
+        color: ${token?.customUpload?.colorFileText};
+        text-align: center;
+        font-size: 14px;
+        line-height: 22px;
+      }
 
-        :hover {
-          .clear-text {
-            color: ${token.colorPrimaryHover};
-          }
-
-          svg * {
-            fill: ${token.colorPrimaryHover} !important;
-          }
-        }
-        :active {
-          .clear-text {
-            color: ${token.colorPrimaryActive};
-          }
-          svg * {
-            fill: ${token.colorPrimaryActive} !important;
-          }
-        }
+      .fileName {
+        color: ${token?.customUpload?.colorFileText};
+        font-size: 14px;
+        line-height: 22px;
       }
     `
   }

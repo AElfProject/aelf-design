@@ -7,6 +7,7 @@ import useStyles from './style'
 import { ReactElement, ReactNode } from 'react'
 import UploadIcon from 'assets/upload-icon.svg?react'
 import ClearIcon from 'assets/clear-icon.svg?react'
+import FileIcon from 'assets/file.svg?react'
 import { useTheme } from 'antd-style'
 import { UploadFile } from 'antd/es/upload'
 
@@ -28,13 +29,41 @@ function UploadItemRender({
   actions: { download: () => void; preview: () => void; remove: () => void }
 }) {
   const { styles, cx } = useStyles()
+  console.log(file, 'file')
   const token = useTheme()
-  return (file.url || file.thumbUrl) && file.status === 'done' ? (
-    <div className={cx(styles.previewContainer)}>
-      <Image
-        height={202}
-        src={file?.response?.url || file.url || file.thumbUrl}
-      />
+  return file.url || file.thumbUrl ? (
+    file.status === 'done' && (
+      <div className={cx(styles.previewContainer)}>
+        <Image
+          height={202}
+          src={file?.response?.url || file.url || file.thumbUrl}
+        />
+        <div className="file-info">
+          <div className={cx('fileName')}>{file.name}</div>
+          <div
+            className="clear-container"
+            onClick={() => {
+              actions.remove()
+            }}
+          >
+            <ClearIcon
+              color={token.colorPrimary}
+              data-hovercolor={token.colorPrimaryHover}
+              data-activecolor={token.colorPrimaryActive}
+              width={16}
+              height={16}
+            />
+            <span className="clear-text">Delete</span>
+          </div>
+        </div>
+      </div>
+    )
+  ) : (
+    <div className={cx(styles.FilePreviewContainer)}>
+      <div className="file-icon-container">
+        <FileIcon width={56} height={56} />
+        <div className="file-tips">Ready for review</div>
+      </div>
       <div className="file-info">
         <div className={cx('fileName')}>{file.name}</div>
         <div
@@ -50,11 +79,11 @@ function UploadItemRender({
             width={16}
             height={16}
           />
-          <span className="clear-text">Delete</span>
+          <span className="clear-text">Remove</span>
         </div>
       </div>
     </div>
-  ) : null
+  )
 }
 
 function Upload(props: IUploadProps) {
