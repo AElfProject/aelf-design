@@ -16,6 +16,7 @@ export default function ButtonExample() {
           default
         </Button>
         <Button
+          className="!rounded-2xl"
           size="ultra"
           millisecondOfThrottle={1000}
           onClick={() => {

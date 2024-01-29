@@ -22,6 +22,11 @@ const useStyles = createStyles(
             color: ${token.colorTextDisabled};
           }
         }
+        &.${prefixCls}-input-outlined.${prefixCls}-input-disabled {
+          .${prefixCls}-input {
+            cursor: not-allowed;
+          }
+        }
       `
     }
   }

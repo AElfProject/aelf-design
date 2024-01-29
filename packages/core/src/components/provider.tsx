@@ -8,6 +8,10 @@ export interface IAelfdThemeProviderProps
 }
 
 export interface IAelfdCustomToken {
+  customButton?: {
+    borderRadiusDefault?: string
+    borderRadiusLarge?: string
+  }
   customPagination?: {
     colorTextSecondary?: string
     colorBgHover?: string
@@ -56,6 +60,9 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
       {...props}
       customToken={({ isDarkMode }) => {
         return {
+          customButton: {
+            ...props.customToken?.customButton
+          },
           customCollapse: {
             headerHoverBg: isDarkMode ? '#212121' : '#f8f8f8',
             headerClickBg: isDarkMode ? '#212121' : '#f8f8f8',
