@@ -16,6 +16,6 @@
     }
   },
   "scripts": {
-    "preversion": "lerna run build"
+    "prepublish": "lerna run build"
   }
 }
