@@ -1,8 +1,10 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "0.1.53-alpha.0",
+  "version": "0.1.54-alpha.0",
   "npmClient": "yarn",
-  "packages": ["packages/*"],
+  "packages": [
+    "packages/*"
+  ],
   "commands": {
     "build": {
       "ignore": [
