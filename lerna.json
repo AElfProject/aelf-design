@@ -1,10 +1,12 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "0.1.49-alpha.0",
+  "version": "0.1.50-alpha.0",
   "npmClient": "yarn",
   "commands": {
     "build": {
-      "ignore": ["*.test.js"],
+      "ignore": [
+        "*.test.js"
+      ],
       "npmClient": "npm",
       "script": "build",
       "stream": true
