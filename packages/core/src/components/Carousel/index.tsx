@@ -28,7 +28,7 @@ export default function Carousel(props: ICarouselProps) {
     data,
     onSlideClick,
     className,
-    thumbsSlidesPerView,
+    thumbsSlidesPerView = 5,
     thumbsSwiperWidth,
     galleryObjectFit
   } = props
@@ -37,7 +37,9 @@ export default function Carousel(props: ICarouselProps) {
     cx,
     prefixCls
   } = useStyles({
-    thumbsSwiperWidth: thumbsSwiperWidth || 424,
+    thumbsSwiperWidth:
+      thumbsSwiperWidth ||
+      72 * thumbsSlidesPerView + (thumbsSlidesPerView - 1) * 16,
     galleryObjectFit: galleryObjectFit || 'cover'
   })
   const responsive = useResponsive()
@@ -55,7 +57,7 @@ export default function Carousel(props: ICarouselProps) {
         autoHeight
         breakpoints={{
           768: {
-            slidesPerGroup: 3,
+            slidesPerGroup: 1,
             centeredSlides: false
           }
         }}
@@ -105,7 +107,7 @@ export default function Carousel(props: ICarouselProps) {
         }}
         autoHeight
         spaceBetween={responsive.md ? 16 : 12}
-        slidesPerView={thumbsSlidesPerView || 5}
+        slidesPerView={thumbsSlidesPerView}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}

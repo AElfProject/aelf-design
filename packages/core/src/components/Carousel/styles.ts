@@ -12,6 +12,9 @@ const useStyles = createStyles(
       Carousel: css`
         .swiper-gallery {
           margin-bottom: 16px;
+          ${responsive.md} {
+            margin-bottom: 12px;
+          }
           .gallery-slide {
             display: flex;
             justify-content: center;
