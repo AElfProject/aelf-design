@@ -18,6 +18,8 @@ function Button({
 }: IButtonProps) {
   const { styles: st, cx } = useStyles({ size })
 
+  console.log('lerna auto build test')
+
   const buttonClickHandler = debounce(
     (e: MouseEvent<HTMLElement>) => {
       rest.onClick && rest.onClick(e)
