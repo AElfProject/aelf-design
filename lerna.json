@@ -10,7 +10,7 @@
       "ignore": [
         "*.test.js"
       ],
-      "npmClient": "npm",
+      "npmClient": "yarn",
       "script": "build",
       "stream": true
     }
