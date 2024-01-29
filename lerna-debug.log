@@ -7,23 +7,23 @@
 1 notice cli v7.3.0
 2 verbose packageConfigs Explicit "packages" configuration found in lerna.json. Resolving packages using the configured glob(s): ["packages/*"]
 3 verbose rootPath /Users/baijianxiong/aelfd/aelfd
-4 verbose session a1ab3a800430aa0a
+4 verbose session e8b5282aeaec5226
 5 verbose user-agent lerna/7.3.0/node@v18.17.0+arm64 (darwin)
 6 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '7.3.0' }
 7 verbose packageConfigs Explicit "packages" configuration found in lerna.json. Resolving packages using the configured glob(s): ["packages/*"]
 8 verbose rootPath /Users/baijianxiong/aelfd/aelfd
-9 info current version 0.1.61-alpha.0
+9 info current version 0.1.62-alpha.0
 10 silly isAnythingCommitted
 11 verbose isAnythingCommitted 1
 12 silly getCurrentBranch
 13 verbose currentBranch feature/table
 14 silly remoteBranchExists
 15 silly isBehindUpstream
-16 silly isBehindUpstream feature/table is behind origin/feature/table by 0 commit(s) and ahead by 2
+16 silly isBehindUpstream feature/table is behind origin/feature/table by 0 commit(s) and ahead by 1
 17 silly hasTags
 18 verbose hasTags true
-19 silly git-describe.sync "v0.1.61-alpha.0-2-g2970f23" => {"lastTagName":"v0.1.61-alpha.0","lastVersion":"v0.1.61-alpha.0","refCount":"2","sha":"2970f23","isDirty":false}
-20 info Looking for changed packages since v0.1.61-alpha.0
+19 silly git-describe.sync "v0.1.62-alpha.0-1-g1fe4d9e" => {"lastTagName":"v0.1.62-alpha.0","lastVersion":"v0.1.62-alpha.0","refCount":"1","sha":"1fe4d9e","isDirty":false}
+20 info Looking for changed packages since v0.1.62-alpha.0
 21 silly checking diff packages/core
 22 silly found diff in packages/core/package.json
 22 silly found diff in packages/core/src/examples/addressExample.tsx
@@ -32,8 +32,8 @@
 23 verbose filtered diff   'packages/core/src/examples/addressExample.tsx'
 23 verbose filtered diff ]
 24 verbose updated aelf-design
-25 verbose git-describe undefined => "v0.1.61-alpha.0-2-g2970f23"
-26 silly git-describe parsed => {"lastTagName":"v0.1.61-alpha.0","lastVersion":"v0.1.61-alpha.0","refCount":"2","sha":"2970f23","isDirty":false}
+25 verbose git-describe undefined => "v0.1.62-alpha.0-1-g1fe4d9e"
+26 silly git-describe parsed => {"lastTagName":"v0.1.62-alpha.0","lastVersion":"v0.1.62-alpha.0","refCount":"1","sha":"1fe4d9e","isDirty":false}
 27 info execute Skipping releases
 28 silly lifecycle No script for "preversion" in "root", continuing
 29 silly lifecycle No script for "preversion" in "aelf-design", continuing
@@ -45,17 +45,17 @@
 33 silly gitAdd   'packages/core/package-lock.json',
 33 silly gitAdd   'lerna.json'
 33 silly gitAdd ]
-34 silly gitCommit v0.1.62-alpha.0
-35 verbose git [ 'commit', '-m', 'v0.1.62-alpha.0' ]
-36 silly gitTag v0.1.62-alpha.0 git tag %s -m %s
-37 verbose git [ 'tag', 'v0.1.62-alpha.0', '-m', 'v0.1.62-alpha.0' ]
+34 silly gitCommit v0.1.63-alpha.0
+35 verbose git [ 'commit', '-m', 'v0.1.63-alpha.0' ]
+36 silly gitTag v0.1.63-alpha.0 git tag %s -m %s
+37 verbose git [ 'tag', 'v0.1.63-alpha.0', '-m', 'v0.1.63-alpha.0' ]
 38 silly lifecycle No script for "postversion" in "aelf-design", continuing
 39 silly lifecycle No script for "postversion" in "root", continuing
 40 info git Pushing tags...
 41 silly gitPush origin feature/table
 42 info publish Publishing packages to npm...
 43 silly getCurrentSHA
-44 verbose getCurrentSHA b880a9c6806ee11f62a4d6db0737f0492848c520
+44 verbose getCurrentSHA 1aa35daea2285ac00ac9acdde7d47608813ab3a1
 45 silly lifecycle No script for "prepublish" in "root", continuing
 46 silly lifecycle No script for "prepare" in "root", continuing
 47 silly lifecycle No script for "prepublishOnly" in "root", continuing

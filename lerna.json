@@ -15,6 +15,7 @@
       "stream": true
     }
   },
+  "preversion": "lerna run build",
   "scripts": {
     "preversion": "lerna run build"
   }
