@@ -22,7 +22,7 @@ export default function AddressExample() {
       />
       <Address
         className="w-[300px]"
-        address="iCQmBkK5m4FsC6DMjkMsssssGAx4q3niWfvTN6DqWgU7BYSGCRMAdDr"
+        address="iCQmBkK5m4FsC6DMjkMssssssGAx4q3niWfvTN6DqWgU7BYSGCRMAdDr"
         size="ultra"
       />
 
