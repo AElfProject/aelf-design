@@ -38,11 +38,11 @@
     "@svgr/babel-plugin-transform-svg-component": "^8.0.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
-    "antd-style": "^3.5.2",
     "copy-to-clipboard": "^3.3.3",
     "swiper": "^11.0.5"
   },
   "devDependencies": {
+    "antd-style": "^3.5.2",
     "@aws-sdk/client-cognito-identity": "^3.410.0",
     "@aws-sdk/client-s3": "^3.410.0",
     "@aws-sdk/credential-provider-cognito-identity": "^3.410.0",
@@ -100,7 +100,8 @@
     "antd": "^5.13.1",
     "antd-mobile": "^5.34.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "antd-style": "^3.5.2"
   },
   "eslintConfig": {
     "extends": [

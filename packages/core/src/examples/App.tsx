@@ -169,11 +169,12 @@ const App = () => {
         <div className="mt-5">
           <div className="mb-4">
             <Input
-              disabled
+              // disabled
               className="w-[400px]"
               placeholder="default"
               prefix={<AndroidOutlined />}
-              allowClear={{ clearIcon: <div>x</div> }}
+              // allowClear={{ clearIcon: <div>x</div> }}
+              // allowClear={false}
               onClear={(e) => {
                 console.log(e)
               }}
