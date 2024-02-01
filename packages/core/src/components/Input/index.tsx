@@ -24,12 +24,12 @@ export interface CountConfig {
   max?: number
   strategy?: (value: string) => number
   show?:
-    | boolean
-    | ((args: {
-        value: string
-        count: number
-        maxLength?: number
-      }) => ReactNode)
+  | boolean
+  | ((args: {
+    value: string
+    count: number
+    maxLength?: number
+  }) => ReactNode)
   exceedFormatter?: (value: string, config: { max: number }) => string
 }
 
@@ -70,9 +70,9 @@ function Input({
       size={size}
       className={`${st.aelfdInput} ${className || ''}`}
       allowClear={
-        allowClear
-          ? allowClear
-          : {
+        allowClear === false
+          ? false : allowClear ? allowClear
+            : {
               clearIcon: getClearIcon(onClear, token)
             }
       }

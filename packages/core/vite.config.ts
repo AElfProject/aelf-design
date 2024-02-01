@@ -19,7 +19,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/components/index.tsx')
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'antd', 'antd-mobile'],
+      external: ['react', 'react-dom', 'antd', 'antd-mobile', 'antd-style'],
       output: [
         {
           dir: resolve(__dirname, 'dist/umd'),

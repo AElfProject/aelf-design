@@ -1,6 +1,6 @@
 {
   "name": "aelf-design",
-  "version": "0.1.47-alpha.0",
+  "version": "0.1.66-alpha.0",
   "private": false,
   "types": "./dist/es/index.d.ts",
   "main": "./dist/cjs/aelf-design.js",
@@ -38,7 +38,6 @@
     "@svgr/babel-plugin-transform-svg-component": "^8.0.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
-    "antd-style": "^3.5.2",
     "copy-to-clipboard": "^3.3.3",
     "swiper": "^11.0.5"
   },
@@ -69,6 +68,7 @@
     "@vitest/ui": "^0.34.6",
     "antd": "^5.13.1",
     "antd-mobile": "^5.34.0",
+    "antd-style": "^3.5.2",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
@@ -99,6 +99,7 @@
   "peerDependencies": {
     "antd": "^5.13.1",
     "antd-mobile": "^5.34.0",
+    "antd-style": "^3.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -115,5 +116,5 @@
     ],
     "*.{css,less}": "stylelint --fix"
   },
-  "gitHead": "58976c888a7eccd4b9b4b5ba669f89ac1f852df1"
+  "gitHead": "f623f203d1e909cfdccfd77d8406ed05d5110ce5"
 }
