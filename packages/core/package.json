@@ -1,6 +1,6 @@
 {
   "name": "aelf-design",
-  "version": "0.1.47-alpha.0",
+  "version": "0.1.65-alpha.0",
   "private": false,
   "types": "./dist/es/index.d.ts",
   "main": "./dist/cjs/aelf-design.js",
@@ -42,7 +42,6 @@
     "swiper": "^11.0.5"
   },
   "devDependencies": {
-    "antd-style": "^3.5.2",
     "@aws-sdk/client-cognito-identity": "^3.410.0",
     "@aws-sdk/client-s3": "^3.410.0",
     "@aws-sdk/credential-provider-cognito-identity": "^3.410.0",
@@ -69,6 +68,7 @@
     "@vitest/ui": "^0.34.6",
     "antd": "^5.13.1",
     "antd-mobile": "^5.34.0",
+    "antd-style": "^3.5.2",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
@@ -99,9 +99,9 @@
   "peerDependencies": {
     "antd": "^5.13.1",
     "antd-mobile": "^5.34.0",
+    "antd-style": "^3.5.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "antd-style": "^3.5.2"
+    "react-dom": "^18.2.0"
   },
   "eslintConfig": {
     "extends": [
