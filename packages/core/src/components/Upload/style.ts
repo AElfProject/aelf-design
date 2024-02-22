@@ -79,6 +79,10 @@ export default createStyles(({ css, token, prefixCls }) => {
         line-height: 22px;
         margin-left: 8px;
       }
+      .preview-img {
+        width: 100%;
+        object-fit: contain;
+      }
     `,
     uploadButton: css`
       display: flex;
@@ -140,6 +144,11 @@ export default createStyles(({ css, token, prefixCls }) => {
         color: ${token.colorTextBase};
         font-size: 14px;
         line-height: 22px;
+        width: 100%;
+        margin-right: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     `,
     FilePreviewContainer: css`
