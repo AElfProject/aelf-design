@@ -33,6 +33,8 @@ function UploadItemRender({
       <div className={cx(styles.previewContainer)}>
         <Image
           height={202}
+          width="100%"
+          className="preview-img"
           src={file?.response?.url || file.url || file.thumbUrl}
         />
         <div className="file-info">

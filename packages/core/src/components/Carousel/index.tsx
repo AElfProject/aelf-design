@@ -55,12 +55,6 @@ export default function Carousel(props: ICarouselProps) {
         slidesPerView={'auto'}
         centeredSlides={true}
         autoHeight
-        breakpoints={{
-          768: {
-            slidesPerGroup: 1,
-            centeredSlides: false
-          }
-        }}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
         className="swiper-gallery"

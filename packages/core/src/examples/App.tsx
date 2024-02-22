@@ -451,7 +451,7 @@ const App = () => {
         <div className="mt-5">
           <LoadingExample />
         </div>
-        <div className="mt-5">
+        <div className="mt-5 p-10">
           <CarouselExample />
         </div>
         <div className="mt-5">

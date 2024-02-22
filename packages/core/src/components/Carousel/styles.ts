@@ -19,7 +19,7 @@ const useStyles = createStyles(
             display: flex;
             justify-content: center;
             ${responsive.md} {
-              width: 89%;
+              width: 100%;
             }
             .slide-container {
               width: 320px;
@@ -53,7 +53,6 @@ const useStyles = createStyles(
           width: ${props.thumbsSwiperWidth}px;
           ${responsive.sm} {
             width: 100%;
-            padding: 0 16px;
             box-sizing: border-box;
           }
           .thumbs-slide {
@@ -88,6 +87,12 @@ const useStyles = createStyles(
               border-radius: 6px;
               object-fit: cover;
               aspect-ratio: 4/3;
+            }
+            ${responsive.md} {
+              aspect-ratio: 728/410;
+            }
+            ${responsive.sm} {
+              aspect-ratio: 2/1.1;
             }
           }
         }
