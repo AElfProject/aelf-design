@@ -111,7 +111,7 @@ export default function Carousel(props: ICarouselProps) {
           return (
             <SwiperSlide
               className={cx(
-                responsive.md ? 'thumbs-slide' : 'mobile-thumbs-slide'
+                responsive.lg ? 'thumbs-slide' : 'mobile-thumbs-slide'
               )}
               key={index}
             >
