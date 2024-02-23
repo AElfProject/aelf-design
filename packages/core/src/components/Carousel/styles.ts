@@ -51,7 +51,7 @@ const useStyles = createStyles(
         }
         .thumbs-swiper {
           width: ${props.thumbsSwiperWidth}px;
-          ${responsive.sm} {
+          ${responsive.md} {
             width: 100%;
             box-sizing: border-box;
           }
