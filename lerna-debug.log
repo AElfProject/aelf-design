@@ -1,8 +1,106 @@
-36 error Error: Command failed with exit code 128: git tag v0.1.37-alpha.0 -m v0.1.37-alpha.0
-36 error 致命错误：标签 'v0.1.37-alpha.0' 已存在
-36 error     at makeError (/Users/liuxiyang/work/code/aelfd/node_modules/execa/lib/error.js:60:11)
-36 error     at handlePromise (/Users/liuxiyang/work/code/aelfd/node_modules/execa/index.js:118:26)
-36 error     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-36 error     at async VersionCommand.gitCommitAndTagVersion (/Users/liuxiyang/work/code/aelfd/node_modules/lerna/dist/index.js:8365:9)
-36 error     at async VersionCommand.commitAndTagUpdates (/Users/liuxiyang/work/code/aelfd/node_modules/lerna/dist/index.js:8330:18)
-36 error     at async Promise.all (index 0)
+0 silly argv {
+0 silly argv   _: [ 'publish' ],
+0 silly argv   composed: 'publish',
+0 silly argv   lernaVersion: '7.3.0',
+0 silly argv   '$0': '/opt/homebrew/bin/lerna'
+0 silly argv }
+1 notice cli v7.3.0
+2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+3 verbose rootPath /Users/liuxiyang/work/code/aelfd
+4 verbose session 04bb42c656d3ddac
+5 verbose user-agent lerna/7.3.0/node@v19.7.0+arm64 (darwin)
+6 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '7.3.0' }
+7 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+8 verbose rootPath /Users/liuxiyang/work/code/aelfd
+9 info current version 0.1.68-alpha.0
+10 silly isAnythingCommitted
+11 verbose isAnythingCommitted 1
+12 silly getCurrentBranch
+13 verbose currentBranch main
+14 silly remoteBranchExists
+15 silly isBehindUpstream
+16 silly isBehindUpstream main is behind origin/main by 0 commit(s) and ahead by 0
+17 silly hasTags
+18 verbose hasTags true
+19 silly git-describe.sync "v0.1.68-alpha.0-1-g9f3a8a9" => {"lastTagName":"v0.1.68-alpha.0","lastVersion":"v0.1.68-alpha.0","refCount":"1","sha":"9f3a8a9","isDirty":false}
+20 info Looking for changed packages since v0.1.68-alpha.0
+21 silly checking diff packages/core
+22 silly found diff in packages/core/src/components/Carousel/index.tsx
+22 silly found diff in packages/core/src/components/Carousel/styles.ts
+22 silly found diff in packages/core/src/examples/carouselExample.tsx
+23 verbose filtered diff [
+23 verbose filtered diff   'packages/core/src/components/Carousel/index.tsx',
+23 verbose filtered diff   'packages/core/src/components/Carousel/styles.ts',
+23 verbose filtered diff   'packages/core/src/examples/carouselExample.tsx'
+23 verbose filtered diff ]
+24 verbose updated aelf-design
+25 verbose git-describe undefined => "v0.1.68-alpha.0-1-g9f3a8a9"
+26 silly git-describe parsed => {"lastTagName":"v0.1.68-alpha.0","lastVersion":"v0.1.68-alpha.0","refCount":"1","sha":"9f3a8a9","isDirty":false}
+27 info execute Skipping releases
+28 silly lifecycle No script for "preversion" in "root", continuing
+29 silly lifecycle No script for "preversion" in "aelf-design", continuing
+30 silly lifecycle No script for "version" in "aelf-design", continuing
+31 verbose version Detected yarn version 1.22.19
+32 silly lifecycle No script for "version" in "root", continuing
+33 silly gitAdd [
+33 silly gitAdd   'packages/core/package.json',
+33 silly gitAdd   'packages/core/package-lock.json',
+33 silly gitAdd   'lerna.json'
+33 silly gitAdd ]
+34 silly gitCommit v0.1.69-alpha.0
+35 verbose git [ 'commit', '-m', 'v0.1.69-alpha.0' ]
+36 silly gitTag v0.1.69-alpha.0 git tag %s -m %s
+37 verbose git [ 'tag', 'v0.1.69-alpha.0', '-m', 'v0.1.69-alpha.0' ]
+38 silly lifecycle No script for "postversion" in "aelf-design", continuing
+39 silly lifecycle No script for "postversion" in "root", continuing
+40 info git Pushing tags...
+41 silly gitPush origin main
+42 info publish Publishing packages to npm...
+43 silly getCurrentSHA
+44 verbose getCurrentSHA c5dcde5aec9e95cb89d24712a2b4a8abdce17168
+45 silly lifecycle No script for "prepublish" in "root", continuing
+46 silly lifecycle No script for "prepare" in "root", continuing
+47 silly lifecycle No script for "prepublishOnly" in "root", continuing
+48 silly lifecycle No script for "prepack" in "root", continuing
+49 verbose pack-directory
+50 silly lifecycle No script for "prepublish" in "aelf-design", continuing
+51 silly lifecycle No script for "prepare" in "aelf-design", continuing
+52 silly lifecycle No script for "prepublishOnly" in "aelf-design", continuing
+53 silly lifecycle No script for "prepack" in "aelf-design", continuing
+54 silly lifecycle No script for "postpack" in "aelf-design", continuing
+55 verbose packed packages/core
+56 silly lifecycle No script for "postpack" in "root", continuing
+57 verbose publish aelf-design
+58 silly FetchError: request to https://registry.npmjs.org/aelf-design failed, reason: connect ETIMEDOUT 104.16.24.34:443
+58 silly     at ClientRequest.<anonymous> (/Users/liuxiyang/work/code/aelfd/node_modules/minipass-fetch/lib/index.js:130:14)
+58 silly     at ClientRequest.emit (node:events:512:28)
+58 silly     at TLSSocket.socketErrorListener (node:_http_client:496:9)
+58 silly     at TLSSocket.emit (node:events:524:35)
+58 silly     at emitErrorNT (node:internal/streams/destroy:151:8)
+58 silly     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+58 silly     at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+58 silly  FetchError: request to https://registry.npmjs.org/aelf-design failed, reason: connect ETIMEDOUT 104.16.24.34:443
+58 silly     at ClientRequest.<anonymous> (/Users/liuxiyang/work/code/aelfd/node_modules/minipass-fetch/lib/index.js:130:14)
+58 silly     at ClientRequest.emit (node:events:512:28)
+58 silly     at TLSSocket.socketErrorListener (node:_http_client:496:9)
+58 silly     at TLSSocket.emit (node:events:524:35)
+58 silly     at emitErrorNT (node:internal/streams/destroy:151:8)
+58 silly     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+58 silly     at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+58 silly   code: 'ETIMEDOUT',
+58 silly   errno: 'ETIMEDOUT',
+58 silly   syscall: 'connect',
+58 silly   address: '104.16.24.34',
+58 silly   port: 443,
+58 silly   type: 'system'
+58 silly }
+59 warn notice Package failed to publish: aelf-design
+60 error ETIMEDOUT request to https://registry.npmjs.org/aelf-design failed, reason: connect ETIMEDOUT 104.16.24.34:443
+61 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+62 error FetchError: request to https://registry.npmjs.org/aelf-design failed, reason: connect ETIMEDOUT 104.16.24.34:443
+62 error     at ClientRequest.<anonymous> (/Users/liuxiyang/work/code/aelfd/node_modules/minipass-fetch/lib/index.js:130:14)
+62 error     at ClientRequest.emit (node:events:512:28)
+62 error     at TLSSocket.socketErrorListener (node:_http_client:496:9)
+62 error     at TLSSocket.emit (node:events:524:35)
+62 error     at emitErrorNT (node:internal/streams/destroy:151:8)
+62 error     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
