@@ -3,7 +3,7 @@ import { Tooltip as AntdTooltip, TooltipProps as AntdTooltipProps } from 'antd'
 export type ITooltipProps = AntdTooltipProps
 import useStyles from './style'
 
-export default function Tooltip(props: ITooltipProps) {
+export default function ToolTip(props: ITooltipProps) {
   const { styles, cx, prefixCls } = useStyles()
   const { children } = props
   return (

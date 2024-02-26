@@ -55,6 +55,7 @@ const FileUpload = () => {
     <Upload
       fileList={fileList}
       onChange={handleChange}
+      uploadIconColor="green"
       tips={'Formats supported JPG, JPEG, PNG. Max size 100MB.'}
     />
   )

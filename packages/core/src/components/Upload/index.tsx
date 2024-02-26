@@ -14,6 +14,8 @@ import { UploadFile } from 'antd/es/upload'
 export interface IUploadProps
   extends Omit<AntdUploadProps, 'listType' | 'itemRender'> {
   tips?: string | ReactNode
+  uploadText?: string
+  uploadIconColor?: string
   showUploadButton?: boolean
 }
 
@@ -88,7 +90,7 @@ function UploadItemRender({
 function Upload(props: IUploadProps) {
   const { styles, cx, prefixCls } = useStyles()
   const token = useTheme()
-  const { tips, showUploadButton = true } = props
+  const { tips, showUploadButton = true, uploadText, uploadIconColor } = props
   return (
     <div
       className={
@@ -114,14 +116,12 @@ function Upload(props: IUploadProps) {
             className={cx(prefixCls + '-upload-button', styles.uploadButton)}
           >
             <UploadIcon
-              color={token.colorPrimary}
-              data-hovercolor={token.colorPrimaryHover}
-              data-activecolor={token.colorPrimaryActive}
+              color={uploadIconColor || token.colorPrimary}
               width={40}
               height={40}
             />
             <div className={styles.message}>
-              <div className={styles.uploadText}>Upload</div>
+              <div className={styles.uploadText}>{uploadText || 'Upload'}</div>
               {tips || (
                 <>
                   <div className={styles.messageTitle}>

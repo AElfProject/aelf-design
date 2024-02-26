@@ -98,14 +98,10 @@ export default createStyles(({ css, token, prefixCls }) => {
       border: 1px dashed ${token.customUpload?.borderColor};
       background: ${token.customUpload?.containerBg};
       :hover {
-        svg * {
-          fill: ${token.colorPrimaryHover} !important;
-        }
+        border-color: ${token.colorPrimaryHover};
       }
       :active {
-        svg * {
-          fill: ${token.colorPrimaryActive} !important;
-        }
+        border: ${token.colorPrimaryActive};
       }
     `,
     uploadText: css`
