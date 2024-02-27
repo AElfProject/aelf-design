@@ -43,6 +43,8 @@ export type { IUploadProps } from './Upload'
 export { default as Loading } from './Loading'
 export type { ILoadingProps } from './Loading'
 export { default as Carousel } from './Carousel'
+export { default as UploadButton } from './UploadButton'
+export type { IUploadButtonProps } from './UploadButton'
 export type { ICarouselProps } from './Carousel'
 
 export { default as useResponsive } from 'hooks/useResponsive'
