@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Tooltip from 'components/Tooltip'
+import ToolTip from 'components/ToolTip'
 import Button from 'components/Button'
 
 const text = (
@@ -28,15 +28,15 @@ const App: React.FC = () => (
         whiteSpace: 'nowrap'
       }}
     >
-      <Tooltip placement="topLeft" open={true} title={text}>
+      <ToolTip placement="topLeft" open={true} title={text}>
         <Button>TL</Button>
-      </Tooltip>
-      <Tooltip placement="top" title={text}>
+      </ToolTip>
+      <ToolTip placement="top" title={text}>
         <Button>Top</Button>
-      </Tooltip>
-      <Tooltip placement="topRight" title={text}>
+      </ToolTip>
+      <ToolTip placement="topRight" title={text}>
         <Button>TR</Button>
-      </Tooltip>
+      </ToolTip>
     </div>
     <div
       style={{
@@ -47,15 +47,15 @@ const App: React.FC = () => (
         float: 'inline-start'
       }}
     >
-      <Tooltip placement="leftTop" title={text}>
+      <ToolTip placement="leftTop" title={text}>
         <Button>LT</Button>
-      </Tooltip>
-      <Tooltip placement="left" title={text}>
+      </ToolTip>
+      <ToolTip placement="left" title={text}>
         <Button>Left</Button>
-      </Tooltip>
-      <Tooltip placement="leftBottom" title={text}>
+      </ToolTip>
+      <ToolTip placement="leftBottom" title={text}>
         <Button>LB</Button>
-      </Tooltip>
+      </ToolTip>
     </div>
     <div
       style={{
@@ -66,15 +66,15 @@ const App: React.FC = () => (
         marginInlineStart: buttonWidth * 4 + 24
       }}
     >
-      <Tooltip placement="rightTop" open={true} title={text}>
+      <ToolTip placement="rightTop" open={true} title={text}>
         <Button>RT</Button>
-      </Tooltip>
-      <Tooltip placement="right" title={text}>
+      </ToolTip>
+      <ToolTip placement="right" title={text}>
         <Button>Right</Button>
-      </Tooltip>
-      <Tooltip placement="rightBottom" title={text}>
+      </ToolTip>
+      <ToolTip placement="rightBottom" title={text}>
         <Button>RB</Button>
-      </Tooltip>
+      </ToolTip>
     </div>
     <div
       style={{
@@ -86,15 +86,15 @@ const App: React.FC = () => (
         whiteSpace: 'nowrap'
       }}
     >
-      <Tooltip placement="bottomLeft" title={text}>
+      <ToolTip placement="bottomLeft" title={text}>
         <Button>BL</Button>
-      </Tooltip>
-      <Tooltip placement="bottom" title={text}>
+      </ToolTip>
+      <ToolTip placement="bottom" title={text}>
         <Button>Bottom</Button>
-      </Tooltip>
-      <Tooltip placement="bottomRight" title={text}>
+      </ToolTip>
+      <ToolTip placement="bottomRight" title={text}>
         <Button>BR</Button>
-      </Tooltip>
+      </ToolTip>
     </div>
   </div>
 )

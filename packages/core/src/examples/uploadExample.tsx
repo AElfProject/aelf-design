@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import type { UploadRequestOption } from 'rc-upload/lib/interface'
 import { UploadProps } from 'antd'
 import { useAWSUploadService } from 'hooks/useAws'
+import UploadButton from 'components/UploadButton'
 const AWSUpload = () => {
   const [fileList, setFileList] = useState<any[]>([])
   const { awsUploadFile } = useAWSUploadService()
@@ -55,6 +56,7 @@ const FileUpload = () => {
     <Upload
       fileList={fileList}
       onChange={handleChange}
+      uploadIconColor="green"
       tips={'Formats supported JPG, JPEG, PNG. Max size 100MB.'}
     />
   )
@@ -64,6 +66,7 @@ const UploadExample: React.FC = () => (
   <div>
     <AWSUpload />
     <FileUpload></FileUpload>
+    <UploadButton />
   </div>
 )
 

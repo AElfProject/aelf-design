@@ -5,15 +5,18 @@ import {
 } from 'antd'
 import useStyles from './style'
 import { ReactElement, ReactNode } from 'react'
-import UploadIcon from 'assets/upload-icon.svg?react'
+
 import ClearIcon from 'assets/clear-icon.svg?react'
 import FileIcon from 'assets/file.svg?react'
 import { useTheme } from 'antd-style'
 import { UploadFile } from 'antd/es/upload'
+import UploadButton from 'components/UploadButton'
 
 export interface IUploadProps
   extends Omit<AntdUploadProps, 'listType' | 'itemRender'> {
   tips?: string | ReactNode
+  uploadText?: string
+  uploadIconColor?: string
   showUploadButton?: boolean
 }
 
@@ -87,8 +90,7 @@ function UploadItemRender({
 
 function Upload(props: IUploadProps) {
   const { styles, cx, prefixCls } = useStyles()
-  const token = useTheme()
-  const { tips, showUploadButton = true } = props
+  const { tips, showUploadButton = true, uploadText, uploadIconColor } = props
   return (
     <div
       className={
@@ -110,28 +112,11 @@ function Upload(props: IUploadProps) {
         }}
       >
         {showUploadButton && (
-          <div
-            className={cx(prefixCls + '-upload-button', styles.uploadButton)}
-          >
-            <UploadIcon
-              color={token.colorPrimary}
-              data-hovercolor={token.colorPrimaryHover}
-              data-activecolor={token.colorPrimaryActive}
-              width={40}
-              height={40}
-            />
-            <div className={styles.message}>
-              <div className={styles.uploadText}>Upload</div>
-              {tips || (
-                <>
-                  <div className={styles.messageTitle}>
-                    {`Formats supported JPG, JPEG, PNG. Max size 100MB.`}
-                    {`Recommend ratio 16:9.`}
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
+          <UploadButton
+            uploadIconColor={uploadIconColor}
+            tips={tips}
+            uploadText={uploadText}
+          />
         )}
       </AntdUpload>
     </div>
