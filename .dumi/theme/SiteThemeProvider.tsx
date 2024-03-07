@@ -28,12 +28,8 @@ const SiteThemeProvider: React.FC<ThemeProviderProps<any>> = ({
       prefixCls="aelf-design-doc"
       appearance={appearance}
       customToken={{
-        // customButton: {
-        //   borderRadiusDefault: '20px',
-        //   borderRadiusLarge: '30px'
-        // },
         customAddress: {
-          primaryLinkColor: appearance == 'dark' ? '#c713af' : '#53dd13',
+          primaryLinkColor: appearance == 'dark' ? '#c713af' : '#266cd3',
           primaryIconColor: appearance == 'dark' ? '#ea1818' : '#7f7777',
           addressHoverColor: appearance == 'dark' ? '#38b117' : '#149434',
           addressActiveColor: appearance == 'dark' ? '#0756BC' : '#0460D9',

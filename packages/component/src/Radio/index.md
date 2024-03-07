@@ -5,31 +5,23 @@ group:
   order: 3
 ---
 
-# Address
+# Radio
+
+1. 定制了样式
+2. 可自定义 圆点样式
 
 ## Basic Usage
 
-<!-- <code src="./demos/basic.tsx"></code> -->
+<code src="./demos/basic.tsx"></code>
 
-## Copyable
+## 组件 token
 
-<!-- <code src="./demos/copyable.tsx"></code> -->
-
-## Format
-
-<!-- <code src="./demos/format.tsx"></code> -->
-
-## Custom Tooltip
-
-<!-- <code src="./demos/customTooltip.tsx"></code> -->
+```json
+customRadio: {
+  dotColor: isDarkMode ? '#1A1A1A' : '#FFFFFF',
+},
+```
 
 ## API
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| ellipsis | Address clipping strategy | `boolean \| { headClip?: number, tailClip?: number }` | `{ headClip: 6, tailClip: 4 }` | - |
-| copyable | Address copyable | `boolean` | `false` | - |
-| address | Address | `string` | - | - |
-| tooltip | Show tooltip when hover address | `boolean \|`[Tooltip.title](https://ant.design/components/tooltip-cn#api) | `true ` | - |
-| format | Address format | `boolean \| (input: string) => ReactNode` | `false` | - |
-| locale | Multilingual settings | `Locale["address"]` | - | - |
+参考 antd

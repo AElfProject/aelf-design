@@ -12,7 +12,7 @@ const useStyles = createStyles(({ css, prefixCls }) => {
       &.${prefixCls}-progress {
         line-height: 1;
       }
-      .${prefixCls}-progress .${prefixCls}-progress-outer {
+      &.${prefixCls}-progress .${prefixCls}-progress-outer {
         display: flex;
       }
     `,

@@ -102,13 +102,7 @@ export default defineConfig({
     },
   },
   favicons: ['https://img2.imgtp.com/2024/03/01/EXKVhuMo.svg'],
-  locales: [
-    {
-      id: 'en-US',
-      name: 'English',
-    },
-    { id: 'zh-CN', name: '中文' },
-  ],
+  locales: [{ id: 'zh-CN', name: '中文' }],
   extraBabelPlugins: [
     [
       'babel-plugin-inline-react-svg-v2',
