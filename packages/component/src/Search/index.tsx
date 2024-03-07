@@ -1,10 +1,13 @@
-import React, { MouseEvent, useCallback, useMemo, useState } from 'react';
+import type { MouseEvent } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { DownArrowIcon, QueryIcon } from '@aelf-design/internal-icons';
-import { MenuProps } from 'antd';
-import { MenuItemType } from 'antd/lib/menu/hooks/useItems';
+import type { MenuProps } from 'antd';
+import type { MenuItemType } from 'antd/lib/menu/hooks/useItems';
 
-import Dropdown, { DropdownSizeType } from '../Dropdown';
-import Input, { IInputProps, InputSizeType } from '../Input';
+import type { DropdownSizeType } from '../Dropdown';
+import Dropdown from '../Dropdown';
+import type { IInputProps, InputSizeType } from '../Input';
+import Input from '../Input';
 import useStyles from './style';
 
 export type WithSearchIconType = 'connect' | 'inline' | 'after';

@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Search } from 'aelf-design';
-import { Row } from 'antd';
 
 function Demo() {
   return (
     <>
-      <Search withSearchIcon="after" placeholder="search something..." />
+      <Search placeholder="search something..." />
     </>
   );
 }
