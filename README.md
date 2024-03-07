@@ -5,12 +5,10 @@
 <h1 align="center">AELF Design</h1>
 </div>
 
-- 官网: https://
-
-## 开发
+## develop
 
 ```bash
 $ git clone https://github.com/AElf-devops/aelf-design.git
-$ pnpm i (如果没有pnpm，先 npm install -g pnpm)
+$ pnpm i (if there is not pnpm，please npm install -g pnpm first)
 $ pnpm dev
 ```

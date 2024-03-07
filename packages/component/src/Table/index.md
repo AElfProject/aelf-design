@@ -16,13 +16,17 @@ group:
 
 ## 组件 token
 
-```json
-Table: {
-  headerBg: appearance === 'dark' ? '#353535' : '#F0F0F0',
-  rowHoverBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
-  headerColor: appearance === 'dark' ? '#8C8C8C' : '#808080',
-  fontWeightStrong: 500,
-}
+```js
+<AELFDProvider theme={{
+  components:{
+    Table: {
+      headerBg: appearance === 'dark' ? '#353535' : '#F0F0F0',
+      rowHoverBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
+      headerColor: appearance === 'dark' ? '#8C8C8C' : '#808080',
+      fontWeightStrong: 500,
+    }
+  }
+}}>
 ```
 
 <!-- <code src="./demos/customTooltip.tsx"></code> -->

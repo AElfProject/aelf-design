@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Search } from 'aelf-design';
-import { Row, Space } from 'antd';
+import { Space } from 'antd';
 
 const items = [
   {
@@ -28,7 +28,6 @@ function Demo() {
         onSearchBtnClick={(e) => {
           console.log(e);
         }}
-        status="error"
         placeholder="search something..."
       />
       <Search
@@ -36,30 +35,14 @@ function Demo() {
         onSearchBtnClick={(e) => {
           console.log(e);
         }}
-        status="warning"
         placeholder="search something..."
       />
       <Search
-        filterItems={items}
-        inputSize="middle"
-        placeholder="search something..."
-        prefixWidth={130}
-        onClear={() => {
-          console.log(1);
-        }}
-        onSelectChange={(obj) => {
-          console.log(obj);
-        }}
-        onPressEnter={(e) => {
-          console.log('enter', e);
-        }}
-        onChange={(e) => {
-          console.log(e.target.value);
-        }}
+        withSearchIcon="after"
         onSearchBtnClick={(e) => {
           console.log(e);
         }}
-        withSearchIcon="connect"
+        placeholder="search something..."
       />
     </Space>
   );

@@ -5,31 +5,18 @@ group:
   order: 3
 ---
 
-# Address
+# Loading
+
+aelf-design own component
 
 ## Basic Usage
 
-<!-- <code src="./demos/basic.tsx"></code> -->
-
-## Copyable
-
-<!-- <code src="./demos/copyable.tsx"></code> -->
-
-## Format
-
-<!-- <code src="./demos/format.tsx"></code> -->
-
-## Custom Tooltip
-
-<!-- <code src="./demos/customTooltip.tsx"></code> -->
+<code src="./demos/basic.tsx"></code>
 
 ## API
 
-| Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| ellipsis | Address clipping strategy | `boolean \| { headClip?: number, tailClip?: number }` | `{ headClip: 6, tailClip: 4 }` | - |
-| copyable | Address copyable | `boolean` | `false` | - |
-| address | Address | `string` | - | - |
-| tooltip | Show tooltip when hover address | `boolean \|`[Tooltip.title](https://ant.design/components/tooltip-cn#api) | `true ` | - |
-| format | Address format | `boolean \| (input: string) => ReactNode` | `false` | - |
-| locale | Multilingual settings | `Locale["address"]` | - | - |
+| Property | Description         | Type                        | Default      | Version |
+| -------- | ------------------- | --------------------------- | ------------ | ------- |
+| open     | 设置是否展示Loading | `boolean`                   | `false`      | `1.0.0` |
+| content  | 设置内容区          | `string \| React.ReactNode` | `loading...` | `1.0.0` |
+| width    | 设置Loading宽度     | `number \| string`          | `240`        | `1.0.0` |

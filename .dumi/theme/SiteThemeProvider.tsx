@@ -9,7 +9,6 @@ interface NewToken {
   anchorTop: number;
 }
 
-// 通过给 antd-style 扩展 CustomToken 对象类型定义，可以为 useTheme 中增加相应的 token 对象
 declare module 'antd-style' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface CustomToken extends NewToken {}
@@ -27,26 +26,26 @@ const SiteThemeProvider: React.FC<ThemeProviderProps<any>> = ({
     <AELFDProvider
       prefixCls="aelf-design-doc"
       appearance={appearance}
-      customToken={{
-        // customButton: {
-        //   borderRadiusDefault: '20px',
-        //   borderRadiusLarge: '30px'
-        // },
-        customAddress: {
-          primaryLinkColor: appearance == 'dark' ? '#c713af' : '#53dd13',
-          primaryIconColor: appearance == 'dark' ? '#ea1818' : '#7f7777',
-          addressHoverColor: appearance == 'dark' ? '#38b117' : '#149434',
-          addressActiveColor: appearance == 'dark' ? '#0756BC' : '#0460D9',
-        },
-      }}
-      theme={{
-        token: {
-          colorPrimary: appearance == 'dark' ? '#1370DD' : '#764DF1',
-          colorPrimaryHover: appearance == 'dark' ? '#3689DD' : '#7F58F5',
-          colorPrimaryActive: appearance == 'dark' ? '#0756BC' : '#6F45EF',
-          colorTextDisabled: appearance == 'dark' ? '#96C4FB' : '#ACD2FF',
-        },
-      }}
+      // customToken={{
+      //   customButton: {
+      //     borderRadiusDefault: '20px',
+      //     borderRadiusLarge: '30px'
+      //   },
+      //   customAddress: {
+      //     primaryLinkColor: appearance == 'dark' ? '#c713af' : '#53dd13',
+      //     primaryIconColor: appearance == 'dark' ? '#ea1818' : '#7f7777',
+      //     addressHoverColor: appearance == 'dark' ? '#38b117' : '#149434',
+      //     addressActiveColor: appearance == 'dark' ? '#0756BC' : '#0460D9',
+      //   },
+      // }}
+      // theme={{
+      //   token: {
+      //     colorPrimary: appearance == 'dark' ? '#1370DD' : '#764DF1',
+      //     colorPrimaryHover: appearance == 'dark' ? '#3689DD' : '#7F58F5',
+      //     colorPrimaryActive: appearance == 'dark' ? '#0756BC' : '#6F45EF',
+      //     colorTextDisabled: appearance == 'dark' ? '#96C4FB' : '#ACD2FF',
+      //   },
+      // }}
     >
       {children}
     </AELFDProvider>
