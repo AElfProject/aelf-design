@@ -1,35 +1,24 @@
 ---
 nav: Components
+title: Carousel
 group:
   title: Display
   order: 3
 ---
 
-# Address
+# Carousel 轮播图组件
 
-## Basic Usage
+## 代码演示
 
-<!-- <code src="./demos/basic.tsx"></code> -->
-
-## Copyable
-
-<!-- <code src="./demos/copyable.tsx"></code> -->
-
-## Format
-
-<!-- <code src="./demos/format.tsx"></code> -->
-
-## Custom Tooltip
-
-<!-- <code src="./demos/customTooltip.tsx"></code> -->
+<code src="./demos/basic.tsx"></code>
 
 ## API
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| ellipsis | Address clipping strategy | `boolean \| { headClip?: number, tailClip?: number }` | `{ headClip: 6, tailClip: 4 }` | - |
-| copyable | Address copyable | `boolean` | `false` | - |
-| address | Address | `string` | - | - |
-| tooltip | Show tooltip when hover address | `boolean \|`[Tooltip.title](https://ant.design/components/tooltip-cn#api) | `true ` | - |
-| format | Address format | `boolean \| (input: string) => ReactNode` | `false` | - |
-| locale | Multilingual settings | `Locale["address"]` | - | - |
+| data | 轮播图数据，URL是必传的 | `ICarouselSlideItem { url: string [key: string]: any}[]` | `{ headClip: 6, tailClip: 4 }` | - |
+| galleryObjectFit | gallery图片展示规则 | `fill \| contain \| cover \| none \| scale-down` | `cover` | - |
+| thumbsSlidesPerView | thumbs一页展示多少条 | `number` | 5 | - |
+| onSlideClick | 点击轮播图片触发事件，返回值是当前点击的图片ICarouselSlideItem对象 | `(value: ICarouselSlideItem) => void` | - |
+
+## 本期暂未涉及token
