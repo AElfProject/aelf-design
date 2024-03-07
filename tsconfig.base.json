@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "esnext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "allowJs": false,
+    "declaration": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@@/*": [".dumi/tmp/*"],
+      "aelf-design": ["./packages/component/src/index.ts"],
+      "@aelf-design/common": ["./packages/common/src/index.ts"],
+      "@aelf-design/internal-icons": ["./packages/internal-icons/src/index.ts"]
+    }
+  }
+}
