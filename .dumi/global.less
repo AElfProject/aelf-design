@@ -1,0 +1,48 @@
+#root {
+  .dumi-default-header-left {
+    width: 300px;
+  }
+  .dumi-default-header-right {
+    justify-content: end;
+  }
+  .dumi-default-navbar {
+    margin-right: 24px;
+  }
+
+  .dumi-default-hero-title {
+    font-size: 80px;
+  }
+
+  .dumi-default-content-footer {
+    line-height: 1.2;
+  }
+
+  .home {
+    main {
+      max-width: none;
+      padding: 0;
+    }
+    .dumi-default-header-content {
+      max-width: none;
+    }
+  }
+}
+
+:not([data-prefers-color='dark']) {
+  .home {
+    .dumi-default-header {
+      background-color: #fff;
+    }
+    .dumi-default-content {
+      background-color: #fff;
+    }
+  }
+}
+
+[data-prefers-color='dark'] {
+  .home {
+    .dumi-default-content {
+      background-color: #050709;
+    }
+  }
+}
