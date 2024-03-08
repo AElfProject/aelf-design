@@ -32,7 +32,7 @@ export default defineConfig({
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
+
     gtag('config', 'G-C31HWEY1D4');
     `,
   ],
@@ -56,7 +56,7 @@ export default defineConfig({
     {
       property: 'og:description',
       content:
-        'AELF Design 是一个基于 Ant Design 的 React 组件库，它提供了一系列的组件，可以帮助你快速构建去中心化应用（DApp）。',
+        'AELF Design is a React component library based on Ant Design. It provides a series of components that can help you quickly build decentralized applications（DApp）',
     },
     {
       name: 'apple-mobile-web-app-capable',
@@ -99,6 +99,10 @@ export default defineConfig({
     logo: 'https://img2.imgtp.com/2024/03/01/EXKVhuMo.svg',
     socialLinks: {
       github: 'https://github.com/AElf-devops/aelf-design',
+    },
+    apiHeader: {
+      // 组件库包名，可以从 package.json 中引入名称
+      pkg: 'aelf-design',
     },
   },
   favicons: ['https://img2.imgtp.com/2024/03/01/EXKVhuMo.svg'],
