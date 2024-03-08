@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 import { Button as AntdButton, ButtonProps } from 'antd';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 
 import useStyles from './style';
 

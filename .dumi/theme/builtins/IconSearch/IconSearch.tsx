@@ -4,7 +4,7 @@ import AntdIcon from '@ant-design/icons';
 import { Affix, Empty, Grid, Input, Segmented, type SegmentedProps } from 'antd';
 import { createStyles, useTheme } from 'antd-style';
 import { useIntl } from 'dumi';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 
 import Category from './Category';
 import { categories, CategoriesKeys } from './fields';

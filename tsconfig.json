@@ -1,5 +1,4 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": ["./packages/component/src/**/*", ".dumirc.ts"],
-  "exclude": ["./docs/**/*", "./packages/component/src/**/*/demos/"]
+  "include": ["/packages/**/*", ".dumirc.ts"]
 }
