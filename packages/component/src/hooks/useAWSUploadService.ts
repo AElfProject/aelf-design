@@ -3,38 +3,42 @@ import { CognitoIdentityClient } from '@aws-sdk/client-cognito-identity';
 import { ObjectCannedACL, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { fromCognitoIdentityPool } from '@aws-sdk/credential-provider-cognito-identity';
 
-export function useAWSUploadService() {
-  const info = {
-    identityPoolID: 'ap-northeast-1:8bf42009-6180-4bcf-97fd-9a849a9f1927',
-    bucket: 'forest-dev',
-  };
+export interface IUploadService {
+  identityPoolID: string;
+  bucket: string;
+  region: string;
+}
 
-  const REGION = 'ap-northeast-1';
+export default function useAWSUploadService(props: IUploadService) {
+  const { region, bucket, identityPoolID } = props;
 
-  const s3Client = useMemo(
-    () =>
-      new S3Client({
-        region: REGION,
-        credentials: fromCognitoIdentityPool({
-          client: new CognitoIdentityClient({
-            region: REGION,
-          }),
-          identityPoolId: info.identityPoolID || '',
+  const s3Client = useMemo(() => {
+    if (!identityPoolID || !bucket || !region) {
+      return null;
+    }
+
+    const client = new S3Client({
+      region: region,
+      credentials: fromCognitoIdentityPool({
+        client: new CognitoIdentityClient({
+          region: region,
         }),
+        identityPoolId: identityPoolID || '',
       }),
-    [info.identityPoolID],
-  );
+    });
+    return client;
+  }, [identityPoolID, region, bucket]);
 
   const awsUploadFile = useCallback(
     async (file: File) => {
       const FileKey = `${Date.now()}-${file.name}`;
       const params = {
         ACL: 'public-read' as ObjectCannedACL,
-        Bucket: info.bucket,
+        Bucket: bucket,
         Key: FileKey,
       };
       try {
-        const res = await s3Client.send(
+        const res = await s3Client?.send(
           new PutObjectCommand({
             Body: file,
             ContentType: file.type,
@@ -42,13 +46,14 @@ export function useAWSUploadService() {
             ...params,
           }),
         );
-        return `https://${info.bucket}.s3.${REGION}.amazonaws.com/${encodeURIComponent(FileKey)}`;
+        console.log(res);
+        return `https://${bucket}.s3.${region}.amazonaws.com/${encodeURIComponent(FileKey)}`;
       } catch (error) {
         console.error('=====awsUploadFile error:', error);
         return Promise.reject(error);
       }
     },
-    [s3Client, info.bucket],
+    [s3Client, bucket, region],
   );
 
   return {
