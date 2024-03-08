@@ -21,26 +21,26 @@ Uploading is the process of publishing information (web pages, text, pictures, v
 
 ### basic
 
-<code src="./demos/basic.tsx"></code>
+<code src="./demos/basic.tsx">basic upload</code>
 
 ### AWS
 
 Please fill in your AWS configuration before trying to upload
 
-<code src="./demos/AWSUpload.tsx"></code>
+<code src="./demos/AWSUpload.tsx">AWS upload</code>
 
 ## API
 
 | Adjust | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- | --- |
-| add | tips | 上传区域提示文案 | `string \| ReactNode` | Formats supported JPG, JPEG, PNG. Max size 10 MB.Recommend ratio 16:9. |  |
-| add | showUploadButton | 是否展示上传按钮 | `boolean` | `true` | - |
-| add | uploadText | 上传提示文案 | `string` | Upload | - |
-| add | uploadIconColor | 上传icon颜色 | `string` | 默认是主题色,colorPrimary | - |
-| add | format | Address format | `boolean \| (input: string) => ReactNode` | `false` | - |
-| add | locale | Multilingual settings | `Locale["address"]` | - | - |
-| delete | listType | - | - | - | - |
-| delete | itemRender | - | - | - | - |
+| <Badge type="success">add</Badge> | tips | 上传区域提示文案 | `string \| ReactNode` | Formats supported JPG, JPEG, PNG. Max size 10 MB.Recommend ratio 16:9. |  |
+| <Badge type="success">add</Badge> | showUploadButton | 是否展示上传按钮 | `boolean` | `true` | - |
+| <Badge type="success">add</Badge> | uploadText | 上传提示文案 | `string` | Upload | - |
+| <Badge type="success">add</Badge> | uploadIconColor | 上传icon颜色 | `string` | 默认是主题色,colorPrimary | - |
+| <Badge type="success">add</Badge> | format | Address format | `boolean \| (input: string) => ReactNode` | `false` | - |
+| <Badge type="success">add</Badge> | locale | Multilingual settings | `Locale["address"]` | - | - |
+| <Badge type="error">delete</Badge> | listType | - | - | - | - |
+| <Badge type="error">delete</Badge> | itemRender | - | - | - | - |
 
 ## Design Token
 

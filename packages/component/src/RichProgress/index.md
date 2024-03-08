@@ -5,7 +5,7 @@ group:
   order: 3
 ---
 
-# Address
+# RichProgress
 
 ## Basic Usage
 
