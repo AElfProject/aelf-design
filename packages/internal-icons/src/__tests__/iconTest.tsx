@@ -1,5 +1,5 @@
 import path from 'path';
-import { type ComponentType } from 'react';
+import React, { type ComponentType } from 'react';
 import { globSync } from 'glob';
 
 export async function getComponents(dir: string): Promise<ComponentType[]> {

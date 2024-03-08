@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { DownArrowIcon, LeftArrowIcon, RightArrowIcon } from '@aelf-design/internal-icons';
 import { Select } from 'antd';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 
 import Button from '../Button';
 import useStyles from './style';

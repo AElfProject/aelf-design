@@ -48,7 +48,8 @@
     "copy-to-clipboard": "^3.3.3",
     "swiper": "^11.0.5",
     "dayjs": "^1.11.10",
-    "ahooks": "^3.7.10"
+    "ahooks": "^3.7.10",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@types/react": "^18.2.45",
