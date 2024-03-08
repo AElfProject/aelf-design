@@ -8,10 +8,10 @@ export type ButtonSizeType = 'mini' | 'small' | 'medium' | 'large' | 'ultra';
 export interface IButtonProps extends Omit<ButtonProps, 'size' | 'onClick'> {
   size?: ButtonSizeType;
   onClick?: React.MouseEventHandler<HTMLElement>;
-  millisecondOfThrottle?: number;
+  millisecondOfDebounce?: number;
 }
 
-function Button({ size = 'large', className, millisecondOfThrottle = 0, ...rest }: IButtonProps) {
+function Button({ size = 'large', className, millisecondOfDebounce = 0, ...rest }: IButtonProps) {
   const { styles: st, cx } = useStyles({ size });
 
   const buttonClickHandler = debounce(
@@ -20,10 +20,10 @@ function Button({ size = 'large', className, millisecondOfThrottle = 0, ...rest 
         rest.onClick(e);
       }
     },
-    millisecondOfThrottle,
+    millisecondOfDebounce,
     {
-      leading: true,
-      trailing: false,
+      leading: false,
+      trailing: true,
     },
   );
   return (
