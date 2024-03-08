@@ -42,3 +42,4 @@ export type { IUploadButtonProps } from './UploadButton';
 export type { ICarouselProps } from './Carousel';
 
 export { default as useResponsive } from './hooks/useResponsive';
+export { default as useAWSUploadService } from './hooks/useAWSUploadService';
