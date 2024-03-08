@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Button } from 'aelf-design';
 
 const App: React.FC = () => {
+  const [count, setCount] = useState(0);
+
   return (
     <div>
       <Button
         type="primary"
         size="medium"
-        millisecondOfThrottle={1000}
+        millisecondOfDebounce={1000}
         onClick={() => {
-          console.log('send');
+          setCount((c) => c + 1);
         }}
       >
-        send
+        debounced button
       </Button>
+      <p>current count: {count}</p>
     </div>
   );
 };
