@@ -66,6 +66,8 @@
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@types/react-copy-to-clipboard": "^5.0.7",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
     "@umijs/fabric": "^4.0.1",
     "@vitest/coverage-v8": "^1.1.0",
     "aelf-design": "workspace:*",
@@ -78,6 +80,10 @@
     "dumi": "^2.2.17",
     "dumi-theme-antd-style": "0.25.1",
     "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "ethers": "^6.9.1",
     "father": "^4.3.8",
@@ -94,7 +100,7 @@
     "typescript": "^5.3.3",
     "viem": "^2.0.0",
     "vite-plugin-svgr": "^4.2.0",
-    "vitest": "~1.1.0"
+    "vitest": "^1.3.1"
   },
   "ci": {
     "type": "aci",

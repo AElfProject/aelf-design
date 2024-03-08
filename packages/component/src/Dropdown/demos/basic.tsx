@@ -24,16 +24,16 @@ const App: React.FC = () => {
     <div>
       <Space size={100}>
         <Dropdown size="small" menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}>
-          <Typography.Text>small (hover me)</Typography.Text>
+          <Typography.Title level={7}>small (hover me)</Typography.Title>
         </Dropdown>
         <Dropdown size="medium" menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}>
-          <Typography.Text>medium</Typography.Text>
+          <Typography.Title level={7}>medium</Typography.Title>
         </Dropdown>
         <Dropdown size="default" menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}>
-          <Typography.Text>default</Typography.Text>
+          <Typography.Title level={7}>default</Typography.Title>
         </Dropdown>
         <Dropdown size="large" menu={{ items, selectable: true, defaultSelectedKeys: ['1'] }}>
-          <Typography.Text>large</Typography.Text>
+          <Typography.Title level={7}>large</Typography.Title>
         </Dropdown>
       </Space>
     </div>

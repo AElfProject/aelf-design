@@ -7,7 +7,7 @@ group:
 
 # DatePicker
 
-## for PC
+## For PC
 
 <code src="./demos/pc.tsx"></code>
 
@@ -15,7 +15,7 @@ group:
 
 refer to [DatePicker](https://ant-design.antgroup.com/components/date-picker-cn#%E5%85%B1%E5%90%8C%E7%9A%84-api)
 
-### token
+### Token
 
 ```js
 <AELFDProvider theme={{
@@ -30,11 +30,11 @@ refer to [DatePicker](https://ant-design.antgroup.com/components/date-picker-cn#
 }}>
 ```
 
-### other token
+### Supported token
 
 refer to [DatePicker](https://ant.design/components/date-picker-cn#%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8Fdesign-token)
 
-## for Mobile
+## For Mobile
 
 <code src="./demos/mobile.tsx"></code>
 
@@ -42,7 +42,7 @@ refer to [DatePicker](https://ant.design/components/date-picker-cn#%E4%B8%BB%E9%
 
 refer to [Picker](https://mobile.ant.design/zh/components/picker/#%E5%B1%9E%E6%80%A7-2)
 
-### token
+### Token
 
 Inherited global token, no extended token, follows global token specification
 
