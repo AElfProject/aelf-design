@@ -50,7 +50,7 @@ const StepItemIcon = ({
   return (
     <Progress
       percent={responsive.md ? 0 : percent}
-      width={24}
+      size={24}
       type="circle"
       strokeLinecap="butt"
       showInfo

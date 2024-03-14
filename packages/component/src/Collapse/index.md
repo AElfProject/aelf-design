@@ -44,7 +44,7 @@ refer to [Collapse Token](https://ant.design/components/collapse-cn#%E4%B8%BB%E9
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| expandIcon<Badge type='error'>删除</Badge> | 自定义切换图标 | `(panelProps) => ReactNode` | `1.0.0` |
+| expandIcon<Badge type='error'>删除</Badge> | 自定义切换图标 | `(panelProps) => ReactNode` | - | `1.0.0` |
 | expandIconPosition<Badge type='error'>删除</Badge> | 设置图标位置 | `number` | `start \| end` | `1.0.0` |
 
 ## Supported API

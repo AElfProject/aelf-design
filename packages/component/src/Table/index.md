@@ -7,14 +7,14 @@ group:
 
 # Table
 
-1. 定制了分页器
-2. 修改了 table header
+1. customize pagination
+2. customize table header
 
 ## Basic Table
 
 <code src="./demos/basic.tsx"></code>
 
-## 组件 token
+## Token
 
 ```js
 <AELFDProvider theme={{
@@ -29,8 +29,12 @@ group:
 }}>
 ```
 
-<!-- <code src="./demos/customTooltip.tsx"></code> -->
+## Supported Token
+
+refer to [Table Token](https://ant.design/components/table-cn#%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8Fdesign-token)
 
 ## API
 
-参考 antd
+## Supported API
+
+refer to [Table API](https://ant.design/components/table-cn#table)
