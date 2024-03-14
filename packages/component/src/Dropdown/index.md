@@ -34,9 +34,9 @@ refer to [Dropdown Token](https://ant.design/components/dropdown-cn/#%E4%B8%BB%E
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| size | 设置下拉面板大小 | `small \| medium \| default \| large` | `default` | `1.0.0` |
-| offsetX | 下拉面板距离触发元素的横向偏移量 | number | `0` | `1.0.0` |
-| offsetY | 下拉面板距离触发元素的纵向偏移量 | number | `0` | `1.0.0` |
+| size<Badge type='success'>新增</Badge> | 设置下拉面板大小 | `small \| medium \| default \| large` | `default` | `1.0.0` |
+| offsetX<Badge type='success'>新增</Badge> | 下拉面板距离触发元素的横向偏移量 | `number` | `0` | `1.0.0` |
+| offsetY <Badge type='success'>新增</Badge> | 下拉面板距离触发元素的纵向偏移量 | `number` | `0` | `1.0.0` |
 
 ## Supported API
 

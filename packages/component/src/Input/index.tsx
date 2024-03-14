@@ -75,7 +75,13 @@ function Input({ size = 'middle', className, onClear, allowClear, ...rest }: IIn
   );
 }
 
-function InputPassword({ size = 'middle', className, ...rest }: InputPasswordProps) {
+function InputPassword({
+  size = 'middle',
+  className,
+  onClear,
+  allowClear,
+  ...rest
+}: InputPasswordProps) {
   const { styles: st } = useStyles({ size });
   const token = useTheme();
   const iconProps: IconColorProps = {
@@ -88,9 +94,15 @@ function InputPassword({ size = 'middle', className, ...rest }: InputPasswordPro
       {...rest}
       size={size}
       className={`${st.aelfdInput} ${className || ''}`}
-      allowClear={{
-        clearIcon: getClearIcon(),
-      }}
+      allowClear={
+        allowClear === false
+          ? false
+          : allowClear
+            ? allowClear
+            : {
+                clearIcon: getClearIcon(onClear, token),
+              }
+      }
       iconRender={(visible) =>
         visible ? (
           <EyeTwoToneIcon {...iconProps} width={16} height={16} />

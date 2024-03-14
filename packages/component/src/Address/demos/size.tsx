@@ -1,37 +1,43 @@
 import React from 'react';
-import { HashAddress } from 'aelf-design';
+import { HashAddress, Typography } from 'aelf-design';
 import { Space } from 'antd';
 
 const App: React.FC = () => {
   return (
     <Space direction="vertical">
       <div>
-        small:
-        <HashAddress address="2DKgy7GafbrYWGnhSC3iSYgM9ZfudYS2KLLr1rDPLF9nZfWA6G" size="small" />
-      </div>
-      <div>
-        default:
+        <Typography.Title level={7}>small:</Typography.Title>
         <HashAddress
           address="2DKgy7GafbrYWGnhSC3iSYgM9ZfudYS2KLLr1rDPLF9nZfWA6G"
           preLen={8}
           endLen={8}
-          ignorePrefixSuffix
+          size="small"
+        />
+      </div>
+      <div>
+        <Typography.Title level={7}>default:</Typography.Title>
+        <HashAddress
+          address="2DKgy7GafbrYWGnhSC3iSYgM9ZfudYS2KLLr1rDPLF9nZfWA6G"
+          preLen={8}
+          endLen={8}
           size="default"
         />
       </div>
       <div>
-        large:
+        <Typography.Title level={7}>large:</Typography.Title>
         <HashAddress
           address="2DKgy7GafbrYWGnhSC3iSYgM9ZfudYS2KLLr1rDPLF9nZfWA6G"
-          hasCopy={false}
+          preLen={8}
+          endLen={8}
           size="large"
         />
       </div>
       <div>
-        ultra:
+        <Typography.Title level={7}>ultra:</Typography.Title>
         <HashAddress
           address="2DKgy7GafbrYWGnhSC3iSYgM9ZfudYS2KLLr1rDPLF9nZfWA6G"
-          hasCopy={false}
+          preLen={8}
+          endLen={8}
           size="ultra"
         />
       </div>

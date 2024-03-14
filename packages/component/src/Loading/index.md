@@ -7,7 +7,7 @@ group:
 
 # Loading
 
-aelf-design own component
+<Badge type='success'>aelf-design</Badge> aelf-design own component
 
 ## Basic Usage
 

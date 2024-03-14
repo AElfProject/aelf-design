@@ -7,33 +7,45 @@ group:
 
 # Modal
 
-1. 定制 width 为 438
-2. Bool(closeIcon) 为 true 时定制了icon，为 false 时显示 null
+1. customize `width` to 438
+2. customize closeIcon, do not display when `closeIcon` is false
 
 ## Basic Usage
 
 <code src="./demos/basic.tsx"></code>
 
-## 组件 Token
+## Token
 
-```json
-Modal: {
-    // 控制元素的内间距
-    paddingMD: 24,
-    // 控制内容元素水平内间距
-    paddingContentHorizontalLG: 24,
-    // 控制标题类组件（如 h1、h2、h3）或选中项的字体粗细
-    fontWeightStrong: 500,
-    // 标题字体大小
-    titleFontSize: 20,
-    // 标题行高
-    titleLineHeight: 1.4,
- },
+```js
+<AELFDProvider theme={{
+  components:{
+    Modal: {
+      // Control the padding of elements
+      paddingMD: 24,
+      // Control horizontal padding of content elements
+      paddingContentHorizontalLG: 24,
+      // Control the font weight of heading components (such as h1, h2, h3)
+      fontWeightStrong: 500,
+      // Control title font size
+      titleFontSize: 20,
+      // Control title line height
+      titleLineHeight: 1.4,
+    }
+  }
+}}>
 ```
+
+## Supported Token
+
+refer to [Modal Token](https://ant.design/components/modal-cn#%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8Fdesign-token)
 
 ## API
 
 | Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- |
-| width | 宽度 | `string \| number` | 438 | - |
-| closeIcon | 关闭icon | - | Bool(closeIcon) 为 true 时定制了icon，为 false 时显示 null | - |
+| --- | --- | --- | --- | --- | --- |
+| width<Badge type='warning'>修改</Badge> | 设置宽度 | `string \| number` | `438` | `1.0.0` |
+| closeIcon<Badge type='warning'>修改</Badge> | 关闭icon，`false`时不显示，非`false`展示默认 | - | `ReactNode` | - | `1.0.0` |
+
+## Supported API
+
+refer to [Modal API](https://ant.design/components/modal-cn#api)
