@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
-  "include": ["src", "global.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", ".fatherrc.ts"],
+  "exclude": ["src/**/*/demos/**/*"],
   "compilerOptions": {
     "outDir": "dist"
   }
