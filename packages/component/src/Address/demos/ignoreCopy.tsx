@@ -9,11 +9,7 @@ const App: React.FC = () => {
         address="2DKgy7GafbrYWGnhSC3iSYgM9ZfudYS2KLLr1rDPLF9nZfWA6G"
         preLen={8}
         endLen={8}
-        addressClickCallback={(originAdd, finalAdd, event) => {
-          console.log(originAdd, finalAdd, event);
-        }}
-        ignoreEvent={true}
-        ignorePrefixSuffix
+        hasCopy={false}
       />
     </Space>
   );

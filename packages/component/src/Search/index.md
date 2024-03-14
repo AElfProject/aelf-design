@@ -7,7 +7,7 @@ group:
 
 # Search
 
-aelf-design own component
+<Badge type='success'>aelf-design</Badge> aelf-design own component
 
 ## Basic Usage
 
@@ -33,10 +33,10 @@ aelf-design own component
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| inputSize | 设置搜索框大小 | `small \| middle` | middle | `1.0.0` |
-| dropdownSize | 设置搜索框下拉筛选菜单大小 | `small \| medium \| default \| large` | default | `1.0.0` |
+| inputSize | 设置搜索框大小 | `small \| middle` | `middle` | `1.0.0` |
+| dropdownSize | 设置搜索框下拉筛选菜单大小 | `small \| medium \| default \| large` | `default` | `1.0.0` |
 | filterItems | 下拉筛选菜单内容 | [FilterItemType[]](#filteritemtype) | - | `1.0.0` |
-| prefixWidth | 筛选区域元素宽度 | `string \| number` | auto | `1.0.0` |
+| prefixWidth | 筛选区域元素宽度 | `string \| number` | `auto` | `1.0.0` |
 | withSearchIcon | 搜索按钮与搜索框的位置关系 | `connect \| inline \| after` <br/> `connect`: 连接在搜索框后面;<br/> `inline`: 在搜索框内部;<br/> `after`: 在搜索框后面，不连接需要指定，否则不展示搜索按钮 | 需要指定，否则不展示搜索按钮 | `1.0.0` |
 | status | 设置搜索框大小 | `error \| warning` | - | `1.0.0` |
 | className | 设置输入框外层样式 | `string` | - | `1.0.0` |

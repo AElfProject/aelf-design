@@ -34,7 +34,10 @@ export const AelfIcon = React.forwardRef<
 
     ...restProps
   } = props;
+  const { width = defaultWidth, height = defaultHeight, style, ...restedProps } = restProps;
   const iconColor: IconColorProps = {
+    width,
+    height,
     color,
     hoverColor,
     activeColor,
@@ -42,20 +45,19 @@ export const AelfIcon = React.forwardRef<
     hoverTwoToneColor,
     activeTwoToneColor,
   };
-  const { width = defaultWidth, height = defaultHeight, style, ...restedProps } = restProps;
   const { styles } = useStyles(iconColor);
   const cls = classnames(prefixCls, props.className, styles.iconWrap);
   return (
     <AntdIcon
       {...restedProps}
-      className={cls}
       ref={ref}
       component={component}
       style={{
-        width,
-        height,
         ...style,
       }}
+      className={cls}
     />
   );
 });
+
+AelfIcon.displayName = 'AelfIcon';

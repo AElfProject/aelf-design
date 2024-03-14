@@ -1,6 +1,8 @@
 import { BaseReturnType, createStyles, SerializedStyles } from 'antd-style';
 
 export interface IconColorProps {
+  width?: string | number;
+  height?: string | number;
   color?: string;
   hoverColor?: string;
   activeColor?: string;
@@ -25,6 +27,8 @@ const createPathsStyle = (colors: string[], timing?: 'hover' | 'active') => {
 const useStyles = createStyles<IconColorProps, { iconWrap: SerializedStyles }>(({ css }, props) => {
   return {
     iconWrap: css`
+      width: ${typeof props.width === 'number' ? `${props.width}px` : props.width};
+      height: ${typeof props.height === 'number' ? `${props.height}px` : props.height};
       path:nth-of-type(1) {
         fill: ${props.color};
       }

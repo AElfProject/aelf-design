@@ -7,14 +7,14 @@ group:
 
 # Input
 
-1. 定制了 size props、 文本样式
-2. `Input` 默认有 allowClearIcon
-3. `Input.Password` 定制了 隐藏/显示icon
+1. customize size props
+2. `Input` allowClearIcon by default
+3. `Input.Password` customize show/hide icon
 4. `Input.TextArea`
 
 ## Basic Usage
 
-size: small | middle; 高度为 40 | 48 <code src="./demos/basic.tsx"></code>
+<code src="./demos/basic.tsx"></code>
 
 ## Input.Password
 
@@ -24,25 +24,37 @@ size: small | middle; 高度为 40 | 48 <code src="./demos/basic.tsx"></code>
 
 <code src="./demos/textArea.tsx"></code>
 
-## 组件 token
+## Token
 
-```json
-Input: {
-    // 标准输入框纵向内边距
-    paddingBlock: 11,
-    // 小号输入框纵向内边距
-    paddingBlockSM: 7,
-    // 标准输入框横向内边距
-    paddingInline: 11,
-    // 小号输入框横向内边距
-    paddingInlineSM: 7,
-    // 前/后置标签背景色
-    addonBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
- }
+```js
+<AELFDProvider theme={{
+  components:{
+    Input: {
+      // Vertical padding of standard input box
+      paddingBlock: 11,
+      // Vertical padding of small input box
+      paddingBlockSM: 7,
+      // Horizontal padding of standard input box
+      paddingInline: 11,
+      // Horizontal padding of small input box
+      paddingInlineSM: 7,
+      // Prefix/suffix label background color
+      addonBg: appearance === 'dark' ? '#212121' : '#F8F8F8',
+    }
+  }
+}}>
 ```
+
+## Supported Token
+
+refer to [Input Token](https://ant.design/components/input-cn#%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8Fdesign-token)
 
 ## API
 
-| Property | Description | Type              | Default  | Version |
-| -------- | ----------- | ----------------- | -------- | ------- |
-| size     | input 高度  | `small \| middle` | `middle` | -       |
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| size<Badge type='warning'>修改</Badge> | 设置 input 高度 | `small \| middle` <br/> `small: 40px` <br/> `middle: 48px` | `middle` | `1.0.0` |
+
+## Supported API
+
+refer to [Input API](https://ant.design/components/input-cn#api)

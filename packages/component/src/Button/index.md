@@ -45,7 +45,7 @@ refer to [Button Token](https://ant.design/components/button-cn/#%E4%B8%BB%E9%A2
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| size<Badge type='warning'>修改</Badge> | 设置按钮 height | `mini \| small \| medium \| large \| ultra` | `large` | `1.0.0` |
+| size<Badge type='warning'>修改</Badge> | 设置按钮 height | `mini \| small \| medium \| large \| ultra` <br/> `mini`: `24px` <br/> `small`: `32px` <br/> `medius`: `40px` <br/> `large`: `48px` <br/> `ultra`: `56px` | `large` | `1.0.0` |
 | millisecondOfDebounce<Badge type='success'>新增</Badge> | 等待时间，单位为毫秒 | `number` | `0` | `1.0.0` |
 
 ## Supported API
