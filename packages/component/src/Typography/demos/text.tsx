@@ -8,20 +8,31 @@ function Demo() {
       <Typography.Text size="mini" fontWeight={FontWeightEnum.Regular}>
         text mini Regular
       </Typography.Text>
+      <Typography.Text size="mini" fontWeight={FontWeightEnum.Medium}>
+        text mini Medium
+      </Typography.Text>
+      <Typography.Text size="mini" fontWeight={FontWeightEnum.Bold}>
+        text mini Bold
+      </Typography.Text>
+
       <Typography.Text size="small" fontWeight={FontWeightEnum.Regular}>
         text small Regular
       </Typography.Text>
-      <Typography.Text size="normal" fontWeight={FontWeightEnum.Regular}>
-        text normal Regular
-      </Typography.Text>
-      <Typography.Text size="normal" fontWeight={FontWeightEnum.Bold}>
-        text normal Bold
+      <Typography.Text size="small" fontWeight={FontWeightEnum.Medium}>
+        text small Medium
       </Typography.Text>
       <Typography.Text size="small" fontWeight={FontWeightEnum.Bold}>
         text small Bold
       </Typography.Text>
-      <Typography.Text size="mini" fontWeight={FontWeightEnum.Bold}>
-        text mini Bold
+
+      <Typography.Text size="normal" fontWeight={FontWeightEnum.Regular}>
+        text normal Regular
+      </Typography.Text>
+      <Typography.Text size="normal" fontWeight={FontWeightEnum.Medium}>
+        text normal Medium
+      </Typography.Text>
+      <Typography.Text size="normal" fontWeight={FontWeightEnum.Bold}>
+        text normal Bold
       </Typography.Text>
     </Space>
   );

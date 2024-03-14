@@ -31,9 +31,6 @@ function Demo() {
       <Typography.Title fontWeight={FontWeightEnum.Bold} level={7}>
         level7 Bold
       </Typography.Title>
-      <Typography.Text size="small" disabled fontWeight={FontWeightEnum.Regular}>
-        text small Regular
-      </Typography.Text>
     </Space>
   );
 }

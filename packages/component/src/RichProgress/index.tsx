@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { ProgressErrorIcon, ProgressSuccessIcon } from '@aelf-design/internal-icons';
-import { useResponsive } from 'ahooks/es/useResponsive';
+import { useResponsive } from 'antd-style';
 
 import Progress from '../Progress';
 import useStyles from './style';
@@ -50,7 +50,7 @@ const StepItemIcon = ({
   return (
     <Progress
       percent={responsive.md ? 0 : percent}
-      width={24}
+      size={24}
       type="circle"
       strokeLinecap="butt"
       showInfo
@@ -196,4 +196,4 @@ const RichProgress = ({
   );
 };
 
-export { RichProgress };
+export default memo(RichProgress);
