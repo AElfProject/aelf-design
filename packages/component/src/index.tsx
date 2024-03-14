@@ -41,7 +41,11 @@ export type { ICarouselProps } from './Carousel';
 export { default as UploadButton } from './UploadButton';
 export type { IUploadButtonProps } from './UploadButton';
 export { default as RichProgress } from './RichProgress';
-export type { ProgressLineType, IStepItem, IProgressStepsProps } from './RichProgress';
+export type {
+  ProgressLineType,
+  IStepItem as IProgressStepItem,
+  IProgressStepsProps,
+} from './RichProgress';
 export { default as ProgressModal } from './ProgressModal';
 export type { IProgressModalProps } from './ProgressModal';
 

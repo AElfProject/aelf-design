@@ -1,12 +1,9 @@
 import React from 'react';
-import { Button } from 'aelf-design';
-
-import { IStepItem } from '../../RichProgress/index';
-import ProgressModal from '../index';
+import { Button, IProgressStepItem, ProgressModal } from 'aelf-design';
 
 const App: React.FC = () => {
   const [showProgress, setShowProgress] = React.useState(false);
-  const steps: IStepItem[] = [
+  const steps: IProgressStepItem[] = [
     {
       title: 'Title1Title1Title1',
       subTitle: 'subTitle1subTitle1.',
