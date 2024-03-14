@@ -1,9 +1,8 @@
 import React from 'react';
-
-import RichProgress, { IStepItem } from '../index';
+import { IProgressStepItem, RichProgress } from 'aelf-design';
 
 const App: React.FC = () => {
-  const steps: IStepItem[] = [
+  const steps: IProgressStepItem[] = [
     {
       title: 'Title1Title1Title1',
       subTitle: 'subTitle1subTitle1.',
