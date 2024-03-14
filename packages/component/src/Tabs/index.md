@@ -7,27 +7,39 @@ group:
 
 # Tabs
 
-1. 调整了样式
-2. 修改 size props, 提供middle 和small 两种大小
-3. 删除 tabBarGutter： tabs 之间的间隙
+1. customize style
+2. delete `size` props, and provide `middle`,`small` size
+3. delete `tabBarGutter`: gap between tabs
 
 ## Basic Usage
 
 <code src="./demos/basic.tsx"></code>
 
-## 组件 token
+## Token
 
-```json
-Tabs: {
-    // 标准大小横向标签页标签内间距
-    horizontalItemPadding: '17px 16px',
-    // 小号横向标签页标签内间距
-    horizontalItemPaddingSM: '13px 10px',
- },
+```js
+<AELFDProvider theme={{
+  components:{
+    Tabs: {
+      // padding of standard tabs
+      horizontalItemPadding: '17px 16px',
+      // padding of small tabs
+      horizontalItemPaddingSM: '13px 10px',
+    },
+  }
+}}>
 ```
+
+## Supported Token
+
+refer to [Tabs Token](https://ant.design/components/tabs-cn#%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8Fdesign-token)
 
 ## API
 
-| Property | Description                   | Type              | Default  | Version |
-| -------- | ----------------------------- | ----------------- | -------- | ------- |
-| size     | 提供 middle 和 small 两种大小 | `middle \| small` | `middle` | -       |
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| size<Badge type='warning'>修改</Badge> | 提供 middle 和 small 两种大小 | `middle \| small` | `middle` | `1.0.0` |
+
+## Supported API
+
+refer to [Tabs API](https://ant.design/components/tabs-cn#api)

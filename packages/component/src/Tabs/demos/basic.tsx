@@ -1,6 +1,5 @@
 import React from 'react';
 import { DownArrowIcon } from '@aelf-design/internal-icons';
-import { AndroidOutlined, SearchOutlined } from '@ant-design/icons';
 import { Tabs } from 'aelf-design';
 import { Space } from 'antd';
 
@@ -9,7 +8,7 @@ const tabItems = [
     key: '1',
     label: 'Tab 1',
     children: 'Content of Tab Pane 1',
-    icon: <SearchOutlined />,
+    icon: <DownArrowIcon />,
   },
   {
     key: '2',
@@ -21,7 +20,7 @@ const tabItems = [
     key: '3',
     label: 'Tabxxxxxx 3',
     children: 'Content of Tab Pane 3',
-    icon: <SearchOutlined />,
+    icon: <DownArrowIcon />,
   },
 ];
 const App: React.FC = () => {
@@ -30,9 +29,9 @@ const App: React.FC = () => {
       <Tabs defaultActiveKey="1" items={tabItems} />
       <Tabs
         size="small"
-        defaultActiveKey="1"
+        defaultActiveKey="3"
         items={tabItems}
-        indicatorSize={(origin) => origin - 26}
+        indicator={{ size: (origin) => origin - 20 }}
       />
     </Space>
   );

@@ -1,6 +1,6 @@
 {
   "name": "aelf-design",
-  "version": "0.0.1-alpha.3",
+  "version": "1.0.0.alpha.1",
   "type": "module",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -39,29 +39,28 @@
     "build": "father build"
   },
   "dependencies": {
-    "@ant-design/cssinjs": "^1.18.2",
     "@aelf-design/common": "workspace:*",
     "@aelf-design/internal-icons": "workspace:*",
+    "@ant-design/cssinjs": "^1.18.2",
     "@ctrl/tinycolor": "^4.0.2",
     "antd": "^5.12.4",
     "classnames": "^2.3.2",
     "copy-to-clipboard": "^3.3.3",
-    "swiper": "^11.0.5",
     "dayjs": "^1.11.10",
-    "ahooks": "^3.7.10",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
-    "father": "^4.3.8",
-    "typescript": "^5.3.3",
-    "antd-mobile": "^5.34.0",
-    "antd-style": "^3.5.2",
     "@aws-sdk/client-cognito-identity": "^3.410.0",
     "@aws-sdk/client-s3": "^3.410.0",
     "@aws-sdk/credential-provider-cognito-identity": "^3.410.0",
-    "@aws-sdk/lib-storage": "^3.412.0"
+    "@aws-sdk/lib-storage": "^3.412.0",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "antd-mobile": "^5.34.0",
+    "antd-style": "^3.5.2",
+    "father": "^4.3.8",
+    "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "antd": ">=5.0.0",

@@ -51,14 +51,14 @@ group:
 ## API
 
 | Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- | --- |
-| address | hash地址 | `string` | - | `1.0.0` |
+| --- | --- | --- | --- | --- |
+| address | hash地址 | `string` | - | `1.0.0`&nbsp; |
 | chain | 主侧链信息 | `AELF \| tDVV \| tDVW` | `AELF` | `1.0.0` |
 | preLen | ...之前保留多少位 | `number` | `0` | `1.0.0` |
 | endLen | ...之后保留多少位 | `number` | `0` | `1.0.0` |
 | hasCopy | 是否展示复制按钮 | `boolean` | `true` | `1.0.0` |
 | addressClickCallback | 点击hash地址回调函数 | `(originAddress?: string,finalAddress?: string,e?: React.MouseEvent<HTMLElement>) => void` | - | `1.0.0` |
 | className | 设置最外层样式 | `string` | - | `1.0.0` |
-| size | 设置元素大小 | `small \| default \| large \| ultra` <br/>`small`: font-size:12px <br/>`default`: font-size:14px <br/>`large`: font-size:16px <br/>`ultra`: font-size:20px | `default` | - | `1.0.0` |
+| size | 设置元素大小 | `small \| default \| large \| ultra` <br/>`small`: font-size:12px <br/>`default`: font-size:14px <br/>`large`: font-size:16px <br/>`ultra`: font-size:20px | `default`&nbsp; | `1.0.0` |
 | ignorePrefixSuffix | 忽略添加前后缀 | `boolean` | `false` | `1.0.0` |
 | ignoreEvent | 忽略绑定点击事件 | `boolean` | `false` | `1.0.0` |

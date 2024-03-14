@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, ToolTip } from 'aelf-design';
-import { Space } from 'antd';
 
 const text = (
   <span>
@@ -9,9 +8,24 @@ const text = (
   </span>
 );
 
-function Demo() {
-  return (
-    <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+const buttonWidth = 100;
+
+const App: React.FC = () => (
+  <div
+    className="demo"
+    style={{
+      padding: 200,
+    }}
+  >
+    <div
+      style={{
+        width: buttonWidth,
+        marginInlineStart: buttonWidth,
+        display: 'flex',
+        gap: 10,
+        whiteSpace: 'nowrap',
+      }}
+    >
       <ToolTip placement="topLeft" open={true} title={text}>
         <Button>TL</Button>
       </ToolTip>
@@ -21,8 +35,66 @@ function Demo() {
       <ToolTip placement="topRight" title={text}>
         <Button>TR</Button>
       </ToolTip>
-    </Space>
-  );
-}
+    </div>
+    <div
+      style={{
+        width: buttonWidth,
+        display: 'flex',
+        gap: 10,
+        flexDirection: 'column',
+        float: 'inline-start',
+      }}
+    >
+      <ToolTip placement="leftTop" title={text}>
+        <Button>LT</Button>
+      </ToolTip>
+      <ToolTip placement="left" title={text}>
+        <Button>Left</Button>
+      </ToolTip>
+      <ToolTip placement="leftBottom" title={text}>
+        <Button>LB</Button>
+      </ToolTip>
+    </div>
+    <div
+      style={{
+        width: buttonWidth,
+        display: 'flex',
+        gap: 10,
+        flexDirection: 'column',
+        marginInlineStart: buttonWidth * 4 + 24,
+      }}
+    >
+      <ToolTip placement="rightTop" open={true} title={text}>
+        <Button>RT</Button>
+      </ToolTip>
+      <ToolTip placement="right" title={text}>
+        <Button>Right</Button>
+      </ToolTip>
+      <ToolTip placement="rightBottom" title={text}>
+        <Button>RB</Button>
+      </ToolTip>
+    </div>
+    <div
+      style={{
+        marginInlineStart: buttonWidth,
+        clear: 'both',
+        width: buttonWidth,
+        display: 'flex',
+        gap: 10,
+        whiteSpace: 'nowrap',
+      }}
+    >
+      <ToolTip placement="bottomLeft" title={text}>
+        <Button>BL</Button>
+      </ToolTip>
+      <ToolTip placement="bottom" title={text}>
+        <Button>Bottom</Button>
+      </ToolTip>
+      <ToolTip placement="bottomRight" title={text}>
+        <Button>BR</Button>
+      </ToolTip>
+    </div>
+  </div>
+);
 
-export default Demo;
+export default App;

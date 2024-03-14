@@ -33,7 +33,7 @@ group:
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| inputSize | 设置搜索框大小 | `small \| middle` | `middle` | `1.0.0` |
+| inputSize | 设置搜索框大小 | `small \| middle` | `middle` | `1.0.0`&nbsp; |
 | dropdownSize | 设置搜索框下拉筛选菜单大小 | `small \| medium \| default \| large` | `default` | `1.0.0` |
 | filterItems | 下拉筛选菜单内容 | [FilterItemType[]](#filteritemtype) | - | `1.0.0` |
 | prefixWidth | 筛选区域元素宽度 | `string \| number` | `auto` | `1.0.0` |

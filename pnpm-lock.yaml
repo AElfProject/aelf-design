@@ -204,9 +204,6 @@ importers:
       '@ctrl/tinycolor':
         specifier: ^4.0.2
         version: 4.0.3
-      ahooks:
-        specifier: ^3.7.10
-        version: 3.7.10(react@18.2.0)
       antd:
         specifier: ^5.12.4
         version: 5.14.2(react-dom@18.2.0)(react@18.2.0)
@@ -258,7 +255,7 @@ importers:
         version: 3.6.1(@types/react@18.2.61)(antd@5.14.2)(react-dom@18.2.0)(react@18.2.0)
       father:
         specifier: ^4.3.8
-        version: 4.4.0(@babel/core@7.24.0)(@types/node@20.11.24)(styled-components@6.1.8)(webpack@5.90.3)
+        version: 4.4.0(@babel/core@7.24.0)(styled-components@6.1.8)(webpack@5.90.3)
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -4027,7 +4024,7 @@ packages:
     resolution: {integrity: sha512-UTYAUj/wviwdsMfzoSJspJxbkH5o1snzwX0//0ENX1u/55kkZZkcTZP6u9bwKGkv+dkk9at4m1Cpt0uY80kcpQ==}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
-      '@jridgewell/trace-mapping': 0.3.24
+      '@jridgewell/trace-mapping': 0.3.25
     dev: true
 
   /@jridgewell/sourcemap-codec@1.4.15:
@@ -4101,12 +4098,42 @@ packages:
       read-yaml-file: 1.1.0
     dev: true
 
+  /@microsoft/api-extractor-model@7.28.4:
+    resolution: {integrity: sha512-vucgyPmgHrJ/D4/xQywAmjTmSfxAx2/aDmD6TkIoLu51FdsAfuWRbijWA48AePy60OO+l+mmy9p2P/CEeBZqig==}
+    dependencies:
+      '@microsoft/tsdoc': 0.14.2
+      '@microsoft/tsdoc-config': 0.16.2
+      '@rushstack/node-core-library': 3.63.0
+    transitivePeerDependencies:
+      - '@types/node'
+    dev: true
+
   /@microsoft/api-extractor-model@7.28.4(@types/node@20.11.24):
     resolution: {integrity: sha512-vucgyPmgHrJ/D4/xQywAmjTmSfxAx2/aDmD6TkIoLu51FdsAfuWRbijWA48AePy60OO+l+mmy9p2P/CEeBZqig==}
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
       '@rushstack/node-core-library': 3.63.0(@types/node@20.11.24)
+    transitivePeerDependencies:
+      - '@types/node'
+    dev: true
+
+  /@microsoft/api-extractor@7.39.1:
+    resolution: {integrity: sha512-V0HtCufWa8hZZvSmlEzQZfINcJkHAU/bmpyJQj6w+zpI87EkR8DuBOW6RWrO9c7mUYFZoDaNgUTyKo83ytv+QQ==}
+    hasBin: true
+    dependencies:
+      '@microsoft/api-extractor-model': 7.28.4
+      '@microsoft/tsdoc': 0.14.2
+      '@microsoft/tsdoc-config': 0.16.2
+      '@rushstack/node-core-library': 3.63.0
+      '@rushstack/rig-package': 0.5.1
+      '@rushstack/ts-command-line': 4.17.1
+      colors: 1.2.5
+      lodash: 4.17.21
+      resolve: 1.22.8
+      semver: 7.5.4
+      source-map: 0.6.1
+      typescript: 5.3.3
     transitivePeerDependencies:
       - '@types/node'
     dev: true
@@ -4464,6 +4491,23 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@rushstack/node-core-library@3.63.0:
+    resolution: {integrity: sha512-Q7B3dVpBQF1v+mUfxNcNZh5uHVR8ntcnkN5GYjbBLrxUYHBGKbnCM+OdcN+hzCpFlLBH6Ob0dEHhZ0spQwf24A==}
+    peerDependencies:
+      '@types/node': '*'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+    dependencies:
+      colors: 1.2.5
+      fs-extra: 7.0.1
+      import-lazy: 4.0.0
+      jju: 1.4.0
+      resolve: 1.22.8
+      semver: 7.5.4
+      z-schema: 5.0.5
+    dev: true
 
   /@rushstack/node-core-library@3.63.0(@types/node@20.11.24):
     resolution: {integrity: sha512-Q7B3dVpBQF1v+mUfxNcNZh5uHVR8ntcnkN5GYjbBLrxUYHBGKbnCM+OdcN+hzCpFlLBH6Ob0dEHhZ0spQwf24A==}
@@ -6741,6 +6785,7 @@ packages:
       resize-observer-polyfill: 1.5.1
       screenfull: 5.2.0
       tslib: 2.6.2
+    dev: true
 
   /ajv-keywords@3.5.2(ajv@6.12.6):
     resolution: {integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==}
@@ -9980,6 +10025,45 @@ packages:
       - webpack-plugin-serve
     dev: true
 
+  /father@4.4.0(@babel/core@7.24.0)(styled-components@6.1.8)(webpack@5.90.3):
+    resolution: {integrity: sha512-7xwjMLmZtPmoCkvA+B+65X0SUplcJD7lxA+ruELObpGsEGOxPgmdrNbZcdmDg1xAHCrNv/mlE6A4z3QxOKF7WA==}
+    hasBin: true
+    dependencies:
+      '@microsoft/api-extractor': 7.39.1
+      '@umijs/babel-preset-umi': 4.1.2
+      '@umijs/bundler-utils': 4.1.2
+      '@umijs/bundler-webpack': 4.1.2(typescript@5.3.3)(webpack@5.90.3)
+      '@umijs/case-sensitive-paths-webpack-plugin': 1.0.1
+      '@umijs/core': 4.1.2
+      '@umijs/utils': 4.1.2
+      '@vercel/ncc': 0.33.3
+      babel-plugin-dynamic-import-node: 2.3.3
+      babel-plugin-module-resolver: 4.1.0
+      babel-plugin-styled-components: 2.1.4(@babel/core@7.24.0)(styled-components@6.1.8)
+      babel-plugin-transform-define: 2.0.1
+      enhanced-resolve: 5.9.3
+      fast-glob: 3.2.12
+      file-system-cache: 2.0.0
+      loader-runner: 4.2.0
+      minimatch: 3.1.2
+      tsconfig-paths: 4.0.0
+      typescript: 5.3.3
+      typescript-transform-paths: 3.4.6(typescript@5.3.3)
+      v8-compile-cache: 2.3.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/node'
+      - '@types/webpack'
+      - sockjs-client
+      - styled-components
+      - supports-color
+      - type-fest
+      - webpack
+      - webpack-dev-server
+      - webpack-hot-middleware
+      - webpack-plugin-serve
+    dev: true
+
   /fault@2.0.1:
     resolution: {integrity: sha512-WtySTkS4OKev5JtpHXnib4Gxiurzh5NCGvWrFaZ34m6JehfTUhKZvn9njTfw48t6JumVQOmrKqpmGcdwxnhqBQ==}
     dependencies:
@@ -11245,6 +11329,7 @@ packages:
 
   /intersection-observer@0.12.2:
     resolution: {integrity: sha512-7m1vEcPCxXYI8HqnL8CKI6siDyD+eIWSwgB3DZA+ZTogxk9I4CDnj4wilt9x/+/QbHI4YG5YZNmC6458/e9Ktg==}
+    dev: true
 
   /intl-messageformat@10.5.11:
     resolution: {integrity: sha512-eYq5fkFBVxc7GIFDzpFQkDOZgNayNTQn4Oufe8jw6YY6OHVw70/4pA3FyCsQ0Gb2DnvEJEMmN2tOaXUGByM+kg==}
@@ -11879,6 +11964,7 @@ packages:
 
   /js-cookie@2.2.1:
     resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}
+    dev: true
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
@@ -12358,6 +12444,7 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: true
 
   /log-symbols@2.2.0:
     resolution: {integrity: sha512-VeIAFslyIerEJLXHziedo2basKbMKtTw3vfn5IzG0XTjhAVEJyNHnL2p7vc+wBDSdQuUpNw3M2u6xb9QsAY5Eg==}
@@ -16224,6 +16311,7 @@ packages:
   /screenfull@5.2.0:
     resolution: {integrity: sha512-9BakfsO2aUQN2K9Fdbj87RJIEZ82Q9IGim7FqM5OsebfoFC6ZHXgDq/KvniuLTPdeM8wY2o6Dj3WQ7KeQCj3cA==}
     engines: {node: '>=0.10.0'}
+    dev: true
 
   /scroll-into-view-if-needed@3.1.0:
     resolution: {integrity: sha512-49oNpRjWRvnU8NyGVmUaYG4jtTkNonFZI86MmGRDqBphEK2EXT9gdEUoQPZhuBM8yWHxCWbobltqYO5M4XrUvQ==}
@@ -17508,6 +17596,7 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: true
 
   /tsutils@3.21.0(typescript@5.3.3):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
