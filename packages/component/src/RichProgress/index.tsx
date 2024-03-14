@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { ProgressErrorIcon, ProgressSuccessIcon } from '@aelf-design/internal-icons';
-import { useResponsive } from 'ahooks/es/useResponsive';
+import { useResponsive } from 'antd-style';
 
 import Progress from '../Progress';
 import useStyles from './style';

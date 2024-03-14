@@ -31,16 +31,16 @@ Please fill in your AWS configuration before trying to upload
 
 ## API
 
-| Adjust | Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- | --- |
-| <Badge type="success">add</Badge> | tips | 上传区域提示文案 | `string \| ReactNode` | Formats supported JPG, JPEG, PNG. Max size 10 MB.Recommend ratio 16:9. |  |
-| <Badge type="success">add</Badge> | showUploadButton | 是否展示上传按钮 | `boolean` | `true` | - |
-| <Badge type="success">add</Badge> | uploadText | 上传提示文案 | `string` | Upload | - |
-| <Badge type="success">add</Badge> | uploadIconColor | 上传icon颜色 | `string` | 默认是主题色,colorPrimary | - |
-| <Badge type="success">add</Badge> | format | Address format | `boolean \| (input: string) => ReactNode` | `false` | - |
-| <Badge type="success">add</Badge> | locale | Multilingual settings | `Locale["address"]` | - | - |
-| <Badge type="error">delete</Badge> | listType | - | - | - | - |
-| <Badge type="error">delete</Badge> | itemRender | - | - | - | - |
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| tips<Badge type="success">add</Badge> | 上传区域提示文案 | `string \| ReactNode` | Formats supported JPG, JPEG, PNG. Max size 10 MB.Recommend ratio 16:9. | `1.0.0`&nbsp; |
+| showUploadButton<Badge type="success">add</Badge> | 是否展示上传按钮 | `boolean` | `true` | `1.0.0` |
+| uploadText<Badge type="success">add</Badge> | 上传提示文案 | `string` | Upload | `1.0.0` |
+| uploadIconColor<Badge type="success">add</Badge> | 上传icon颜色 | `string` | 默认是主题色,colorPrimary | `1.0.0` |
+| format<Badge type="success">add</Badge> | Address format | `boolean \| (input: string) => ReactNode` | `false` | `1.0.0` |
+| locale<Badge type="success">add</Badge> | Multilingual settings | `Locale["address"]` | - | `1.0.0` |
+| listType<Badge type="error">delete</Badge> | - | - | - | `1.0.0` |
+| itemRender<Badge type="error">delete</Badge> | - | - | - | `1.0.0` |
 
 ## Design Token
 
@@ -52,6 +52,6 @@ Please fill in your AWS configuration before trying to upload
 | borderColor      | 边框颜色           | `string` | 暗黑模式：#484848 日间模式：#E0E0E0 |
 | containerBg      | 上传区域背景颜色   | `string` | 暗黑模式：#8C8C8C 日间模式：#808080 |
 
-### 其他支持的API参考antd
+### Supported API
 
-https://ant-design.antgroup.com/components/upload-cn#api
+refer to [Upload API](https://ant-design.antgroup.com/components/upload-cn#api)

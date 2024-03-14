@@ -7,21 +7,27 @@ group:
 
 # Radio
 
-1. 定制了样式
-2. 可自定义 圆点样式
-
 ## Basic Usage
 
 <code src="./demos/basic.tsx"></code>
 
-## 组件 token
+## Token
 
-```json
-customRadio: {
-  dotColor: isDarkMode ? '#1A1A1A' : '#FFFFFF',
-},
+```js
+<AELFDProvider
+  customToken={{
+    customRadio:{
+      // background color of dot
+      dotColor: isDarkMode ? '#1A1A1A' : '#FFFFFF',
+    }
+  }}
+>
 ```
 
-## API
+## Supported Token
 
-参考 antd
+refer to [Radio Token](https://ant.design/components/radio-cn#%E4%B8%BB%E9%A2%98%E5%8F%98%E9%87%8Fdesign-token)
+
+## Supported API
+
+refer to [Radio API](https://ant.design/components/radio-cn#api)

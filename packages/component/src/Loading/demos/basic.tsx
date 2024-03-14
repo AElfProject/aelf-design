@@ -14,10 +14,7 @@ export default function LoadingExample() {
   return (
     <>
       <Button onClick={onClickHandler}>open loading</Button>
-      <Loading
-        open={openLoading}
-        content={<div className="flex items-center justify-center">I am loading...</div>}
-      />
+      <Loading open={openLoading} content={<div>I am loading......</div>} />
     </>
   );
 }
