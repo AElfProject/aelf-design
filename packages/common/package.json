@@ -1,6 +1,6 @@
 {
   "name": "@aelf-design/common",
-  "version": "0.0.1-alpha.3",
+  "version": "1.0.0.alpha.1",
   "type": "module",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",

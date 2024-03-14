@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { ModalProps } from 'antd';
 
 import Modal from '../Modal';
-import { IStepItem, RichProgress } from '../RichProgress';
+import RichProgress, { IStepItem } from '../RichProgress';
 import useStyles from './style';
 
 export interface IProgressModalProps extends ModalProps {
@@ -15,7 +15,7 @@ export interface IProgressModalProps extends ModalProps {
   errorIcon?: ReactNode;
 }
 
-export const ProgressModal = (props: IProgressModalProps) => {
+const ProgressModal = (props: IProgressModalProps) => {
   const { steps, desc, successIcon, errorIcon, strokeColor, trailColor, strokeErrorColor } = props;
   const { styles, cx, prefixCls } = useStyles();
 
@@ -38,3 +38,5 @@ export const ProgressModal = (props: IProgressModalProps) => {
     </Modal>
   );
 };
+
+export default memo(ProgressModal);

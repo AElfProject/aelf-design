@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'aelf-design';
 
 import { IStepItem } from '../../RichProgress/index';
-import { ProgressModal } from '../index';
+import ProgressModal from '../index';
 
 const App: React.FC = () => {
   const [showProgress, setShowProgress] = React.useState(false);

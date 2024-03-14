@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IStepItem, RichProgress } from '../index';
+import RichProgress, { IStepItem } from '../index';
 
 const App: React.FC = () => {
   const steps: IStepItem[] = [

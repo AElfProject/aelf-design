@@ -37,9 +37,13 @@ export type { IUploadProps } from './Upload';
 export { default as Loading } from './Loading';
 export type { ILoadingProps } from './Loading';
 export { default as Carousel } from './Carousel';
+export type { ICarouselProps } from './Carousel';
 export { default as UploadButton } from './UploadButton';
 export type { IUploadButtonProps } from './UploadButton';
-export type { ICarouselProps } from './Carousel';
+export { default as RichProgress } from './RichProgress';
+export type { ProgressLineType, IStepItem, IProgressStepsProps } from './RichProgress';
+export { default as ProgressModal } from './ProgressModal';
+export type { IProgressModalProps } from './ProgressModal';
 
 export { default as useResponsive } from './hooks/useResponsive';
 export { default as useAWSUploadService } from './hooks/useAWSUploadService';

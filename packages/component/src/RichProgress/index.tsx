@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { ProgressErrorIcon, ProgressSuccessIcon } from '@aelf-design/internal-icons';
 import { useResponsive } from 'antd-style';
 
@@ -196,4 +196,4 @@ const RichProgress = ({
   );
 };
 
-export { RichProgress };
+export default memo(RichProgress);
