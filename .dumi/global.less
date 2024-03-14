@@ -1,0 +1,54 @@
+#root {
+  background-color: rgb(248, 248, 250);
+  .dumi-default-header {
+    box-shadow:
+      rgba(0, 0, 0, 0.03) 0px 1px 2px 0px,
+      rgba(0, 0, 0, 0.02) 0px 1px 6px -1px,
+      rgba(0, 0, 0, 0.02) 0px 2px 4px 0px;
+  }
+  .dumi-default-header-left {
+    width: 300px;
+  }
+  .dumi-default-header-right {
+    justify-content: end;
+  }
+  .dumi-default-navbar {
+    margin-right: 24px;
+  }
+
+  .dumi-default-hero-title {
+    font-size: 80px;
+  }
+
+  .dumi-default-content-footer {
+    line-height: 1.2;
+  }
+
+  .home {
+    .site-app > div:first-child {
+      display: block;
+    }
+  }
+  .rc-footer-container {
+    display: none;
+  }
+}
+
+:not([data-prefers-color='dark']) {
+  .home {
+    .dumi-default-header {
+      background-color: #fff;
+    }
+    .dumi-default-content {
+      background-color: #fff;
+    }
+  }
+}
+
+[data-prefers-color='dark'] {
+  .home {
+    .dumi-default-content {
+      background-color: #050709;
+    }
+  }
+}
