@@ -4,7 +4,7 @@ import { Space } from 'antd';
 
 import styles from './index.module.less';
 
-export default () => {
+export default function Address() {
   return (
     <div className={styles.cardBg}>
       <span className={styles.title}>Address</span>
@@ -22,4 +22,4 @@ export default () => {
       </Space>
     </div>
   );
-};
+}

@@ -3,6 +3,7 @@ import React, { type ComponentType } from 'react';
 import { globSync } from 'glob';
 
 export async function getComponents(dir: string): Promise<ComponentType[]> {
+  // eslint-disable-next-line no-async-promise-executor
   return new Promise(async (resolve) => {
     const files = globSync(path.resolve(__dirname, '..', dir, '*.tsx'));
     const res: ComponentType[] = [];

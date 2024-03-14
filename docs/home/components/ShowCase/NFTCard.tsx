@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from './index.module.less';
 
-export default () => {
+export default function NFTCard() {
   return (
     <div className={styles.cardBg}>
       <span className={styles.title}>NFT Card</span>
@@ -17,4 +17,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}

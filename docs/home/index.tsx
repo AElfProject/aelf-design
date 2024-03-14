@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { usePrefersColor } from 'dumi';
 
 import HomeBanner from './components/Banner';
-import Features from './components/Features';
 import ShowCase from './components/ShowCase';
 // import Theme from './components/Theme';
 import styles from './index.module.less';
 
-export default () => {
+export default function Home() {
   const [, prefersColor] = usePrefersColor();
 
   useEffect(() => {
@@ -25,7 +24,6 @@ export default () => {
     <div className={styles.container}>
       <HomeBanner />
       <div className={styles.centerbg}>
-        <Features />
         {/* <Theme /> */}
         {/* <div className={styles.rightTopImage} />
         <div className={styles.leftBottomImage} /> */}
@@ -33,4 +31,4 @@ export default () => {
       <ShowCase />
     </div>
   );
-};
+}
