@@ -58,16 +58,7 @@ export default function TableExample() {
     setLoading(false);
   };
 
-  const pageChange = (page: number) => {
-    setTableParams({
-      pagination: {
-        ...tableParams.pagination,
-        current: page,
-      },
-    });
-  };
-
-  const pageSizeChange = (page: number, pageSize: number) => {
+  const onChange = (page: number, pageSize: number) => {
     setTableParams({
       pagination: {
         ...tableParams.pagination,
@@ -82,11 +73,13 @@ export default function TableExample() {
   }, [tableParams]);
 
   return (
-    <Table
-      columns={columns}
-      loading={loading}
-      pagination={{ ...tableParams.pagination, pageChange, pageSizeChange }}
-      dataSource={dataSource}
-    ></Table>
+    <div>
+      <Table
+        columns={columns}
+        loading={loading}
+        pagination={{ ...tableParams.pagination, onChange }}
+        dataSource={dataSource}
+      ></Table>
+    </div>
   );
 }

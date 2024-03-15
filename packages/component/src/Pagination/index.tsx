@@ -15,8 +15,10 @@ export interface IPaginationProps {
   defaultCurrent?: number;
   total: number;
   defaultPageSize?: number;
+  showSizeChange?: boolean;
   showSizeChanger?: boolean;
   pageChange?: (page: number, pageSize?: number) => void;
+  onChange?: (page: number, pageSize: number) => void;
   pageSizeChange?: (page: number, pageSize: number) => void;
   options?: Options;
 }
@@ -27,11 +29,13 @@ export default function Pagination({
   defaultCurrent = 1,
   defaultPageSize = 10,
   total,
+  showSizeChange = true,
   showSizeChanger = true,
-  pageChange,
   hideOnSinglePage,
-  pageSizeChange,
   options = [10, 20, 50],
+  pageChange,
+  onChange,
+  pageSizeChange,
 }: IPaginationProps) {
   // Component state
   const [pageNum, setPageNum] = useState<number>(defaultCurrent);
@@ -62,6 +66,7 @@ export default function Pagination({
     const page = pageNum === 1 ? pageNum : pageNum - 1;
     setPageNum(page);
     pageChange?.(page);
+    onChange?.(page, pageSizeValue);
   };
   const runPrevChange = debounce(prevChange, 300, {
     leading: true,
@@ -72,6 +77,7 @@ export default function Pagination({
     const page = pageNum === totalPage ? totalPage : pageNum + 1;
     setPageNum(page);
     pageChange?.(page);
+    onChange?.(page, pageSizeValue);
   };
   const runNextChange = debounce(nextChange, 300, {
     leading: true,
@@ -80,7 +86,8 @@ export default function Pagination({
 
   const jumpFirst = () => {
     setPageNum(1);
-    pageChange?.(1, pageSize);
+    pageChange?.(1, pageSizeValue);
+    onChange?.(1, pageSizeValue);
   };
   const debounceJumpFirst = debounce(jumpFirst, 300, {
     leading: true,
@@ -89,7 +96,8 @@ export default function Pagination({
 
   const jumpLast = () => {
     setPageNum(totalPage);
-    pageChange?.(totalPage, pageSize);
+    pageChange?.(totalPage, pageSizeValue);
+    onChange?.(totalPage, pageSizeValue);
   };
   const debounceJumpLast = debounce(jumpLast, 300, {
     leading: true,
@@ -100,6 +108,7 @@ export default function Pagination({
     setPageNum(1);
     setPageSizeValue(value);
     pageSizeChange?.(1, value);
+    onChange?.(1, value);
   };
 
   const pagesizeOptions = useMemo(() => {
@@ -116,11 +125,12 @@ export default function Pagination({
   return (
     <div className={cx(styles.paginationContainer, prefixCls + '-pagination-container')}>
       <div>
-        {showSizeChanger && (
+        {showSizeChange && showSizeChanger && (
           <>
             <span className={cx(styles.pagesizeLabel, prefixCls + '-pagesize-label')}>Show：</span>
             <Select
               defaultValue={pageSizeValue}
+              value={pageSizeValue}
               className={styles.pagesizeSelect}
               popupClassName={styles.pageSizePopup}
               popupMatchSelectWidth={false}
