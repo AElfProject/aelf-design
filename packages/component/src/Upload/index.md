@@ -46,11 +46,25 @@ Please fill in your AWS configuration before trying to upload
 
 ### Component Token
 
-| Token 名称       | 描述               | 类型     | 默认值                              |
-| ---------------- | ------------------ | -------- | ----------------------------------- |
-| colorMessageText | 提示文本的字体颜色 | `string` | 暗黑模式：#8C8C8C 日间模式：#808080 |
-| borderColor      | 边框颜色           | `string` | 暗黑模式：#484848 日间模式：#E0E0E0 |
-| containerBg      | 上传区域背景颜色   | `string` | 暗黑模式：#8C8C8C 日间模式：#808080 |
+```js
+<AELFDProvider
+  customTokens={
+    customUpload: {
+      borderColor: isDarkMode ? '#484848' : '#E0E0E0',
+      containerBg: isDarkMode ? '#212121' : '#F8F8F8',
+      colorFileText: isDarkMode ? '#fff' : '#070A26',
+      colorMessageText: isDarkMode ? '#8C8C8C' : '#808080',
+    },
+  }
+ />
+```
+
+| Token 名称       | 描述                     | 类型     | 默认值 |
+| ---------------- | ------------------------ | -------- | ------ |
+| colorMessageText | 提示文本的字体颜色       | `string` |        |
+| borderColor      | 边框颜色                 | `string` |        |
+| containerBg      | 上传区域背景颜色         | `string` |        |
+| colorFileText    | 文件预览tips文案字体颜色 | `string` |        |
 
 ### Supported API
 
