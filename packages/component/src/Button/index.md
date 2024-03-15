@@ -22,7 +22,7 @@ group:
 
 <code src="./demos/type.tsx"></code>
 
-## debounce button
+## Debounce button
 
 <code src="./demos/debounce.tsx"></code>
 
