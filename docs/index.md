@@ -1,5 +1,5 @@
 ---
-title: AELF Design
+title: Aelf Design
 ---
 
 <code src="./home/index" inline><code>

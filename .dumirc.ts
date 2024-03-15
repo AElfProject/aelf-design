@@ -22,7 +22,7 @@ const alias = pkgList.reduce(
 );
 
 export default defineConfig({
-  title: 'AELF Design',
+  title: 'Aelf Design',
   headScripts: [
     {
       src: 'https://www.googletagmanager.com/gtag/js?id=G-C31HWEY1D4',
@@ -41,12 +41,12 @@ export default defineConfig({
   metas: [
     {
       name: 'keywords',
-      content: 'web3, AELF, dapp, frontend, components, AELF Design',
+      content: 'web3, AELF, dapp, frontend, components, Aelf Design',
     },
     { name: 'description', content: 'A Components for Web3, Based on Ant Design,' },
     {
       property: 'og:site_name',
-      content: 'AELF Design',
+      content: 'Aelf Design',
     },
     {
       'data-rh': 'keywords',
@@ -56,7 +56,7 @@ export default defineConfig({
     {
       property: 'og:description',
       content:
-        'AELF Design is a React component library based on Ant Design. It provides a series of components that can help you quickly build decentralized applications（DApp）',
+        'Aelf Design is a React component library based on Ant Design. It provides a series of components that can help you quickly build decentralized applications（DApp）',
     },
     {
       name: 'apple-mobile-web-app-capable',
@@ -95,13 +95,13 @@ export default defineConfig({
   publicPath: process.env.PUBLIC_PATH || '/',
   base: process.env.BASE || '/',
   themeConfig: {
-    name: 'AELF Design',
-    logo: 'https://img2.imgtp.com/2024/03/01/EXKVhuMo.svg',
+    name: 'Aelf Design',
+    logo: 'https://ipfs.io/ipfs/QmWtjvb47DU1EQ4MpridFY1ow4214aAWCkhGu3ZF4xvRSY/',
     socialLinks: {
       github: 'https://github.com/AElf-devops/aelf-design',
     },
   },
-  favicons: ['https://img2.imgtp.com/2024/03/01/EXKVhuMo.svg'],
+  favicons: ['https://ipfs.io/ipfs/QmWtjvb47DU1EQ4MpridFY1ow4214aAWCkhGu3ZF4xvRSY/'],
   locales: [{ id: 'zh-CN', name: '中文' }],
   extraBabelPlugins: [
     [
