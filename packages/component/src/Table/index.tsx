@@ -1,8 +1,8 @@
 import React from 'react';
-import { IPaginationProps, Pagination } from 'aelf-design';
 import { Table as AntdTable, TableProps } from 'antd';
 import { AnyObject } from 'antd/es/_util/type';
 
+import Pagination, { IPaginationProps } from '../Pagination';
 import useStyles from './style';
 
 export interface ITableProps<T> extends Omit<TableProps<T>, 'pagination'> {
