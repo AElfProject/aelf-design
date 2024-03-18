@@ -1,6 +1,6 @@
 {
   "name": "@aelf-design/internal-icons",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.10",
   "type": "module",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -40,9 +40,9 @@
     "build": "father build"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.2.6",
     "@ant-design/cssinjs": "^1.18.2",
-    "classnames": "^2.3.2"
+    "classnames": "^2.3.2",
+    "antd-style": "^3.5.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.45",
@@ -52,8 +52,7 @@
     "glob": "^10.3.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.3.3",
-    "antd-style": "^3.5.2"
+    "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "antd": ">=4.23.0 || >=5.0.0",

@@ -1,14 +1,17 @@
 {
   "name": "aelf-design",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.10",
   "type": "module",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
   "exports": {
-    "import": "./dist/esm/index.js",
-    "require": "./dist/lib/index.js",
-    "types": "./dist/esm/index.d.ts"
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/lib/index.js",
+      "types": "./dist/esm/index.d.ts"
+    },
+    "./css": "./dist/esm/styles/fonts.css"
   },
   "files": [
     "dist",
@@ -48,13 +51,13 @@
     "copy-to-clipboard": "^3.3.3",
     "dayjs": "^1.11.10",
     "lodash-es": "^4.17.21",
-    "swiper": "^11.0.5"
-  },
-  "devDependencies": {
+    "swiper": "^11.0.5",
     "@aws-sdk/client-cognito-identity": "^3.410.0",
     "@aws-sdk/client-s3": "^3.410.0",
     "@aws-sdk/credential-provider-cognito-identity": "^3.410.0",
-    "@aws-sdk/lib-storage": "^3.412.0",
+    "@aws-sdk/lib-storage": "^3.412.0"
+  },
+  "devDependencies": {
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "antd-mobile": "^5.34.0",

@@ -4,7 +4,7 @@ import {
   ClearIcon,
   EyeInvisibleOutlinedIcon,
   EyeTwoToneIcon,
-  IconColorProps,
+  IconProps,
 } from '@aelf-design/internal-icons';
 import { Input as AntdInput, InputProps } from 'antd';
 import { Theme, useTheme } from 'antd-style';
@@ -84,7 +84,7 @@ function InputPassword({
 }: InputPasswordProps) {
   const { styles: st } = useStyles({ size });
   const token = useTheme();
-  const iconProps: IconColorProps = {
+  const iconProps: IconProps = {
     twoToneColor: [token?.colorBorder, token?.colorBorder],
     hoverTwoToneColor: [token?.colorPrimaryHover, token?.colorPrimaryHover],
     activeTwoToneColor: [token?.colorPrimaryActive, token?.colorPrimaryActive],
