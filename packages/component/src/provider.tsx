@@ -47,6 +47,12 @@ export interface IAelfdCustomToken {
   customRadio?: {
     dotColor?: string;
   };
+  customCarousel?: {
+    colorNavigation?: string;
+    colorNavigationHover?: string;
+    colorNavigationActive?: string;
+    colorMask?: string;
+  };
 }
 
 declare module 'antd-style' {
@@ -102,8 +108,15 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             ...props.customToken?.customRichProgress,
           },
           customRadio: {
-            dotColor: isDarkMode ? '#1A1A1A' : '#FFFFFF',
+            dotColor: isDarkMode ? '#d07171' : '#FFFFFF',
             ...props.customToken?.customRadio,
+          },
+          customCarousel: {
+            colorNavigation: isDarkMode ? '#E8E8E8' : '#070A26',
+            colorNavigationHover: isDarkMode ? '#fff' : '#22253E',
+            colorNavigationActive: isDarkMode ? '#8C8C8C' : '#131631',
+            colorMask: isDarkMode ? '#000000cc' : '#ffffffcc',
+            ...props.customToken?.customCarousel,
           },
         };
       }}

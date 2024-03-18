@@ -26,7 +26,7 @@ function UploadItemRender({
   const { styles, cx } = useStyles();
   const token = useTheme();
   return file.url || file.thumbUrl ? (
-    file.status === 'done' && (
+    (file.status === 'done' && (
       <div className={cx(styles.previewContainer)}>
         <Image
           height={202}
@@ -53,7 +53,8 @@ function UploadItemRender({
           </div>
         </div>
       </div>
-    )
+    )) ||
+      null
   ) : (
     <div className={cx(styles.FilePreviewContainer)}>
       <div className="file-icon-container">

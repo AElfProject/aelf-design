@@ -42,10 +42,10 @@ const StepItemIcon = ({
   const responsive = useResponsive();
   const { styles, cx } = useStyles();
   if (status === 'exception') {
-    return errorIcon || <ProgressErrorIcon className={cx(styles.errorIcon)} />;
+    return <>{errorIcon}</> || <ProgressErrorIcon className={cx(styles.errorIcon)} />;
   }
   if (percent === 100) {
-    return successIcon || <ProgressSuccessIcon className={cx(styles.successIcon)} />;
+    return <>{successIcon}</> || <ProgressSuccessIcon className={cx(styles.successIcon)} />;
   }
   return (
     <Progress
