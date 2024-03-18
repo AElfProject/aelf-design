@@ -42,9 +42,9 @@ refer to [Modal Token](https://ant.design/components/modal-cn#%E4%B8%BB%E9%A2%98
 ## API
 
 | Property | Description | Type | Default | Version |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | width<Badge type='warning'>修改</Badge> | 设置宽度 | `string \| number` | `438` | `1.0.0` |
-| closeIcon<Badge type='warning'>修改</Badge> | 关闭icon，`false`时不显示，非`false`展示默认 | - | `ReactNode` | - | `1.0.0` |
+| closeIcon<Badge type='warning'>修改</Badge> | 关闭icon，`false`时不显示，非`false`展示默认 | `ReactNode \| boolean` | `true` | `1.0.0` |
 
 ## Supported API
 

@@ -5,8 +5,13 @@ import { Space } from 'antd';
 function Demo() {
   return (
     <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
-      <Pagination total={100}></Pagination>
-      <Pagination total={100} showSizeChanger={false}></Pagination>
+      <Pagination
+        total={100}
+        onChange={(page, pagesize) => {
+          console.log(page, pagesize);
+        }}
+      ></Pagination>
+      <Pagination total={100} showSizeChange={false}></Pagination>
     </Space>
   );
 }

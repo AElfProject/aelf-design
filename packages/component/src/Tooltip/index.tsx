@@ -5,7 +5,7 @@ import useStyles from './style';
 
 export type ITooltipProps = AntdTooltipProps;
 
-export default function ToolTip(props: ITooltipProps) {
+export default function Tooltip(props: ITooltipProps) {
   const { styles, cx, prefixCls } = useStyles();
   const { children } = props;
   return (
