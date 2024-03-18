@@ -1,3 +1,4 @@
+'use client';
 export * from './components/CircleClose';
 export * from './components/ClearIcon';
 export * from './components/CloseIcon';
@@ -15,4 +16,7 @@ export * from './components/QueryIcon';
 export * from './components/RightArrowIcon';
 export * from './components/UploadIcon';
 
+export * from './icon/AelfIcon';
 export * from './hooks';
+
+export * from './type';

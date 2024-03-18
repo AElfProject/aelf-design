@@ -1,15 +1,8 @@
-import { BaseReturnType, createStyles, SerializedStyles } from 'antd-style';
+import React from 'react';
+import { createStyles, SerializedStyles } from 'antd-style';
 
-export interface IconColorProps {
-  width?: string | number;
-  height?: string | number;
-  color?: string;
-  hoverColor?: string;
-  activeColor?: string;
-  twoToneColor?: string[];
-  hoverTwoToneColor?: string[];
-  activeTwoToneColor?: string[];
-}
+import { type IconProps } from '../type';
+
 const createPathsStyle = (colors: string[], timing?: 'hover' | 'active') => {
   return colors.reduce((pre, next, i) => {
     const selectorPrefix = timing ? `&:${timing} ` : '';
@@ -24,9 +17,10 @@ const createPathsStyle = (colors: string[], timing?: 'hover' | 'active') => {
   }, '');
 };
 
-const useStyles = createStyles<IconColorProps, { iconWrap: SerializedStyles }>(({ css }, props) => {
+const useStyles = createStyles<IconProps, { iconWrap: SerializedStyles }>(({ css }, props) => {
   return {
     iconWrap: css`
+      display: inline-flex;
       width: ${typeof props.width === 'number' ? `${props.width}px` : props.width};
       height: ${typeof props.height === 'number' ? `${props.height}px` : props.height};
       path:nth-of-type(1) {

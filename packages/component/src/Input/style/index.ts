@@ -27,6 +27,9 @@ const useStyles = createStyles(({ css, token, prefixCls }, { size }: { size: Inp
           cursor: not-allowed;
         }
       }
+      & .${prefixCls}-input-password-icon {
+        cursor: pointer;
+      }
     `,
   };
 });

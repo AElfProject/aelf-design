@@ -1,15 +1,11 @@
 import * as React from 'react';
-import { type IconBaseProps } from '@ant-design/icons/lib/components/Icon';
 
-import type { IconColorProps } from '../hooks';
 import { AelfIcon } from '../icon/AelfIcon';
 import AelfSVGComponent from '../svgs/progress/success.svg';
+import { type IconProps } from '../type';
 
 const componentName = 'ProgressSuccessIcon';
-export const ProgressSuccessIcon = React.forwardRef<
-  HTMLSpanElement,
-  IconBaseProps & IconColorProps
->((props, ref) => {
+export const ProgressSuccessIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
   return (
     <AelfIcon
       component={AelfSVGComponent}

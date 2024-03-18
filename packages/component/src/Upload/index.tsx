@@ -70,8 +70,8 @@ function UploadItemRender({
         >
           <ClearIcon
             color={token.colorPrimary}
-            data-hovercolor={token.colorPrimaryHover}
-            data-activecolor={token.colorPrimaryActive}
+            hoverColor={token.colorPrimaryHover}
+            activeColor={token.colorPrimaryActive}
             width={16}
             height={16}
           />

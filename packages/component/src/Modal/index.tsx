@@ -20,7 +20,7 @@ function Modal({ wrapClassName, width = 438, closeIcon = true, children, ...prop
       closeIcon={
         closeIcon ? (
           <div className={styles.closeIconWrap}>
-            <CloseIcon color={token?.colorTextBase} width="16" height="16" />
+            <CloseIcon color={token?.colorTextBase} width="16px" height="16px" />
           </div>
         ) : null
       }
