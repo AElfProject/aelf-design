@@ -12,3 +12,5 @@ $ git clone https://github.com/AElf-devops/aelf-design.git
 $ pnpm i (if there is not pnpm，please npm install -g pnpm first)
 $ pnpm dev
 ```
+
+update
