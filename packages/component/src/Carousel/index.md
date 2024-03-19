@@ -22,3 +22,18 @@ group:
 | galleryObjectFit | gallery图片展示规则 | `fill \| contain \| cover \| none \| scale-down` | `cover` | `1.0.0` |
 | thumbsSlidesPerView | thumbs一页展示多少条 | `number` | `5` | `1.0.0` |
 | onSlideClick | 点击轮播图片触发事件，返回值是当前点击的图片ICarouselSlideItem对象 | `(value: ICarouselSlideItem) => void` | - | `1.0.0` |
+
+## Token
+
+```js
+<AELFDProvider
+  customToken={{
+    customCarousel:{
+      colorNavigation: isDarkMode ? '#E8E8E8' : '#070A26',
+      colorNavigationHover: isDarkMode ? '#fff' : '#22253E',
+      colorNavigationActive: isDarkMode ? '#8C8C8C' : '#131631',
+      colorMask: isDarkMode ? '#000000cc' : '#ffffffcc',
+    }
+  }}
+>
+```

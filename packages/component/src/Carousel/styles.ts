@@ -2,7 +2,7 @@ import { createStyles } from 'antd-style';
 
 const useStyles = createStyles(
   (
-    { responsive, css },
+    { responsive, css, token },
     props: {
       thumbsSwiperWidth: number;
       galleryObjectFit: string;
@@ -75,7 +75,7 @@ const useStyles = createStyles(
               position: absolute;
               cursor: pointer;
               inset: 0;
-              background-color: #ffffffcc;
+              background-color: ${token.customCarousel?.colorMask};
             }
           }
           .mobile-thumbs-slide {

@@ -10,7 +10,10 @@ group:
 1. customize pagination
 2. customize table header
 
-:::warning由于重写了分页器，这个onChange不会触发分页.使用分页组件的onChange :::
+<!-- prettier-ignore -->
+:::warning
+由于重写了分页器，这个onChange不会触发分页.使用分页组件的onChange
+:::
 
 ## Basic Table
 
@@ -48,7 +51,10 @@ refer to[Table Token](https://ant.design/components/table-cn#%E4%B8%BB%E9%A2%98%
 
 ## API
 
-:::warning由于重写了分页器，这个onChange不会触发分页.使用分页组件的onChange :::
+<!-- prettier-ignore -->
+:::warning
+由于重写了分页器，这个onChange不会触发分页.使用分页组件的onChange 
+:::
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |

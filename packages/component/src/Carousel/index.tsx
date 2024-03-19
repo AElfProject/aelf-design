@@ -1,6 +1,6 @@
 import React, { SetStateAction, useState } from 'react';
 import { NextButtonIcon, PrevButtonIcon } from '@aelf-design/internal-icons';
-import { useResponsive } from 'antd-style';
+import { useResponsive, useTheme } from 'antd-style';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -43,6 +43,8 @@ export default function Carousel(props: ICarouselProps) {
     galleryObjectFit: galleryObjectFit || 'cover',
   });
   const responsive = useResponsive();
+
+  const token = useTheme();
   return (
     <div className={cx(st.Carousel, prefixCls + 'carousel', className)}>
       <Swiper
@@ -77,9 +79,9 @@ export default function Carousel(props: ICarouselProps) {
         <div className="swiper-button-next">
           <NextButtonIcon
             className="navigation-button"
-            color="#070A26"
-            hoverColor="#22253E"
-            activeColor="#131631"
+            color={token.customCarousel?.colorNavigation}
+            hoverColor={token.customCarousel?.colorNavigationHover}
+            activeColor={token.customCarousel?.colorNavigationActive}
             width={16}
             height={60}
           />
@@ -87,9 +89,9 @@ export default function Carousel(props: ICarouselProps) {
         <div className="swiper-button-prev">
           <PrevButtonIcon
             className="navigation-button"
-            color="#070A26"
-            hoverColor="#22253E"
-            activeColor="#131631"
+            color={token.customCarousel?.colorNavigation}
+            hoverColor={token.customCarousel?.colorNavigationHover}
+            activeColor={token.customCarousel?.colorNavigationActive}
             width={16}
             height={60}
           />
