@@ -22,6 +22,10 @@ export interface IHashAddressProps {
   size?: AddressSize;
   ignorePrefixSuffix?: boolean;
   ignoreEvent?: boolean;
+  primaryLinkColor?: string;
+  primaryIconColor?: string;
+  addressHoverColor?: string;
+  addressActiveColor?: string;
 }
 
 const addPrefixSuffix = (str: string, chain: TChain) => {
@@ -66,8 +70,23 @@ function Address({
   size = 'default',
   ignorePrefixSuffix = false,
   ignoreEvent = false,
+  primaryLinkColor,
+  primaryIconColor,
+  addressHoverColor,
+  addressActiveColor,
 }: IHashAddressProps) {
-  const { styles: st, cx, prefixCls } = useStyles({ size, ignoreEvent });
+  const {
+    styles: st,
+    cx,
+    prefixCls,
+  } = useStyles({
+    size,
+    ignoreEvent,
+    primaryLinkColor,
+    primaryIconColor,
+    addressHoverColor,
+    addressActiveColor,
+  });
 
   const addPrefixSuffixTxt = ignorePrefixSuffix ? address : addPrefixSuffix(address, chain);
   const omittedStr = getOmittedStr(addPrefixSuffixTxt, preLen, endLen);

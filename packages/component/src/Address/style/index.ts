@@ -3,7 +3,24 @@ import { createStyles } from 'antd-style';
 import { AddressSize } from '../index';
 
 const useStyles = createStyles(
-  ({ token, css }, { size, ignoreEvent }: { size: AddressSize; ignoreEvent: boolean }) => {
+  (
+    { token, css },
+    {
+      size,
+      ignoreEvent,
+      primaryLinkColor,
+      primaryIconColor,
+      addressHoverColor,
+      addressActiveColor,
+    }: {
+      size: AddressSize;
+      ignoreEvent: boolean;
+      primaryLinkColor?: string;
+      primaryIconColor?: string;
+      addressHoverColor?: string;
+      addressActiveColor?: string;
+    },
+  ) => {
     return {
       addressWrap: css`
         font-weight: 500;
@@ -26,14 +43,14 @@ const useStyles = createStyles(
             : size === 'large'
               ? '24px'
               : '28px'};
-        color: ${token.customAddress?.primaryLinkColor};
+        color: ${primaryLinkColor || token.customAddress?.primaryLinkColor};
         word-break: break-all;
         /* flex: 1; */
         &:hover {
-          color: ${token.customAddress?.addressHoverColor};
+          color: ${addressHoverColor || token.customAddress?.addressHoverColor};
         }
         &:active {
-          color: ${token.customAddress?.addressActiveColor};
+          color: ${addressActiveColor || token.customAddress?.addressActiveColor};
         }
       `,
       copyBtnWrap: css`
@@ -66,16 +83,16 @@ const useStyles = createStyles(
               ? '18px'
               : '20px'};
         path {
-          fill: ${token.customAddress?.primaryIconColor};
+          fill: ${primaryIconColor || token.customAddress?.primaryIconColor};
         }
         &:hover {
           path {
-            fill: ${token.customAddress?.addressHoverColor};
+            fill: ${addressHoverColor || token.customAddress?.addressHoverColor};
           }
         }
         &:active {
           path {
-            fill: ${token.customAddress?.addressActiveColor};
+            fill: ${addressActiveColor || token.customAddress?.addressActiveColor};
           }
         }
       `,

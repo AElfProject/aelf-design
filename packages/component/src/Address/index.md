@@ -13,6 +13,10 @@ group:
 
 <code src="./demos/basic.tsx"></code>
 
+## Custom Colors
+
+<code src="./demos/customColor.tsx">custom colors</code>
+
 ## Size
 
 <code src="./demos/size.tsx"></code>
@@ -30,6 +34,11 @@ group:
 <code src="./demos/ignorePrefixSuffix.tsx"></code>
 
 ## Token
+
+<!-- prettier-ignore -->
+:::info
+新增了primaryLinkColor | primaryIconColor | addressHoverColor | addressActiveColor 这四个颜色的api设置,组件api设置之后将会覆盖token的设置
+:::
 
 ```js
 <AELFDProvider
@@ -62,3 +71,7 @@ group:
 | size | 设置元素大小 | `small \| default \| large \| ultra` <br/>`small`: font-size:12px <br/>`default`: font-size:14px <br/>`large`: font-size:16px <br/>`ultra`: font-size:20px | `default`&nbsp; | `1.0.0` |
 | ignorePrefixSuffix | 忽略添加前后缀 | `boolean` | `false` | `1.0.0` |
 | ignoreEvent | 忽略绑定点击事件 | `boolean` | `false` | `1.0.0` |
+| primaryLinkColor | 地址默认颜色 | `string` | `customToken.customAddress.primaryLinkColor` | `1.0.0` |
+| primaryIconColor | copy按钮颜色 | `string` | `customToken.customAddress.primaryIconColor` | `1.0.0` |
+| addressHoverColor | 地址和copy按钮hover颜色 | `string` | `customToken.customAddress.addressHoverColor` | `1.0.0` |
+| addressActiveColor | 地址和按钮点击颜色 | `string` | `customToken.customAddress.addressActiveColor` | `1.0.0` |

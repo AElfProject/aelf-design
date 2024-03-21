@@ -157,9 +157,9 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             ...props?.theme?.components?.Modal,
           },
           Tooltip: {
-            colorBgSpotlight: appearance === 'dark' ? '#282828' : '#FFF',
-            colorTextLightSolid: appearance === 'dark' ? '#8C8C8C' : '#808080',
-            colorText: appearance === 'dark' ? '#8C8C8C' : '#808080',
+            colorBgSpotlight: appearance === 'dark' ? '#FFF' : '#282828',
+            colorTextLightSolid: appearance === 'dark' ? '#808080' : '#8C8C8C',
+            colorText: appearance === 'dark' ? '#808080' : '#8C8C8C',
             borderRadius: 8,
             fontSize: 12,
             lineHeight: 1.66666666666667,
