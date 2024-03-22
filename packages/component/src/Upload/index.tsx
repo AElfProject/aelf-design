@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode } from 'react';
-import { ClearIcon, FileIcon } from '@aelf-design/internal-icons';
+import { ClearIconFilled, FileIcon } from '@aelf-design/internal-icons';
 import { Upload as AntdUpload, UploadProps as AntdUploadProps, Image } from 'antd';
 import { useTheme } from 'antd-style';
 import { UploadFile } from 'antd/es/upload';
@@ -42,7 +42,7 @@ function UploadItemRender({
               actions.remove();
             }}
           >
-            <ClearIcon
+            <ClearIconFilled
               color={token.colorPrimary}
               hoverColor={token.colorPrimaryHover}
               activeColor={token.colorPrimaryActive}
@@ -69,7 +69,7 @@ function UploadItemRender({
             actions.remove();
           }}
         >
-          <ClearIcon
+          <ClearIconFilled
             color={token.colorPrimary}
             hoverColor={token.colorPrimaryHover}
             activeColor={token.colorPrimaryActive}

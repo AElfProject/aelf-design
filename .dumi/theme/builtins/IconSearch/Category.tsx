@@ -3,7 +3,7 @@ import { message } from 'antd';
 import { useIntl } from 'dumi';
 
 import CopyableIcon from './CopyableIcon';
-import { type CategoriesKeys } from './fields';
+import { CategoryNames, type CategoriesKeys } from './fields';
 import { type ThemeType } from './IconSearch';
 
 interface CategoryProps {
@@ -41,7 +41,7 @@ const Category: React.FC<CategoryProps> = (props) => {
 
   return (
     <div>
-      <h3>{intl.formatMessage({ id: `app.docs.components.icon.category.${title}` })}</h3>
+      <h3>{CategoryNames[title]}</h3>
       <ul className="anticons-list">
         {icons.map((name) => (
           <CopyableIcon
