@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 import { AelfIcon } from '../../icon/AelfIcon';
-import AelfSVGComponent from '../../svgs/direction/left.svg';
+import AelfSVGComponent from '../../svgs/direction/up.svg';
 import { IconProps } from '../../type';
 
-const componentName = 'LeftOutlined';
-export const LeftOutlined = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
+const componentName = 'UpOutlined';
+export const UpOutlined = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
   return (
     <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
   );
 });
-LeftOutlined.displayName = componentName;
+UpOutlined.displayName = componentName;
