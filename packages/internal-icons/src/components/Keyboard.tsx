@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 import { AelfIcon } from '../icon/AelfIcon';
-import AelfSVGComponent from '../svgs/upload-icon.svg';
+import AelfSVGComponent from '../svgs/key-board.svg';
 import { type IconProps } from '../type';
 
-const componentName = 'UploadIcon';
-export const UploadIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
+const componentName = 'Keyboard';
+export const Keyboard = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
   return (
     <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
   );
 });
-UploadIcon.displayName = componentName;
+Keyboard.displayName = componentName;

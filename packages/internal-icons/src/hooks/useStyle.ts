@@ -21,8 +21,6 @@ const useStyles = createStyles<IconProps, { iconWrap: SerializedStyles }>(({ css
   return {
     iconWrap: css`
       display: inline-flex;
-      width: ${typeof props.width === 'number' ? `${props.width}px` : props.width};
-      height: ${typeof props.height === 'number' ? `${props.height}px` : props.height};
       path:nth-of-type(1) {
         fill: ${props.color};
       }
@@ -33,8 +31,8 @@ const useStyles = createStyles<IconProps, { iconWrap: SerializedStyles }>(({ css
         fill: ${props.activeColor};
       }
       svg {
-        width: 100%;
-        height: 100%;
+        width: 1em;
+        height: 1em;
       }
       ${createPathsStyle(props.twoToneColor ?? [])}
       ${createPathsStyle(props.hoverTwoToneColor ?? [], 'hover')}
