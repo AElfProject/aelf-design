@@ -16,7 +16,7 @@ export default function UploadButton(props: IUploadButtonProps) {
   const token = useTheme();
   return (
     <div className={cx(prefixCls + '-upload-button', styles.uploadButton)}>
-      <UploadIcon color={uploadIconColor || token.colorPrimary} width={40} height={40} />
+      <UploadIcon color={uploadIconColor || token.colorPrimary} />
       <div className={styles.message}>
         <div className={styles.uploadText}>{uploadText || 'Upload'}</div>
         {tips || (

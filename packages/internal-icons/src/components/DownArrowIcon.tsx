@@ -7,14 +7,7 @@ import { type IconProps } from '../type';
 const componentName = 'DownArrowIcon';
 export const DownArrowIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
   return (
-    <AelfIcon
-      component={AelfSVGComponent}
-      componentName={componentName}
-      defaultWidth={12}
-      defaultHeight={12}
-      ref={ref}
-      {...props}
-    />
+    <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
   );
 });
 DownArrowIcon.displayName = 'DownArrowIcon';

@@ -11,8 +11,7 @@ export const EyeInvisibleOutlinedIcon = React.forwardRef<HTMLSpanElement, IconPr
       <AelfIcon
         component={AelfSVGComponent}
         componentName={componentName}
-        defaultWidth={18}
-        defaultHeight={18}
+        style={{ fontSize: '18px' }}
         ref={ref}
         {...props}
       />

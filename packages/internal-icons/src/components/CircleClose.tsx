@@ -8,14 +8,7 @@ const componentName = 'CircleCloseIconOutlined';
 export const CircleCloseIconOutlined = React.forwardRef<HTMLSpanElement, IconProps>(
   (props, ref) => {
     return (
-      <AelfIcon
-        component={AelfSVGComponent}
-        componentName={componentName}
-        defaultWidth={16}
-        defaultHeight={16}
-        ref={ref}
-        {...props}
-      />
+      <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
     );
   },
 );

@@ -46,8 +46,6 @@ function UploadItemRender({
               color={token.colorPrimary}
               hoverColor={token.colorPrimaryHover}
               activeColor={token.colorPrimaryActive}
-              width={16}
-              height={16}
             />
             <span className="clear-text">Delete</span>
           </div>
@@ -58,7 +56,7 @@ function UploadItemRender({
   ) : (
     <div className={cx(styles.FilePreviewContainer)}>
       <div className="file-icon-container">
-        <FileIcon width={56} height={56} />
+        <FileIcon />
         <div className="file-tips">Ready for review</div>
       </div>
       <div className="file-info">
@@ -73,8 +71,6 @@ function UploadItemRender({
             color={token.colorPrimary}
             hoverColor={token.colorPrimaryHover}
             activeColor={token.colorPrimaryActive}
-            width={16}
-            height={16}
           />
           <span className="clear-text">Remove</span>
         </div>

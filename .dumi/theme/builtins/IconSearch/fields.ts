@@ -1,6 +1,6 @@
-import * as AntdIcons from '@ant-design/icons/lib/icons';
+import * as AntdWeb3Icons from '@aelf-design/internal-icons';
 
-const all = Object.keys(AntdIcons)
+const all = Object.keys(AntdWeb3Icons)
   .map((n) => n.replace(/(Outlined|Filled|TwoTone)$/, ''))
   .filter((n, i, arr) => arr.indexOf(n) === i);
 

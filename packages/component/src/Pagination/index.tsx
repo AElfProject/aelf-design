@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { DownArrowIcon, LeftArrowIcon, RightArrowIcon } from '@aelf-design/internal-icons';
+import { DownArrowIcon, LeftOutlined, RightOutlined } from '@aelf-design/internal-icons';
 import { Select } from 'antd';
 import { debounce } from 'lodash-es';
 
@@ -167,7 +167,7 @@ export default function Pagination({
             size="small"
             ghost
             onClick={runPrevChange}
-            icon={<LeftArrowIcon />}
+            icon={<LeftOutlined />}
           />
         </div>
         <div className={cx(prefixCls + '-pageNumber-container', styles.pageNumberContainer)}>
@@ -181,7 +181,7 @@ export default function Pagination({
             ghost
             disabled={isLastPage}
             onClick={runNextChange}
-            icon={<RightArrowIcon />}
+            icon={<RightOutlined />}
           />
         </div>
         <div>
