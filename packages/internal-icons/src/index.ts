@@ -16,6 +16,7 @@ export * from './components/QueryIcon';
 export * from './components/RightArrowIcon';
 export * from './components/UploadIcon';
 
+export * from './components/direction/index';
 export * from './icon/AelfIcon';
 export * from './hooks';
 

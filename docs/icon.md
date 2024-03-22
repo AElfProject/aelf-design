@@ -1,5 +1,5 @@
 ---
-nav: Components
+nav: icons
 group:
   title: Display
   order: 3
