@@ -82,8 +82,6 @@ export default function Carousel(props: ICarouselProps) {
             color={token.customCarousel?.colorNavigation}
             hoverColor={token.customCarousel?.colorNavigationHover}
             activeColor={token.customCarousel?.colorNavigationActive}
-            width={16}
-            height={60}
           />
         </div>
         <div className="swiper-button-prev">
@@ -92,8 +90,6 @@ export default function Carousel(props: ICarouselProps) {
             color={token.customCarousel?.colorNavigation}
             hoverColor={token.customCarousel?.colorNavigationHover}
             activeColor={token.customCarousel?.colorNavigationActive}
-            width={16}
-            height={60}
           />
         </div>
       </Swiper>

@@ -10,8 +10,10 @@ export const PrevButtonIcon = React.forwardRef<HTMLSpanElement, IconProps>((prop
     <AelfIcon
       component={AelfSVGComponent}
       componentName={componentName}
-      defaultWidth={16}
-      defaultHeight={60}
+      style={{
+        width: '16px',
+        height: '60px',
+      }}
       ref={ref}
       {...props}
     />

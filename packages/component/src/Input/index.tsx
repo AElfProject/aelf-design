@@ -45,8 +45,6 @@ const getClearIcon = (
         color={token?.colorBorder}
         hoverColor={token?.Table?.headerBg}
         activeColor={token?.colorTextDisabled}
-        width="16px"
-        height="16px"
       />
     </div>
   );
@@ -103,11 +101,7 @@ function InputPassword({
               }
       }
       iconRender={(visible) =>
-        visible ? (
-          <EyeTwoToneIcon {...iconProps} width={16} height={16} />
-        ) : (
-          <EyeInvisibleOutlinedIcon {...iconProps} width={16} height={16} />
-        )
+        visible ? <EyeTwoToneIcon {...iconProps} /> : <EyeInvisibleOutlinedIcon {...iconProps} />
       }
     ></AntdInput.Password>
   );

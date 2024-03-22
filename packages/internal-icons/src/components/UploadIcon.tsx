@@ -7,7 +7,13 @@ import { type IconProps } from '../type';
 const componentName = 'UploadIcon';
 export const UploadIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
   return (
-    <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
+    <AelfIcon
+      component={AelfSVGComponent}
+      style={{ fontSize: '40px' }}
+      componentName={componentName}
+      ref={ref}
+      {...props}
+    />
   );
 });
 UploadIcon.displayName = componentName;

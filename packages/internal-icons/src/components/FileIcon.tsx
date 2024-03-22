@@ -10,8 +10,7 @@ export const FileIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref
     <AelfIcon
       component={AelfSVGComponent}
       componentName={componentName}
-      defaultWidth={56}
-      defaultHeight={56}
+      style={{ fontSize: '56px' }}
       ref={ref}
       {...props}
     />
