@@ -1,8 +1,6 @@
 import React from 'react';
 
 export interface IconInnerProps {
-  width?: string | number;
-  height?: string | number;
   color?: string;
   hoverColor?: string;
   activeColor?: string;
