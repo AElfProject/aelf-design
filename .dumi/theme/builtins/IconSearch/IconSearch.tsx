@@ -8,13 +8,11 @@ import { debounce } from 'lodash-es';
 
 import Category from './Category';
 import { categories, CategoriesKeys } from './fields';
-import { CircleFilledIcon, FilledIcon } from './themeIcons';
+import { FilledIcon, OutlinedIcon } from './themeIcons';
 
 export enum ThemeType {
   Filled = 'Filled',
-  CircleFilled = 'CircleFilled',
-  Colorful = 'Colorful',
-  CircleColorful = 'CircleColorful',
+  Outlined = 'Outlined',
 }
 
 const allIcons: Record<string, any> = AntdWeb3Icons;
@@ -32,14 +30,14 @@ const options = (
   onlyIcon?: boolean,
 ): SegmentedProps['options'] => [
   {
-    value: ThemeType.CircleFilled,
-    icon: <AntdIcon component={CircleFilledIcon} />,
-    label: !onlyIcon && formatMessage({ id: 'app.docs.components.icon.circle-filled' }),
+    value: ThemeType.Outlined,
+    icon: <AntdIcon component={OutlinedIcon} />,
+    label: !onlyIcon && 'Outlined',
   },
   {
     value: ThemeType.Filled,
     icon: <AntdIcon component={FilledIcon} />,
-    label: !onlyIcon && formatMessage({ id: 'app.docs.components.icon.filled' }),
+    label: !onlyIcon && 'Filled',
   },
 ];
 
@@ -55,7 +53,7 @@ const IconSearch: React.FC = () => {
   const { styles } = useStyle();
   const [displayState, setDisplayState] = useState<IconSearchState>({
     searchKey: '',
-    theme: ThemeType.CircleColorful,
+    theme: ThemeType.Outlined,
   });
 
   const newIconNames: string[] = [];
@@ -126,7 +124,7 @@ const IconSearch: React.FC = () => {
             onChange={handleChangeTheme}
           />
           <Input.Search
-            placeholder={intl.formatMessage({ id: 'app.docs.components.icon.search.placeholder' })}
+            placeholder="Search icons here, click icon to copy code"
             style={{ flex: 1, marginInlineStart: 16 }}
             allowClear
             autoFocus
