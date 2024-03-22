@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import {
-  CircleCloseIcon,
-  ClearIcon,
+  CircleCloseIconOutlined,
   EyeInvisibleOutlinedIcon,
   EyeTwoToneIcon,
   IconProps,
@@ -42,7 +41,7 @@ const getClearIcon = (
         onClear?.(e);
       }}
     >
-      <CircleCloseIcon
+      <CircleCloseIconOutlined
         color={token?.colorBorder}
         hoverColor={token?.Table?.headerBg}
         activeColor={token?.colorTextDisabled}

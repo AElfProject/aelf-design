@@ -1,53 +1,42 @@
-import * as AntdWeb3Icons from '@aelf-design/internal-icons';
+import * as AntdIcons from '@ant-design/icons/lib/icons';
 
-const all = Object.keys(AntdWeb3Icons)
-  .map((n) => n.replace(/(CircleColorful|Colorful|Filled|CircleFilled)$/, ''))
+const all = Object.keys(AntdIcons)
+  .map((n) => n.replace(/(Outlined|Filled|TwoTone)$/, ''))
   .filter((n, i, arr) => arr.indexOf(n) === i);
 
-const chain = [
-  'Arbitrum',
-  'Bitcoin',
-  'BSC',
-  'Ethereum',
-  'Optimism',
-  'Polygon',
-  'Sui',
-  'Tron',
-  'Base',
-  'Avalanche',
-  'Fantom',
-  'Celo',
-  'Cronos',
-  'Moonbeam',
-  'Solana',
-];
+// 方向指示类图标
+const direction = ['CircleCloseIcon', 'ClearIcon'];
 
-const token = ['DAI', 'WBTC', 'AAVE', 'USDT'];
+// 提示建议类图标
+const suggestion: string[] = [];
 
-const tool = [
-  'CoinbaseWallet',
-  'Etherscan',
-  'MetaMask',
-  'WalletConnect',
-  'TokenPocket',
-  'Safeheron',
-  'Uniswap',
-  'PancakeSwap',
-  'SushiSwap',
-  'Phantom',
-  'OkxWallet',
-];
+// 交互按钮图标
+const interaction: string[] = [];
 
-const datum = [...chain, ...token, ...tool];
+// 聊天图标
+const chat: string[] = [];
+
+const datum = [...direction, ...suggestion, ...interaction, ...chat];
 
 const other = all.filter((n) => !datum.includes(n));
 
 export const categories = {
-  chain,
-  token,
-  tool,
+  direction,
+  suggestion,
+  interaction,
+  chat,
   other,
 };
+
+export const CategoryNames = {
+  direction: '方向指示类图标',
+  suggestion: '提示建议类图标',
+  interaction: '交互按钮图标',
+  chat: '聊天图标',
+  other: '其他图标',
+};
+
+export default categories;
 
 export type Categories = typeof categories;
 export type CategoriesKeys = keyof Categories;
