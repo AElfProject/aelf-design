@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { forwardRef } from 'react';
 
 import Copy from './copy';
 import useStyles from './style';
@@ -59,59 +59,68 @@ const getOmittedStr = (str: string, preLen?: number, endLen?: number) => {
   return `${str.slice(0, preLen)}...${str.slice(-endLen)}`;
 };
 
-function Address({
-  address,
-  chain = 'AELF',
-  preLen = 0,
-  endLen = 0,
-  hasCopy = true,
-  addressClickCallback,
-  className,
-  size = 'default',
-  ignorePrefixSuffix = false,
-  ignoreEvent = false,
-  primaryLinkColor,
-  primaryIconColor,
-  addressHoverColor,
-  addressActiveColor,
-}: IHashAddressProps) {
-  const {
-    styles: st,
-    cx,
-    prefixCls,
-  } = useStyles({
-    size,
-    ignoreEvent,
-    primaryLinkColor,
-    primaryIconColor,
-    addressHoverColor,
-    addressActiveColor,
-  });
+const Address = forwardRef<HTMLDivElement, IHashAddressProps>(
+  (
+    {
+      address,
+      chain = 'AELF',
+      preLen = 0,
+      endLen = 0,
+      hasCopy = true,
+      addressClickCallback,
+      className,
+      size = 'default',
+      ignorePrefixSuffix = false,
+      ignoreEvent = false,
+      primaryLinkColor,
+      primaryIconColor,
+      addressHoverColor,
+      addressActiveColor,
+    }: IHashAddressProps,
+    ref,
+  ) => {
+    const {
+      styles: st,
+      cx,
+      prefixCls,
+    } = useStyles({
+      size,
+      ignoreEvent,
+      primaryLinkColor,
+      primaryIconColor,
+      addressHoverColor,
+      addressActiveColor,
+    });
 
-  const addPrefixSuffixTxt = ignorePrefixSuffix ? address : addPrefixSuffix(address, chain);
-  const omittedStr = getOmittedStr(addPrefixSuffixTxt, preLen, endLen);
+    const addPrefixSuffixTxt = ignorePrefixSuffix ? address : addPrefixSuffix(address, chain);
+    const omittedStr = getOmittedStr(addPrefixSuffixTxt, preLen, endLen);
 
-  const addressClickHandler = (e: React.MouseEvent<HTMLElement>) => {
-    if (ignoreEvent) {
-      return;
-    }
-    if (addressClickCallback) {
-      addressClickCallback(address, addPrefixSuffixTxt, e);
-    }
-  };
+    const addressClickHandler = (e: React.MouseEvent<HTMLElement>) => {
+      if (ignoreEvent) {
+        return;
+      }
+      if (addressClickCallback) {
+        addressClickCallback(address, addPrefixSuffixTxt, e);
+      }
+    };
 
-  return (
-    <div className={cx(st.addressWrap, className, prefixCls + '-hash-address')}>
-      <span className={st.addressText} onClick={addressClickHandler}>
-        {omittedStr}
-      </span>
-      {hasCopy && (
-        <div className={st.copyBtnWrap}>
-          <Copy className={st.copyBtn} value={addPrefixSuffixTxt} />
-        </div>
-      )}
-    </div>
-  );
+    return (
+      <div className={cx(st.addressWrap, className, prefixCls + '-hash-address')} ref={ref}>
+        <span className={st.addressText} onClick={addressClickHandler}>
+          {omittedStr}
+        </span>
+        {hasCopy && (
+          <div className={st.copyBtnWrap}>
+            <Copy className={st.copyBtn} value={addPrefixSuffixTxt} />
+          </div>
+        )}
+      </div>
+    );
+  },
+);
+
+if (process.env.NODE_ENV !== 'production') {
+  Address.displayName = 'Address';
 }
 
-export default memo(Address);
+export default Address;

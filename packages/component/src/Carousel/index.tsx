@@ -1,8 +1,8 @@
-import React, { SetStateAction, useState } from 'react';
+import React, { forwardRef, SetStateAction, useState } from 'react';
 import { NextButtonIcon, PrevButtonIcon } from '@aelf-design/internal-icons';
 import { useResponsive, useTheme } from 'antd-style';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 
 import useStyles from './styles';
 
@@ -23,7 +23,7 @@ export interface ICarouselProps {
   onSlideClick?: (value: ICarouselSlideItem) => void;
 }
 
-export default function Carousel(props: ICarouselProps) {
+const Carousel = forwardRef<SwiperRef, ICarouselProps>((props: ICarouselProps, ref) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const {
     data,
@@ -60,6 +60,7 @@ export default function Carousel(props: ICarouselProps) {
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
         className="swiper-gallery"
+        ref={ref}
       >
         {data.map((item, index) => {
           return (
@@ -121,4 +122,10 @@ export default function Carousel(props: ICarouselProps) {
       </Swiper>
     </div>
   );
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  Carousel.displayName = 'Carousel';
 }
+
+export default Carousel;

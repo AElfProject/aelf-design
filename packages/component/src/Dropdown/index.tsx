@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Dropdown as AntdDropdown, DropdownProps } from 'antd';
 
 import useStyles from './style';
@@ -11,19 +11,19 @@ export interface IDropdownProps extends Omit<DropdownProps, 'overlayClassName'> 
   offsetY?: number;
 }
 
-function Dropdown({
+const Dropdown = ({
   children,
   size = 'default',
   offsetX = 0,
   offsetY = 0,
   ...props
-}: IDropdownProps) {
+}: IDropdownProps) => {
   const { styles, cx } = useStyles({ size, offsetX, offsetY });
   return (
     <AntdDropdown overlayClassName={cx(styles.dropDownWrap, props.overlayClassName)} {...props}>
       {children}
     </AntdDropdown>
   );
-}
+};
 
 export default Dropdown;

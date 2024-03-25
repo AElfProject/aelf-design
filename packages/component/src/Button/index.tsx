@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { forwardRef, MouseEvent } from 'react';
 import { Button as AntdButton, ButtonProps } from 'antd';
 import { debounce } from 'lodash-es';
 
@@ -11,26 +11,37 @@ export interface IButtonProps extends Omit<ButtonProps, 'size' | 'onClick'> {
   millisecondOfDebounce?: number;
 }
 
-function Button({ size = 'large', className, millisecondOfDebounce = 0, ...rest }: IButtonProps) {
-  const { styles: st, cx } = useStyles({ size });
+const Button = forwardRef<HTMLElement, IButtonProps>(
+  ({ size = 'large', className, millisecondOfDebounce = 0, ...rest }: IButtonProps, ref) => {
+    const { styles: st, cx } = useStyles({ size });
 
-  const buttonClickHandler = debounce(
-    (e: MouseEvent<HTMLElement>) => {
-      if (rest.onClick) {
-        rest.onClick(e);
-      }
-    },
-    millisecondOfDebounce,
-    {
-      leading: false,
-      trailing: true,
-    },
-  );
-  return (
-    <AntdButton {...rest} onClick={buttonClickHandler} className={cx(st.buttonWrap, className)}>
-      {rest.children}
-    </AntdButton>
-  );
+    const buttonClickHandler = debounce(
+      (e: MouseEvent<HTMLElement>) => {
+        if (rest.onClick) {
+          rest.onClick(e);
+        }
+      },
+      millisecondOfDebounce,
+      {
+        leading: false,
+        trailing: true,
+      },
+    );
+    return (
+      <AntdButton
+        ref={ref}
+        {...rest}
+        onClick={buttonClickHandler}
+        className={cx(st.buttonWrap, className)}
+      >
+        {rest.children}
+      </AntdButton>
+    );
+  },
+);
+
+if (process.env.NODE_ENV !== 'production') {
+  Button.displayName = 'Button';
 }
 
 export default Button;
