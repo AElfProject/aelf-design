@@ -1,5 +1,5 @@
 import React from 'react';
-import { UploadIcon } from '@aelf-design/internal-icons';
+import { UploadOutlined } from '@aelf-design/internal-icons';
 import { useTheme } from 'antd-style';
 
 import useStyles from './style';
@@ -16,7 +16,7 @@ export default function UploadButton(props: IUploadButtonProps) {
   const token = useTheme();
   return (
     <div className={cx(prefixCls + '-upload-button', styles.uploadButton)}>
-      <UploadIcon color={uploadIconColor || token.colorPrimary} />
+      <UploadOutlined style={{ fontSize: 40 }} color={uploadIconColor || token.colorPrimary} />
       <div className={styles.message}>
         <div className={styles.uploadText}>{uploadText || 'Upload'}</div>
         {tips || (
