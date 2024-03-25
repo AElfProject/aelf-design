@@ -1,5 +1,5 @@
 import React from 'react';
-import { CopyIcon } from '@aelf-design/internal-icons';
+import { CopyOutlined } from '@aelf-design/internal-icons';
 import { message } from 'antd';
 import copy from 'copy-to-clipboard';
 
@@ -14,5 +14,5 @@ export default function Copy({ value, className }: { value: string; className?: 
       message.error('Copy failed, please copy by yourself.');
     }
   };
-  return <CopyIcon className={className} onClick={handleCopy} />;
+  return <CopyOutlined className={className} onClick={handleCopy} />;
 }

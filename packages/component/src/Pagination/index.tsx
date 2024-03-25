@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { DownArrowIcon, LeftOutlined, RightOutlined } from '@aelf-design/internal-icons';
+import { DownOutlined, LeftOutlined, RightOutlined } from '@aelf-design/internal-icons';
 import { Select } from 'antd';
 import { debounce } from 'lodash-es';
 
@@ -134,7 +134,7 @@ export default function Pagination({
               className={styles.pagesizeSelect}
               popupClassName={styles.pageSizePopup}
               popupMatchSelectWidth={false}
-              suffixIcon={<DownArrowIcon />}
+              suffixIcon={<DownOutlined />}
               options={pagesizeOptions}
               onChange={sizeChange}
             />
