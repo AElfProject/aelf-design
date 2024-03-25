@@ -1,5 +1,5 @@
 import React from 'react';
-import { QueryIcon } from '@aelf-design/internal-icons';
+import { SearchOutlined } from '@aelf-design/internal-icons';
 import { Button } from 'aelf-design';
 import { Space } from 'antd';
 
@@ -29,31 +29,31 @@ const App: React.FC = () => {
           </Button>
         </Space>
         <Space>
-          <Button shape="circle" icon={<QueryIcon />} />
-          <Button shape="circle" type="primary" icon={<QueryIcon />} />
-          <Button shape="circle" type="dashed" icon={<QueryIcon />} />
-          <Button shape="circle" type="primary" ghost icon={<QueryIcon />} />
-          <Button shape="circle" danger icon={<QueryIcon />} />
+          <Button shape="circle" icon={<SearchOutlined />} />
+          <Button shape="circle" type="primary" icon={<SearchOutlined />} />
+          <Button shape="circle" type="dashed" icon={<SearchOutlined />} />
+          <Button shape="circle" type="primary" ghost icon={<SearchOutlined />} />
+          <Button shape="circle" danger icon={<SearchOutlined />} />
         </Space>
         <Space>
-          <Button icon={<QueryIcon />} />
-          <Button type="primary" icon={<QueryIcon />} />
-          <Button type="dashed" icon={<QueryIcon />} />
-          <Button type="primary" ghost icon={<QueryIcon />} />
-          <Button danger icon={<QueryIcon />} />
+          <Button icon={<SearchOutlined />} />
+          <Button type="primary" icon={<SearchOutlined />} />
+          <Button type="dashed" icon={<SearchOutlined />} />
+          <Button type="primary" ghost icon={<SearchOutlined />} />
+          <Button danger icon={<SearchOutlined />} />
         </Space>
         <Space>
-          <Button icon={<QueryIcon />}>button</Button>
-          <Button type="primary" icon={<QueryIcon />}>
+          <Button icon={<SearchOutlined />}>button</Button>
+          <Button type="primary" icon={<SearchOutlined />}>
             button
           </Button>
-          <Button type="dashed" icon={<QueryIcon />}>
+          <Button type="dashed" icon={<SearchOutlined />}>
             button
           </Button>
-          <Button type="primary" ghost icon={<QueryIcon />}>
+          <Button type="primary" ghost icon={<SearchOutlined />}>
             button
           </Button>
-          <Button danger icon={<QueryIcon />}>
+          <Button danger icon={<SearchOutlined />}>
             button
           </Button>
         </Space>

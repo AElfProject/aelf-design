@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react';
 import React, { useCallback, useMemo, useState } from 'react';
-import { DownArrowIcon, QueryIcon } from '@aelf-design/internal-icons';
+import { DownOutlined, SearchOutlined } from '@aelf-design/internal-icons';
 import type { MenuProps } from 'antd';
 import type { MenuItemType } from 'antd/lib/menu/hooks/useItems';
 
@@ -70,7 +70,7 @@ function Search({
         isErrorStatus && styles.searchBtnDisabled,
       )}
     >
-      <QueryIcon />
+      <SearchOutlined />
     </div>
   );
 
@@ -90,7 +90,7 @@ function Search({
 
   const prefixDom = useMemo(() => {
     if (filterItems.length === 0) {
-      return <QueryIcon />;
+      return <SearchOutlined />;
     }
     return (
       <Dropdown
@@ -109,10 +109,10 @@ function Search({
         <div className={styles.searchDropDownWrap}>
           <div className={styles.searchDropDownLeft}>
             <div className={styles.searchDropDownLeftLabel}>{checkedItem?.value}</div>
-            <DownArrowIcon className={cx(isDropDownOpen && styles.collapseIcon)} />
+            <DownOutlined className={cx(isDropDownOpen && styles.collapseIcon)} />
           </div>
           <div className={styles.searchDropDownRight}>
-            <QueryIcon />
+            <SearchOutlined />
           </div>
         </div>
       </Dropdown>
