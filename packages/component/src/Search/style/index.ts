@@ -21,6 +21,7 @@ const useStyles = createStyles(
       align-items: center;
     `;
     const searchBtnBase = css`
+      font-size: 16px;
       cursor: pointer;
       height: ${inputSize === 'middle' ? '48px' : '40px'};
       padding: 0 15px;
