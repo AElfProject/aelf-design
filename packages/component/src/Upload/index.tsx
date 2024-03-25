@@ -1,5 +1,5 @@
 import React, { forwardRef, ReactElement, ReactNode } from 'react';
-import { DeleteOutlined, ShareExternalOutlined } from '@aelf-design/icons';
+import { DeleteOutlined, FileIcon } from '@aelf-design/icons';
 import { Upload as AntdUpload, UploadProps as AntdUploadProps, Image } from 'antd';
 import { useTheme } from 'antd-style';
 import { UploadFile } from 'antd/es/upload';
@@ -57,7 +57,7 @@ function UploadItemRender({
   ) : (
     <div className={cx(styles.FilePreviewContainer)}>
       <div className="file-icon-container">
-        <ShareExternalOutlined />
+        <FileIcon />
         <div className="file-tips">Ready for review</div>
       </div>
       <div className="file-info">

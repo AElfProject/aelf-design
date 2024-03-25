@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { UploadIcon } from '@aelf-design/icons';
+import { UploadOutlined } from '@aelf-design/icons';
 import { useTheme } from 'antd-style';
 
 import useStyles from './style';
@@ -23,7 +23,7 @@ const UploadButton = forwardRef<HTMLDivElement, IUploadButtonProps>(
         style={style}
         ref={ref}
       >
-        <UploadIcon color={uploadIconColor || token.colorPrimary} />
+        <UploadOutlined style={{ fontSize: 40 }} color={uploadIconColor || token.colorPrimary} />
         <div className={styles.message}>
           <div className={styles.uploadText}>{uploadText || 'Upload'}</div>
           {tips || (

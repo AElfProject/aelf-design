@@ -19,7 +19,7 @@ const Icon: React.FC = () => {
         margin: 3px 0;
         padding: 10px 0 0;
         overflow: hidden;
-        color: #555;
+        color: #101114;
         text-align: center;
         list-style: none;
         background-color: inherit;
