@@ -13,6 +13,7 @@ import { FilledIcon, OutlinedIcon } from './themeIcons';
 export enum ThemeType {
   Filled = 'Filled',
   Outlined = 'Outlined',
+  All = 'All',
 }
 
 const allIcons: Record<string, any> = AntdWeb3Icons;
@@ -29,6 +30,10 @@ const options = (
   formatMessage: (values: Record<string, string>) => React.ReactNode,
   onlyIcon?: boolean,
 ): SegmentedProps['options'] => [
+  {
+    value: ThemeType.All,
+    label: 'All',
+  },
   {
     value: ThemeType.Outlined,
     icon: <AntdIcon component={OutlinedIcon} />,
@@ -53,7 +58,7 @@ const IconSearch: React.FC = () => {
   const { styles } = useStyle();
   const [displayState, setDisplayState] = useState<IconSearchState>({
     searchKey: '',
-    theme: ThemeType.Outlined,
+    theme: ThemeType.All,
   });
 
   const newIconNames: string[] = [];
@@ -70,6 +75,12 @@ const IconSearch: React.FC = () => {
     const { searchKey = '', theme } = displayState;
     const categoriesResult = Object.keys(categories)
       .map((key) => {
+        if (theme === ThemeType.Filled && !key.toLowerCase().includes('filled')) {
+          return null;
+        }
+        if (theme === ThemeType.Outlined && key.toLowerCase().includes('filled')) {
+          return null;
+        }
         let iconList = categories[key as CategoriesKeys];
         if (searchKey) {
           const matchKey = searchKey
@@ -81,11 +92,10 @@ const IconSearch: React.FC = () => {
 
         return {
           category: key,
-          icons: iconList
-            .map((iconName) => iconName + theme)
-            .filter((iconName) => allIcons[iconName]),
+          icons: iconList.filter((iconName) => allIcons[iconName]),
         };
       })
+      .filter(Boolean)
       .filter(({ icons }) => !!icons.length)
       .map(({ category, icons }) => (
         <Category
