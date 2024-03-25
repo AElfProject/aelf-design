@@ -8,4 +8,4 @@ const componentName = 'EyeTwoToneIcon';
 export const EyeTwoToneIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
   return <AelfIcon component={AelfSVGComponent} ref={ref} {...props} />;
 });
-EyeTwoToneIcon.displayName = 'EyeTwoToneIcon';
+EyeTwoToneIcon.displayName = componentName;
