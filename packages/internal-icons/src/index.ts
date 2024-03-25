@@ -18,6 +18,7 @@ export * from './components/direction/index';
 export * from './components/suggestion/index';
 export * from './components/chat/index';
 export * from './components/interactive/index';
+export * from './components/filled/index';
 export * from './icon/AelfIcon';
 export * from './hooks';
 

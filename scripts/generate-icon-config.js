@@ -14,7 +14,6 @@ const config = dirs.reduce((pre, next) => {
     const files = fs.readdirSync(dirPath);
     pre[next] = files
       .map((file) => path.basename(file, path.extname(file)))
-      .map((file) => file.replace(/Outlined|Filled/, ''))
       .filter((file) => file !== 'index');
   }
   return pre;
