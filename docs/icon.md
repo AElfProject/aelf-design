@@ -1,10 +1,10 @@
 ---
-nav: icons
+nav: Icons
 group:
   title: Display
   order: 3
 ---
 
-## 图标列表
+## Icon List
 
 <IconSearch></IconSearch>
