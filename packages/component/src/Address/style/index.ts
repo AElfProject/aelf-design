@@ -61,6 +61,13 @@ const useStyles = createStyles(
             : size === 'large'
               ? '24px'
               : '28px'};
+        font-size: ${size === 'small'
+          ? '12px'
+          : size === 'default'
+            ? '14px'
+            : size === 'large'
+              ? '16px'
+              : '20px'};
         display: flex;
         flex-shrink: 0;
         margin-left: ${size === 'small' ? '4px' : '8px'};
@@ -68,20 +75,6 @@ const useStyles = createStyles(
         cursor: pointer;
       `,
       copyBtn: css`
-        width: ${size === 'small'
-          ? '12px'
-          : size === 'default'
-            ? '16px'
-            : size === 'large'
-              ? '18px'
-              : '20px'};
-        height: ${size === 'small'
-          ? '12px'
-          : size === 'default'
-            ? '16px'
-            : size === 'large'
-              ? '18px'
-              : '20px'};
         path {
           fill: ${primaryIconColor || token.customAddress?.primaryIconColor};
         }

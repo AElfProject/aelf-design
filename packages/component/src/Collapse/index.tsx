@@ -1,5 +1,5 @@
 import React from 'react';
-import { DownArrowIcon } from '@aelf-design/internal-icons';
+import { DownOutlined } from '@aelf-design/internal-icons';
 import { Collapse as AntdCollapse, CollapseProps } from 'antd';
 
 import useStyles from './style';
@@ -13,7 +13,7 @@ function Collapse({ className, ...rest }: ICollapseProps) {
   return (
     <AntdCollapse
       {...rest}
-      expandIcon={({ isActive }) => <DownArrowIcon className={cx(isActive && st.collapseIcon)} />}
+      expandIcon={({ isActive }) => <DownOutlined className={cx(isActive && st.collapseIcon)} />}
       expandIconPosition={'end'}
       className={cx(st.aelfdCollapse, className)}
     />

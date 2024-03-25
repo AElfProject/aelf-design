@@ -1,5 +1,5 @@
 import React from 'react';
-import { DownArrowIcon } from '@aelf-design/internal-icons';
+import { DownOutlined } from '@aelf-design/internal-icons';
 import { Tabs } from 'aelf-design';
 import { Space } from 'antd';
 
@@ -8,19 +8,19 @@ const tabItems = [
     key: '1',
     label: 'Tab 1',
     children: 'Content of Tab Pane 1',
-    icon: <DownArrowIcon />,
+    icon: <DownOutlined />,
   },
   {
     key: '2',
     label: 'Tab 2',
     children: 'Content of Tab Pane 2',
-    icon: <DownArrowIcon />,
+    icon: <DownOutlined />,
   },
   {
     key: '3',
     label: 'Tabxxxxxx 3',
     children: 'Content of Tab Pane 3',
-    icon: <DownArrowIcon />,
+    icon: <DownOutlined />,
   },
 ];
 const App: React.FC = () => {

@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import {
   CircleCloseIconOutlined,
-  EyeInvisibleOutlinedIcon,
-  EyeTwoToneIcon,
+  EyeInvisibleOutlined,
+  EyeOutlined,
   IconProps,
 } from '@aelf-design/internal-icons';
 import { Input as AntdInput, InputProps } from 'antd';
@@ -101,7 +101,7 @@ function InputPassword({
               }
       }
       iconRender={(visible) =>
-        visible ? <EyeTwoToneIcon {...iconProps} /> : <EyeInvisibleOutlinedIcon {...iconProps} />
+        visible ? <EyeInvisibleOutlined {...iconProps} /> : <EyeOutlined {...iconProps} />
       }
     ></AntdInput.Password>
   );
