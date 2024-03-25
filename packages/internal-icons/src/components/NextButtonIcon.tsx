@@ -6,16 +6,6 @@ import { type IconProps } from '../type';
 
 const componentName = 'NextButtonIcon';
 export const NextButtonIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
-  return (
-    <AelfIcon
-      component={AelfSVGComponent}
-      style={{
-        width: '16px',
-        height: '60px',
-      }}
-      ref={ref}
-      {...props}
-    />
-  );
+  return <AelfIcon component={AelfSVGComponent} ref={ref} {...props} />;
 });
 NextButtonIcon.displayName = componentName;

@@ -100,6 +100,10 @@ const useStyles = createStyles(
           width: 16px;
           height: 60px;
           right: 0;
+          svg {
+            width: 16px;
+            height: 60px;
+          }
           ::after {
             display: none;
           }
@@ -112,6 +116,10 @@ const useStyles = createStyles(
           width: 16px;
           height: 60px;
           left: 0;
+          svg {
+            width: 16px;
+            height: 60px;
+          }
           ::after {
             display: none;
           }

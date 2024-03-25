@@ -3,7 +3,7 @@ export * from './components/NextButtonIcon';
 export * from './components/PrevButtonIcon';
 export * from './components/ProgressErrorIcon';
 export * from './components/ProgressSuccessIcon';
-export * from './components/UploadIcon';
+export * from './components/FileIcon';
 
 export * from './components/direction/index';
 export * from './components/suggestion/index';
