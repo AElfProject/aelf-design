@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, { forwardRef, ReactNode, Ref } from 'react';
 import { CloseFilled, EyeInvisibleOutlined, EyeOutlined, IconProps } from '@aelf-design/icons';
-import { Input as AntdInput, InputProps } from 'antd';
+import { Input as AntdInput, InputProps, InputRef } from 'antd';
 import { Theme, useTheme } from 'antd-style';
 import { OverrideToken } from 'antd/es/theme/interface';
 import type { PasswordProps, TextAreaProps } from 'antd/lib/input';
@@ -45,27 +45,30 @@ const getClearIcon = (
   );
 };
 
-const Input = ({ size = 'middle', className, onClear, allowClear, ...rest }: IInputProps) => {
-  const { styles: st } = useStyles({ size });
-  const token = useTheme();
+const InternalInput = forwardRef<InputRef, IInputProps>(
+  ({ size = 'middle', className, onClear, allowClear, ...rest }: IInputProps, ref) => {
+    const { styles: st } = useStyles({ size });
+    const token = useTheme();
 
-  return (
-    <AntdInput
-      {...rest}
-      size={size}
-      className={`${st.aelfdInput} ${className || ''}`}
-      allowClear={
-        allowClear === false
-          ? false
-          : allowClear
-            ? allowClear
-            : {
-                clearIcon: getClearIcon(onClear, token),
-              }
-      }
-    />
-  );
-};
+    return (
+      <AntdInput
+        {...rest}
+        ref={ref}
+        size={size}
+        className={`${st.aelfdInput} ${className || ''}`}
+        allowClear={
+          allowClear === false
+            ? false
+            : allowClear
+              ? allowClear
+              : {
+                  clearIcon: getClearIcon(onClear, token),
+                }
+        }
+      />
+    );
+  },
+);
 
 function InputPassword({
   size = 'middle',
@@ -113,20 +116,18 @@ function InputTextArea({ size = 'middle', className, ...rest }: InputTextAreaPro
   );
 }
 
+if (process.env.NODE_ENV !== 'production') {
+  InternalInput.displayName = 'Input';
+}
+
+type CompoundedInput = typeof InternalInput & {
+  Password: typeof InputPassword;
+  TextArea: typeof InputTextArea;
+};
+
+const Input = InternalInput as CompoundedInput;
+
 Input.Password = InputPassword;
 Input.TextArea = InputTextArea;
 
-// function TestIcon() {
-//   const token = useTheme();
-//   return (
-//     <ClearIcon
-//       color={token.colorPrimary}
-//       hoverColor={token.colorPrimaryHover}
-//       activeColor={token.colorPrimaryActive}
-//       width={36}
-//       height={36}
-//     />
-//   );
-// }
-// Input.TestIcon = TestIcon;
 export default Input;
