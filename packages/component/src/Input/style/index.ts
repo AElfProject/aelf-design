@@ -30,6 +30,9 @@ const useStyles = createStyles(({ css, token, prefixCls }, { size }: { size: Inp
       & .${prefixCls}-input-password-icon {
         cursor: pointer;
       }
+      & .${prefixCls}-input-clear-icon {
+        font-size: inherit;
+      }
     `,
   };
 });

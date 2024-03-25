@@ -1,7 +1,8 @@
 import React from 'react';
-// import { AndroidOutlined } from '@ant-design/icons';
-import { Input } from 'aelf-design';
 import { Space } from 'antd';
+
+// import { AndroidOutlined } from '@ant-design/icons';
+import Input from '../index';
 
 const App: React.FC = () => {
   return (

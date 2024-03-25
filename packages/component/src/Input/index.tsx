@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import {
-  CircleCloseIconOutlined,
+  CloseCircleOutlined,
   EyeInvisibleOutlined,
   EyeOutlined,
   IconProps,
@@ -41,7 +41,7 @@ const getClearIcon = (
         onClear?.(e);
       }}
     >
-      <CircleCloseIconOutlined
+      <CloseCircleOutlined
         color={token?.colorBorder}
         hoverColor={token?.Table?.headerBg}
         activeColor={token?.colorTextDisabled}
@@ -50,7 +50,7 @@ const getClearIcon = (
   );
 };
 
-function Input({ size = 'middle', className, onClear, allowClear, ...rest }: IInputProps) {
+const Input = ({ size = 'middle', className, onClear, allowClear, ...rest }: IInputProps) => {
   const { styles: st } = useStyles({ size });
   const token = useTheme();
 
@@ -70,7 +70,7 @@ function Input({ size = 'middle', className, onClear, allowClear, ...rest }: IIn
       }
     />
   );
-}
+};
 
 function InputPassword({
   size = 'middle',
