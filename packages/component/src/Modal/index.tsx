@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { CloseIcon } from '@aelf-design/internal-icons';
+import { CloseOutlined } from '@aelf-design/internal-icons';
 import { Modal as AntdModal, ModalProps } from 'antd';
 import { useTheme } from 'antd-style';
 
@@ -20,7 +20,7 @@ function Modal({ wrapClassName, width = 438, closeIcon = true, children, ...prop
       closeIcon={
         closeIcon ? (
           <div className={styles.closeIconWrap}>
-            <CloseIcon color={token?.colorTextBase} />
+            <CloseOutlined color={token?.colorTextBase} />
           </div>
         ) : null
       }
