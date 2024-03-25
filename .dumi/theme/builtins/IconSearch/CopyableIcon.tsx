@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as AntdWeb3Icons from '@aelf-design/internal-icons';
+import * as AntdWeb3Icons from '@aelf-design/icons';
 import { Badge, message } from 'antd';
 import classNames from 'classnames';
 import CopyToClipboard from 'react-copy-to-clipboard';

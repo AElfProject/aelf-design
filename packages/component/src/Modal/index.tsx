@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { CloseOutlined } from '@aelf-design/internal-icons';
+import { CloseOutlined } from '@aelf-design/icons';
 import { Modal as AntdModal, ModalProps } from 'antd';
 import { useTheme } from 'antd-style';
 

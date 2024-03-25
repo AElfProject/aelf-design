@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react';
 import React, { useCallback, useMemo, useState } from 'react';
-import { DownOutlined, SearchOutlined } from '@aelf-design/internal-icons';
+import { DownOutlined, SearchOutlined } from '@aelf-design/icons';
 import type { MenuProps } from 'antd';
 import type { MenuItemType } from 'antd/lib/menu/hooks/useItems';
 
@@ -25,6 +25,7 @@ export interface ISearchProps extends Omit<IInputProps, 'size' | 'addonAfter' | 
   prefixWidth?: number;
   withSearchIcon?: WithSearchIconType;
   className?: string;
+  style?: React.CSSProperties;
   inputClassName?: string;
   onSelectChange?: MenuClickEventHandler;
   onSearchBtnClick?: (e: React.MouseEvent<HTMLElement>) => void;
@@ -41,6 +42,7 @@ function Search({
   inputClassName,
   onSelectChange,
   onSearchBtnClick,
+  style,
   ...props
 }: ISearchProps) {
   const [checkedItem, setCheckedItem] = useState(filterItems[0]);
@@ -135,7 +137,7 @@ function Search({
   ]);
 
   return (
-    <div className={cx(styles.search, className)}>
+    <div className={cx(styles.search, className)} style={style}>
       <div className={styles.searchInput}>
         <Input
           {...props}

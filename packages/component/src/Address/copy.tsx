@@ -1,5 +1,5 @@
 import React from 'react';
-import { CopyOutlined } from '@aelf-design/internal-icons';
+import { CopyOutlined } from '@aelf-design/icons';
 import { message } from 'antd';
 import copy from 'copy-to-clipboard';
 

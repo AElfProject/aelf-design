@@ -1,9 +1,5 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": [
-    "./packages/common/src/",
-    "./packages/component/src/",
-    "./packages/internal-icons/src/"
-  ],
+  "include": ["./packages/common/src/", "./packages/component/src/", "./packages/icons/src/"],
   "exclude": ["./packages/component/src/**/*/demos"]
 }

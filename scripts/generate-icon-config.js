@@ -5,7 +5,7 @@ import chalk from 'chalk';
 
 const log = console.log;
 
-const srcPath = './packages/internal-icons/src/components/';
+const srcPath = './packages/icons/src/components/';
 const dirs = fs.readdirSync(srcPath);
 
 const config = dirs.reduce((pre, next) => {

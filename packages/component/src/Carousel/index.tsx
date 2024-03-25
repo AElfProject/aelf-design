@@ -1,5 +1,5 @@
 import React, { forwardRef, SetStateAction, useState } from 'react';
-import { NextButtonIcon, PrevButtonIcon } from '@aelf-design/internal-icons';
+import { NextButtonIcon, PrevButtonIcon } from '@aelf-design/icons';
 import { useResponsive, useTheme } from 'antd-style';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';

@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@aelf-design/common": "workspace:*",
-    "@aelf-design/internal-icons": "workspace:*",
+    "@aelf-design/icons": "workspace:*",
     "@ant-design/cssinjs": "^1.18.2",
     "@ctrl/tinycolor": "^4.0.2",
     "antd": "^5.12.4",

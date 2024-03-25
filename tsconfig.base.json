@@ -18,7 +18,7 @@
       "@@/*": [".dumi/tmp/*"],
       "aelf-design": ["./packages/component/src/index.ts"],
       "@aelf-design/common": ["./packages/common/src/index.ts"],
-      "@aelf-design/internal-icons": ["./packages/internal-icons/src/index.ts"]
+      "@aelf-design/icons": ["./packages/icons/src/index.ts"]
     }
   }
 }

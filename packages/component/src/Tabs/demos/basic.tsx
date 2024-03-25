@@ -1,5 +1,5 @@
 import React from 'react';
-import { DownOutlined } from '@aelf-design/internal-icons';
+import { DownOutlined } from '@aelf-design/icons';
 import { Tabs } from 'aelf-design';
 import { Space } from 'antd';
 

@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@aelf-design/common": "workspace:*",
-    "@aelf-design/internal-icons": "workspace:*",
+    "@aelf-design/icons": "workspace:*",
     "@ant-design/icons": "^5.2.6",
     "@babel/parser": "^7.24.0",
     "@biomejs/biome": "^1.4.1",
