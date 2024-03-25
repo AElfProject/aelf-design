@@ -1,8 +1,4 @@
 'use client';
-export * from './components/CircleClose';
-export * from './components/ClearIcon';
-export * from './components/CloseIcon';
-export * from './components/FileIcon';
 export * from './components/NextButtonIcon';
 export * from './components/PrevButtonIcon';
 export * from './components/ProgressErrorIcon';
