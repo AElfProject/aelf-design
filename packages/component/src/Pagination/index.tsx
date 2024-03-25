@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { DownOutlined, LeftOutlined, RightOutlined } from '@aelf-design/internal-icons';
+import { DownOutlined, LeftOutlined, RightOutlined } from '@aelf-design/icons';
 import { Select } from 'antd';
 import { debounce } from 'lodash-es';
 

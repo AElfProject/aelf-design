@@ -1,4 +1,4 @@
-import * as AntdIcons from '@aelf-design/internal-icons';
+import * as AntdIcons from '@aelf-design/icons';
 
 const categoriesConfig = require('./icon-config.json');
 

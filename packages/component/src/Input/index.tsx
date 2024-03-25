@@ -1,10 +1,5 @@
 import React, { ReactNode } from 'react';
-import {
-  CloseFilled,
-  EyeInvisibleOutlined,
-  EyeOutlined,
-  IconProps,
-} from '@aelf-design/internal-icons';
+import { CloseFilled, EyeInvisibleOutlined, EyeOutlined, IconProps } from '@aelf-design/icons';
 import { Input as AntdInput, InputProps } from 'antd';
 import { Theme, useTheme } from 'antd-style';
 import { OverrideToken } from 'antd/es/theme/interface';

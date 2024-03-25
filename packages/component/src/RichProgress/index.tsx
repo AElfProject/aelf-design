@@ -1,5 +1,5 @@
 import React, { memo, ReactNode } from 'react';
-import { ProgressErrorIcon, ProgressSuccessIcon } from '@aelf-design/internal-icons';
+import { ProgressErrorIcon, ProgressSuccessIcon } from '@aelf-design/icons';
 import { useResponsive } from 'antd-style';
 
 import Progress from '../Progress';

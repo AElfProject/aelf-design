@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddCircleOutlined, AelfIcon } from '@aelf-design/internal-icons';
+import { AddCircleOutlined, AelfIcon } from '@aelf-design/icons';
 import { Space } from 'antd';
 import type { GetProps } from 'antd';
 

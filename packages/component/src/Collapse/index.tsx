@@ -1,5 +1,5 @@
 import React from 'react';
-import { DownOutlined } from '@aelf-design/internal-icons';
+import { DownOutlined } from '@aelf-design/icons';
 import { Collapse as AntdCollapse, CollapseProps } from 'antd';
 
 import useStyles from './style';

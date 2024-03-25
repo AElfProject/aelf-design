@@ -11,7 +11,7 @@ importers:
       '@aelf-design/common':
         specifier: workspace:*
         version: link:packages/common
-      '@aelf-design/internal-icons':
+      '@aelf-design/icons':
         specifier: workspace:*
         version: link:packages/internal-icons
       '@ant-design/icons':
@@ -198,7 +198,7 @@ importers:
       '@aelf-design/common':
         specifier: workspace:*
         version: link:../common
-      '@aelf-design/internal-icons':
+      '@aelf-design/icons':
         specifier: workspace:*
         version: link:../internal-icons
       '@ant-design/cssinjs':

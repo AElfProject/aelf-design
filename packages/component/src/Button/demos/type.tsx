@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchOutlined } from '@aelf-design/internal-icons';
+import { SearchOutlined } from '@aelf-design/icons';
 import { Button } from 'aelf-design';
 import { Space } from 'antd';
 

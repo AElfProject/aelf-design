@@ -1,5 +1,5 @@
 import React, { CSSProperties, useCallback, useMemo, useState } from 'react';
-import * as AntdWeb3Icons from '@aelf-design/internal-icons';
+import * as AntdWeb3Icons from '@aelf-design/icons';
 import AntdIcon from '@ant-design/icons';
 import { Affix, Empty, Grid, Input, Segmented, type SegmentedProps } from 'antd';
 import { createStyles, useTheme } from 'antd-style';

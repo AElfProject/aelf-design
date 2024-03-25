@@ -18,7 +18,7 @@ export default defineConfig({
   resolve: {
     alias: {
       'aelf-design': resolve('./packages/web3/src/index'),
-      '@aelf-design/internal-icons': resolve('./packages/icons/src/index'),
+      '@aelf-design/icons': resolve('./packages/internal-icons/src/index'),
       '@aelf-design/common': resolve('./packages/common/src/index'),
     },
   },

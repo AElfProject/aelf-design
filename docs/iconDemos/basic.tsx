@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddCircleOutlined, DownOutlined } from '@aelf-design/internal-icons';
+import { AddCircleOutlined, DownOutlined } from '@aelf-design/icons';
 import { Space } from 'antd';
 
 const App: React.FC = () => (

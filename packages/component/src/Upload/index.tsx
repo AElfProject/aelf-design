@@ -1,8 +1,9 @@
-import React, { ReactElement, ReactNode } from 'react';
-import { DeleteOutlined, ShareExternalOutlined } from '@aelf-design/internal-icons';
+import React, { forwardRef, ReactElement, ReactNode } from 'react';
+import { DeleteOutlined, ShareExternalOutlined } from '@aelf-design/icons';
 import { Upload as AntdUpload, UploadProps as AntdUploadProps, Image } from 'antd';
 import { useTheme } from 'antd-style';
 import { UploadFile } from 'antd/es/upload';
+import { UploadRef } from 'antd/es/upload/Upload';
 
 import UploadButton from '../UploadButton';
 import useStyles from './style';
@@ -79,7 +80,7 @@ function UploadItemRender({
   );
 }
 
-function Upload(props: IUploadProps) {
+const InternalUpload = forwardRef<UploadRef, IUploadProps>((props: IUploadProps, ref) => {
   const { styles, cx, prefixCls } = useStyles();
   const { tips, showUploadButton = true, uploadText, uploadIconColor } = props;
   return (
@@ -87,6 +88,7 @@ function Upload(props: IUploadProps) {
       <AntdUpload
         {...props}
         listType="picture-card"
+        ref={ref}
         itemRender={(originNode, file, fileList, actions) => {
           return (
             <UploadItemRender
@@ -104,7 +106,13 @@ function Upload(props: IUploadProps) {
       </AntdUpload>
     </div>
   );
-}
+});
+InternalUpload.displayName = 'Upload';
+type InternalUploadType = typeof InternalUpload;
+type CompoundedComponent = InternalUploadType & {
+  LIST_IGNORE: string;
+};
+const Upload = InternalUpload as CompoundedComponent;
 
 Upload.LIST_IGNORE = AntdUpload.LIST_IGNORE;
 
