@@ -68,7 +68,6 @@ const IconSearch: React.FC = () => {
 
   const renderCategories = useMemo<React.ReactNode | React.ReactNode[]>(() => {
     const { searchKey = '', theme } = displayState;
-
     const categoriesResult = Object.keys(categories)
       .map((key) => {
         let iconList = categories[key as CategoriesKeys];
