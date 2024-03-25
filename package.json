@@ -5,11 +5,12 @@
   "workspaces": [
     "packages/*"
   ],
+  "type": "module",
   "packageManager": "pnpm@8.9.0",
   "files": [],
   "scripts": {
-    "start": "dumi dev",
-    "dev": "dumi dev",
+    "start": "./scripts/generate-icon-config.js && dumi dev",
+    "dev": "./scripts/generate-icon-config.js && dumi dev",
     "dev:lib": "pnpm run --parallel --if-present --recursive --filter \"@aelf-design/*\" dev",
     "build": "pnpm run --if-present --recursive build",
     "build:docs": "dumi build",
@@ -73,6 +74,7 @@
     "antd": "^5.13.2",
     "antd-style": "^3.6.1",
     "babel-plugin-inline-react-svg-v2": "^2.0.2",
+    "chalk": "^5.3.0",
     "classnames": "^2.3.2",
     "dumi": "^2.2.17",
     "eslint": "^8.56.0",

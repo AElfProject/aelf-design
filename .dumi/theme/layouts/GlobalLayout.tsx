@@ -7,7 +7,6 @@ const GlobalLayout: React.FC = () => {
   const outlet = useOutlet();
   const { pathname } = useLocation();
   const [color] = usePrefersColor();
-  console.log('color----', color);
   return (
     <>
       <SiteThemeProvider appearance={color}>

@@ -1,40 +1,24 @@
-import * as AntdWeb3Icons from '@aelf-design/internal-icons';
+import * as AntdIcons from '@aelf-design/internal-icons';
 
-const all = Object.keys(AntdWeb3Icons)
+const categoriesConfig = require('./icon-config.json');
+
+const all = Object.keys(AntdIcons)
   .map((n) => n.replace(/(Outlined|Filled|TwoTone)$/, ''))
   .filter((n, i, arr) => arr.indexOf(n) === i);
 
-// 方向指示类图标
-const direction = ['CircleCloseIcon', 'ClearIcon'];
+const other: string[] = [];
 
-// 提示建议类图标
-const suggestion: string[] = [];
-
-// 交互按钮图标
-const interaction: string[] = [];
-
-// 聊天图标
-const chat: string[] = [];
-
-const datum = [...direction, ...suggestion, ...interaction, ...chat];
-
-const other = all.filter((n) => !datum.includes(n));
-
-export const categories = {
-  direction,
-  suggestion,
-  interaction,
-  chat,
+export const categories: Record<string, string[]> = {
+  ...categoriesConfig,
   other,
 };
-
-export const CategoryNames = {
-  direction: '方向指示类图标',
-  suggestion: '提示建议类图标',
-  interaction: '交互按钮图标',
-  chat: '聊天图标',
-  other: '其他图标',
-};
+export const CategoryNames = Object.keys(categories).reduce(
+  (ace, key) => {
+    ace[key] = key;
+    return ace;
+  },
+  {} as Record<string, string>,
+);
 
 export default categories;
 

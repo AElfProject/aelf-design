@@ -8,13 +8,7 @@ const componentName = 'EyeInvisibleOutlinedIcon';
 export const EyeInvisibleOutlinedIcon = React.forwardRef<HTMLSpanElement, IconProps>(
   (props, ref) => {
     return (
-      <AelfIcon
-        component={AelfSVGComponent}
-        componentName={componentName}
-        style={{ fontSize: '18px' }}
-        ref={ref}
-        {...props}
-      />
+      <AelfIcon component={AelfSVGComponent} style={{ fontSize: '18px' }} ref={ref} {...props} />
     );
   },
 );

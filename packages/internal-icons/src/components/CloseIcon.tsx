@@ -6,8 +6,6 @@ import { type IconProps } from '../type';
 
 const componentName = 'CloseIcon';
 export const CloseIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
-  return (
-    <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
-  );
+  return <AelfIcon component={AelfSVGComponent} ref={ref} {...props} />;
 });
 CloseIcon.displayName = 'CloseIcon';

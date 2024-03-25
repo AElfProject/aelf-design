@@ -9,7 +9,6 @@ export const ProgressSuccessIcon = React.forwardRef<HTMLSpanElement, IconProps>(
   return (
     <AelfIcon
       component={AelfSVGComponent}
-      componentName={componentName}
       style={{
         fontSize: '24px',
       }}

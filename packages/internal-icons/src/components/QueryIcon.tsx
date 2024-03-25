@@ -9,7 +9,6 @@ export const QueryIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, re
   return (
     <AelfIcon
       component={AelfSVGComponent}
-      componentName={componentName}
       style={{
         fontSize: '18px',
       }}

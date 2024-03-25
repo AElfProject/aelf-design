@@ -75,7 +75,7 @@ const IconSearch: React.FC = () => {
         if (searchKey) {
           const matchKey = searchKey
             .replace(new RegExp(`^<([a-zA-Z]*)\\s/>$`, 'gi'), (_, name) => name)
-            .replace(/(Colorful|Filled|CircleFilled)$/gi, '')
+            .replace(/(Colorful|Filled|CircleFilled|Outlined)$/gi, '')
             .toLowerCase();
           iconList = iconList.filter((iconName) => iconName.toLowerCase().includes(matchKey));
         }

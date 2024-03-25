@@ -6,8 +6,6 @@ import { IconProps } from '../../type';
 
 const componentName = 'LeftArrowOutlined';
 export const LeftArrowOutlined = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
-  return (
-    <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
-  );
+  return <AelfIcon component={AelfSVGComponent} ref={ref} {...props} />;
 });
 LeftArrowOutlined.displayName = componentName;
