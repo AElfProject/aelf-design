@@ -32,7 +32,7 @@ const Icon: React.FC = () => {
           padding: 10px 0 0;
         }
 
-        .anticon {
+        .ant-icon {
           margin: 12px 0 8px;
           font-size: 36px;
           transition: transform 0.3s ease-in-out;
@@ -59,7 +59,7 @@ const Icon: React.FC = () => {
           color: #fff;
           background-color: ${token.colorPrimary};
 
-          .anticon {
+          .ant-icon {
             transform: scale(1.4);
           }
 
@@ -68,20 +68,20 @@ const Icon: React.FC = () => {
           }
         }
 
-        &.CircleFilled .anticon {
+        &.CircleFilled .ant-icon {
           border-radius: 50%;
         }
 
         &.CircleFilled:hover {
           color: #000;
 
-          .anticon {
+          .ant-icon {
             color: #000;
             background-color: #000;
           }
         }
 
-        &.isWhite .anticon {
+        &.isWhite .ant-icon {
           background-color: #000;
         }
 
