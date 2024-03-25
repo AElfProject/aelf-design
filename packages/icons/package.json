@@ -1,6 +1,6 @@
 {
   "name": "@aelf-design/icons",
-  "version": "1.0.0-alpha.10",
+  "version": "1.0.0-alpha.13",
   "type": "module",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
