@@ -6,8 +6,6 @@ import { type IconProps } from '../type';
 
 const componentName = 'Keyboard';
 export const Keyboard = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
-  return (
-    <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
-  );
+  return <AelfIcon component={AelfSVGComponent} ref={ref} {...props} />;
 });
 Keyboard.displayName = componentName;

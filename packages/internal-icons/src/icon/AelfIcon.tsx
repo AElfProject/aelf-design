@@ -5,7 +5,6 @@ import { useStyles } from '../hooks';
 import type { IconProps } from '../type';
 
 export interface AelfIconProps {
-  componentName: string;
   component: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 

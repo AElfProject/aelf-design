@@ -6,8 +6,6 @@ import { IconProps } from '../../type';
 
 const componentName = 'MenuFoldOutlined';
 export const MenuFoldOutlined = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
-  return (
-    <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
-  );
+  return <AelfIcon component={AelfSVGComponent} ref={ref} {...props} />;
 });
 MenuFoldOutlined.displayName = componentName;

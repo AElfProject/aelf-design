@@ -1,0 +1,24 @@
+{
+  "direction": [
+    "Backtop",
+    "DownArrow",
+    "DownDouble",
+    "Down",
+    "Fullscreen",
+    "FullsreenExit",
+    "LeftArrow",
+    "Left",
+    "MenuFold",
+    "MenuUnfold",
+    "RightArrow",
+    "Right",
+    "RollBack",
+    "RotateLeft",
+    "SwapLeft",
+    "Swap",
+    "SwapRight",
+    "UpArrow",
+    "Up"
+  ],
+  "suggestion": ["Add", "Check", "Minus"]
+}

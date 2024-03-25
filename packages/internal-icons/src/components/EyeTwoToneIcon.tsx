@@ -6,8 +6,6 @@ import { type IconProps } from '../type';
 
 const componentName = 'EyeTwoToneIcon';
 export const EyeTwoToneIcon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
-  return (
-    <AelfIcon component={AelfSVGComponent} componentName={componentName} ref={ref} {...props} />
-  );
+  return <AelfIcon component={AelfSVGComponent} ref={ref} {...props} />;
 });
 EyeTwoToneIcon.displayName = 'EyeTwoToneIcon';
