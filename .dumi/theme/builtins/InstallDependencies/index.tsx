@@ -76,7 +76,13 @@ const InstallDependencies: React.FC<InstallProps> = (props) => {
         },
       }}
     >
-      <Tabs className="markdown" size="small" defaultActiveKey="npm" items={items} />
+      <Tabs
+        className="markdown"
+        style={{ margin: '16px 0' }}
+        size="small"
+        defaultActiveKey="npm"
+        items={items}
+      />
     </ConfigProvider>
   );
 };

@@ -5,6 +5,12 @@ group:
   order: 3
 ---
 
+## How to use
+
+使用图标组件，你需要安装 [@aelf-design/icons](https://github.com/AElf-devops/aelf-design/tree/main/packages/icons) 图标组件包：
+
+<InstallDependencies npm='npm install @aelf-design/icons --save' yarn='yarn add @aelf-design/icons' pnpm='pnpm install @aelf-design/icons --save'></InstallDependencies>
+
 ## Icon List
 
 <IconSearch></IconSearch>
