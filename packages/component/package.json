@@ -29,13 +29,13 @@
     "ui",
     "web3"
   ],
-  "homepage": "https://we3.ant.design",
+  "homepage": "https://aelf-design.vercel.app/components/address",
   "bugs": {
-    "url": "https://github.com/ant-design/ant-design-web3/issues"
+    "url": "https://github.com/AElf-devops/aelf-design/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ant-design/ant-design-web3"
+    "url": "https://github.com/AElf-devops/aelf-design/tree/main/packages/component"
   },
   "scripts": {
     "dev": "father dev",
