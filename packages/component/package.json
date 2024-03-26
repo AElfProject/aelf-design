@@ -1,6 +1,6 @@
 {
   "name": "aelf-design",
-  "version": "1.0.0-alpha.13",
+  "version": "1.0.0-alpha.14",
   "type": "module",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -29,13 +29,13 @@
     "ui",
     "web3"
   ],
-  "homepage": "https://we3.ant.design",
+  "homepage": "https://aelf-design.vercel.app/components/address",
   "bugs": {
-    "url": "https://github.com/ant-design/ant-design-web3/issues"
+    "url": "https://github.com/AElf-devops/aelf-design/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ant-design/ant-design-web3"
+    "url": "https://github.com/AElf-devops/aelf-design/tree/main/packages/component"
   },
   "scripts": {
     "dev": "father dev",
