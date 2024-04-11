@@ -49,5 +49,11 @@ export type {
 export { default as ProgressModal } from './ProgressModal';
 export type { IProgressModalProps } from './ProgressModal';
 
+export { default as Switch } from './Switch';
+export type { SwitchProps } from './Switch';
+
+export { default as Tag } from './Tag';
+export type { TagProps } from './Tag';
+
 export { default as useResponsive } from './hooks/useResponsive';
 export { default as useAWSUploadService } from './hooks/useAWSUploadService';
