@@ -30,7 +30,7 @@ export const AelfIcon = React.forwardRef<HTMLSpanElement, IconProps & AelfIconPr
       activeTwoToneColor,
     };
     const { styles, prefixCls } = useStyles(iconColor);
-    const cls = classnames(`${prefixCls}-icon`, props.className, styles.iconWrap);
+    const cls = classnames(`${prefixCls}-icon`, 'icon', props.className, styles.iconWrap);
     const Com = component;
     return (
       <span

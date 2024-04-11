@@ -34,6 +34,7 @@ const useStyles = createStyles<IconProps, { iconWrap: SerializedStyles }>(({ css
         width: 1em;
         height: 1em;
       }
+      vertical-align: -0.125em;
       ${createPathsStyle(props.twoToneColor ?? [])}
       ${createPathsStyle(props.hoverTwoToneColor ?? [], 'hover')}
         ${createPathsStyle(props.activeTwoToneColor ?? [], 'active')}
