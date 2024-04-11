@@ -54,6 +54,8 @@ export type { SwitchProps } from './Switch';
 
 export { default as Tag } from './Tag';
 export type { TagProps } from './Tag';
+export { default as Alert } from './Alert';
+export type { IAlertProps } from './Alert';
 
 export { default as useResponsive } from './hooks/useResponsive';
 export { default as useAWSUploadService } from './hooks/useAWSUploadService';
