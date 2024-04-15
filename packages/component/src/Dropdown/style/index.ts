@@ -19,7 +19,7 @@ const useStyles = createStyles(
           padding: 0;
           overflow: hidden;
           box-shadow: none;
-          border: 1px solid ${token.colorPrimaryBorder};
+          border: 1px solid ${token.colorBorder};
           .${prefixCls}-dropdown-menu-item {
             padding: ${dynamicVal} 12px;
             border-radius: 0;
