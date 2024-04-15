@@ -213,6 +213,21 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorWarningBorder: appearance === 'dark' ? '#9C5D00' : '#FFD596',
             ...props?.theme?.components?.Alert,
           },
+          Breadcrumb: {
+            itemColor: appearance === 'dark' ? '#8C8C8C' : '#808080',
+            lastItemColor: appearance === 'dark' ? '#FFFFFF' : '#1A1A1A',
+            linkColor: appearance === 'dark' ? '#8C8C8C' : '#808080',
+            linkHoverColor: appearance === 'dark' ? '#FFFFFF' : '#1A1A1A',
+            separatorColor: appearance === 'dark' ? '#8C8C8C' : '#808080',
+            ...props?.theme?.components?.Breadcrumb,
+          },
+          Slider: {
+            handleLineWidth: 1,
+            handleLineWidthHover: 2,
+            handleSize: 10, // 1 + 10 + 1 = 12
+            handleSizeHover: 12, // 2 + 12 + 2 = 16
+            ...props?.theme?.components?.Slider,
+          },
         };
         const baseToken = {
           screenXXLMin: 1441,
@@ -288,7 +303,6 @@ const AELFDProvider = (props: IAelfdThemeProviderProps) => {
             colorLinkActive: '#0460D9',
             colorTextBase: '#1A1A1A',
             colorBorder: '#E0E0E0',
-            colorPrimaryBorder: '#E0E0E0',
             colorErrorBg: '#FEE8E8',
             colorTextDisabled: '#010101',
             controlItemBgActive: 'transparent',

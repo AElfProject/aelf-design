@@ -26,7 +26,7 @@ export interface CountConfig {
   exceedFormatter?: (value: string, config: { max: number }) => string;
 }
 
-const getClearIcon = (
+export const getClearIcon = (
   onClear?: React.MouseEventHandler<HTMLElement> | undefined,
   token?: Theme & OverrideToken,
 ) => {

@@ -57,5 +57,11 @@ export type { TagProps } from './Tag';
 export { default as Alert } from './Alert';
 export type { IAlertProps } from './Alert';
 
+export { default as Breadcrumb } from './Breadcrumb';
+export type { IBreadcrumbProps } from './Breadcrumb';
+export { default as Slider } from './Slider';
+export { SliderBindInput } from './Slider';
+export type { SliderSingleProps, SliderProps } from './Slider';
+
 export { default as useResponsive } from './hooks/useResponsive';
 export { default as useAWSUploadService } from './hooks/useAWSUploadService';
