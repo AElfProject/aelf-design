@@ -1,7 +1,7 @@
 import { createStyles } from 'antd-style';
 
 const useStyles = createStyles(({ token, css, prefixCls }) => {
-  const { handleLineWidth = 1, handleLineWidthHover = 2 } = token.Slider ?? {};
+  const { handleLineWidth = 1, handleLineWidthHover = 2 } = (token as any).Slider ?? {};
   return {
     sliderWrap: css`
       // error
