@@ -6,6 +6,7 @@
   "linked": [],
   "access": "restricted",
   "baseBranch": "main",
+  "preReleasePrefix": "alpha",
   "updateInternalDependencies": "patch",
   "ignore": []
 }

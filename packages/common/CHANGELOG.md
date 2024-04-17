@@ -1,5 +1,12 @@
 # @ant-design/web3-common
 
+## 1.0.0-alpha.14
+
+### Minor Changes
+
+- minor
+- minor
+
 ## 1.3.3
 
 ### Patch Changes

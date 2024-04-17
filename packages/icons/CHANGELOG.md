@@ -1,5 +1,12 @@
 # @ant-design/web3-icons
 
+## 1.0.0-alpha.15
+
+### Minor Changes
+
+- minor
+- minor
+
 ## 1.3.2
 
 ### Patch Changes
