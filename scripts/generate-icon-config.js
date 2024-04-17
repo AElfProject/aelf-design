@@ -26,6 +26,6 @@ log(config);
 
 fs.writeFileSync(
   './.dumi/theme/builtins/IconSearch/icon-config.json',
-  JSON.stringify(config, null, 2),
+  JSON.stringify(config, null, 2) + '\n',
   'utf-8',
 );
