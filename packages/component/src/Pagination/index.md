@@ -11,7 +11,7 @@ group:
 
 ## Basic Usage
 
-<code src="./demos/basic.tsx"></code>
+<code src="./demos/basic.tsx"></code> <code src="./demos/last.tsx"></code>
 
 ## Token
 

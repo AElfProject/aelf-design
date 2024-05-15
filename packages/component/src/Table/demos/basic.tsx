@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { IPaginationProps, Table } from 'aelf-design';
 import { ColumnsType } from 'antd/es/table';
+
+import { IPaginationProps } from '../../Pagination';
+import Table from '../index';
 
 interface DataType {
   key: React.Key;
@@ -77,9 +79,9 @@ export default function TableExample() {
       <Table
         columns={columns}
         loading={loading}
-        pagination={{ ...tableParams.pagination, onChange }}
+        pagination={{ ...tableParams.pagination, onChange, showLast: false }}
         dataSource={dataSource}
-      ></Table>
+      />
     </div>
   );
 }
