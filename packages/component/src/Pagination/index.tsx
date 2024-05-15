@@ -17,6 +17,8 @@ export interface IPaginationProps {
   defaultPageSize?: number;
   showSizeChange?: boolean;
   showSizeChanger?: boolean;
+  showLast?: boolean;
+  showFirst?: boolean;
   pageChange?: (page: number, pageSize?: number) => void;
   onChange?: (page: number, pageSize: number) => void;
   pageSizeChange?: (page: number, pageSize: number) => void;
@@ -30,6 +32,8 @@ export default function Pagination({
   defaultPageSize = 10,
   total,
   showSizeChange = true,
+  showLast = true,
+  showFirst = true,
   showSizeChanger = true,
   hideOnSinglePage,
   options = [10, 20, 50],
@@ -147,19 +151,21 @@ export default function Pagination({
         )}
       </div>
       <div className={cx(styles.pageContainer, prefixCls + '-page-container')}>
-        <div>
-          <Button
-            disabled={isFirstPage}
-            size="small"
-            className={cx(styles.paginationButton, prefixCls + '-pagination-button')}
-            type="primary"
-            ghost
-            onClick={debounceJumpFirst}
-          >
-            First
-          </Button>
-        </div>
-        <div>
+        {showFirst && (
+          <div>
+            <Button
+              disabled={isFirstPage}
+              size="small"
+              className={cx(styles.paginationButton, prefixCls + '-pagination-button')}
+              type="primary"
+              ghost
+              onClick={debounceJumpFirst}
+            >
+              First
+            </Button>
+          </div>
+        )}
+        <div className={cx(prefixCls + '-pagination-first-button')}>
           <Button
             disabled={isFirstPage}
             type="primary"
@@ -184,18 +190,20 @@ export default function Pagination({
             icon={<RightOutlined />}
           />
         </div>
-        <div>
-          <Button
-            disabled={isLastPage}
-            className={cx(styles.paginationButton, prefixCls + '-pagination-button')}
-            type="primary"
-            size="small"
-            ghost
-            onClick={debounceJumpLast}
-          >
-            Last
-          </Button>
-        </div>
+        {showLast && (
+          <div className={cx(prefixCls + '-pagination-last-button')}>
+            <Button
+              disabled={isLastPage}
+              className={cx(styles.paginationButton, prefixCls + '-pagination-button')}
+              type="primary"
+              size="small"
+              ghost
+              onClick={debounceJumpLast}
+            >
+              Last
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );

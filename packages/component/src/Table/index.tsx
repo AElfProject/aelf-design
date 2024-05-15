@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from 'react';
+import React, { forwardRef } from 'react';
 import { Table as AntdTable, TableProps } from 'antd';
 import { AnyObject } from 'antd/es/_util/type';
 import { TableRef } from 'antd/es/table';
@@ -27,4 +27,6 @@ const Table = <T extends AnyObject>(
   );
 };
 
-export default forwardRef(Table);
+export default forwardRef(Table) as <T extends AnyObject>(
+  props: ITableProps<T> & { ref?: React.Ref<TableRef> },
+) => JSX.Element;
