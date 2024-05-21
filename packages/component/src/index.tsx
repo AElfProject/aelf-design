@@ -56,6 +56,8 @@ export { default as Tag } from './Tag';
 export type { TagProps } from './Tag';
 export { default as Alert } from './Alert';
 export type { IAlertProps } from './Alert';
+export { default as Drawer } from './Drawer';
+export type { IDrawerProps } from './Drawer';
 
 export { default as Breadcrumb } from './Breadcrumb';
 export type { IBreadcrumbProps } from './Breadcrumb';
