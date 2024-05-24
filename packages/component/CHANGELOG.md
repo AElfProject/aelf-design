@@ -1,5 +1,19 @@
 # @ant-design/web3
 
+## 1.1.0
+
+### Minor Changes
+
+- 648b082: minor
+- 648b082: minor
+
+### Patch Changes
+
+- Updated dependencies [648b082]
+- Updated dependencies [648b082]
+  - @aelf-design/common@1.1.0
+  - @aelf-design/icons@1.1.0
+
 ## 1.0.0-alpha.15
 
 ### Minor Changes

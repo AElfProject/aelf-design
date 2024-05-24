@@ -1,5 +1,12 @@
 # @ant-design/web3-common
 
+## 1.1.0
+
+### Minor Changes
+
+- 648b082: minor
+- 648b082: minor
+
 ## 1.0.0-alpha.14
 
 ### Minor Changes

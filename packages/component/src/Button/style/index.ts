@@ -69,6 +69,21 @@ const useStyles = createStyles(({ css, prefixCls, token }, { size }: { size: But
         min-width: auto;
         width: ${dynamicWidth};
       }
+
+      &:disabled {
+        color: rgba(0, 0, 0, 0.25);
+        border-width: 0;
+      }
+      &.${prefixCls}-btn-dashed:disabled {
+        border-width: 1px;
+      }
+      &.${prefixCls}-btn-background-ghost:disabled {
+        border-width: 1px;
+        color: rgba(0, 0, 0, 0.25);
+      }
+      &.${prefixCls}-btn-dangerous:disabled {
+        color: rgba(0, 0, 0, 0.25);
+      }
     `,
   };
 });
