@@ -57,6 +57,27 @@ const App: React.FC = () => {
             button
           </Button>
         </Space>
+        <Space>
+          <Button type="primary" disabled>
+            button
+          </Button>
+          <Button disabled>button</Button>
+          <Button type="dashed" disabled>
+            button
+          </Button>
+          <Button type="primary" ghost disabled>
+            button
+          </Button>
+          <Button type="text" disabled>
+            button
+          </Button>
+          <Button type="link" disabled>
+            link
+          </Button>
+          <Button type="primary" danger disabled>
+            button
+          </Button>
+        </Space>
       </Space>
     </div>
   );
