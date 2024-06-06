@@ -1,6 +1,6 @@
 {
-  "name": "@aelf-design/icons",
-  "version": "1.1.1",
+  "name": "@aelf-design/nextjs-registry",
+  "version": "1.1.2",
   "type": "module",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -16,48 +16,34 @@
     "README.md"
   ],
   "keywords": [
-    "ant",
-    "component",
-    "components",
+    "aelf",
     "design",
-    "framework",
     "frontend",
     "react",
-    "react-component",
-    "ui",
     "web3"
   ],
-  "homepage": "https://aelf-design.vercel.app/icon",
   "bugs": {
     "url": "https://github.com/AElf-devops/aelf-design/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AElf-devops/aelf-design/tree/main/packages/icons"
+    "url": "https://github.com/AElf-devops/aelf-design/tree/main/packages/nextjs-registry"
   },
   "scripts": {
     "dev": "father dev",
     "build": "father build"
   },
-  "dependencies": {
-    "@ant-design/cssinjs": "^1.18.2",
-    "classnames": "^2.3.2",
-    "antd-style": "^3.5.2"
-  },
   "devDependencies": {
+    "@ant-design/cssinjs": "^1.18.2",
+    "antd-style": "^3.5.2",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "antd": "^5.12.4",
     "father": "^4.3.8",
     "glob": "^10.3.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.3.3"
-  },
-  "peerDependencies": {
-    "antd": ">=4.23.0 || >=5.0.0",
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
+    "typescript": "^5.3.3",
+    "next": "^14.0.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",

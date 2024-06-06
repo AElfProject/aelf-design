@@ -1,6 +1,6 @@
 import path from 'path';
-import { defineConfig } from 'vitest/config';
 import svgr from 'vite-plugin-svgr';
+import { defineConfig } from 'vitest/config';
 
 const resolve = (src: string) => {
   return path.resolve(__dirname, src);
@@ -19,7 +19,7 @@ export default defineConfig({
     alias: {
       'aelf-design': resolve('./packages/web3/src/index'),
       '@aelf-design/icons': resolve('./packages/icons/src/index'),
-      '@aelf-design/common': resolve('./packages/common/src/index'),
+      '@aelf-design/nextjs-registry': resolve('./packages/nextjs-registry/src/index'),
     },
   },
   test: {
