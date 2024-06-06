@@ -46,7 +46,7 @@
     "*.{json,less,md}": "prettier --ignore-unknown --write"
   },
   "devDependencies": {
-    "@aelf-design/common": "workspace:*",
+    "@aelf-design/nextjs-registry": "workspace:*",
     "@aelf-design/icons": "workspace:*",
     "@ant-design/icons": "^5.2.6",
     "@babel/parser": "^7.24.0",

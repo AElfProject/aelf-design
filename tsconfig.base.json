@@ -17,7 +17,7 @@
     "paths": {
       "@@/*": [".dumi/tmp/*"],
       "aelf-design": ["./packages/component/src/index.ts"],
-      "@aelf-design/common": ["./packages/common/src/index.ts"],
+      "@aelf-design/nextjs-registry": ["./packages/nextjs-registry/src/index.ts"],
       "@aelf-design/icons": ["./packages/icons/src/index.ts"]
     }
   }
