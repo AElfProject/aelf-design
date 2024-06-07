@@ -3,6 +3,8 @@
 <img height="180" src="https://ipfs.io/ipfs/QmWtjvb47DU1EQ4MpridFY1ow4214aAWCkhGu3ZF4xvRSY/">
 
 <h1 align="center">Aelf Design</h1>
+<h2>A UI component library based on Antd and compliant with AELF visual specifications</h2>
+
 </div>
 
 # Install
@@ -216,7 +218,7 @@ css`
 
 1. ### According to the component design draft, identify the differences with the antd component
 
-![img](https://l43za40phm9.sg.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2VkNTg5ZWUxNWFjMTViMjBlMjVkOWIxODJkNDc3MGZfQkJPS2FwVlVZUFhiTWRSY3FjZHB3dkY0ODV5UldiNXdfVG9rZW46UnRnTmIzREFkb3J1aEJ4UmdEOWxwc2ZZZzVkXzE3MTc1ODMzNzE6MTcxNzU4Njk3MV9WNA)
+![img](https://hoopox.feishu.cn/space/api/box/stream/download/asynccode/?code=OWY0Yjc4MGRlMjY5ZWIzOTFmMWFlMWVlNjE2NmUyNGFfcTM4dWUyTkhLYTBQVG1pSjhjWkVhVzNhaGIxazJoRFpfVG9rZW46Q0x6S2JwTlZRb2pDdVV4TU5mWGNVd2ZEbllnXzE3MTc3MzA0OTE6MTcxNzczNDA5MV9WNA)
 
 1. 5 size types need to be provided, antd has 3
 2. Different sizes of height, padding, rounded corners, font size, and minimum width are different
