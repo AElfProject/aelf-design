@@ -31,11 +31,11 @@
   ],
   "homepage": "https://aelf-design.vercel.app/components/address",
   "bugs": {
-    "url": "https://github.com/AElf-devops/aelf-design/issues"
+    "url": "https://github.com/AElfProject/aelf-design/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AElf-devops/aelf-design/tree/main/packages/component"
+    "url": "https://github.com/AElfProject/aelf-design/tree/main/packages/component"
   },
   "scripts": {
     "dev": "father dev",
@@ -68,8 +68,8 @@
   },
   "peerDependencies": {
     "antd": ">=5.0.0",
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",

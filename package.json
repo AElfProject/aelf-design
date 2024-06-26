@@ -6,7 +6,6 @@
     "packages/*"
   ],
   "type": "module",
-  "packageManager": "pnpm@8.9.0",
   "files": [],
   "scripts": {
     "start": "./scripts/generate-icon-config.js && dumi dev",
@@ -107,5 +106,5 @@
   "engines": {
     "node": ">=18"
   },
-  "repository": "https://github.com/AElf-devops/aelf-design"
+  "repository": "https://github.com/AElfProject/aelf-design"
 }
