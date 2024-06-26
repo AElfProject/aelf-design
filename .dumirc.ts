@@ -97,7 +97,7 @@ export default defineConfig({
     name: 'Aelf Design',
     logo: 'https://ipfs.io/ipfs/QmWtjvb47DU1EQ4MpridFY1ow4214aAWCkhGu3ZF4xvRSY/',
     socialLinks: {
-      github: 'https://github.com/AElf-devops/aelf-design',
+      github: 'https://github.com/AElfProject/aelf-design',
     },
   },
   favicons: ['https://ipfs.io/ipfs/QmWtjvb47DU1EQ4MpridFY1ow4214aAWCkhGu3ZF4xvRSY/'],

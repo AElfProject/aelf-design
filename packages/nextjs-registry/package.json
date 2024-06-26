@@ -23,11 +23,11 @@
     "web3"
   ],
   "bugs": {
-    "url": "https://github.com/AElf-devops/aelf-design/issues"
+    "url": "https://github.com/AElfProject/aelf-design/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AElf-devops/aelf-design/tree/main/packages/nextjs-registry"
+    "url": "https://github.com/AElfProject/aelf-design/tree/main/packages/nextjs-registry"
   },
   "scripts": {
     "dev": "father dev",

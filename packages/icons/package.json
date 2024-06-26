@@ -29,11 +29,11 @@
   ],
   "homepage": "https://aelf-design.vercel.app/icon",
   "bugs": {
-    "url": "https://github.com/AElf-devops/aelf-design/issues"
+    "url": "https://github.com/AElfProject/aelf-design/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AElf-devops/aelf-design/tree/main/packages/icons"
+    "url": "https://github.com/AElfProject/aelf-design/tree/main/packages/icons"
   },
   "scripts": {
     "dev": "father dev",

@@ -1,0 +1,42 @@
+{
+  "name": "@aelf-design/image-check",
+  "version": "1.1.4",
+  "type": "module",
+  "main": "src/imageCheck.js",
+  "bin": {
+    "image-check": "./src/imageCheck.js"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "keywords": [
+    "aelf",
+    "frontend",
+    "web3"
+  ],
+  "bugs": {
+    "url": "https://github.com/AElfProject/aelf-design/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AElfProject/aelf-design/tree/main/packages/image-check"
+  },
+  "scripts": {
+    "start": "node src/imageCheck.js"
+  },
+  "devDependencies": {
+    "father": "^4.3.8",
+    "glob": "^10.3.10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "> 1%",
+    "ie >= 11"
+  ]
+}

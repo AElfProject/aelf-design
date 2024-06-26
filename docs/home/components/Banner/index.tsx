@@ -15,7 +15,7 @@ const Banner: React.FC = () => {
               {intl.formatMessage({ id: 'app.docs.site.index.banner.button-text' })}
             </Link> */}
           <Link to={`/components/address`}>开始</Link>
-          <a href="https://github.com/AElf-devops/aelf-design" target="_blank" rel="noreferrer">
+          <a href="https://github.com/AElfProject/aelf-design" target="_blank" rel="noreferrer">
             GitHub
           </a>
         </div>
