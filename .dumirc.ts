@@ -101,7 +101,7 @@ export default defineConfig({
     },
   },
   favicons: ['https://ipfs.io/ipfs/QmWtjvb47DU1EQ4MpridFY1ow4214aAWCkhGu3ZF4xvRSY/'],
-  locales: [{ id: 'zh-CN', name: '中文' }],
+  locales: [{ id: 'en-US', name: 'EN' }],
   extraBabelPlugins: [
     [
       'babel-plugin-inline-react-svg-v2',
