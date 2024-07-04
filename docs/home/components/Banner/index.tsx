@@ -14,7 +14,7 @@ const Banner: React.FC = () => {
           {/* <Link to={`${intl.locale === 'zh-CN' ? '/zh-CN' : ''}/components/address`}>
               {intl.formatMessage({ id: 'app.docs.site.index.banner.button-text' })}
             </Link> */}
-          <Link to={`/components/address`}>开始</Link>
+          <Link to={`/components/address`}>Begin</Link>
           <a href="https://github.com/AElfProject/aelf-design" target="_blank" rel="noreferrer">
             GitHub
           </a>

@@ -20,7 +20,8 @@
     "design",
     "frontend",
     "react",
-    "web3"
+    "web3",
+    "SSR"
   ],
   "bugs": {
     "url": "https://github.com/AElfProject/aelf-design/issues"

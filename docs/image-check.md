@@ -1,3 +1,10 @@
+---
+nav: Image-check
+group:
+  title: Display
+  order: 3
+---
+
 # @aelf-design/nextjs-registry
 
 This package is used for check the compliance of images.
