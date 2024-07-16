@@ -33,10 +33,10 @@ Please fill in your AWS configuration before trying to upload
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| tips<Badge type="success">add</Badge> | 上传区域提示文案 | `string \| ReactNode` | Formats supported JPG, JPEG, PNG. Max size 10 MB.Recommend ratio 16:9. | `1.0.0`&nbsp; |
-| showUploadButton<Badge type="success">add</Badge> | 是否展示上传按钮 | `boolean` | `true` | `1.0.0` |
-| uploadText<Badge type="success">add</Badge> | 上传提示文案 | `string` | Upload | `1.0.0` |
-| uploadIconColor<Badge type="success">add</Badge> | 上传icon颜色 | `string` | 默认是主题色,colorPrimary | `1.0.0` |
+| tips<Badge type="success">add</Badge> | Upload regional prompt copy | `string \| ReactNode` | Formats supported JPG, JPEG, PNG. Max size 10 MB.Recommend ratio 16:9. | `1.0.0`&nbsp; |
+| showUploadButton<Badge type="success">add</Badge> | Whether to display the upload button | `boolean` | `true` | `1.0.0` |
+| uploadText<Badge type="success">add</Badge> | Upload prompt copy | `string` | Upload | `1.0.0` |
+| uploadIconColor<Badge type="success">add</Badge> | Upload icon color | `string` | The default is the theme color, colorPrimary | `1.0.0` |
 | format<Badge type="success">add</Badge> | Address format | `boolean \| (input: string) => ReactNode` | `false` | `1.0.0` |
 | locale<Badge type="success">add</Badge> | Multilingual settings | `Locale["address"]` | - | `1.0.0` |
 | listType<Badge type="error">delete</Badge> | - | - | - | `1.0.0` |
@@ -59,12 +59,12 @@ Please fill in your AWS configuration before trying to upload
  />
 ```
 
-| Token 名称       | 描述                     | 类型     | 默认值 |
+| Token name       | Description                     | Type     | Default |
 | ---------------- | ------------------------ | -------- | ------ |
-| colorMessageText | 提示文本的字体颜色       | `string` |        |
-| borderColor      | 边框颜色                 | `string` |        |
-| containerBg      | 上传区域背景颜色         | `string` |        |
-| colorFileText    | 文件预览tips文案字体颜色 | `string` |        |
+| colorMessageText | Font color of prompt text       | `string` |        |
+| borderColor      | Border color                 | `string` |        |
+| containerBg      | Upload area background color         | `string` |        |
+| colorFileText    | File preview tips copywriting font color | `string` |        |
 
 ### Supported API
 
