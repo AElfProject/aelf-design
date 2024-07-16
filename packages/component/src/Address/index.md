@@ -61,17 +61,17 @@ group:
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| address | hash地址 | `string` | - | `1.0.0`&nbsp; |
-| chain | 主侧链信息 | `AELF \| tDVV \| tDVW` | `AELF` | `1.0.0` |
-| preLen | ...之前保留多少位 | `number` | `0` | `1.0.0` |
-| endLen | ...之后保留多少位 | `number` | `0` | `1.0.0` |
-| hasCopy | 是否展示复制按钮 | `boolean` | `true` | `1.0.0` |
-| addressClickCallback | 点击hash地址回调函数 | `(originAddress?: string,finalAddress?: string,e?: React.MouseEvent<HTMLElement>) => void` | - | `1.0.0` |
-| className | 设置最外层样式 | `string` | - | `1.0.0` |
-| size | 设置元素大小 | `small \| default \| large \| ultra` <br/>`small`: font-size:12px <br/>`default`: font-size:14px <br/>`large`: font-size:16px <br/>`ultra`: font-size:20px | `default`&nbsp; | `1.0.0` |
-| ignorePrefixSuffix | 忽略添加前后缀 | `boolean` | `false` | `1.0.0` |
-| ignoreEvent | 忽略绑定点击事件 | `boolean` | `false` | `1.0.0` |
-| primaryLinkColor | 地址默认颜色 | `string` | `customToken.customAddress.primaryLinkColor` | `1.0.0` |
-| primaryIconColor | copy按钮颜色 | `string` | `customToken.customAddress.primaryIconColor` | `1.0.0` |
-| addressHoverColor | 地址和copy按钮hover颜色 | `string` | `customToken.customAddress.addressHoverColor` | `1.0.0` |
-| addressActiveColor | 地址和按钮点击颜色 | `string` | `customToken.customAddress.addressActiveColor` | `1.0.0` |
+| address | hash address | `string` | - | `1.0.0`&nbsp; |
+| chain | Mainchain and sidechain information | `AELF \| tDVV \| tDVW` | `AELF` | `1.0.0` |
+| preLen | ...Number of digits reserved before | `number` | `0` | `1.0.0` |
+| endLen | ...Number of bits retained after | `number` | `0` | `1.0.0` |
+| hasCopy | Whether to display the copy button | `boolean` | `true` | `1.0.0` |
+| addressClickCallback | Click hash address callback function | `(originAddress?: string,finalAddress?: string,e?: React.MouseEvent<HTMLElement>) => void` | - | `1.0.0` |
+| className | Set outermost style | `string` | - | `1.0.0` |
+| size | Set element size | `small \| default \| large \| ultra` <br/>`small`: font-size:12px <br/>`default`: font-size:14px <br/>`large`: font-size:16px <br/>`ultra`: font-size:20px | `default`&nbsp; | `1.0.0` |
+| ignorePrefixSuffix | Ignore adding prefix and suffix | `boolean` | `false` | `1.0.0` |
+| ignoreEvent | Ignore binding click events | `boolean` | `false` | `1.0.0` |
+| primaryLinkColor | Address default color | `string` | `customToken.customAddress.primaryLinkColor` | `1.0.0` |
+| primaryIconColor | copy button color | `string` | `customToken.customAddress.primaryIconColor` | `1.0.0` |
+| addressHoverColor | Address and copy button hover color | `string` | `customToken.customAddress.addressHoverColor` | `1.0.0` |
+| addressActiveColor | Address and button click colors | `string` | `customToken.customAddress.addressActiveColor` | `1.0.0` |
