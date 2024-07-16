@@ -53,7 +53,7 @@ refer to [Input Token](https://ant.design/components/input-cn#%E4%B8%BB%E9%A2%98
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| size<Badge type='warning'>修改</Badge> | 设置 input 高度 | `small \| middle` <br/> `small: 40px` <br/> `middle: 48px` | `middle` | `1.0.0` |
+| size<Badge type='warning'>Revise</Badge> | Set input height | `small \| middle` <br/> `small: 40px` <br/> `middle: 48px` | `middle` | `1.0.0` |
 
 ## Supported API
 
