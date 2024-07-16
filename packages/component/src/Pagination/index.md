@@ -31,14 +31,14 @@ group:
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| current | 当前页数 | `number` | - | `1.0.0`&nbsp; |
-| pageSize | 每页条数 | `number` | `10` | `1.0.0` |
-| defaultCurrent | 默认的当前页数 | `number` | `1` | `1.0.0` |
-| defaultPageSize | 默认的每页条数 | `number` | `10` | `1.0.0` |
-| hideOnSinglePage | 只有一页时是否隐藏分页器。根据options最小值判断 | `boolean` | `false` | `1.0.0` |
-| total | 数据总数 | `number` | - | - |
-| showSizeChange | 是否显示pageSize切换 | `boolean` | `true` | `1.0.0` |
-| options | 指定每页可以显示多少条 | `number[]` | `[10, 20, 50]` | `1.0.0` |
-| onChange | 页码或 pageSize 改变的回调，参数是改变后的页码及每页条数 | `function(page, pageSize)` | - | `1.0.0` |
-| pageChange | 页码改变的回调，参数是改变后的页码 | `function(page)` | - | `1.0.0` |
-| pageSizeChange | pageSize 改变的回调，参数是改变后的页码及每页条数。因为这里默认处理当sizeChange的时候，页码重置为1，所以一起返回了 | `function(current, size)` | - | `1.0.0` |
+| current | Current page number | `number` | - | `1.0.0`&nbsp; |
+| pageSize | Number of items per page | `number` | `10` | `1.0.0` |
+| defaultCurrent | Default current page number | `number` | `1` | `1.0.0` |
+| defaultPageSize | Default number of items per page | `number` | `10` | `1.0.0` |
+| hideOnSinglePage | Whether to hide the paginator when there is only one page. Decide based on the minimum value of options | `boolean` | `false` | `1.0.0` |
+| total | Total data | `number` | - | - |
+| showSizeChange | Whether to display pageSize switch | `boolean` | `true` | `1.0.0` |
+| options | Specify how many items can be displayed on each page | `number[]` | `[10, 20, 50]` | `1.0.0` |
+| onChange | Callback for page number or pageSize change. The parameters are the changed page number and the number of items per page | `function(page, pageSize)` | - | `1.0.0` |
+| pageChange | Callback for page number change, the parameter is the changed page number | `function(page)` | - | `1.0.0` |
+| pageSizeChange | The callback for pageSize change, the parameters are the changed page number and the number of items per page. Because the default processing here is that when sizeChange occurs, the page number is reset to 1, so it is returned together | `function(current, size)` | - | `1.0.0` |
