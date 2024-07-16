@@ -7,7 +7,7 @@ group:
 
 ## How to use
 
-使用图标组件，你需要安装 [@aelf-design/icons](https://github.com/AElfProject/aelf-design/tree/main/packages/icons) 图标组件包：
+To use the icon component you need to install [@aelf-design/icons](https://github.com/AElfProject/aelf-design/tree/main/packages/icons) Icon component package:
 
 <InstallDependencies npm='npm install @aelf-design/icons --save' yarn='yarn add @aelf-design/icons' pnpm='pnpm install @aelf-design/icons --save'></InstallDependencies>
 
@@ -17,14 +17,14 @@ group:
 
 ## Basic Usage
 
-<code src="./iconDemos/basic.tsx">基本用法</code> <code src="./iconDemos/customColor.tsx">自定义图标颜色</code> <code src="./iconDemos/custom.tsx">自定义图标</code>
+<code src="./iconDemos/basic.tsx">Basic usage</code> <code src="./iconDemos/customColor.tsx">Custom icon color</code> <code src="./iconDemos/custom.tsx">Custom icon</code>
 
 ## API
 
 | Property    | Description                   | Type            | Default | Version |
 | ----------- | ----------------------------- | --------------- | ------- | ------- |
-| color       | 基础颜色                      | `string`        |         | `1.0.0` |
-| hoverColor  | hover颜色                     | `string`        |         | `1.0.0` |
-| activeColor | 点击颜色                      | `string`        |         | `1.0.0` |
-| style       | 设置图标的样式，例如 fontSize | `CSSProperties` |         | `1.0.0` |
-| className   | 计算后的 svg 类名             | `CSSProperties` |         | `1.0.0` |
+| color       | Base color                      | `string`        |         | `1.0.0` |
+| hoverColor  | Hover color                     | `string`        |         | `1.0.0` |
+| activeColor | Click color                      | `string`        |         | `1.0.0` |
+| style       | Set the style of the icon, such as fontSize | `CSSProperties` |         | `1.0.0` |
+| className   | Calculated svg class name             | `CSSProperties` |         | `1.0.0` |

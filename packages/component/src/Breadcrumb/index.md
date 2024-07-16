@@ -48,8 +48,8 @@ refer to [Breadcrumb Token](https://ant.design/components/breadcrumb-cn#%E4%B8%B
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| separatorMode<Badge type='success'>新增</Badge> | 可选择的分隔符：箭头或者斜线 | `'slash' \| 'arrow'` | `slash` | - |
-| size<Badge type='success'>新增</Badge> | 尺寸 | `small` | - | - |
+| separatorMode<Badge type='success'>New</Badge> | Optional delimiter: arrow or slash | `'slash' \| 'arrow'` | `slash` | - |
+| size<Badge type='success'>New</Badge> | size | `small` | - | - |
 
 ## Supported API
 

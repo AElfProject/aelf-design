@@ -17,23 +17,23 @@ group:
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| stepsData | 步骤数据 | [IStepItem[]](#istepitem) | - | `1.0.0` |
-| strokeColor | 成功进度条颜色 | `string` | 跟随`progress`组件主色 | `1.0.0` |
-| strokeErrorColor | 失败进度条颜色 | `string` | 跟随`progress`组件`error`色 | `1.0.0` |
-| trailColor | 进度条底色 | `string` | 跟随`progress`组件`trailColor`色 | `1.0.0` |
-| successIcon | 成功步骤图标 | `ReactNode` | `<ProgressSuccessIcon />` | `1.0.0` |
-| errorIcon | 失败步骤图标 | `ReactNode` | `<ProgressErrorIcon />` | `1.0.0` |
+| stepsData | Step data | [IStepItem[]](#istepitem) | - | `1.0.0` |
+| strokeColor | Success progress bar color | `string` | Follow the main color of the `progress` component | `1.0.0` |
+| strokeErrorColor | Failure progress bar color | `string` | Follow the `error` color of the `progress` component | `1.0.0` |
+| trailColor | Progress bar background color | `string` | Follow the `progress` component `trailColor` color | `1.0.0` |
+| successIcon | Success steps icons | `ReactNode` | `<ProgressSuccessIcon />` | `1.0.0` |
+| errorIcon | Failed step icon | `ReactNode` | `<ProgressErrorIcon />` | `1.0.0` |
 
 ### IStepItem
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| title | 设置title | `ReactNode` | - | `1.0.0` |
-| subTitle | 设置subTitle | `ReactNode` | - | `1.0.0` |
-| percent | 当前步骤进度条百分比 | `number` | - | `1.0.0` |
-| progressTip | 当前步骤进度条下方文本描述 | `ReactNode` | - | `1.0.0` |
-| status | 当前步骤状态 | [ProgressLineType](#progresslinetype) | - | `1.0.0` |
-| available | 控制当前步骤文案黑色还是灰色 | `boolean` | - | `1.0.0` |
+| title | Set title | `ReactNode` | - | `1.0.0` |
+| subTitle | Set subTitle | `ReactNode` | - | `1.0.0` |
+| percent | Current step progress bar percentage | `number` | - | `1.0.0` |
+| progressTip | Text description below the progress bar of the current step | `ReactNode` | - | `1.0.0` |
+| status | Current step status | [ProgressLineType](#progresslinetype) | - | `1.0.0` |
+| available | Control whether the copy of the current step is black or gray | `boolean` | - | `1.0.0` |
 
 ### ProgressLineType
 

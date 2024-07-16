@@ -48,6 +48,6 @@ Inherited global token, no extended token, follows global token specification
 
 | Token | Description | Type | Default |
 | --- | --- | --- | --- |
-| colorTextBase | 日期文字颜色 | `string` | 暗黑模式：`#E8E8E8` <br>日间模式：`#1A1A1A` |
-| colorBgElevated | 面板背景色 | `string` | 暗黑模式：`#282828` <br>日间模式：`#FFFFFF` |
-| colorPrimary | 操作按钮(`done/cancel`)的颜色 | `string` | 暗黑模式：`#1370DD` <br>日间模式：`#127FFF` |
+| colorTextBase | Date text color | `string` | Dark mode:`#E8E8E8` <br>Day mode:`#1A1A1A` |
+| colorBgElevated | Panel background color | `string` | Dark mode:`#282828` <br>Day mode:`#FFFFFF` |
+| colorPrimary | Action button(`done/cancel`)'s color | `string` | Dark mode:`#1370DD` <br>Day mode:`#127FFF` |

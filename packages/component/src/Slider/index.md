@@ -41,7 +41,7 @@ group:
   theme={{
     components: {
       Slider: {
-        /* 这里是你的组件 token */
+        /* Here is your component token */
       },
     },
   }}
@@ -60,22 +60,22 @@ refer to [slider Token](https://ant.design/components/slider-cn#%E4%B8%BB%E9%A2%
 
 | Property                                 | Description        | Type      | Default | Version |
 | ---------------------------------------- | ------------------ | --------- | ------- | ------- |
-| status<Badge type='success'>新增</Badge> | 状态：出错 \| .... | `'error'` | -       |
+| status<Badge type='success'>New</Badge> | Status: Error \| .... | `'error'` | -       |
 
 ### SliderBindInput
 
 | Property     | Description        | Type                     | Default | Version |
 | ------------ | ------------------ | ------------------------ | ------- | ------- |
-| value        | 值                 | number                   | -       | -       |
-| onChange     | 监听值改变         | (value: number) => void; | -       | -       |
-| defaultValue | 默认值             | number                   | -       | -       |
-| status       | 状态：出错 \| .... | `'error'`                | -       | -       |
-| className    | 类名               | string                   | -       | -       |
-| min          | 最小值             | number                   | 0       | -       |
-| max          | 最大值             | number                   | 100     | -       |
-| style        | 样式               | React.CSSProperties      | -       | -       |
-| sliderProps  | 透传 Slider        | SliderSingleProps        | -       | -       |
-| inputProps   | 透传 InputNumber   | InputNumberProps         | -       | -       |
+| value        | value                 | number                   | -       | -       |
+| onChange     | Listen for value changes         | (value: number) => void; | -       | -       |
+| defaultValue | Default value             | number                   | -       | -       |
+| status       | Status: Error \| .... | `'error'`                | -       | -       |
+| className    | Class name               | string                   | -       | -       |
+| min          | Minimum value             | number                   | 0       | -       |
+| max          | Maximum value             | number                   | 100     | -       |
+| style        | Style               | React.CSSProperties      | -       | -       |
+| sliderProps  | Penetrate Slider        | SliderSingleProps        | -       | -       |
+| inputProps   | Penetrate InputNumber   | InputNumberProps         | -       | -       |
 
 ## Supported API
 

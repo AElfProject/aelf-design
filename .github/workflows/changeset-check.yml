@@ -32,7 +32,7 @@ jobs:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          # 拉取 pr 源分支代码
+          # Pull PR source branch code
           files=$ALL_CHANGED_FILES
           echo "File list: $files"
           diff=$(gh pr diff ${{ github.event.pull_request.number }})
@@ -61,7 +61,7 @@ jobs:
         with:
             token: ${{ secrets.GITHUB_TOKEN }}
             body: |
-              ## 🚨 @${{ github.actor }}, 本次 PR 的更改包含 major 变更，请确认是否符合预期。
+              ## 🚨 @${{ github.actor }}, The changes in this PR include major changes, please confirm whether they meet expectations。
               ___
               ## 🚨 @${{ github.actor }}, this PR contains major changes, please confirm if it is as expected.
 

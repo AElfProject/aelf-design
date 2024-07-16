@@ -29,7 +29,7 @@ const CopyableIcon: React.FC<CopyableIconProps> = ({
     copied: justCopied === name,
     [theme]: !!theme,
 
-    // 一些白色图标需要添加背景色
+    // Some white icons need to add background color
     isWhite: name.includes('White'),
   });
 

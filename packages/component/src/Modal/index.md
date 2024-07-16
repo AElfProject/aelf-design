@@ -43,8 +43,8 @@ refer to [Modal Token](https://ant.design/components/modal-cn#%E4%B8%BB%E9%A2%98
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| width<Badge type='warning'>修改</Badge> | 设置宽度 | `string \| number` | `438` | `1.0.0` |
-| closeIcon<Badge type='warning'>修改</Badge> | 关闭icon，`false`时不显示，非`false`展示默认 | `ReactNode \| boolean` | `true` | `1.0.0` |
+| width<Badge type='warning'>Revise</Badge> | set width | `string \| number` | `438` | `1.0.0` |
+| closeIcon<Badge type='warning'>Revise</Badge> | Close icon，`false` not displayed when，Non `false` displays the default | `ReactNode \| boolean` | `true` | `1.0.0` |
 
 ## Supported API
 
