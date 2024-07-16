@@ -19,6 +19,6 @@ group:
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| tips | 上传区域提示文案 | `string \| ReactNode` | Formats supported JPG, JPEG, PNG. Max size 10 MB.Recommend ratio 16:9. | `1.0.0`&nbsp; |
-| uploadText | 上传提示文案 | `string` | Upload | `1.0.0` |
-| uploadIconColor | 上传icon颜色 | `string` | 默认是主题色,colorPrimary | `1.0.0` |
+| tips | Upload regional prompt copy | `string \| ReactNode` | Formats supported JPG, JPEG, PNG. Max size 10 MB.Recommend ratio 16:9. | `1.0.0`&nbsp; |
+| uploadText | Upload prompt copy | `string` | Upload | `1.0.0` |
+| uploadIconColor | Upload icon color | `string` | The default is the theme color, colorPrimary | `1.0.0` |
