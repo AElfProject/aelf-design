@@ -17,6 +17,6 @@ group:
 
 | Property | Description         | Type                        | Default      | Version |
 | -------- | ------------------- | --------------------------- | ------------ | ------- |
-| open     | 设置是否展示Loading | `boolean`                   | `false`      | `1.0.0` |
-| content  | 设置内容区          | `string \| React.ReactNode` | `loading...` | `1.0.0` |
-| width    | 设置Loading宽度     | `number \| string`          | `240`        | `1.0.0` |
+| open     | Set whether to display Loading | `boolean`                   | `false`      | `1.0.0` |
+| content  | Set up content area          | `string \| React.ReactNode` | `loading...` | `1.0.0` |
+| width    | Set Loading width    | `number \| string`          | `240`        | `1.0.0` |
