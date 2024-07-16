@@ -33,18 +33,18 @@ group:
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| inputSize | 设置搜索框大小 | `small \| middle` | `middle` | `1.0.0`&nbsp; |
-| dropdownSize | 设置搜索框下拉筛选菜单大小 | `small \| medium \| default \| large` | `default` | `1.0.0` |
-| filterItems | 下拉筛选菜单内容 | [FilterItemType[]](#filteritemtype) | - | `1.0.0` |
-| prefixWidth | 筛选区域元素宽度 | `string \| number` | `auto` | `1.0.0` |
-| withSearchIcon | 搜索按钮与搜索框的位置关系 | `connect \| inline \| after` <br/> `connect`: 连接在搜索框后面;<br/> `inline`: 在搜索框内部;<br/> `after`: 在搜索框后面，不连接需要指定，否则不展示搜索按钮 | 需要指定，否则不展示搜索按钮 | `1.0.0` |
-| status | 设置搜索框大小 | `error \| warning` | - | `1.0.0` |
-| className | 设置输入框外层样式 | `string` | - | `1.0.0` |
-| inputClassName | 设置输入框input区域样式 | `string` | - | `1.0.0` |
-| onSelectChange | 下拉筛选菜单选择回调 | `(info: FilterItemType) => void` | - | `1.0.0` |
-| onSearchBtnClick | 搜索按钮点击回调 | `(e: React.MouseEvent<HTMLElement>) => void` | - | - |
-| onChange | 输入框内容变化时的回调 | `function(e)` | - | `1.0.0` |
-| onPressEnter | 按下回车的回调 | `function(e)` | - | `1.0.0` |
+| inputSize | Set search box size | `small \| middle` | `middle` | `1.0.0`&nbsp; |
+| dropdownSize | Set the size of the search box drop-down filter menu | `small \| medium \| default \| large` | `default` | `1.0.0` |
+| filterItems | Drop down filter menu content | [FilterItemType[]](#filteritemtype) | - | `1.0.0` |
+| prefixWidth | Filter area element width | `string \| number` | `auto` | `1.0.0` |
+| withSearchIcon | The positional relationship between the search button and the search box | `connect \| inline \| after` <br/> `connect`: Connect behind the search box;<br/> `inline`: inside the search box;<br/> `after`: Behind the search box, no connection needs to be specified, otherwise the search button will not be displayed | Need to be specified, otherwise the search button will not be displayed | `1.0.0` |
+| status | Set search box size | `error \| warning` | - | `1.0.0` |
+| className | Set the outer style of the input box | `string` | - | `1.0.0` |
+| inputClassName | Set the input area style of the input box | `string` | - | `1.0.0` |
+| onSelectChange | Drop-down filter menu selection callback | `(info: FilterItemType) => void` | - | `1.0.0` |
+| onSearchBtnClick | Search button click callback | `(e: React.MouseEvent<HTMLElement>) => void` | - | - |
+| onChange | Callback when the content of the input box changes | `function(e)` | - | `1.0.0` |
+| onPressEnter | Callback when pressing enter | `function(e)` | - | `1.0.0` |
 
 ### FilterItemType
 
