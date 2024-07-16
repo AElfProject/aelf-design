@@ -41,7 +41,7 @@ group:
   theme={{
     components: {
       Slider: {
-        /* 这里是你的组件 token */
+        /* Here is your component token */
       },
     },
   }}
