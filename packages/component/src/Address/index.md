@@ -37,7 +37,7 @@ group:
 
 <!-- prettier-ignore -->
 :::info
-新增了primaryLinkColor | primaryIconColor | addressHoverColor | addressActiveColor 这四个颜色的api设置,组件api设置之后将会覆盖token的设置
+addedPrimaryLinkColor | primaryIconColor | addressHoverColor | addressActiveColor API settings for these four colors, After the component api is set, the token setting will be overwritten.
 :::
 
 ```js
