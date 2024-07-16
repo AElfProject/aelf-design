@@ -22,7 +22,7 @@ const App: React.FC = () => {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
-      <Form.Item>结合表单验证</Form.Item>
+      <Form.Item>Combined with form validation</Form.Item>
       <Form.Item
         label="username"
         name="username"
