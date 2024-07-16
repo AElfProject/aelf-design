@@ -38,7 +38,7 @@ refer to [Tabs Token](https://ant.design/components/tabs-cn#%E4%B8%BB%E9%A2%98%E
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| size<Badge type='warning'>修改</Badge> | 提供 middle 和 small 两种大小 | `middle \| small` | `middle` | `1.0.0` |
+| size<Badge type='warning'>Revise</Badge> | Available in two sizes: middle and small | `middle \| small` | `middle` | `1.0.0` |
 
 ## Supported API
 
