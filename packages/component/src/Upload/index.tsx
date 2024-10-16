@@ -3,6 +3,7 @@ import { DeleteOutlined, FileIcon } from '@aelf-design/icons';
 import { Upload as AntdUpload, UploadProps as AntdUploadProps, Image } from 'antd';
 import { useTheme } from 'antd-style';
 import { UploadFile } from 'antd/es/upload';
+import { UploadFileStatus } from 'antd/es/upload/interface';
 import { UploadRef } from 'antd/es/upload/Upload';
 
 import UploadButton from '../UploadButton';
@@ -14,7 +15,7 @@ export interface IUploadProps extends Omit<AntdUploadProps, 'listType' | 'itemRe
   uploadIconColor?: string;
   showUploadButton?: boolean;
 }
-
+const StatusList: UploadFileStatus[] = ['done', 'uploading'];
 function UploadItemRender({
   file,
   actions,
@@ -27,7 +28,7 @@ function UploadItemRender({
   const { styles, cx } = useStyles();
   const token = useTheme();
   return file.url || file.thumbUrl ? (
-    (file.status === 'done' && (
+    (StatusList.includes(file.status as UploadFileStatus) && (
       <div className={cx(styles.previewContainer)}>
         <Image
           height={202}
@@ -36,20 +37,26 @@ function UploadItemRender({
           src={file?.response?.url || file.url || file.thumbUrl}
         />
         <div className="file-info">
-          <div className={cx('fileName')}>{file.name}</div>
-          <div
-            className="clear-container"
-            onClick={() => {
-              actions.remove();
-            }}
-          >
-            <DeleteOutlined
-              color={token.colorPrimary}
-              hoverColor={token.colorPrimaryHover}
-              activeColor={token.colorPrimaryActive}
-            />
-            <span className="clear-text">Delete</span>
-          </div>
+          {file.status === 'done' ? (
+            <>
+              <div className={cx('fileName')}>{file.name}</div>
+              <div
+                className="clear-container"
+                onClick={() => {
+                  actions.remove();
+                }}
+              >
+                <DeleteOutlined
+                  color={token.colorPrimary}
+                  hoverColor={token.colorPrimaryHover}
+                  activeColor={token.colorPrimaryActive}
+                />
+                <span className="clear-text">Delete</span>
+              </div>
+            </>
+          ) : (
+            <div>Uploading...</div>
+          )}
         </div>
       </div>
     )) ||
